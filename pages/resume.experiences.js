@@ -74,7 +74,7 @@ const Freelancer = () =>
 	<article>
 		<small className="lg:float-right text-gray-600">{duration(new Date(2009, 2, 1))}</small>
 
-		<h3><a href="https://ozana.cz">ozana.cz</a> &ndash; Freelance web designer</h3>
+		<h3><a href="https://ozana.cz">Freelance web designer</a></h3>
 
 		<h4>October 2009 &ndash; present</h4>
 
