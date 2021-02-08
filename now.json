@@ -1,6 +1,6 @@
 {
 	"version": 2,
-	"name": "ozana.cz",
+	"name": "ozana-cz",
 	"env": {
 		"NODE_ENV": "production"
 	},
