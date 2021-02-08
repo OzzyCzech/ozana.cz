@@ -1,0 +1,32 @@
+{
+	"items": [
+		{
+			"badge_counts": {
+				"bronze": 27,
+				"silver": 38,
+				"gold": 2
+			},
+			"account_id": 145481,
+			"is_employee": false,
+			"last_modified_date": 1607615253,
+			"last_access_date": 1612532549,
+			"reputation_change_year": 100,
+			"reputation_change_quarter": 100,
+			"reputation_change_month": 30,
+			"reputation_change_week": 30,
+			"reputation_change_day": 20,
+			"reputation": 7207,
+			"creation_date": 1275389990,
+			"user_type": "registered",
+			"user_id": 355316,
+			"location": "Prague, Czech Republic",
+			"website_url": "https://omdesign.cz",
+			"link": "https://stackoverflow.com/users/355316/ozzyczech",
+			"profile_image": "https://www.gravatar.com/avatar/c9e2bf74e0cc0c30cdae3271853e2173?s=128&d=identicon&r=PG",
+			"display_name": "OzzyCzech"
+		}
+	],
+	"has_more": false,
+	"quota_max": 300,
+	"quota_remaining": 299
+}
