@@ -18,7 +18,6 @@ export default class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					<meta name="google-site-verification" content="4LFYmB-l6Y6CTN9Cto7z8EiPwQy-ecopaMP-6pxQUKo"/>
 					<meta name="author" content="All: Roman Ožana; e-mail: roman@ozana.cz"/>
 					<link rel="shortcut icon" href="/favicon.png"/>
 					<link rel="author" href="/humans.txt"/>
