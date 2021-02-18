@@ -7,7 +7,7 @@ const ContactInformation = () =>
 		<div className="flex flex-wrap justify-center my-10">
 			<div className="w-6/12 sm:w-2/12">
 				<a href="/img/roman-ozana.jpg" download="Roman Ožana.jpg" title="Download me 😉...">
-					<img src="/img/roman-ozana.jpg" alt="..." className="shadow shadow-lg rounded-full max-w-full h-auto align-middle border-none"/>
+					<img src="/img/roman-ozana.jpg" alt="..." className="shadow rounded-full max-w-full h-auto align-middle border-none"/>
 				</a>
 			</div>
 		</div>

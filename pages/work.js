@@ -43,7 +43,7 @@ const Testomato = () =>
 				<li>our own <a href="https://github.com/testomato/minicrawler" target="_blank" className="hover:text-white">Minicrawler</a></li>
 				<li><a href="https://www.docker.com/" target="_blank" rel="nofollow" className="hover:text-white">Docker</a>, git, DI, CI, TDD, &hellip;</li>
 				<li>Angular JS + Javascript ES6</li>
-				<li>Webpack</li>
+				<li>Build with <a href="https://webpack.js.org/" target="_blank" className="hover:text-white">Webpack</a> and Makefile</li>
 			</ul>
 
 			<p className="text-center">
@@ -76,20 +76,18 @@ const Zdrojak = () =>
 			<h3>Technologies &amp; Tools</h3>
 
 			<ul className="text-xl ">
-				<li><a href="https://wordpress.org/" target="_blank" rel="nofollow">Wordpress 5+</a> with custom plugins and template</li>
-				<li>PHP 7.4, Javascript</li>
-				<li><a href="https://reactjs.org/" target="_blank" rel="nofollow">React</a> (for Gutenberg plugins)</li>
+				<li><a href="https://wordpress.org/" target="_blank" rel="nofollow" className="hover:text-white">Wordpress 5+</a> with custom plugins and template</li>
+				<li>PHP 8 and Javascript ES6</li>
+				<li><a href="https://reactjs.org/" target="_blank" rel="nofollow" className="hover:text-white">React</a> (for Gutenberg plugins)</li>
 				<li>
-					<a href="https://mariadb.org/" target="_blank" rel="nofollow">MariaDB</a>,{' '}
-					<a href="https://redis.io/" target="_blank" rel="nofollow">Redis</a>,{' '}
-					<a href="https://memcached.org/" target="_blank" rel="nofollow">Memcached</a>
+					<a href="https://mariadb.org/" target="_blank" rel="nofollow" className="hover:text-white">MariaDB</a>,{' '}
+					<a href="https://redis.io/" target="_blank" rel="nofollow" className="hover:text-white">Redis</a>{' '}
 				</li>
 				<li>
-					<a href="https://www.docker.com/" target="_blank" rel="nofollow">Docker</a>, git, CI
+					<a href="https://www.docker.com/" target="_blank" rel="nofollow" className="hover:text-white">Docker</a>, git, CI
 				</li>
 				<li>
-					<a href="https://parceljs.org/" target="_blank" rel="nofollow">Parcel</a>,{' '}
-					<a href="https://webpack.js.org/" target="_blank" rel="nofollow">Webpack</a> and Makefile
+					Build with <a href="https://parceljs.org/" target="_blank" rel="nofollow" className="hover:text-white">Parcel</a> and Makefile
 				</li>
 			</ul>
 
