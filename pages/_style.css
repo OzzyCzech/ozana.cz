@@ -107,6 +107,8 @@ article ul {
 		min-height: auto;
 		grid-template-rows: auto;
 		min-width: 992px !important;
+		margin:0;
+		padding:0;
 	}
 
 	.page-break-before {
@@ -141,6 +143,7 @@ article ul {
 
 	@page {
 		size: a4;
+		margin: 10mm;
 	}
 
 	.print {
