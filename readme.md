@@ -1,7 +1,12 @@
 # Personal homepage
 
-- Next.js
-- NOW 
+Personal website https://ozana.cz
+
+# Technologies 
+
+- [Next.js](https://nextjs.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Vercel](https://vercel.com/)
 
 ## Install & run
 
