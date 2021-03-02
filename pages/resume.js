@@ -38,7 +38,7 @@ const Resume = () => (
 
 		<section className="page-break-before">
 			<h2 className="text-center md:text-left italic border-b-4 p-4 mb-5">Skills &amp; Technologies</h2>
-			<div className="grid grid-cols-2 sm:grid-col-none mx-4 gap-2 xl:mx-6">
+			<div className="mx-4 gap-2 grid grid-cols-1 md:grid-cols-2 xl:mx-6">
 				<article>
 					<h3>Day-to-day comfort</h3>
 					<ul>
