@@ -1,7 +1,9 @@
 screenshots:
+	yarn add puppeteer
 	node screenshot.js https://www.testomato.com ./public/img/work/testomato.png
 	node screenshot.js https://www.zdrojak.cz ./public/img/work/zdrojak.png
 	node screenshot.js https://www.sphido.org ./public/img/work/sphido.png
+	yarn remove puppeteer
 
 resume:
 	rm -rf public/cv.pdf && node resume.js && open public/cv.pdf
