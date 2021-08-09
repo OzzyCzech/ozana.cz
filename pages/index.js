@@ -12,7 +12,7 @@ const ContactInformation = () =>
 			</div>
 		</div>
 
-		<div className="text-center">
+		<div className="text-center mb-10">
 			<h1 itemProp="name">Ing. Roman Ožana</h1>
 
 			<a href="mailto:roman@ozana.cz" itemProp="email" className="text-3xl text-current font-bold">roman@ozana.cz</a>
