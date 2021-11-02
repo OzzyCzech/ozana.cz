@@ -19,7 +19,6 @@ const ContactInformation = () =>
 
 			<p className="flex grid-cols-2 gap-x-3 justify-center divide-x my-3">
 				<a href="tel:+420605783455" itemProp="telephone" className="font-bold text-current">+420 605 783 455</a>
-				<a href="http://m.me/roman.ozana" target="_blank" className="pl-3 text-current">Messenger</a>
 			</p>
 
 			<p itemProp="address" itemScope itemType="http://schema.org/PostalAddress" className="my-3">
@@ -30,7 +29,7 @@ const ContactInformation = () =>
 			</p>
 
 			<p>
-				IN: <a href="http://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJFND&Action=Search&ICO=87098504" title="Registration number" target="_blank" className="text-current">87098504</a>
+				IN: <a href="https://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJFND&Action=Search&ICO=87098504" title="Registration number" target="_blank" className="text-current">87098504</a>
 			</p>
 
 			<a href="/ozana.vcf" download="Ing. Roman Ozana.vcf" className="btn btn-blue mt-5 ml-2">
