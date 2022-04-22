@@ -1,135 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* https://nerdcave.com/tailwind-cheat-sheet */
 
-body {
-	grid-template-rows: auto 1fr auto;
+@tailwind base;
+@layer base {
+	a {
+		@apply text-current hover:underline hover:text-blue-600 hover:ease-in-out;
+	}
 }
 
-h1, h2, h3 {
-	@apply font-bold;
-}
-
-h1 {
-	@apply text-4xl mb-1;
-}
-
-h2 {
-	@apply text-3xl mb-1;
-}
-
-h3 {
-	@apply text-2xl mb-1;
-}
-
-h4 {
-	@apply font-bold;
-}
-
-.btn {
-	@apply font-bold py-3 px-6 rounded inline-flex items-center rounded-full no-underline;
-}
-
-.btn:hover {
-	@apply border-transparent no-underline
-}
-
-.btn-blue {
-	@apply bg-blue-500 text-white border-blue-500;
-}
-
-.btn-blue:hover {
-	@apply bg-blue-700 text-white;
-}
-
-.btn-white {
-	@apply text-white bg-white bg-opacity-25
-}
-
-.btn-white:hover {
-	@apply text-white bg-opacity-50
-}
-
-.btn-black {
-	@apply text-white bg-black bg-opacity-75
-}
-
-.btn-black:hover {
-	@apply text-white bg-opacity-100
-}
-
-a {
-	@apply text-current;
-}
-
-a:hover {
-	@apply underline text-blue-600 ease-in-out;
-}
-
-p {
-	@apply mt-0 mb-4;
-}
-
-article ul {
-	@apply list-disc ml-6 mt-0 mb-3;
-}
-
-.bg-testomato {
-	background-color: #b72b2a;
-}
-
-.bg-zdrojak {
-	background-color: #424242;
-}
-
-/** @see https://primer.style/css/utilities/colors */
-.bg-github {
-	background-color: #f6f8fa;
-}
-
-.print-grid,
-.print {
-	display: none;
-}
+@tailwind utilities;
+@tailwind components;
 
 @media print {
-	*,
-	*::before,
-	*::after {
-		text-shadow: none !important;
-		box-shadow: none !important;
-	}
-
-	body, html {
-		display: block;
-		min-height: auto;
-		grid-template-rows: auto;
-		min-width: 992px !important;
-		margin:0;
-		padding:0;
-	}
-
-	.page-break-before {
-		page-break-before: always;
-	}
-
-	abbr[title]::after {
-		content: " (" attr(title) ")";
-	}
-
-	pre {
-		white-space: pre-wrap !important;
-	}
-
-	pre, blockquote {
-		border: 1px solid #adb5bd;
-		page-break-inside: avoid;
-	}
-
-	tr, img {
-		page-break-inside: avoid;
+	@page {
+		size: a4;
+		margin: 10mm;
 	}
 
 	p, h2, h3 {
@@ -141,25 +25,11 @@ article ul {
 		page-break-after: avoid;
 	}
 
-	@page {
-		size: a4;
-		margin: 10mm;
+	tr, img {
+		page-break-inside: avoid;
 	}
 
-	.print {
-		display: inherit;
-	}
-
-	.print-grid {
-		display: grid;
-	}
-
-	.no-print {
-		display: none !important
-	}
-
-	#__next-prerender-indicator,
-	#__next-build-watcher {
-		display: none;
+	.page-break-before-always {
+		page-break-before: always;
 	}
 }

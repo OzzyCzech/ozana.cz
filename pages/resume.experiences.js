@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React from "react";
+import React from 'react';
 
 function duration(start, end) {
 	let s = moment(start).add(-1, 'day');
@@ -15,43 +15,41 @@ function duration(start, end) {
 }
 
 export const Testomato = () =>
-	<article>
-		<small className="lg:float-right text-gray-600">{duration(new Date(2012, 3, 1), new Date())}</small>
-		<h3>
-			<a href="https://www.testomato.com" target="_blank">Testomato s.r.o.</a> &ndash;
-			Co-founder &amp; lead developer
-		</h3>
-
-		<h4>March 2012 &ndash; present</h4>
-
+	<article className="py-4">
+		<div className="flex justify-between">
+			<h3 className="text-xl font-semibold mb-1">
+				<a href="https://www.testomato.com" target="_blank">Testomato s.r.o.</a> &ndash;
+				Co-founder &amp; lead developer
+			</h3>
+			<small className="text-gray-600">{duration(new Date(2012, 3, 1), new Date())}</small>
+		</div>
+		<strong>March 2012 &ndash; present</strong>
 		<p>
 			Work as full time Javascript and PHP lead developer.
 		</p>
-
 	</article>;
 
 const Devel = () =>
-	<article>
-		<small className="lg:float-right text-gray-600">{duration(new Date(2011, 5, 1))}</small>
-
-		<h3><a href="http://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJFND&Action=Search&ICO=24683507" target="_blank">Devel.cz
-			Lab s.r.o.</a> &ndash; PHP/JS developer</h3>
-
-		<h4>October 2009 &ndash; present</h4>
-
+	<article className="py-4">
+		<div className="flex justify-between">
+			<h3 className="text-xl font-semibold mb-1"><a href="http://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJFND&Action=Search&ICO=24683507" target="_blank">
+				Devel.cz Lab s.r.o.</a> &ndash; PHP/JS developer
+			</h3>
+			<small className="text-gray-600">{duration(new Date(2011, 5, 1))}</small>
+		</div>
+		<strong>October 2009 &ndash; present</strong>
 		<p>
 			Work as experienced PHP and Javascript developer mostly on <a href="https://www.zdrojak.cz">zdrojak.cz</a>.
 		</p>
 	</article>;
 
 const Intergraph = () =>
-	<article>
-		<small className="lg:float-right text-gray-600">{duration(new Date(2010, 7, 1), new Date(2011, 3, 31))}</small>
-
-		<h3>Intergraph s.r.o. &ndash; Application Engineer</h3>
-
-		<h4>July 2010 &ndash; April 2011</h4>
-
+	<article className="py-4">
+		<div className="flex justify-between">
+			<h3 className="text-xl font-semibold mb-1">Intergraph s.r.o. &ndash; Application Engineer</h3>
+			<small className="text-gray-600">{duration(new Date(2010, 7, 1), new Date(2011, 3, 31))}</small>
+		</div>
+		<strong>July 2010 &ndash; April 2011</strong>
 		<p>
 			Application Engineer (external consultant) – testing of corporate solution for metadata
 			sharing and managing. Developing of simple C# .NET applications.
@@ -59,44 +57,41 @@ const Intergraph = () =>
 	</article>;
 
 const Skvely = () =>
-	<article>
-
-		<small className="lg:float-right text-gray-600">{duration(new Date(2009, 3, 1), new Date(2010, 7, 31))}</small>
-		
-		<h3>Skvely.CZ s.r.o. &ndash; PHP developer</h3>
-
-		<h4>March 2009 &ndash; July 2010</h4>
-
+	<article className="py-4">
+		<div className="flex justify-between">
+			<h3 className="text-xl font-semibold mb-1">Skvely.CZ s.r.o. &ndash; PHP developer</h3>
+			<small className="text-gray-600">{duration(new Date(2009, 3, 1), new Date(2010, 7, 31))}</small>
+		</div>
+		<strong>March 2009 &ndash; July 2010</strong>
 		<p>Works there as web application developer mostly in PHP and developing some modules for e-commerce Magento.</p>
 	</article>;
 
 const Freelancer = () =>
-	<article>
-		<small className="lg:float-right text-gray-600">{duration(new Date(2009, 2, 1))}</small>
-
-		<h3><a href="https://ozana.cz">Freelance web designer</a></h3>
-
-		<h4>October 2009 &ndash; present</h4>
-
+	<article className="py-4">
+		<div className="flex justify-between">
+			<h3 className="text-xl font-semibold mb-1"><a href="https://ozana.cz">Freelance web designer</a></h3>
+			<small className="text-gray-600">{duration(new Date(2009, 2, 1))}</small>
+		</div>
+		<strong>October 2009 &ndash; present</strong>
 		<p>Freelance web designer and developer of Internet application &ndash; mostly in PHP and Javascript.</p>
 	</article>;
 
 
 const Experiences = () => (
 	<section>
-		<h2 className="text-center md:text-left italic border-b-4 p-4 mb-5">Work Experiences</h2>
-		<div className="grid gap-y-4 mx-4 lg:mx-8">
+		<h2 className="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Work Experiences</h2>
+		<div className="divide-y mb-3">
 			<Testomato/>
 			<Devel/>
 			<Freelancer/>
 		</div>
-		<h2 className="text-center md:text-left italic border-b-4 p-4 mb-5">Former Work Experiences</h2>
-		<div className="grid gap-y-4 mx-4 lg:mx-8">
+		<h2 className="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current€">Former Work Experiences</h2>
+		<div className="divide-y mb-3">
 			<Intergraph/>
 			<Skvely/>
 		</div>
 	</section>
 
-)
+);
 
 export default Experiences;

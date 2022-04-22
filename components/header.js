@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const Header = ({active = '/'}) =>
-	<header className="no-print">
+	<header className="print:hidden">
 		<nav className="flex justify-center lg:justify-end border-b text-center">
 			<ul className="grid grid-cols-3 divide-x py-3">
 				<li className={active === '/' ? 'font-bold' : null}>

@@ -14,9 +14,9 @@
 
 ------------------------------------------------------------------------------------------------------------------------
 
-     Last up date: 2021
+     Last up date: 2022
         Standards: HTML5, CSS3
-       Components: nodejs, webpack, express
+       Components: nodejs, nextjs, Tailwind
  Desktop software: macOS, Visual Stuido Code
 
 ------------------------------------------------------------------------------------------------------------------------

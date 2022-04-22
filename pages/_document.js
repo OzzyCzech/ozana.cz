@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
 					<link rel="author" href="/humans.txt"/>
 				</Head>
 
-				<body className={'font-sans text-gray-900 leading-normal tracking-normal grid min-h-screen ' + (page ? page : 'home')}>
+				<body className={'font-sans text-gray-900 leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto] ' + (page ? page : 'home')}>
 				<Header active={pathname}/>
 				<main className="grid items-center"><Main/></main>
 				<Footer active={pathname}/>
