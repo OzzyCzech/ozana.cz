@@ -145,4 +145,8 @@ const Resume = () => (
 	</div>
 );
 
+
+// QR code generator
+// @see https://www.qrcode-monkey.com/
+
 export default Resume;
