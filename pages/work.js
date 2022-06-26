@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import github from '../data/github.json';
+import Twemoji from '../components/twemoji.js';
 
 // classname fill-current w-4 h-4 ml-2
 const ShareIcon = () =>
@@ -12,9 +13,9 @@ const Testomato = () =>
 	<article className="bg-[#b72b2a] grid lg:grid-cols-2 md:p-12 md:gap-12 p-6 lg:p-32 lg:gap-32 text-white">
 		<div>
 
-			<img src="/img/testomato.svg" alt="Testomato" className="w-6/12 sm:w-4/12 my-4"/>
+			<img src="/img/testomato.svg" alt="Testomato" className="w-6/12 sm:w-4/12 my-6"/>
 
-			<p className="text-xl leading-relaxed mb-3">
+			<p className="text-xl leading-relaxed mb-4">
 				I'm working at <a href="https://www.testomato.com/team" target="_blank" className="hover:text-white">Testomato</a> since beginning as co-founder &amp; developer.{' '}
 				<a href="https://www.testomato.com" target="_blank" className="hover:text-current">Testomato starts</a> almost ten years ago
 				as <a href="https://www.testomato.com/about" className="hover:text-current">one man project</a> based on ideas
@@ -26,9 +27,9 @@ const Testomato = () =>
 				300 times a day. How often do you?
 			</p>
 
-			<h3 className="font-semibold mb-2 text-xl">Technologies &amp; Tools</h3>
+			<h3 className="font-medium mb-3 text-xl">Technologies &amp; Tools</h3>
 
-			<ul className="list-disc ml-6 leading-loose text-lg mb-3">
+			<ul className="list-disc ml-8 leading-loose text-lg mb-4">
 				<li>
 					PHP (<a href="https://nette.org/cs/" target="_blank" rel="nofollow" className="hover:text-current">Nette</a>,{' '}
 					<a href="https://framework.zend.com/" target="_blank" rel="nofollow" className="hover:text-current">Zend Framework</a>)
@@ -44,9 +45,9 @@ const Testomato = () =>
 				<li>Build with <a href="https://parceljs.org/" target="_blank" className="hover:text-current">Parcel</a> and Makefile</li>
 			</ul>
 
-			<p className="text-right">
+			<p className="mt-6">
 				<a href="https://www.testomato.com" target="_blank" className="py-3 px-6 bg-white/20 hover:bg-white/30 rounded-full hover:text-current hover:no-underline inline-flex items-center" title="Visit page">
-					<ShareIcon/> Testomato.com
+					<ShareIcon/> Visit Testomato
 				</a>
 			</p>
 		</div>
@@ -62,7 +63,7 @@ const Zdrojak = () =>
 	<article className="bg-[#424242] grid lg:grid-cols-2 md:p-12 md:gap-12 p-6 lg:p-32 lg:gap-32 text-gray-50">
 		<div>
 
-			<img src="/img/zdrojak.svg" alt="Zdrojak.cz" className="drop-shadow-2xl w-6/12 sm:w-4/12 my-4"/>
+			<img src="/img/zdrojak.svg" alt="Zdrojak.cz" className="drop-shadow-2xl w-6/12 sm:w-4/12 my-6"/>
 
 			<p className="text-xl leading-relaxed mb-3">
 				<a href="https://www.zdrojak.cz/" target="_blank" className="hover:text-current">Zdrojak.cz</a> is one of the most famous Czech
@@ -71,10 +72,10 @@ const Zdrojak = () =>
 				Current version is build on Wordpress and multiple in-house plugins, modifications and tweaks.
 			</p>
 
-			<h3 className="font-semibold mb-2 text-xl">Technologies &amp; Tools</h3>
+			<h3 className="font-medium mb-3 text-xl">Technologies &amp; Tools</h3>
 
-			<ul className="list-disc ml-6 leading-loose text-lg">
-				<li><a href="https://wordpress.org/" target="_blank" rel="nofollow" className="hover:text-white">Wordpress 5+</a> with custom plugins and template</li>
+			<ul className="list-disc ml-8 leading-loose text-lg mb-4">
+				<li><a href="https://wordpress.org/" target="_blank" rel="nofollow" className="hover:text-white">Wordpress</a> with custom plugins and template</li>
 				<li>PHP 8 and Javascript ES6</li>
 				<li><a href="https://reactjs.org/" target="_blank" rel="nofollow" className="hover:text-white">React</a> (for Gutenberg plugins)</li>
 				<li>
@@ -89,9 +90,9 @@ const Zdrojak = () =>
 				</li>
 			</ul>
 
-			<p className="text-right">
+			<p className="mt-6">
 				<a href="https://www.zdrojak.cz" target="_blank" className="py-3 px-6 bg-white/20 hover:bg-white/30 rounded-full hover:text-current hover:no-underline inline-flex" title="Visit page">
-					<ShareIcon/> Zdrojak.cz
+					<ShareIcon/> Visit Zdrojak.cz
 				</a>
 			</p>
 
@@ -106,10 +107,12 @@ const Zdrojak = () =>
 
 const Sphido = () =>
 	<article className="text-center bg-gray-200 p-6 md:p-24 lg:p-32">
-			<a href="http://sphido.org" target="_sphido"><img src="/img/sphido.svg" alt="Sphido Logo" className="inline-block my-4"/></a>
-		<p className="my-2">A rocket <img className="inline-block w-6 h-6 mb-1" draggable="false" alt="🚀" src="https://twemoji.maxcdn.com/v/13.0.0/72x72/1f680.png"/> fast, lightweight, static site generator</p>
-		<p className="text-center">
-			<a href="https://sphido.org" target="_blank" className="py-3 px-6 bg-rose-600 hover:bg-rose-700 text-white rounded-full hover:text-white hover:no-underline inline-flex items-center"><ShareIcon/> Sphido.org</a>
+		<a href="http://sphido.org" target="_sphido"><img src="/img/sphido.svg" alt="Sphido Logo" className="inline-block my-4"/></a>
+		<p className="my-3 text-xl">
+			A rocket <Twemoji>🚀</Twemoji> fast, <Twemoji>💭</Twemoji> lightweight and flexible static site <Twemoji>🤖</Twemoji> generator
+		</p>
+		<p className="text-center mt-6">
+			<a href="https://sphido.org" target="_blank" className="py-3 px-6 bg-rose-600 hover:bg-rose-700 text-white rounded-full hover:text-white hover:no-underline inline-flex items-center"><ShareIcon/> sphido.org</a>
 		</p>
 	</article>;
 
