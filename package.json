@@ -8,7 +8,7 @@
 		"now-build": "next build"
 	},
 	"dependencies": {
-		"@tailwindcss/typography": "^0.5.4",
+		"@tailwindcss/typography": "^0.5.7",
 		"autoprefixer": "^10.4.8",
 		"cssnano": "^5.1.13",
 		"moment": "^2.29.4",
