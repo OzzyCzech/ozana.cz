@@ -21,7 +21,7 @@ export const Testomato = () =>
 				<a href="https://www.testomato.com" target="_blank">Testomato s.r.o.</a> &ndash;
 				Co-founder &amp; lead developer
 			</h3>
-			<small className="text-gray-600">{duration(new Date(2012, 3, 1), new Date())}</small>
+			<span className="text-gray-600">{duration(new Date(2012, 3, 1), new Date())}</span>
 		</div>
 		<strong>March 2012 &ndash; present</strong>
 		<p>
@@ -35,7 +35,7 @@ const Devel = () =>
 			<h3 className="text-xl font-semibold mb-1"><a href="http://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJFND&Action=Search&ICO=24683507" target="_blank">
 				Devel.cz Lab s.r.o.</a> &ndash; PHP/JS developer
 			</h3>
-			<small className="text-gray-600">{duration(new Date(2011, 5, 1))}</small>
+			<span className="text-gray-600">{duration(new Date(2011, 5, 1))}</span>
 		</div>
 		<strong>October 2009 &ndash; present</strong>
 		<p>
@@ -47,7 +47,7 @@ const Intergraph = () =>
 	<article className="py-4">
 		<div className="flex justify-between">
 			<h3 className="text-xl font-semibold mb-1">Intergraph s.r.o. &ndash; Application Engineer</h3>
-			<small className="text-gray-600">{duration(new Date(2010, 7, 1), new Date(2011, 3, 31))}</small>
+			<span className="text-gray-600">{duration(new Date(2010, 7, 1), new Date(2011, 3, 31))}</span>
 		</div>
 		<strong>July 2010 &ndash; April 2011</strong>
 		<p>
@@ -60,7 +60,7 @@ const Skvely = () =>
 	<article className="py-4">
 		<div className="flex justify-between">
 			<h3 className="text-xl font-semibold mb-1">Skvely.CZ s.r.o. &ndash; PHP developer</h3>
-			<small className="text-gray-600">{duration(new Date(2009, 3, 1), new Date(2010, 7, 31))}</small>
+			<span className="text-gray-600">{duration(new Date(2009, 3, 1), new Date(2010, 7, 31))}</span>
 		</div>
 		<strong>March 2009 &ndash; July 2010</strong>
 		<p>Works there as web application developer mostly in PHP and developing some modules for e-commerce Magento.</p>
@@ -70,7 +70,7 @@ const Freelancer = () =>
 	<article className="py-4">
 		<div className="flex justify-between">
 			<h3 className="text-xl font-semibold mb-1"><a href="https://ozana.cz">Freelance web designer</a></h3>
-			<small className="text-gray-600">{duration(new Date(2009, 2, 1))}</small>
+			<span className="text-gray-600">{duration(new Date(2009, 2, 1))}</span>
 		</div>
 		<strong>October 2009 &ndash; present</strong>
 		<p>Freelance web designer and developer of Internet application &ndash; mostly in PHP and Javascript.</p>

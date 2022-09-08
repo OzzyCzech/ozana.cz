@@ -51,20 +51,18 @@ const Resume = () => (
 						<li>MongoDB, Redis, Memcached</li>
 						<li>Javascript ES6</li>
 						<li>React, Angular, jQuery</li>
-						<li>HTML5, CSS3, Tailwind (LESS, Sass, cssnext, PostCSS)</li>
-						<li>Responsive Layout and Design</li>
+						<li>HTML5, CSS3, Tailwindcss (LESS, Sass, cssnext, PostCSS)</li>
 						<li>Webpack, Parcel, Makefile</li>
+						<li>Responsive Layout and Design</li>
 					</ul>
 				</article>
 
 				<article>
 					<h3 className="text-lg font-semibold">Experience with</h3>
 					<ul className="list-disc marker:text-gray-500 ml-6 leading-loose my-2">
-						<li>NextJS</li>
 						<li>Node.js</li>
+						<li>NextJS</li>
 						<li>Gulp &amp; Grunt</li>
-						<li>Couchbase</li>
-						<li>Adobe Photoshop and Illustrator</li>
 					</ul>
 				</article>
 
@@ -82,7 +80,7 @@ const Resume = () => (
 					<ul className="list-disc marker:text-gray-500 ml-6 leading-loose my-2">
 						<li>Docker</li>
 						<li>Git</li>
-						<li>Webpack, Makefile, Bash</li>
+						<li>Parcel, Webpack, Makefile, Bash</li>
 						<li>Travis &amp; GitLab CI</li>
 						<li>MacOS and OS Linux</li>
 					</ul>
