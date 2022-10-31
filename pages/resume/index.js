@@ -1,5 +1,9 @@
 import Head from 'next/head';
 import Experiences from './resume.experiences';
+import Image from 'next/image';
+
+import qr from './contact.svg';
+import DownloadIcon from '../../components/download-icon.js';
 
 function experiences() {
 	let d = new Date();
@@ -127,16 +131,14 @@ const Resume = () => (
 		<section className="hidden print:block break-before-page">
 			<div className="grid min-h-screen align-center">
 				<div className="self-center">
-					<img src="/contact.svg" alt="Roman Ožana" className="w-6/12 mx-auto"/>
+					<Image src={qr} alt="Roman Ožana" className="w-6/12 mx-auto"/>
 				</div>
 			</div>
 		</section>
 
 		<div className="text-center my-12 print:hidden">
 			<a href="/cv.pdf" download={`Resume - Ing. Roman Ožana - ${new Date().getFullYear()}.pdf`} className="py-3 px-6 bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline inline-flex items-center">
-				<svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-					<path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
-				</svg>
+				<DownloadIcon/>
 				Download as PDF
 			</a>
 		</div>

@@ -17,6 +17,6 @@
      Last up date: 2022
         Standards: HTML5, CSS3
        Components: nodejs, nextjs, Tailwind
- Desktop software: macOS, Visual Stuido Code
+ Desktop software: macOS, Visual Studio Code
 
 ------------------------------------------------------------------------------------------------------------------------

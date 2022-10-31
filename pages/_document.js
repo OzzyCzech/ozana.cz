@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
 			<Html>
 				<Head>
 					<meta name="author" content="All: Roman Ožana; e-mail: roman@ozana.cz"/>
-					<link rel="shortcut icon" href="/favicon.png"/>
+					<link rel="shortcut icon" href="/favicon.svg"/>
 					<link rel="author" href="/humans.txt"/>
 				</Head>
 

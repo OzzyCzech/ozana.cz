@@ -1,6 +1,15 @@
 import Head from 'next/head';
-import github from '../data/github.json';
-import Twemoji from '../components/twemoji.js';
+import github from '../../data/github.json';
+import Twemoji from '../../components/twemoji.js';
+import Image from 'next/image';
+
+import logoGithub from './github.svg';
+import logoSphido from './sphido.svg';
+import logoTestomato from './testomato.svg';
+import logoZdrojak from './zdrojak.svg';
+
+import homepageTestomato from './testomato.png';
+import homepageZdrojak from './zdrojak.png';
 
 // classname fill-current w-4 h-4 ml-2
 const ShareIcon = () =>
@@ -13,7 +22,7 @@ const Testomato = () =>
 	<article className="bg-[#b72b2a] grid lg:grid-cols-2 md:p-12 md:gap-12 p-6 lg:p-32 lg:gap-32 text-white">
 		<div>
 
-			<img src="/img/testomato.svg" alt="Testomato" className="w-6/12 sm:w-4/12 my-6"/>
+			<Image src={logoTestomato} alt="Testomato" className="w-6/12 sm:w-4/12 my-6"/>
 
 			<p className="text-xl leading-relaxed mb-4">
 				I'm working at <a href="https://www.testomato.com/team" target="_blank" className="hover:text-white">Testomato</a> since beginning as co-founder &amp; developer.{' '}
@@ -53,8 +62,8 @@ const Testomato = () =>
 		</div>
 
 		<div>
-			<a href="https://www.testomato.com">
-				<img src="/img/work/testomato.png" alt="Testomato website screenshot" className="shadow-2xl rounded-lg border border-gray-900"/>
+			<a href="https://www.testomato.com" target="_blank">
+				<Image src={homepageTestomato} alt="Testomato website screenshot" className="shadow-2xl rounded-lg border border-gray-900"/>
 			</a>
 		</div>
 	</article>;
@@ -63,7 +72,7 @@ const Zdrojak = () =>
 	<article className="bg-[#424242] grid lg:grid-cols-2 md:p-12 md:gap-12 p-6 lg:p-32 lg:gap-32 text-gray-50">
 		<div>
 
-			<img src="/img/zdrojak.svg" alt="Zdrojak.cz" className="drop-shadow-2xl w-6/12 sm:w-4/12 my-6"/>
+			<Image src={logoZdrojak} alt="Zdrojak.cz" className="drop-shadow-2xl w-6/12 sm:w-4/12 my-6"/>
 
 			<p className="text-xl leading-relaxed mb-3">
 				<a href="https://www.zdrojak.cz/" target="_blank" className="hover:text-current">Zdrojak.cz</a> is one of the most famous Czech
@@ -99,15 +108,17 @@ const Zdrojak = () =>
 		</div>
 
 		<div>
-			<a href="https://www.testomato.com">
-				<img src="/img/work/zdrojak.png" alt="Zdrojak website screenshot" className="shadow-2xl rounded-lg border border-gray-900"/>
+			<a href="https://www.testomato.com" target="_blank">
+				<Image src={homepageZdrojak} alt="Zdrojak website screenshot" className="shadow-2xl rounded-lg border border-gray-900"/>
 			</a>
 		</div>
 	</article>;
 
 const Sphido = () =>
 	<article className="text-center bg-gray-200 p-6 md:p-24 lg:p-32">
-		<a href="http://sphido.org" target="_sphido"><img src="/img/sphido.svg" alt="Sphido Logo" className="inline-block my-4"/></a>
+		<a href="http://sphido.org" target="_sphido">
+			<Image src={logoSphido} alt="Sphido Logo" className="inline-block my-4"/>
+		</a>
 		<p className="my-3 text-xl">
 			A rocket <Twemoji>🚀</Twemoji> fast, <Twemoji>💭</Twemoji> lightweight and flexible static site <Twemoji>🤖</Twemoji> generator
 		</p>
@@ -121,7 +132,7 @@ const GitHub = () =>
 	<article className="bg-[#f6f8fa] p-6 md:p-24 xl:p-32">
 
 		<a href="https://github.com/OzzyCzech" target="_blank" title="Visit my GitHub profile">
-			<img src="/img/github.svg" alt="GitHub logo" className="w-48 my-4"/>
+			<Image src={logoGithub} alt="GitHub logo" className="w-48 my-4"/>
 		</a>
 
 		<ul className="grid gap-3 lg:grid-cols-2 list-disc marker:text-gray-300">
