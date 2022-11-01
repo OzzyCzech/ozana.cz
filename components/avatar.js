@@ -27,9 +27,9 @@ const Avatar = () => {
 		{showMenu &&
 			(<div className="absolute z-10 w-48 right-0 left-0 m-auto bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 self-center">
 				<ul className="py-1 text-sm text-gray-700 dark:text-gray-200">
-					<li><a className="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-small.jpg" download="Roman Ožana 512x512.jpg"><DownloadIcon/> Avatar size</a></li>
-					<li><a className="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-medium.jpg" download="Roman Ožana 1280x1280.jpg"><DownloadIcon/> Medium size</a></li>
-					<li><a className="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana.jpg" download="Roman Ožana.jpg"><DownloadIcon/> Full size</a></li>
+					<li><a className="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-small.jpg"><DownloadIcon/> Avatar size</a></li>
+					<li><a className="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-medium.jpg"><DownloadIcon/> Medium size</a></li>
+					<li><a className="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana.jpg"><DownloadIcon/> Full size</a></li>
 				</ul>
 			</div>)}
 	</div>);
