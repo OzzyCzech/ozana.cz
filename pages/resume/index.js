@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Experiences from './resume.experiences';
 import Image from 'next/image';
-
 import qr from './contact.svg';
 import DownloadIcon from '../../components/download-icon.js';
+
+import icons from './logos/index.js';
 
 function experiences() {
 	let d = new Date();
@@ -44,37 +45,158 @@ const Resume = () => (
 		<Experiences/>
 
 		<section className="break-before-page">
-			<h2 className="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Skills &amp; Technologies</h2>
+			<h2 className="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Tech Stack</h2>
 			<div className="my-4 gap-2 grid grid-cols-1 sm:grid-cols-2 print:grid-cols-2">
-				<article>
-					<h3 className="text-lg font-semibold">Day-to-day comfort</h3>
-					<ul className="list-disc marker:text-gray-500 ml-6 leading-loose my-2">
-						<li>PHP</li>
-						<li>OOP, DI, IOC, design patterns</li>
-						<li>SQL language (MariaDB, MySQL)</li>
-						<li>MongoDB, Redis, Memcached</li>
-						<li>Javascript ES6</li>
-						<li>React, Angular, jQuery</li>
-						<li>HTML5, CSS3, Tailwindcss (LESS, Sass, cssnext, PostCSS)</li>
-						<li>Webpack, Parcel, Makefile</li>
-						<li>Responsive Layout and Design</li>
+				<article className="">
+
+
+					<h3 className="text-lg font-semibold">Languages</h3>
+
+					<ul className="list-none space-x-4 space-y-4 mb-4">
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-[#7A86B8] p-1 rounded-md">
+								<Image src={icons.php} alt="PHP"/>
+							</div>
+							PHP
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-[#F0DB4F] p-1 rounded-md">
+								<Image src={icons.javascript} alt="Javascript"/>
+							</div>
+							Javascript
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.html5} alt="HTML5"/>
+							</div>
+							HTML5
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.css3} alt="CSS3"/>
+							</div>
+							CSS3
+						</li>
+
 					</ul>
+
+				</article>
+				<article>
+
+					<h3 className="text-lg font-semibold">Frameworks</h3>
+
+					<ul className="list-none space-x-4 space-y-4 mb-4">
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.react} alt="React"/>
+							</div>
+							React
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.nextjs} alt="Nextjs"/>
+							</div>
+							NextJS
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.angularjs} alt="Angular"/>
+							</div>
+							Angular
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.jquery} alt="jQuery"/>
+							</div>
+							jQuery
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.tailwindcss} alt="Tailwindcss"/>
+							</div>
+							Tailwindcss
+						</li>
+
+					</ul>
+
 				</article>
 
 				<article>
-					<h3 className="text-lg font-semibold">Experience with</h3>
-					<ul className="list-disc marker:text-gray-500 ml-6 leading-loose my-2">
-						<li>Node.js</li>
-						<li>NextJS</li>
-						<li>Gulp &amp; Grunt</li>
+					<h3 className="text-lg font-semibold">Databases</h3>
+
+					<ul className="list-none space-x-4 space-y-4 mb-4">
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-[#E8E7D5] p-1 rounded-md">
+								<Image src={icons.mongo} alt="Mongo"/>
+							</div>
+							MongoDB
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-[#00758f] p-1 rounded-md">
+								<Image src={icons.mysql} alt="Javascript"/>
+							</div>
+							MySQL
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.redis} alt="Redis"/>
+							</div>
+							Redis
+						</li>
+					</ul>
+
+				</article>
+
+				<article>
+					<h3 className="text-lg font-semibold">DevStack &amp; environment</h3>
+
+					<ul className="list-none space-x-4 space-y-4">
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.docker} alt="Docker"/>
+							</div>
+							Docker
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.git} alt="Git"/>
+							</div>
+							Git
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.apple} alt="Apple"/>
+							</div>
+							macOS
+						</li>
+
+						<li className="inline-flex gap-1.5">
+							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+								<Image src={icons.linux} alt="Linux"/>
+							</div>
+							Linux
+						</li>
+
 					</ul>
 				</article>
 
 				<article>
 					<h3 className="text-lg font-semibold">Quality assurance</h3>
 					<ul className="list-disc marker:text-gray-500 ml-6 leading-loose my-2">
-						<li>E2E testing with Protractor</li>
-						<li>Selenium + Selenium IDE</li>
+						<li>Cypress</li>
+						<li>Mocha, Nette Tester, PHP Unit</li>
 						<li>Unit Testing (PHP Unit, Nette Tester, Mocha)</li>
 					</ul>
 				</article>
@@ -82,8 +204,6 @@ const Resume = () => (
 				<article>
 					<h3 className="text-lg font-semibold">DevStack</h3>
 					<ul className="list-disc marker:text-gray-500 ml-6 leading-loose my-2">
-						<li>Docker</li>
-						<li>Git</li>
 						<li>Parcel, Webpack, Makefile, Bash</li>
 						<li>Travis &amp; GitLab CI</li>
 						<li>MacOS and OS Linux</li>
