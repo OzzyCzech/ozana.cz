@@ -14,10 +14,12 @@ import docker from './docker.svg';
 import tailwindcss from './tailwindcss.svg';
 import linux from './linux.svg';
 import jquery from './jquery.svg';
+import webpack from './webpack.svg';
 
 const icons = {
 	css3, php, mongo, git, html5, javascript, mysql, redis, react,
 	angularjs, nextjs, docker, apple, tailwindcss, jquery, linux,
+	webpack
 }
 
 export default icons;

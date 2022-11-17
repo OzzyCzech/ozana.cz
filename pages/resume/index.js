@@ -4,7 +4,7 @@ import Image from 'next/image';
 import qr from './contact.svg';
 import DownloadIcon from '../../components/download-icon.js';
 
-import icons from './logos/index.js';
+import icons from '../../components/icons/index.js';
 
 function experiences() {
 	let d = new Date();
@@ -52,76 +52,59 @@ const Resume = () => (
 
 					<h3 className="text-lg font-semibold">Languages</h3>
 
-					<ul className="list-none space-x-4 space-y-4 mb-4">
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-[#7A86B8] p-1 rounded-md">
-								<Image src={icons.php} alt="PHP"/>
-							</div>
+					<ul className="flex flex-wrap gap-8 my-4">
+						<li className="flex gap-1.5">
+							<Image src={icons.php} alt="PHP" className="h-6 w-6 rounded"/>
 							PHP
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-[#F0DB4F] p-1 rounded-md">
-								<Image src={icons.javascript} alt="Javascript"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.javascript} alt="Javascript" className="w-6 h-6"/>
 							Javascript
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.html5} alt="HTML5"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.html5} alt="HTML5" className="w-6 h-6"/>
 							HTML5
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.css3} alt="CSS3"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.css3} alt="CSS3" className="w-6 h-6"/>
 							CSS3
 						</li>
-
 					</ul>
 
 				</article>
-				<article>
 
+				<article>
 					<h3 className="text-lg font-semibold">Frameworks</h3>
 
-					<ul className="list-none space-x-4 space-y-4 mb-4">
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
+					<ul className="flex flex-wrap gap-8 my-4">
+						<li className="flex gap-1.5">
+							<div className="w-6 h-6">
 								<Image src={icons.react} alt="React"/>
 							</div>
 							React
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.nextjs} alt="Nextjs"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.nextjs} alt="Nextjs" className="w-6 h-6"/>
 							NextJS
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.angularjs} alt="Angular"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.angularjs} alt="Angular" className="w-6 h-6"/>
 							Angular
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.jquery} alt="jQuery"/>
-							</div>
-							jQuery
+						<li className="flex gap-1.5">
+							<Image src={icons.tailwindcss} alt="Tailwind CSS" className="w-6 h-6"/>
+							Tailwind CSS
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.tailwindcss} alt="Tailwindcss"/>
-							</div>
-							Tailwindcss
+						<li className="flex gap-1.5">
+							<Image src={icons.jquery} alt="jQuery" className="w-6 h-6"/>
+							jQuery
 						</li>
 
 					</ul>
@@ -131,26 +114,24 @@ const Resume = () => (
 				<article>
 					<h3 className="text-lg font-semibold">Databases</h3>
 
-					<ul className="list-none space-x-4 space-y-4 mb-4">
+					<ul className="flex flex-wrap gap-8 my-4">
 
-						<li className="inline-flex gap-1.5">
+						<li className="flex gap-1.5">
 							<div className="w-6 h-6 flex items-stretch bg-[#E8E7D5] p-1 rounded-md">
 								<Image src={icons.mongo} alt="Mongo"/>
 							</div>
 							MongoDB
 						</li>
 
-						<li className="inline-flex gap-1.5">
+						<li className="flex gap-1.5">
 							<div className="w-6 h-6 flex items-stretch bg-[#00758f] p-1 rounded-md">
-								<Image src={icons.mysql} alt="Javascript"/>
+								<Image src={icons.mysql} alt="MySQL"/>
 							</div>
 							MySQL
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.redis} alt="Redis"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.redis} alt="Redis" className="w-6 h-6"/>
 							Redis
 						</li>
 					</ul>
@@ -158,34 +139,45 @@ const Resume = () => (
 				</article>
 
 				<article>
+					<h3 className="text-lg font-semibold">Tools</h3>
+
+					<ul className="flex flex-wrap gap-4 my-4">
+						<li className="flex gap-1.5">
+							<Image src={icons.webpack} alt="Webpack" className="w-6 h-6"/>
+							Webpack
+						</li>
+
+						<li className="flex gap-1.5">
+							Parcel
+						</li>
+
+						<li className="flex gap-1.5">
+							Makefile
+						</li>
+					</ul>
+				</article>
+
+				<article>
 					<h3 className="text-lg font-semibold">DevStack &amp; environment</h3>
 
-					<ul className="list-none space-x-4 space-y-4">
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.docker} alt="Docker"/>
-							</div>
+					<ul className="flex flex-wrap gap-8 my-4">
+						<li className="flex gap-1.5">
+							<Image src={icons.docker} alt="Docker" className="w-6 h-6"/>
 							Docker
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.git} alt="Git"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.git} alt="Git" className="w-6 h-6"/>
 							Git
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.apple} alt="Apple"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.apple} alt="Apple" className="w-6 h-6"/>
 							macOS
 						</li>
 
-						<li className="inline-flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-gray-200 p-1 rounded-md">
-								<Image src={icons.linux} alt="Linux"/>
-							</div>
+						<li className="flex gap-1.5">
+							<Image src={icons.linux} alt="Linux" className="w-6 h-6"/>
 							Linux
 						</li>
 
@@ -201,14 +193,6 @@ const Resume = () => (
 					</ul>
 				</article>
 
-				<article>
-					<h3 className="text-lg font-semibold">DevStack</h3>
-					<ul className="list-disc marker:text-gray-500 ml-6 leading-loose my-2">
-						<li>Parcel, Webpack, Makefile, Bash</li>
-						<li>Travis &amp; GitLab CI</li>
-						<li>MacOS and OS Linux</li>
-					</ul>
-				</article>
 			</div>
 		</section>
 

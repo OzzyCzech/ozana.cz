@@ -1,6 +1,5 @@
 import moment from 'moment';
 import React from 'react';
-import Image from 'next/image';
 
 function duration(start, end) {
 	let s = moment(start).add(-1, 'day');
