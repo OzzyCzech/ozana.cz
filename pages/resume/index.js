@@ -4,7 +4,8 @@ import Image from 'next/image';
 import qr from './contact.svg';
 import DownloadIcon from '../../components/download-icon.js';
 
-import icons from '../../components/icons/index.js';
+import {Vscode, Git, React, PhpStorm, NextJs, TailwindCss, Docker, Apple, Linux, Parcel, Webpack, Php, Javascript, Html5, Css3, Angularjs, JQuery, Gnu, MySql, Redis, MongoDb} from 'wticons';
+const icons = {};
 
 function experiences() {
 	let d = new Date();
@@ -16,7 +17,6 @@ const Resume = () => (
 		<Head>
 			<title>Resume | Ing. Roman Ožana</title>
 		</Head>
-
 		<h1 className="text-center py-6 md:py-8 lg:py-12 xl:py-20 text-2xl font-semibold">Ing. Roman Ožana / Resume</h1>
 
 		<section className="hidden print:block">
@@ -54,22 +54,22 @@ const Resume = () => (
 
 					<ul className="flex flex-wrap gap-8 my-4">
 						<li className="flex gap-1.5">
-							<Image src={icons.php} alt="PHP" className="h-6 w-6 rounded"/>
+							<Php className="h-6 w-6 rounded"/>
 							PHP
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.javascript} alt="Javascript" className="w-6 h-6"/>
+							<Javascript className="w-6 h-6"/>
 							Javascript
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.html5} alt="HTML5" className="w-6 h-6"/>
+							<Html5 className="w-6 h-6"/>
 							HTML5
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.css3} alt="CSS3" className="w-6 h-6"/>
+							<Css3 className="w-6 h-6"/>
 							CSS3
 						</li>
 					</ul>
@@ -81,29 +81,27 @@ const Resume = () => (
 
 					<ul className="flex flex-wrap gap-8 my-4">
 						<li className="flex gap-1.5">
-							<div className="w-6 h-6">
-								<Image src={icons.react} alt="React"/>
-							</div>
+							<React className="w-6 h-6"/>
 							React
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.nextjs} alt="Nextjs" className="w-6 h-6"/>
+							<NextJs className="w-6 h-6"/>
 							NextJS
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.angularjs} alt="Angular" className="w-6 h-6"/>
+							<Angularjs className="w-6 h-6"/>
 							Angular
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.tailwindcss} alt="Tailwind CSS" className="w-6 h-6"/>
+							<TailwindCss className="w-6 h-6"/>
 							Tailwind CSS
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.jquery} alt="jQuery" className="w-6 h-6"/>
+							<JQuery className="w-6 h-6"/>
 							jQuery
 						</li>
 
@@ -117,21 +115,17 @@ const Resume = () => (
 					<ul className="flex flex-wrap gap-8 my-4">
 
 						<li className="flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-[#E8E7D5] p-1 rounded-md">
-								<Image src={icons.mongo} alt="Mongo"/>
-							</div>
+							<MongoDb className="w-6 h-6"/>
 							MongoDB
 						</li>
 
 						<li className="flex gap-1.5">
-							<div className="w-6 h-6 flex items-stretch bg-[#00758f] p-1 rounded-md">
-								<Image src={icons.mysql} alt="MySQL"/>
-							</div>
+							<MySql className="w-6 h-6"/>
 							MySQL
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.redis} alt="Redis" className="w-6 h-6"/>
+							<Redis className="w-6 h-6"/>
 							Redis
 						</li>
 					</ul>
@@ -143,46 +137,66 @@ const Resume = () => (
 
 					<ul className="flex flex-wrap gap-4 my-4">
 						<li className="flex gap-1.5">
-							<Image src={icons.webpack} alt="Webpack" className="w-6 h-6"/>
+							<Webpack className="w-6 h-6"/>
 							Webpack
 						</li>
 
 						<li className="flex gap-1.5">
+							<Parcel className="w-6 h-6" />
 							Parcel
 						</li>
 
 						<li className="flex gap-1.5">
+							<Gnu className="w-6 h-6" />
 							Makefile
 						</li>
 					</ul>
 				</article>
 
 				<article>
-					<h3 className="text-lg font-semibold">DevStack &amp; environment</h3>
+					<h3 className="text-lg font-semibold">DevStack</h3>
 
 					<ul className="flex flex-wrap gap-8 my-4">
 						<li className="flex gap-1.5">
-							<Image src={icons.docker} alt="Docker" className="w-6 h-6"/>
+							<Docker className="w-6 h-6"/>
 							Docker
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.git} alt="Git" className="w-6 h-6"/>
+							<Git className="w-6 h-6"/>
 							Git
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.apple} alt="Apple" className="w-6 h-6"/>
-							macOS
+							<PhpStorm className="w-6 h-6"/>
+							PhpStorm
 						</li>
 
 						<li className="flex gap-1.5">
-							<Image src={icons.linux} alt="Linux" className="w-6 h-6"/>
-							Linux
+							<Vscode className="w-6 h-6"/>
+							Visual Studio Code
 						</li>
 
 					</ul>
 				</article>
+
+				<article>
+					<h3 className="text-lg font-semibold">Environment</h3>
+
+					<ul className="flex flex-wrap gap-4 my-4">
+
+						<li className="flex gap-1.5">
+							<Apple className="w-6 h-6"/>
+							macOS
+						</li>
+
+						<li className="flex gap-1.5">
+							<Linux className="w-6 h-6"/>
+							Linux
+						</li>
+					</ul>
+				</article>
+
 
 				<article>
 					<h3 className="text-lg font-semibold">Quality assurance</h3>
