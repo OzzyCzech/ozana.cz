@@ -2395,10 +2395,10 @@ ws@6.2.0:
   dependencies:
     async-limiter "~1.0.0"
 
-wticons@^1.0.24:
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/wticons/-/wticons-1.0.24.tgz#8b4799fc4236a775134afbdef56042402e1d0938"
-  integrity sha512-bKgKK4utZV6h32M90E6VpyyBQ5T+3SUFOotkausrHtrZ5MfeaN9fyyloGVOOV0GiwXGAtTqg4kYDylDNbVg3eg==
+wticons@^1.0.25:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/wticons/-/wticons-1.0.25.tgz#c62cf5bafe807f41cf8e4cc72005ffb2cda79361"
+  integrity sha512-fmRLLB2AhhbKBbWzbcTtv5edcVZ9RFT+WpFIZUdPNk+u9JjH9Jqwtwe1zkcNqmG8i3JbLY5D4FWAulk4hZs9rw==
   dependencies:
     "@babel/runtime" "^7.16.3"
 
