@@ -4,7 +4,8 @@ import Image from 'next/image';
 import qr from './contact.svg';
 import DownloadIcon from '../../components/download-icon.js';
 
-import {Vscode, Git, React, PhpStorm, NextJs, TailwindCss, Docker, Apple, Linux, Parcel, Webpack, Php, Javascript, Html5, Css3, Angularjs, JQuery, Gnu, MySql, Redis, MongoDb} from 'wticons';
+import {Vscode, Git, React, PhpStorm, NextJs, TailwindCss, Docker, Apple, Linux, Parcel, Webpack, Php, Javascript, Html5, Css3, Angularjs, JQuery, Gnu, MySql, Redis, MongoDb, VisualStudioCode, Cypress, Mocha} from 'wticons';
+
 const icons = {};
 
 function experiences() {
@@ -142,12 +143,12 @@ const Resume = () => (
 						</li>
 
 						<li className="flex gap-1.5">
-							<Parcel className="w-6 h-6" />
+							<Parcel className="w-6 h-6"/>
 							Parcel
 						</li>
 
 						<li className="flex gap-1.5">
-							<Gnu className="w-6 h-6" />
+							<Gnu className="w-6 h-6"/>
 							Makefile
 						</li>
 					</ul>
@@ -173,7 +174,7 @@ const Resume = () => (
 						</li>
 
 						<li className="flex gap-1.5">
-							<Vscode className="w-6 h-6"/>
+							<VisualStudioCode className="w-6 h-6"/>
 							Visual Studio Code
 						</li>
 
@@ -182,14 +183,11 @@ const Resume = () => (
 
 				<article>
 					<h3 className="text-lg font-semibold">Environment</h3>
-
 					<ul className="flex flex-wrap gap-4 my-4">
-
 						<li className="flex gap-1.5">
 							<Apple className="w-6 h-6"/>
 							macOS
 						</li>
-
 						<li className="flex gap-1.5">
 							<Linux className="w-6 h-6"/>
 							Linux
@@ -200,10 +198,14 @@ const Resume = () => (
 
 				<article>
 					<h3 className="text-lg font-semibold">Quality assurance</h3>
-					<ul className="list-disc marker:text-gray-500 ml-6 leading-loose my-2">
-						<li>Cypress</li>
-						<li>Mocha, Nette Tester, PHP Unit</li>
-						<li>Unit Testing (PHP Unit, Nette Tester, Mocha)</li>
+					<ul className="flex flex-wrap gap-4 my-4">
+						<li className="flex gap-1.5">
+							<Cypress className="w-6 h-6"/>
+							Cypress
+						</li>
+						<li>Mocha</li>
+						<li>Nette Tester</li>
+						<li>PHP Unit</li>
 					</ul>
 				</article>
 
