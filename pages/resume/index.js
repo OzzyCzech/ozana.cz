@@ -4,7 +4,11 @@ import Image from 'next/image';
 import qr from './contact.svg';
 import DownloadIcon from '../../components/download-icon.js';
 
-import {Vscode, Git, React, PhpStorm, NextJs, TailwindCss, Docker, Apple, Linux, Parcel, Webpack, Php, Javascript, Html5, Css3, Angularjs, JQuery, Gnu, MySql, Redis, MongoDb, VisualStudioCode, Cypress, Mocha} from 'wticons';
+import {
+	Git, React, PhpStorm, NextJs, TailwindCss, Docker, Apple, Linux, Parcel, Webpack, Php,
+	Javascript, Html5, Css3, Angularjs, JQuery, Gnu, MySql, Redis, MongoDb, VisualStudioCode,
+	Cypress, Mocha, PhpUnit, NodeJs, Stylus, Less, Bootstrap, Ava, NetteTester, Nette, Zend, Bash,
+} from 'wticons';
 
 const icons = {};
 
@@ -47,85 +51,93 @@ const Resume = () => (
 
 		<section className="break-before-page">
 			<h2 className="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Tech Stack</h2>
-			<div className="my-4 gap-2 grid grid-cols-1 sm:grid-cols-2 print:grid-cols-2">
-				<article className="">
 
+			<div className="grid grid-flow-row gap-10 my-10">
 
-					<h3 className="text-lg font-semibold">Languages</h3>
-
-					<ul className="flex flex-wrap gap-8 my-4">
-						<li className="flex gap-1.5">
+				<article>
+					<h3 className="font-semibold mb-6">Server side</h3>
+					<ul className="flex flex-wrap gap-8 ml-6">
+						<li className="flex gap-1.5 items-center">
 							<Php className="h-6 w-6 rounded"/>
 							PHP
 						</li>
-
-						<li className="flex gap-1.5">
-							<Javascript className="w-6 h-6"/>
-							Javascript
-						</li>
-
-						<li className="flex gap-1.5">
-							<Html5 className="w-6 h-6"/>
-							HTML5
-						</li>
-
-						<li className="flex gap-1.5">
-							<Css3 className="w-6 h-6"/>
-							CSS3
+						<li className="flex gap-1.5 items-center">
+							<NodeJs className="w-6 h-6"/>
+							NodeJS
 						</li>
 					</ul>
-
 				</article>
 
 				<article>
-					<h3 className="text-lg font-semibold">Frameworks</h3>
-
-					<ul className="flex flex-wrap gap-8 my-4">
-						<li className="flex gap-1.5">
+					<h3 className="font-semibold mb-6">Client side</h3>
+					<ul className="flex flex-wrap gap-8 ml-6">
+						<li className="flex gap-1.5 items-center">
+							<Javascript className="w-6 h-6"/>
+							Javascript
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<Html5 className="w-6 h-6"/>
+							HTML5
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<TailwindCss className="w-6 h-6"/>
+							Tailwind CSS
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<Bootstrap className="w-6 h-6"/>
+							Bootstrap
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<Css3 className="w-6 h-6"/>
+							CSS3
+						</li>
+						<li className="flex gap-1.5 items-center">
 							<React className="w-6 h-6"/>
 							React
 						</li>
 
-						<li className="flex gap-1.5">
-							<NextJs className="w-6 h-6"/>
-							NextJS
-						</li>
-
-						<li className="flex gap-1.5">
-							<Angularjs className="w-6 h-6"/>
-							Angular
-						</li>
-
-						<li className="flex gap-1.5">
-							<TailwindCss className="w-6 h-6"/>
-							Tailwind CSS
-						</li>
-
-						<li className="flex gap-1.5">
+						<li className="flex gap-1.5 items-center">
 							<JQuery className="w-6 h-6"/>
 							jQuery
 						</li>
-
 					</ul>
-
 				</article>
 
 				<article>
-					<h3 className="text-lg font-semibold">Databases</h3>
+					<h3 className="font-semibold mb-6">Frameworks</h3>
+					<ul className="flex flex-wrap gap-8 ml-6">
+						<li className="flex gap-1.5 items-center">
+							<NextJs className="w-6 h-6"/>
+							NextJS
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<Angularjs className="w-6 h-6"/>
+							Angular JS
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<Zend className="w-6 h-6"/>
+							Zend Framework
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<Nette className="w-6 h-6"/>
+							Nette Framework
+						</li>
+					</ul>
+				</article>
 
-					<ul className="flex flex-wrap gap-8 my-4">
 
-						<li className="flex gap-1.5">
+				<article>
+					<h3 className="font-semibold mb-6">Databases</h3>
+					<ul className="flex flex-wrap gap-8 ml-6">
+						<li className="flex gap-1.5 items-center">
 							<MongoDb className="w-6 h-6"/>
 							MongoDB
 						</li>
-
-						<li className="flex gap-1.5">
+						<li className="flex gap-1.5 items-center">
 							<MySql className="w-6 h-6"/>
 							MySQL
 						</li>
-
-						<li className="flex gap-1.5">
+						<li className="flex gap-1.5 items-center">
 							<Redis className="w-6 h-6"/>
 							Redis
 						</li>
@@ -133,82 +145,81 @@ const Resume = () => (
 
 				</article>
 
+
 				<article>
-					<h3 className="text-lg font-semibold">Tools</h3>
-
-					<ul className="flex flex-wrap gap-4 my-4">
-						<li className="flex gap-1.5">
-							<Webpack className="w-6 h-6"/>
-							Webpack
+					<h3 className="font-semibold mb-6">Code quality</h3>
+					<ul className="flex flex-wrap gap-8 ml-6">
+						<li className="flex gap-1.5 items-center">
+							<Ava className="w-6 h-6"/>
+							AVA
 						</li>
+						<li className="flex gap-1.5 items-center">
+							<PhpUnit className="w-5 h-5"/>
+							PhpUnit
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<Cypress className="w-6 h-6"/>
+							Cypress
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<Mocha className="w-6 h-6"/>
+							Mocha
+						</li>
+					</ul>
+				</article>
 
-						<li className="flex gap-1.5">
+
+				<article>
+					<h3 className="font-semibold mb-6">Bundlers</h3>
+					<ul className="flex flex-wrap gap-8 ml-6">
+						<li className="flex gap-1.5 items-center">
 							<Parcel className="w-6 h-6"/>
 							Parcel
 						</li>
 
-						<li className="flex gap-1.5">
+						<li className="flex gap-1.5 items-center">
+							<Webpack className="w-6 h-6"/>
+							Webpack
+						</li>
+
+						<li className="flex gap-1.5 items-center">
 							<Gnu className="w-6 h-6"/>
 							Makefile
 						</li>
 					</ul>
 				</article>
 
-				<article>
-					<h3 className="text-lg font-semibold">DevStack</h3>
-
-					<ul className="flex flex-wrap gap-8 my-4">
-						<li className="flex gap-1.5">
-							<Docker className="w-6 h-6"/>
-							Docker
-						</li>
-
-						<li className="flex gap-1.5">
-							<Git className="w-6 h-6"/>
-							Git
-						</li>
-
-						<li className="flex gap-1.5">
-							<PhpStorm className="w-6 h-6"/>
-							PhpStorm
-						</li>
-
-						<li className="flex gap-1.5">
-							<VisualStudioCode className="w-6 h-6"/>
-							Visual Studio Code
-						</li>
-
-					</ul>
-				</article>
 
 				<article>
-					<h3 className="text-lg font-semibold">Environment</h3>
-					<ul className="flex flex-wrap gap-4 my-4">
-						<li className="flex gap-1.5">
+					<h3 className="font-semibold mb-6">DevStack</h3>
+
+					<ul className="flex flex-wrap gap-8 ml-6">
+						<li className="flex gap-1.5 items-center">
 							<Apple className="w-6 h-6"/>
 							macOS
 						</li>
-						<li className="flex gap-1.5">
+						<li className="flex gap-1.5 items-center">
 							<Linux className="w-6 h-6"/>
 							Linux
 						</li>
-					</ul>
-				</article>
-
-
-				<article>
-					<h3 className="text-lg font-semibold">Quality assurance</h3>
-					<ul className="flex flex-wrap gap-4 my-4">
-						<li className="flex gap-1.5">
-							<Cypress className="w-6 h-6"/>
-							Cypress
+						<li className="flex gap-1.5 items-center">
+							<Docker className="w-6 h-6"/>
+							Docker
 						</li>
-						<li>Mocha</li>
-						<li>Nette Tester</li>
-						<li>PHP Unit</li>
+						<li className="flex gap-1.5 items-center">
+							<Git className="w-6 h-6"/>
+							Git
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<PhpStorm className="w-6 h-6"/>
+							PhpStorm
+						</li>
+						<li className="flex gap-1.5 items-center">
+							<VisualStudioCode className="w-6 h-6"/>
+							Visual Studio Code
+						</li>
 					</ul>
 				</article>
-
 			</div>
 		</section>
 
