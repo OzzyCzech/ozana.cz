@@ -52,7 +52,7 @@ const Resume = () => (
 		<section className="break-before-page">
 			<h2 className="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Tech Stack</h2>
 
-			<div className="grid grid-flow-row gap-10 my-10">
+			<div className="grid grid-flow-row gap-8 my-8">
 
 				<article>
 					<h3 className="font-semibold mb-6">Server side</h3>
