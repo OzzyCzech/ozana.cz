@@ -29,7 +29,7 @@ const ContactInformation = () =>
 				IN: <a href="https://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJFND&Action=Search&ICO=87098504" title="Registration number" target="_blank" className="text-current">87098504</a>
 			</p>
 
-			<a href="/ozana.vcf" download="Ing. Roman Ozana.vcf" className="py-3 px-6 bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline inline-flex items-center mt-5 ml-2">
+			<a href="/api/ozana" download className="py-3 px-6 bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline inline-flex items-center mt-5 ml-2">
 				<DownloadIcon/>
 				<span>Add to Contacts</span>
 			</a>
