@@ -24,14 +24,16 @@ export default async function handler(req, res) {
 		.addPhoneNumber('+420605783455', 'IPHONE')
 		.addAddress('', '', '', 'Prague', 'Prague', '', 'Czech Republic')
 		.addURL('https://ozana.cz', 'WORK')
-		.addSocial('Twitter', 'https://twitter.com/OzzyCzech', 'OzzyCzech')
+		.addURL('https://ozzyczech.cz', 'BLOG')
 		.addSocial('GitHub', 'https://github.com/OzzyCzech', 'OzzyCzech')
+		.addSocial('StackOverflow', 'https://stackoverflow.com/users/355316/ozzyczech/', 'OzzyCzech')
+		.addSocial('Twitter', 'https://twitter.com/OzzyCzech', 'OzzyCzech')
 		.addNickname('OzzyCzech')
 		.addPhoto(await readFileAsync(photo, {encoding: 'base64', flag: 'r'}), 'JPEG')
 
 	res
 		.status(200)
 		.setHeader('Content-Type', 'text/vcard')
-		.setHeader('Content-Type', 'text/text') // for debug
+		//.setHeader('Content-Type', 'text/text') // for debug
 		.send(vcf.toString())
 }
