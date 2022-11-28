@@ -1,5 +1,6 @@
 import VCard from 'vcard-creator';
 import {readFile as readFileAsync} from 'node:fs/promises';
+import {join} from 'node:path';
 
 class MyVcard extends VCard {
 	addSocial(type, url, user) {
@@ -14,7 +15,7 @@ class MyVcard extends VCard {
 }
 
 export default async function handler(req, res) {
-	const photo = await readFileAsync('public/img/roman-ozana-small.jpg', {encoding: 'base64', flag: 'r'});
+	const photo = join(process.cwd(), 'public/img/roman-ozana-small.jpg')
 	const vcf = new MyVcard();
 
 	vcf.addName('Ožana', 'Roman')
@@ -26,11 +27,11 @@ export default async function handler(req, res) {
 		.addSocial('Twitter', 'https://twitter.com/OzzyCzech', 'OzzyCzech')
 		.addSocial('GitHub', 'https://github.com/OzzyCzech', 'OzzyCzech')
 		.addNickname('OzzyCzech')
-		.addPhoto(photo, 'JPEG')
+		.addPhoto(await readFileAsync(photo, {encoding: 'base64', flag: 'r'}), 'JPEG')
 
 	res
 		.status(200)
 		.setHeader('Content-Type', 'text/vcard')
-		//.setHeader('Content-Type', 'text/text') // for debug
+		.setHeader('Content-Type', 'text/text') // for debug
 		.send(vcf.toString())
 }
