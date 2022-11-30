@@ -1,6 +1,7 @@
 /* https://nerdcave.com/tailwind-cheat-sheet */
 
 @tailwind base;
+
 @layer base {
 	a {
 		@apply text-current hover:underline hover:text-blue-600 hover:ease-in-out;
@@ -9,6 +10,12 @@
 
 @tailwind utilities;
 @tailwind components;
+
+@layer components {
+	#__next {
+		@apply grid min-h-screen grid-rows-[auto_1fr_auto];
+	}
+}
 
 @media print {
 	@page {

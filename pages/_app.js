@@ -1,5 +1,3 @@
 import './_style.css'
 
-const Web = ({Component, pageProps}) => <Component {...pageProps} />
-
-export default Web;
+export default ({Component, pageProps}) => <Component {...pageProps} />

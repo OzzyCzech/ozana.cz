@@ -10,6 +10,8 @@ import logoZdrojak from './zdrojak.svg';
 
 import homepageTestomato from './testomato.png';
 import homepageZdrojak from './zdrojak.png';
+import Header from '../../components/header.js';
+import Footer from '../../components/footer.js';
 
 // classname fill-current w-4 h-4 ml-2
 const ShareIcon = () =>
@@ -154,12 +156,14 @@ const Work = () =>
 		<Head>
 			<title>Work | Ing. Roman Ožana</title>
 		</Head>
-		<div>
+		<Header/>
+		<main>
 			<Testomato/>
 			<Zdrojak/>
 			<Sphido/>
 			<GitHub/>
-		</div>
+		</main>
+		<Footer/>
 	</>;
 
 export default Work;
