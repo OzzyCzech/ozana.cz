@@ -2,21 +2,9 @@ import VCard from 'vcard-creator';
 import {readFile as readFileAsync} from 'node:fs/promises';
 import {join} from 'node:path';
 
-class MyVcard extends VCard {
-	addSocial(type, url, user) {
-		this.setProperty(type, `X-SOCIALPROFILE${type !== '' ? `;type=${type}` : ''}${user !== '' ? `;x-user=${user}` : ''}`, url)
-		return this;
-	}
-
-	addNickname(nickname) {
-		this.setProperty('nickname', `NICKNAME`, nickname)
-		return this;
-	}
-}
-
 export default async function handler(req, res) {
 	const photo = join(process.cwd(), 'public/img/roman-ozana-small.jpg')
-	const vcf = new MyVcard();
+	const vcf = new VCard();
 
 	vcf.addName('Ožana', 'Roman')
 		.addJobtitle('A freelance web developer')
@@ -25,9 +13,9 @@ export default async function handler(req, res) {
 		.addAddress('', '', '', 'Prague', 'Prague', '', 'Czech Republic')
 		.addURL('https://ozana.cz', 'WORK')
 		.addURL('https://ozzyczech.cz', 'BLOG')
-		.addSocial('GitHub', 'https://github.com/OzzyCzech', 'OzzyCzech')
-		.addSocial('StackOverflow', 'https://stackoverflow.com/users/355316/ozzyczech/', 'OzzyCzech')
-		.addSocial('Twitter', 'https://twitter.com/OzzyCzech', 'OzzyCzech')
+		.addSocial('https://github.com/OzzyCzech', 'GitHub', 'OzzyCzech')
+		.addSocial('https://stackoverflow.com/users/355316/ozzyczech/', 'StackOverflow', 'OzzyCzech')
+		.addSocial('https://twitter.com/OzzyCzech', 'Twitter', 'OzzyCzech')
 		.addNickname('OzzyCzech')
 		.addPhoto(await readFileAsync(photo, {encoding: 'base64', flag: 'r'}), 'JPEG')
 
