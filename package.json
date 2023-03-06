@@ -8,16 +8,16 @@
 		"now-build": "next build"
 	},
 	"dependencies": {
-		"@tailwindcss/typography": "^0.5.8",
+		"@tailwindcss/typography": "^0.5.9",
 		"autoprefixer": "^10.4.13",
-		"cssnano": "^5.1.14",
+		"cssnano": "^5.1.15",
 		"moment": "^2.29.4",
-		"next": "^13.1.1",
+		"next": "^13.2.3",
 		"postcss": "^8.4.21",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"tailwind": "^4.0.0",
-		"tailwindcss": "^3.2.4",
+		"tailwindcss": "^3.2.7",
 		"vcard-creator": "^0.6.0",
 		"wticons": "^1.1.6"
 	}

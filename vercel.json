@@ -4,7 +4,12 @@
 	"env": {
 		"NODE_ENV": "production"
 	},
-	"alias": [
-		"ozana.cz"
-	]
+	"redirects": [
+		{
+			"source": "/source",
+			"destination": "https://github.com/ozzyczech/ozana.cz",
+			"permanent": true
+		}
+	],
+	"alias": ["ozana.cz"]
 }
