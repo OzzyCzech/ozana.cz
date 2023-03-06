@@ -145,7 +145,9 @@ const GitHub = () =>
 			</li>))}
 		</ul>
 		<p className="text-center mt-32">
-			<a href="https://github.com/OzzyCzech" target="_blank" className="py-3 px-6 bg-gray-900 hover:bg-black text-white rounded-full hover:text-white hover:no-underline inline-flex items-center" title="Visit my GitHub profile">
+			<a href="https://github.com/OzzyCzech" target="_blank"
+			   className="py-3 px-6 bg-gray-900 hover:bg-black text-white rounded-full hover:text-white hover:no-underline inline-flex items-center"
+			   title="Visit my GitHub profile">
 				<ShareIcon/> Open GitHub
 			</a>
 		</p>

@@ -9,7 +9,7 @@ export default () =>
 			<link rel="author" href="/humans.txt"/>
 		</Head>
 
-		<body className="font-sans text-gray-900 leading-normal tracking-normal">
+		<body className="font-sans text-gray-900 antialiased leading-normal tracking-normal">
 		<Main/>
 		<NextScript/>
 		</body>
