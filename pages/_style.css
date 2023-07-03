@@ -3,40 +3,40 @@
 @tailwind base;
 
 @layer base {
-	a {
-		@apply text-current hover:underline hover:text-blue-600 hover:ease-in-out;
-	}
+    a {
+        @apply text-current hover:underline hover:text-blue-600 hover:ease-in-out;
+    }
 }
 
 @tailwind utilities;
 @tailwind components;
 
 @layer components {
-	#__next {
-		@apply grid min-h-screen grid-rows-[auto_1fr_auto];
-	}
+    #__next {
+        @apply grid min-h-screen grid-rows-[auto_1fr_auto];
+    }
 }
 
 @media print {
-	@page {
-		size: a4;
-		margin: 10mm;
-	}
+    @page {
+        size: a4;
+        margin: 10mm;
+    }
 
-	p, h2, h3 {
-		orphans: 3;
-		widows: 3;
-	}
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-	h1, h2, h3 {
-		page-break-after: avoid;
-	}
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
 
-	tr, img {
-		page-break-inside: avoid;
-	}
+    tr, img {
+        page-break-inside: avoid;
+    }
 
-	.page-break-before-always {
-		page-break-before: always;
-	}
+    .page-break-before-always {
+        page-break-before: always;
+    }
 }
