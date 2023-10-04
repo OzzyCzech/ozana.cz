@@ -1,4 +1,4 @@
-import {useEffect, useState, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
 import DownloadIcon from './download-icon.js';
 import me from '../public/img/roman-ozana-medium.jpg';
