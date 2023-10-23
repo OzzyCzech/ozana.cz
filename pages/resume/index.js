@@ -43,7 +43,6 @@ export default () =>
               <li><strong>Web</strong>: <a href="https://ozana.cz">https://ozana.cz</a></li>
               <li><strong>Email</strong>: <a href="mailto:roman@ozana.cz?subject=Resume">roman@ozana.cz</a></li>
               <li><strong>Phone</strong>: <a href="tel:+420605783455">+420&nbsp;605&nbsp;783&nbsp;455</a></li>
-              <li><strong>Twitter</strong>: <a href="https://www.twitter.com/OzzyCzech">@OzzyCzech</a></li>
             </ul>
           </div>
           <div className="w-[650px]">
