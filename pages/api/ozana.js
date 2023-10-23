@@ -15,7 +15,6 @@ export default async function handler(req, res) {
     .addURL('https://ozzyczech.cz', 'BLOG')
     .addSocial('https://github.com/OzzyCzech', 'GitHub', 'OzzyCzech')
     .addSocial('https://stackoverflow.com/users/355316/ozzyczech/', 'StackOverflow', 'OzzyCzech')
-    .addSocial('https://twitter.com/OzzyCzech', 'Twitter', 'OzzyCzech')
     .addNickname('OzzyCzech')
     .addPhoto(await readFileAsync(photo, {encoding: 'base64', flag: 'r'}), 'JPEG')
 
