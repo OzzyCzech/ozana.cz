@@ -125,14 +125,14 @@ const Zdrojak = () =>
 
 const Sphido = () =>
   <article className="text-center bg-gray-200 p-6 md:p-24 lg:p-32">
-    <a href="http://sphido.org" target="_sphido">
+    <a href="https://sphido.cz" target="_sphido">
       <Image src={logoSphido} alt="Sphido Logo" className="inline-block my-4"/>
     </a>
     <p className="my-3 text-xl">
       A rocket <Twemoji>🚀</Twemoji> fast, <Twemoji>💭</Twemoji> lightweight and flexible static site <Twemoji>🤖</Twemoji> generator
     </p>
     <p className="text-center mt-6">
-      <a href="https://sphido.org" target="_blank" className="py-3 px-6 bg-rose-600 hover:bg-rose-700 text-white rounded-full hover:text-white hover:no-underline inline-flex items-center"><ShareIcon/> sphido.org</a>
+      <a href="https://sphido.cz" target="_blank" className="py-3 px-6 bg-rose-600 hover:bg-rose-700 text-white rounded-full hover:text-white hover:no-underline inline-flex items-center"><ShareIcon/> sphido.cz</a>
     </p>
   </article>;
 
