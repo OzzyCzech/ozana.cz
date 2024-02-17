@@ -32,7 +32,7 @@ const Devel = () =>
   <article className="py-4">
     <div className="flex justify-between">
       <h3 className="text-xl font-semibold mb-1">
-        Full stack developer at <a href="http://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJFND&Action=Search&ICO=24683507" target="_blank">Devel.cz Lab s.r.o.</a>
+        Full stack developer at <a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=24683507" target="_blank">Devel.cz Lab s.r.o.</a>
       </h3>
       <span className="text-gray-600">{duration(new Date(2011, 5, 1))}</span>
     </div>
