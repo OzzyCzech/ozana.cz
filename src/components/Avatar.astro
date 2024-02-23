@@ -50,6 +50,14 @@ import me from '../../public/img/roman-ozana.jpg';
 				menu.classList.add('hidden');
 				event.stopPropagation();
 			});
+			
+			function hideMenu() {
+				menu.classList.add('hidden');
+				document.removeEventListener('click', hideMenu);
+			}
+
+			// click outside
+			document.addEventListener('click', hideMenu);
 		}
 	}
 
