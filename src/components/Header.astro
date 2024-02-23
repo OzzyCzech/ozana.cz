@@ -1,8 +1,12 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
 <header class="print:hidden">
 	<nav class="flex justify-center lg:justify-end border-b text-center">
 		<ul class="grid grid-cols-3 divide-x py-3">
 			<li class="">
-				<a href="/" class="inline-block py-1 px-5 no-underline text-current">Contact</a>
+				<a href="/" class={'inline-block py-1 px-5 no-underline text-current ' + (currentPath === '/' ? 'active' : '')}>Contact</a>
 			</li>
 			<li class="">
 				<a href="/work" class="inline-block py-1 px-5 no-underline text-current">Work</a>

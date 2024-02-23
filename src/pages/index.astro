@@ -2,9 +2,50 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Avatar from "../components/Avatar.astro";
+import DownloadIcon from "../components/DownloadIcon.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<Header></Header>
-	<Footer></Footer>
+<Layout title="Ing. Roman Ožana">
+	<Header/>
+
+	<main class="lg:container lg:mx-auto self-center align-center" itemscope itemtype="https://schema.org/Person">
+
+		<div class="flex flex-wrap justify-center my-10">
+			<Avatar/>
+		</div>
+
+		<div class="text-center mb-10">
+			<h1 itemprop="name" class="font-bold text-4xl mb-1">Ing. Roman Ožana</h1>
+
+			<a href="mailto:roman@ozana.cz" itemprop="email" class="text-3xl font-semibold">roman@ozana.cz</a>
+
+			<p class="flex grid-cols-2 gap-x-3 justify-center divide-x my-3">
+				<a href="tel:+420605783455" itemprop="telephone" class="font-bold text-current">+420 605 783 455</a>
+			</p>
+
+			<p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" class="my-3">
+				<span hidden itemprop="streetAddress">Přímětická 1199/36</span>
+				<span itemprop="addressLocality">Prague</span>,
+				<span itemprop="addressRegion">Czech Republic</span>
+				<span hidden itemprop="postalCode">14000</span>
+			</p>
+
+			<p>
+				IN: <a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-current">87098504</a>
+			</p>
+
+			<a
+				href="/api/ozana"
+				class="py-3 px-6 bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline inline-flex items-center mt-5 ml-2 print:hidden"
+				download="Roman Ožana.vcf">
+				<DownloadIcon/>
+				<span>Add to Contacts</span>
+			</a>
+		</div>
+
+
+	</main>
+
+	<Footer/>
 </Layout>
