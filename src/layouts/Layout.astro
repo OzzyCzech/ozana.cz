@@ -4,9 +4,12 @@ interface Props {
 	title: string;
 }
 
-const {title = "Ing. Roman Ožana"} = Astro.props;
+const {
+	title = "Ing. Roman Ožana",
+	description = "Personal website of Roman Ožana",
+} = Astro.props;
 
-import  SpeedInsights  from "@vercel/speed-insights/astro"
+import SpeedInsights from "@vercel/speed-insights/astro"
 
 
 const canonical = new URL(Astro.url.pathname, "https://ozana.cz");
@@ -16,15 +19,15 @@ const s = Astro.site;
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width"/>
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-	<link rel="canonical" href={canonical} />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+	<link rel="canonical" href={canonical}/>
 	<link rel="author" href="/humans.txt"/>
 
 	<title>{title}</title>
-	<meta name="description" content=""/>
+	<meta name="description" content={description}/>
 	<meta name="author" content="All: Roman Ožana; e-mail: roman@ozana.cz"/>
 </head>
 <body class="font-sans text-gray-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
