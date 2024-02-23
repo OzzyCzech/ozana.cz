@@ -1,25 +1,27 @@
 {
-	"version": 2,
-	"name": "ozana-cz",
-	"env": {
-		"NODE_ENV": "production"
-	},
-	"redirects": [
-		{
-			"source": "/git",
-			"destination": "https://github.com/OzzyCzech",
-			"permanent": true
-		},
-		{
-			"source": "/blog",
-			"destination": "https://ozzyczech.cz/",
-			"permanent": true
-		},
-		{
-			"source": "/source",
-			"destination": "https://github.com/OzzyCzech/ozana.cz",
-			"permanent": true
-		}
-	],
-	"alias": ["ozana.cz"]
+  "version": 2,
+  "name": "ozana-cz",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "redirects": [
+    {
+      "source": "/git",
+      "destination": "https://github.com/OzzyCzech",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "https://ozzyczech.cz/",
+      "permanent": true
+    },
+    {
+      "source": "/source",
+      "destination": "https://github.com/OzzyCzech/ozana.cz",
+      "permanent": true
+    }
+  ],
+  "alias": [
+    "ozana.cz"
+  ]
 }
