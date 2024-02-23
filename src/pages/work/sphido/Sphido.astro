@@ -1,13 +1,20 @@
 ---
 import {Image} from "astro:assets";
 import sphido from "./_sphido.svg";
+import Twemoji from "../../../components/Twemoji.astro";
 ---
 <article class="text-center bg-gray-200 p-6 md:p-24 lg:p-32">
 	<a href="https://sphido.cz" target="_sphido">
 		<Image src={sphido} alt="Sphido Logo" class="inline-block my-4" loading="lazy"/>
 	</a>
 	<p class="my-3 text-xl">
-		A rocket 🚀 fast, 💭 lightweight and flexible static site 🤖 generator
+		A rocket
+		<Twemoji emoji="🚀" class="inline-block size-5 mx-0.5"/>
+		fast,
+		<Twemoji emoji="💭" class="inline-block size-5 mx-0.5"/>
+		lightweight and flexible static site
+		<Twemoji emoji="🤖" class="inline-block size-5 mx-0.5"/>
+		generator
 	</p>
 	<p class="text-center mt-6">
 		<a href="https://sphido.cz" target="_blank" class="py-3 px-6 bg-rose-600 hover:bg-rose-700 text-white rounded-full hover:text-white hover:no-underline inline-flex items-center">

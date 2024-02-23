@@ -2,12 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import DownloadIcon from "../../components/DownloadIcon.astro";
 import {Image} from "astro:assets";
+import qr from "./_contact.svg";
+import WorkExperiences from "./WorkExperiences.astro";
+import TechStack from "./TechStack.astro";
 
 const years = (new Date()).getFullYear() - 2009;
 ---
-
 
 
 <Layout title="Ing. Roman Ožana / Work">
@@ -37,179 +38,8 @@ const years = (new Date()).getFullYear() - 2009;
 			</article>
 		</section>
 
-		<section class="break-before-page">
-		<h2 class="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Tech Stack</h2>
-
-		<div class="grid grid-flow-row gap-8 my-8">
-
-			<article>
-				<h3 class="font-semibold mb-6">Server side</h3>
-				<ul class="flex flex-wrap gap-8 ml-6">
-					<li class="flex gap-1.5 items-center">
-						<Image src="php" class="h-6 w-6 rounded"/>
-						PHP
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<NodeJs class="w-6 h-6"/>
-						NodeJS
-					</li>
-				</ul>
-			</article>
-
-			<article>
-				<h3 class="font-semibold mb-6">Client side</h3>
-				<ul class="flex flex-wrap gap-8 ml-6">
-					<li class="flex gap-1.5 items-center">
-						<Javascript class="w-6 h-6"/>
-						Javascript
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Html5 class="w-6 h-6"/>
-						HTML5
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<TailwindCss class="w-6 h-6"/>
-						Tailwind CSS
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Bootstrap class="w-6 h-6"/>
-						Bootstrap
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Css3 class="w-6 h-6"/>
-						CSS3
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<React class="w-6 h-6"/>
-						React
-					</li>
-
-					<li class="flex gap-1.5 items-center">
-						<JQuery class="w-6 h-6"/>
-						jQuery
-					</li>
-				</ul>
-			</article>
-
-			<article>
-				<h3 class="font-semibold mb-6">Frameworks</h3>
-				<ul class="flex flex-wrap gap-8 ml-6">
-					<li class="flex gap-1.5 items-center">
-						<NextJs class="w-6 h-6"/>
-						NextJS
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Angularjs class="w-6 h-6"/>
-						Angular JS
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Zend class="w-6 h-6"/>
-						Zend Framework
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Nette class="w-6 h-6"/>
-						Nette Framework
-					</li>
-				</ul>
-			</article>
-
-
-			<article>
-				<h3 class="font-semibold mb-6">Databases</h3>
-				<ul class="flex flex-wrap gap-8 ml-6">
-					<li class="flex gap-1.5 items-center">
-						<MongoDb class="w-6 h-6"/>
-						MongoDB
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<MySql class="w-6 h-6"/>
-						MySQL
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Redis class="w-6 h-6"/>
-						Redis
-					</li>
-				</ul>
-
-			</article>
-
-
-			<article>
-				<h3 class="font-semibold mb-6">Code quality</h3>
-				<ul class="flex flex-wrap gap-8 ml-6">
-					<li class="flex gap-1.5 items-center">
-						<Ava class="w-6 h-6"/>
-						AVA
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<PhpUnit class="w-5 h-5"/>
-						PhpUnit
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Cypress class="w-6 h-6"/>
-						Cypress
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Mocha class="w-6 h-6"/>
-						Mocha
-					</li>
-				</ul>
-			</article>
-
-
-			<article>
-				<h3 class="font-semibold mb-6">Bundlers</h3>
-				<ul class="flex flex-wrap gap-8 ml-6">
-					<li class="flex gap-1.5 items-center">
-						<Parcel class="w-6 h-6"/>
-						Parcel
-					</li>
-
-					<li class="flex gap-1.5 items-center">
-						<Webpack class="w-6 h-6"/>
-						Webpack
-					</li>
-
-					<li class="flex gap-1.5 items-center">
-						<Gnu class="w-6 h-6"/>
-						Makefile
-					</li>
-				</ul>
-			</article>
-
-
-			<article>
-				<h3 class="font-semibold mb-6">DevStack</h3>
-
-				<ul class="flex flex-wrap gap-8 ml-6">
-					<li class="flex gap-1.5 items-center">
-						<Apple class="w-6 h-6"/>
-						macOS
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Linux class="w-6 h-6"/>
-						Linux
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Docker class="w-6 h-6"/>
-						Docker
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<Git class="w-6 h-6"/>
-						Git
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<PhpStorm class="w-6 h-6"/>
-						PhpStorm
-					</li>
-					<li class="flex gap-1.5 items-center">
-						<VisualStudioCode class="w-6 h-6"/>
-						Visual Studio Code
-					</li>
-				</ul>
-			</article>
-		</div>
-		</section>
+		<WorkExperiences/>
+		<TechStack/>
 
 		<section>
 			<h2 class="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Languages</h2>
@@ -257,7 +87,9 @@ const years = (new Date()).getFullYear() - 2009;
 
 		<div class="text-center my-12 print:hidden">
 			<a href="/cv.pdf" download={`Resume - Ing. Roman Ožana - ${new Date().getFullYear()}.pdf`} class="py-3 px-6 bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline inline-flex items-center">
-				<DownloadIcon/>
+				<svg class="fill-current size-4 mr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+					<path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
+				</svg>
 				Download as PDF
 			</a>
 		</div>

@@ -4,12 +4,12 @@ Personal website https://ozana.cz
 
 # Technologies 
 
-- [Next.js](https://nextjs.org/)
+- [Astro](https://astro.build/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Vercel](https://vercel.com/)
 
 ## Install & run
 
 ```bash
-yarn install && yarn build && yarn dev
+yarn install && yarn build && yarn start
 ```
