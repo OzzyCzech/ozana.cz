@@ -6,6 +6,9 @@ interface Props {
 
 const {title = "Ing. Roman Ožana"} = Astro.props;
 
+import  SpeedInsights  from "@vercel/speed-insights/astro"
+
+
 const canonical = new URL(Astro.url.pathname, "https://ozana.cz");
 const s = Astro.site;
 ---
@@ -26,5 +29,6 @@ const s = Astro.site;
 </head>
 <body class="font-sans text-gray-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
 <slot/>
+<SpeedInsights/>
 </body>
 </html>
