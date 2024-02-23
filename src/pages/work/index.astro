@@ -2,9 +2,22 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Sphido from './sphido/Sphido.astro';
+import Zdrojak from "./zdrojak/Zdrojak.astro";
+import CmdDialog from "./cmd-dialog/CmdDialog.astro";
+import Testomato from "./testomato/Testomato.astro";
+import GitHub from "./github/GitHub.astro";
 ---
 
 <Layout title="Ing. Roman Ožana / Work">
 	<Header/>
+	<main>
+		<Testomato/>
+		<Zdrojak/>
+		<Sphido/>
+		<CmdDialog/>
+		<GitHub/>
+	</main>
+
 	<Footer/>
 </Layout>

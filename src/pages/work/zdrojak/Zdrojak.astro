@@ -1,0 +1,54 @@
+---
+import {Image} from "astro:assets";
+import logo from "./zdrojak.svg";
+import screenshot from "./zdrojak.png";
+---
+
+<article class="bg-[#424242] grid lg:grid-cols-2 md:p-12 md:gap-12 p-6 lg:p-32 lg:gap-32 text-gray-50">
+	<div>
+
+		<Image src={logo} alt="Zdrojak.cz" class="drop-shadow-2xl w-6/12 sm:w-4/12 my-6" loading="eager"/>
+
+		<p class="text-xl leading-relaxed mb-3">
+			<a href="https://www.zdrojak.cz/" target="_blank" class="hover:text-current">Zdrojak.cz</a> is one of the most famous Czech
+			magazines about development. I am there since <a href="https://www.zdrojak.cz/clanky/novy-zdrojak-startuje-tri-dva-jedna/">the rebirth</a> as
+			the lead developer and site administrator.
+			Current version is build on Wordpress and multiple in-house plugins, modifications and tweaks.
+		</p>
+
+		<h3 class="font-medium mb-3 text-xl">Technologies &amp; Tools</h3>
+
+		<ul class="list-disc ml-8 leading-loose text-lg mb-4">
+			<li><a href="https://wordpress.org/" target="_blank" rel="nofollow" class="hover:text-white">Wordpress</a> with custom plugins and template</li>
+			<li>PHP 8 and Javascript ES6</li>
+			<li><a href="https://reactjs.org/" target="_blank" rel="nofollow" class="hover:text-white">React</a> (for Gutenberg plugins)</li>
+			<li>
+				<a href="https://mariadb.org/" target="_blank" rel="nofollow" class="hover:text-white">MariaDB</a>,{' '}
+				<a href="https://redis.io/" target="_blank" rel="nofollow" class="hover:text-white">Redis</a>{' '}
+			</li>
+			<li>
+				<a href="https://www.docker.com/" target="_blank" rel="nofollow" class="hover:text-white">Docker</a>, git, CI
+			</li>
+			<li>
+				Build with <a href="https://parceljs.org/" target="_blank" rel="nofollow" class="hover:text-white">Parcel</a> and Makefile
+			</li>
+		</ul>
+
+		<p class="mt-6">
+			<a href="https://www.zdrojak.cz" target="_blank" class="py-3 px-6 bg-white/20 hover:bg-white/30 rounded-full hover:text-current hover:no-underline inline-flex" title="Visit page">
+				<svg width="1em" height="1em" viewBox="0 0 16 16" class="fill-current w-6 h-6 mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"></path>
+					<path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"></path>
+				</svg>
+				Visit Zdrojak.cz
+			</a>
+		</p>
+
+	</div>
+
+	<div>
+		<a href="https://www.testomato.com" target="_blank">
+			<Image src={screenshot} alt="Zdrojak website screenshot" class="shadow-2xl rounded-lg border border-gray-900" loading="eager"/>
+		</a>
+	</div>
+</article>
