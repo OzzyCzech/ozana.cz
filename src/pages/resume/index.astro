@@ -3,40 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import DownloadIcon from "../../components/DownloadIcon.astro";
-import Icon from "../../icons/Icon.astro";
-
-
-// import {
-// 	Angularjs,
-// 	Apple,
-// 	Ava,
-// 	Bootstrap,
-// 	Css3,
-// 	Cypress,
-// 	Docker,
-// 	Git,
-// 	Gnu,
-// 	Html5,
-// 	Javascript,
-// 	JQuery,
-// 	Linux,
-// 	Mocha,
-// 	MongoDb,
-// 	MySql,
-// 	Nette,
-// 	NextJs,
-// 	NodeJs,
-// 	Parcel,
-// 	Php,
-// 	PhpStorm,
-// 	PhpUnit,
-// 	React,
-// 	Redis,
-// 	TailwindCss,
-// 	VisualStudioCode,
-// 	Webpack,
-// 	Zend
-// } from "wticons";
+import {Image} from "astro:assets";
 
 const years = (new Date()).getFullYear() - 2009;
 ---
@@ -46,7 +13,7 @@ const years = (new Date()).getFullYear() - 2009;
 <Layout title="Ing. Roman Ožana / Work">
 	<Header/>
 
-	<!-- main class="px-4 max-w-screen-xl mx-auto">
+	<main class="px-4 max-w-screen-xl mx-auto">
 		<h1 class="text-center py-6 md:py-8 lg:py-12 xl:py-20 text-2xl font-semibold">Ing. Roman Ožana / Resume</h1>
 		<section class="hidden print:block">
 			<article class="flex gap-4 py-4">
@@ -70,7 +37,7 @@ const years = (new Date()).getFullYear() - 2009;
 			</article>
 		</section>
 
-		section class="break-before-page">
+		<section class="break-before-page">
 		<h2 class="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Tech Stack</h2>
 
 		<div class="grid grid-flow-row gap-8 my-8">
@@ -79,7 +46,7 @@ const years = (new Date()).getFullYear() - 2009;
 				<h3 class="font-semibold mb-6">Server side</h3>
 				<ul class="flex flex-wrap gap-8 ml-6">
 					<li class="flex gap-1.5 items-center">
-						<Php class="h-6 w-6 rounded"/>
+						<Image src="php" class="h-6 w-6 rounded"/>
 						PHP
 					</li>
 					<li class="flex gap-1.5 items-center">
@@ -294,6 +261,6 @@ const years = (new Date()).getFullYear() - 2009;
 				Download as PDF
 			</a>
 		</div>
-	</main -->
+	</main>
 	<Footer/>
 </Layout>
