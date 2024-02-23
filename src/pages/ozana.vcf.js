@@ -1,4 +1,4 @@
-import {VCard} from '../../lib/vcard.js';
+import {VCard} from '../lib/vcard.js';
 import {readFile as readFileAsync} from 'node:fs/promises';
 import {join} from 'node:path';
 
