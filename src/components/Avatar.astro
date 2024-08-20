@@ -1,5 +1,5 @@
 ---
-import {Image} from 'astro:assets';
+import { Image } from 'astro:assets';
 import me from '../../public/img/roman-ozana-medium.jpg';
 ---
 
@@ -50,7 +50,7 @@ import me from '../../public/img/roman-ozana-medium.jpg';
 				menu.classList.add('hidden');
 				event.stopPropagation();
 			});
-			
+
 			function hideMenu() {
 				menu.classList.add('hidden');
 				document.removeEventListener('click', hideMenu);
