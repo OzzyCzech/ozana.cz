@@ -258,10 +258,10 @@
     "@babel/plugin-syntax-jsx" "^7.24.7"
     "@babel/types" "^7.25.2"
 
-"@babel/runtime@^7.23.9":
-  version "7.23.9"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.9.tgz#47791a15e4603bb5f905bc0753801cf21d6345f7"
-  integrity sha512-0CX6F+BI2s9dkUqr08KFrAIZgNFj75rdBU/DjCyYLIaV/quFjkk6T+EJ2LkZHyZTbEV4L5p97mNkUsHl2wLFAw==
+"@babel/runtime@^7.25.0":
+  version "7.25.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.25.0.tgz#3af9a91c1b739c569d5d80cc917280919c544ecb"
+  integrity sha512-7dRy4DwXwtzBrPbZflqxnvfxLF8kdZXPkhymtDeFoFqE6ldzjQFgYTtYIFARcLEYDrqfBfYcZt1WqFxRoyC9Rw==
   dependencies:
     regenerator-runtime "^0.14.0"
 
@@ -1022,12 +1022,12 @@
   resolved "https://registry.yarnpkg.com/@vercel/speed-insights/-/speed-insights-1.0.12.tgz#71c2edffdedae98d34e306d7b0a573e6816898b4"
   integrity sha512-ZGQ+a7bcfWJD2VYEp2R1LHvRAMyyaFBYytZXsfnbOMkeOvzGNVxUL7aVUvisIrTZjXTSsxG45DKX7yiw6nq2Jw==
 
-"@wticons/astro@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@wticons/astro/-/astro-0.0.5.tgz#a6f292806dd611034459f5f96d098d68019997a5"
-  integrity sha512-L0YUpbuInB55+xwKC3y1A2YCuf5lk9oIKi7OkARBPu7w8xyIhpfwl2nlDrhOzk47F+eTPFvYkmbR+u7r8+dGGA==
+"@wticons/astro@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@wticons/astro/-/astro-1.0.0.tgz#66f42c164fc571e65551715b23bfcd3e1089353b"
+  integrity sha512-5xgVqEzRQPxjZLJizoDTvFv4Y0vvSwn0HhSzpbFepBlcaHkBvAth2Yn36G6YR/SgWfKSJAUoXohm38Ns6yzwyA==
   dependencies:
-    "@babel/runtime" "^7.23.9"
+    "@babel/runtime" "^7.25.0"
     pascalcase "^2.0.0"
 
 abbrev@1:

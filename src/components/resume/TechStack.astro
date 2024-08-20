@@ -8,22 +8,26 @@ import {
 	Docker,
 	Git,
 	Gnu,
-	Html5, Javascript,
+	Html5,
+	Javascript,
 	JQuery,
 	Linux,
 	Mocha,
 	MongoDb,
 	MySql,
+	Vuejs,
 	Nette,
 	NextJs,
 	NodeJs,
 	Parcel,
+	Vitejs,
 	Astro as AstroIcon,
 	Php,
 	PhpStorm,
 	PhpUnit,
 	React,
-	Redis, Svelte,
+	Redis,
+	Svelte,
 	TailwindCss,
 	Webpack,
 	Zend
@@ -35,7 +39,7 @@ import {
 	<div class="grid grid-flow-row gap-8 my-8">
 
 		<article>
-			<h3 class="font-semibold mb-6">Server side</h3>
+			<h3 class="font-semibold mb-6">Backend</h3>
 			<ul class="flex flex-wrap gap-8 ml-6">
 				<li class="flex gap-1.5 items-center">
 					<Php class="size-6"/>
@@ -44,11 +48,19 @@ import {
 					<NodeJs class="size-6"/>
 					NodeJS
 				</li>
+				<li class="flex gap-1.5 items-center">
+					<Zend class="size-6"/>
+					Zend
+				</li>
+				<li class="flex gap-1.5 items-center">
+					<Nette class="size-6"/>
+					Nette
+				</li>
 			</ul>
 		</article>
 
 		<article>
-			<h3 class="font-semibold mb-6">Client side</h3>
+			<h3 class="font-semibold mb-6">Frontend</h3>
 			<ul class="flex flex-wrap gap-8 ml-6">
 				<li class="flex gap-1.5 items-center">
 					<Javascript class="size-6"/>
@@ -70,41 +82,29 @@ import {
 					<React class="size-6"/>
 					React
 				</li>
-
 				<li class="flex gap-1.5 items-center">
 					<JQuery class="size-6"/>
 					jQuery
-				</li>
-			</ul>
-		</article>
-
-		<article>
-			<h3 class="font-semibold mb-6">Frameworks</h3>
-			<ul class="flex flex-wrap gap-8 ml-6">
-				<li class="flex gap-1.5 items-center">
-					<NextJs class="size-6"/>
-					NextJS
 				</li>
 				<li class="flex gap-1.5 items-center">
 					<AstroIcon class="size-6"/>
 					Astro
 				</li>
-
 				<li class="flex gap-1.5 items-center">
 					<Svelte class="size-6"/>
 					Svelte
 				</li>
 				<li class="flex gap-1.5 items-center">
+					<Vuejs class:list="size-6"/>
+					VueJS
+				</li>
+				<li class="flex gap-1.5 items-center">
+					<NextJs class="size-6"/>
+					NextJS
+				</li>
+				<li class="flex gap-1.5 items-center">
 					<Angularjs class="size-6"/>
 					Angular JS
-				</li>
-				<li class="flex gap-1.5 items-center">
-					<Zend class="size-6"/>
-					Zend
-				</li>
-				<li class="flex gap-1.5 items-center">
-					<Nette class="size-6"/>
-					Nette
 				</li>
 			</ul>
 		</article>
@@ -162,6 +162,11 @@ import {
 				</li>
 
 				<li class="flex gap-1.5 items-center">
+					<Vitejs class="size-6"/>
+					Vite
+				</li>
+
+				<li class="flex gap-1.5 items-center">
 					<Webpack class="size-6"/>
 					Webpack
 				</li>
@@ -172,7 +177,6 @@ import {
 				</li>
 			</ul>
 		</article>
-
 
 		<article>
 			<h3 class="font-semibold mb-6">DevStack</h3>
