@@ -9,6 +9,6 @@ const { emoji } = Astro.props;
 
 <img
 	{...Astro.props}
-	src={`https://twemoji.maxcdn.com/v/latest/svg/${emoji.codePointAt(0).toString(16)}.svg`}
+	src={`https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/${emoji.codePointAt(0).toString(16)}.svg`}
 	alt={emoji}
 	draggable="false"/>
