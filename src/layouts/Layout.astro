@@ -2,6 +2,7 @@
 import './main.css';
 interface Props {
 	title: string;
+	description?: string;
 }
 
 const {
@@ -12,7 +13,6 @@ const {
 import SpeedInsights from "@vercel/speed-insights/astro"
 
 const canonical = new URL(Astro.url.pathname, "https://ozana.cz");
-const s = Astro.site;
 ---
 
 <!doctype html>

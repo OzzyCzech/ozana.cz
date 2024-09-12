@@ -4,22 +4,23 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && stro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.3",
     "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.7.2",
-    "@tailwindcss/typography": "^0.5.14",
+    "@astrojs/vercel": "^7.8.1",
+    "@tailwindcss/typography": "^0.5.15",
     "@vercel/speed-insights": "^1.0.12",
-    "@wticons/astro": "^1.0.0",
-    "astro": "^4.14.2",
+    "@wticons/astro": "^1.0.2",
+    "astro": "^4.15.4",
     "moment": "^2.30.1",
-    "postcss": "^8.4.41",
+    "postcss": "^8.4.45",
     "postcss-nesting": "^13.0.0",
     "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4"
+    "tailwindcss": "^3.4.11",
+    "typescript": "^5.6.2"
   }
 }

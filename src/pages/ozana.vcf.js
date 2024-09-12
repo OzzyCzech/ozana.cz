@@ -2,7 +2,7 @@ import { VCard } from "../lib/vcard.js";
 import { readFile as readFileAsync } from "node:fs/promises";
 import { join } from "node:path";
 
-export async function GET({ params, request }) {
+export async function GET() {
 	const photo = join(process.cwd(), "/public/img/roman-ozana-small.jpg")
 	const vcf = new VCard();
 	vcf.addName("Ožana", "Roman")

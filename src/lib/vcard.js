@@ -50,7 +50,7 @@ export class VCard {
     return this;
   }
 
-  addPhoto(photo, type) {
+  addPhoto(photo) {
     this.vcf += `PHOTO;ENCODING=b;TYPE=JPEG:${photo}\n`
     return this;
   }

@@ -10,12 +10,14 @@ import data from './github.json'
 	</a>
 
 	<ul class="grid gap-3 lg:grid-cols-2 list-disc marker:text-gray-300">
-		{data.filter((item) => !item.fork && !item.archived).sort((a, b) => {
-			return new Date(b.pushed_at) - new Date(a.pushed_at);
-		}).map((item, index) => (
-			<li key={index} class="mx-4">
-				<a href={item.html_url} target="_blank" class="font-bold">{item.name}</a> {item.description ? '- ' + item.description : ''}
-			</li>))}
+		{data.filter((item) => !item.fork && !item.archived)
+			.sort((a, b) => {
+				return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
+			})
+			.map((item) => (
+				<li class="mx-4">
+					<a href={item.html_url} target="_blank" class="font-bold">{item.name}</a> {item.description ? '- ' + item.description : ''}
+				</li>))}
 	</ul>
 	<p class="text-center mt-32">
 		<a href="https://github.com/OzzyCzech" target="_blank"
