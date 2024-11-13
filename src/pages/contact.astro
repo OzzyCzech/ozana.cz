@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import IconGitHub from "../components/IconGitHub.astro";
+---
+<Layout title="Ing. Roman Ožana / Contact">
+
+	<Header/>
+	<main class="container p-4 mx-auto max-w-screen-sm self-center align-center">
+
+		<div class="flex justify-between">
+
+
+			<div>
+				<h2 class="text-3xl font-semibold mb-8">
+					Want to talk? <br>
+					Lets get in touch!
+				</h2>
+			</div>
+
+			<div>
+				<p>
+					<a href="mailto:roman@ozana.cz" itemprop="email" class="font-semibold text-3xl">roman@ozana.cz</a>
+				</p>
+				<p>
+					<a href="tel:+420605783455" itemprop="telephone" class="font-semibold text-xl">+420 605 783 455</a>
+				</p>
+				<p>
+					<IconGitHub/>
+					<a href="https://github.com/OzzyCzech/" target="_blank">
+						github.com/OzzyCzech
+					</a>
+				</p>
+
+				<p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+					<span hidden itemprop="streetAddress">Přímětická 1199/36</span>
+					<span itemprop="addressLocality">Prague</span>,
+					<span itemprop="addressRegion">Czech Republic</span>
+					<span hidden itemprop="postalCode">14000</span>
+				</p>
+
+				<p>
+					IN: <a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-current">87098504</a>
+				</p>
+
+			</div>
+		</div>
+
+		<div class="text-center mt-24">
+			<a
+				href="/ozana.vcf"
+				class="py-3 px-5 font-medium bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline inline-flex items-center mt-5 print:hidden"
+				download="Roman Ožana.vcf">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="size-5 mr-2">
+					<path fill="currentColor"
+					      d="M6.4 20q-1 0-1.7-.7T4 17.6v-1.175q0-.95.688-1.763q.687-.812 1.812-1.4q1.125-.587 2.538-.925Q10.45 12 11.9 12q1.45 0 2.9.337q1.45.338 2.6.938q1.15.6 1.875 1.413Q20 15.5 20 16.45v1.15q0 1-.7 1.7t-1.7.7Zm5.5-9q-1.45 0-2.475-1.025Q8.4 8.95 8.4 7.5q0-1.45 1.025-2.475Q10.45 4 11.9 4q1.475 0 2.487 1.025Q15.4 6.05 15.4 7.5q0 1.45-1.025 2.475Q13.35 11 11.9 11Z"/>
+				</svg>
+
+				Add to Contacts
+			</a>
+		</div>
+
+
+	</main>
+	<Footer/>
+</Layout>

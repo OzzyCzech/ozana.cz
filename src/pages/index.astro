@@ -3,9 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Avatar from "../components/Avatar.astro";
+import GitHub from "../components/work/github/GitHub.astro";
+import IconGitHub from "../components/IconGitHub.astro";
 ---
 
 <Layout title="Ing. Roman Ožana">
+
 	<Header/>
 
 	<main class="lg:container lg:mx-auto self-center align-center" itemscope itemtype="https://schema.org/Person">
@@ -14,41 +17,22 @@ import Avatar from "../components/Avatar.astro";
 			<Avatar/>
 		</div>
 
-		<div class="text-center mb-10">
+		<article class="text-center">
+
 			<h1 class="font-bold text-4xl mb-1">
 				<span itemprop="honorificPrefix">Ing.</span>
 				<span itemprop="givenName">Roman</span>
 				<span itemprop="familyName">Ožana</span>
 			</h1>
 
-			<a href="mailto:roman@ozana.cz" itemprop="email" class="text-3xl font-semibold">roman@ozana.cz</a>
+			<h2 class="text-3xl py-2">Full Stack Developer</h2>
 
-			<p class="flex grid-cols-2 gap-x-3 justify-center divide-x my-3">
-				<a href="tel:+420605783455" itemprop="telephone" class="font-bold text-current">+420 605 783 455</a>
-			</p>
-
-			<p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" class="my-3">
-				<span hidden itemprop="streetAddress">Přímětická 1199/36</span>
-				<span itemprop="addressLocality">Prague</span>,
-				<span itemprop="addressRegion">Czech Republic</span>
-				<span hidden itemprop="postalCode">14000</span>
-			</p>
-
-			<p>
-				IN: <a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-current">87098504</a>
-			</p>
-
-			<a
-				href="/ozana.vcf"
-				class="py-3 px-6 bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline inline-flex items-center mt-5 ml-2 print:hidden"
-				download="Roman Ožana.vcf">
-				<svg class="fill-current w-4 h-4 mr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-					<path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
-				</svg>
-				<span>Add to Contacts</span>
-			</a>
-		</div>
-
+			<div class="my-5">
+				<a href="https://github.com/OzzyCzech/" target="_blank" class="text-lg inline-flex items-center py-2 px-6 rounded-full text-white hover:no-underline hover:text-white bg-slate-800 hover:bg-slate-900">
+					GitHub
+				</a>
+			</div>
+		</article>
 
 	</main>
 

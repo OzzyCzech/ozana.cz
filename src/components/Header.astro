@@ -1,19 +1,31 @@
 ---
 const currentPath = Astro.url.pathname;
 ---
-
-<header class="print:hidden">
-	<nav class="flex justify-center lg:justify-end border-b text-center">
-		<ul class="grid grid-cols-3 divide-x py-3">
-			<li class={currentPath === '/' ? 'font-bold' : ''}>
-				<a href="/" class="inline-block py-1 px-5 no-underline text-current">Contact</a>
+<header class="container p-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg print:hidden">
+	<nav class="flex justify-evenly text-center">
+		<ul class="flex justify-around w-full max-w-[480px] font-medium text-slate-800">
+			<li class={currentPath === '/' ? 'active' : ''}>
+				<a href="/">Home</a>
 			</li>
-			<li class={currentPath === '/work' ? 'font-bold' : ''}>
-				<a href="/work" class="inline-block py-1 px-5 no-underline text-current">Work</a>
+			<li class={currentPath === '/work' ? 'active' : ''}>
+				<a href="/work">Work</a>
 			</li>
-			<li class={currentPath === '/resume' ? 'font-bold' : ''}>
-				<a href="/resume" class="inline-block py-1 px-5 no-underline text-current">Resume</a>
+			<li class={currentPath === '/resume' ? 'active' : ''}>
+				<a href="/resume">Resume</a>
+			</li>
+			<li class={currentPath === '/contact' ? 'active' : ''}>
+				<a href="/contact">Contact</a>
 			</li>
 		</ul>
 	</nav>
 </header>
+
+<style>
+	a {
+		@apply text-inherit hover:no-underline hover:text-black p-2;
+	}
+
+	li.active {
+		@apply text-black font-semibold;
+	}
+</style>
