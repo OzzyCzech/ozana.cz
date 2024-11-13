@@ -2,21 +2,18 @@
 const currentPath = Astro.url.pathname;
 ---
 <header class="container p-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg print:hidden">
-
-	<span class="hidden">{currentPath}</span>
-
 	<nav class="flex justify-evenly text-center">
 		<ul class="flex justify-around w-full max-w-[480px] font-medium text-slate-800">
-			<li class={currentPath === '/' ? 'active' : ''}>
+			<li class={currentPath === '/' && 'active'}>
 				<a href="/">Home</a>
 			</li>
-			<li class={currentPath === '/work' ? 'active' : ''}>
+			<li class={currentPath.startsWith('/work') && 'active'}>
 				<a href="/work">Work</a>
 			</li>
-			<li class={currentPath === '/resume' ? 'active' : ''}>
+			<li class={currentPath.startsWith('/resume') && 'active'}>
 				<a href="/resume">Resume</a>
 			</li>
-			<li class={currentPath === '/contact' ? 'active' : ''}>
+			<li class={currentPath.startsWith('/contact') && 'active'}>
 				<a href="/contact">Contact</a>
 			</li>
 		</ul>
