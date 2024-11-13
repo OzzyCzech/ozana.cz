@@ -2,6 +2,9 @@
 const currentPath = Astro.url.pathname;
 ---
 <header class="container p-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg print:hidden">
+
+	<span class="hidden">{currentPath}</span>
+
 	<nav class="flex justify-evenly text-center">
 		<ul class="flex justify-around w-full max-w-[480px] font-medium text-slate-800">
 			<li class={currentPath === '/' ? 'active' : ''}>
