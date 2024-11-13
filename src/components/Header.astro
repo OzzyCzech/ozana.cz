@@ -7,8 +7,8 @@ const currentPath = Astro.url.pathname;
 			<li class={currentPath === '/' && 'active'}>
 				<a href="/">Home</a>
 			</li>
-			<li class={currentPath.startsWith('/work') && 'active'}>
-				<a href="/work">Work</a>
+			<li class={currentPath.startsWith('/projects') && 'active'}>
+				<a href="/projects">Projects</a>
 			</li>
 			<li class={currentPath.startsWith('/resume') && 'active'}>
 				<a href="/resume">Resume</a>
