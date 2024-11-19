@@ -11,11 +11,12 @@ import {
 	Html,
 	Js,
 	TypeScript,
-	JQuery,
+	Symfony,
 	Mocha,
 	Mongodb,
 	Mariadb,
 	Vue,
+	Npm,
 	Nette,
 	NextJs,
 	Nodejs,
@@ -31,54 +32,38 @@ import {
 	Svelte,
 	Tailwind,
 	Webpack,
+	Wordpress,
 	ZendFramework
 } from "@wticons/astro";
 ---
 <section class="break-before-page">
 	<h2 class="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Tech Stack</h2>
 
-	<div class="grid grid-flow-row gap-8 my-8">
+	<div class="grid gap-8 my-8">
 
 		<article>
 			<h3>Backend</h3>
 			<div class="flex flex-wrap gap-3">
-				<a href="https://www.php.net" target="_blank" rel="noopener" class="icon">
+				<a href="https://www.php.net" target="_blank" rel="noopener">
 					<Php/>
 					<small>PHP</small>
 				</a>
-				<a href="https://nodejs.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://nodejs.org" target="_blank" rel="noopener">
 					<Nodejs/>
 					<small>Node.js</small>
 				</a>
-				<a href="https://framework.zend.com/" target="_blank" rel="noopener" class="icon">
+				<a href="https://framework.zend.com/" target="_blank" rel="noopener">
 					<ZendFramework/>
 					<small>Zend</small>
 				</a>
-				<a href="https://nette.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://nette.org" target="_blank" rel="noopener">
 					<Nette/>
 					<small>Nette</small>
 				</a>
-			</div>
-		</article>
 
-		<article>
-			<h3>Languages</h3>
-			<div class="flex flex-wrap gap-3">
-				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener" class="icon">
-					<Js/>
-					<small>Javascript</small>
-				</a>
-				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener" class="icon">
-					<TypeScript/>
-					<small>Typescript</small>
-				</a>
-				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener" class="icon">
-					<Html/>
-					<small>HTML5</small>
-				</a>
-				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener" class="icon">
-					<Css/>
-					<small>CSS3</small>
+				<a href="https://symfony.com" target="_blank" rel="noopener">
+					<Symfony />
+					<small>Symfony</small>
 				</a>
 			</div>
 		</article>
@@ -86,37 +71,53 @@ import {
 		<article>
 			<h3>Frontend</h3>
 			<div class="flex flex-wrap gap-3">
-				<a href="https://tailwindcss.com" target="_blank" rel="noopener" class="icon">
+				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
+					<Js/>
+					<small>Javascript</small>
+				</a>
+				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
+					<TypeScript/>
+					<small>Typescript</small>
+				</a>
+				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">
+					<Html/>
+					<small>HTML5</small>
+				</a>
+				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">
+					<Css/>
+					<small>CSS3</small>
+				</a>
+				<a href="https://tailwindcss.com" target="_blank" rel="noopener">
 					<Tailwind/>
 					<small class="text-center">Tailwindcss</small>
 				</a>
-				<a href="https://jquery.com" target="_blank" rel="noopener" class="icon">
-					<JQuery/>
-					<small>jQuery</small>
+			</div>
+		</article>
+
+		<article>
+			<h3>Frameworks</h3>
+			<div class="flex flex-wrap gap-3">
+				<a href="https://vuejs.org" target="_blank" rel="noopener">
+					<Vue/>
+					<small>Vue.js</small>
 				</a>
-				<a href="https://astro.build" target="_blank" rel="noopener" class="icon">
+				<a href="https://astro.build" target="_blank" rel="noopener">
 					<AstroIcon/>
 					<small>Astro</small>
 				</a>
-				<a href="https://svelte.dev" target="_blank" rel="noopener" class="icon">
+				<a href="https://svelte.dev" target="_blank" rel="noopener">
 					<Svelte/>
 					<small>Svelte</small>
 				</a>
-				<a href="https://vuejs.org" target="_blank" rel="noopener" class="icon">
-					<a href="https://vuejs.org" target="_blank" rel="noopener" class="icon">
-						<Vue/>
-						<small>Vue.js</small>
-					</a>
-				</a>
-				<a href="https://reactjs.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://reactjs.org" target="_blank" rel="noopener">
 					<React/>
 					<small>React</small>
 				</a>
-				<a href="https://nextjs.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://nextjs.org" target="_blank" rel="noopener">
 					<NextJs/>
 					<small>Next.js</small>
 				</a>
-				<a href="https://angular.dev" target="_blank" rel="noopener" class="icon">
+				<a href="https://angular.dev" target="_blank" rel="noopener">
 					<Angular/>
 					<small>Angular</small>
 				</a>
@@ -126,22 +127,26 @@ import {
 		<article>
 			<h3>Bundlers</h3>
 			<div class="flex flex-wrap gap-3">
-
-				<a href="https://vitejs.dev" target="_blank" rel="noopener" class="icon">
+				<a href="https://vitejs.dev" target="_blank" rel="noopener">
 					<Vite/>
 					<small>Vite.js</small>
 				</a>
-				<a href="https://www.gnu.org/software/make/" target="_blank" rel="noopener" class="icon">
+				<a href="https://www.gnu.org/software/make/" target="_blank" rel="noopener">
 					<GnuMake/>
 					<small>Makefile</small>
 				</a>
-				<a href="https://parceljs.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://parceljs.org" target="_blank" rel="noopener">
 					<Parcel/>
 					<small>Parcel</small>
 				</a>
-				<a href="https://webpack.js.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://webpack.js.org" target="_blank" rel="noopener">
 					<Webpack/>
 					<small>Webpack</small>
+				</a>
+
+				<a href="https://www.npmjs.com/" target="_blank" rel="noopener">
+					<Npm/>
+					<small>NPM</small>
 				</a>
 			</div>
 		</article>
@@ -149,38 +154,37 @@ import {
 		<article>
 			<h3>Databases</h3>
 			<div class="flex flex-wrap gap-3">
-				<a href="https://www.mongodb.com" target="_blank" rel="noopener" class="icon">
+				<a href="https://www.mongodb.com" target="_blank" rel="noopener">
 					<Mongodb/>
 					<small>MongoDB</small>
 				</a>
-				<a href="https://mariadb.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://mariadb.org" target="_blank" rel="noopener">
 					<Mariadb/>
-					<small>Mariadb</small>
+					<small>MariaDB</small>
 				</a>
-				<a href="https://redis.io" target="_blank" rel="noopener" class="icon">
+				<a href="https://redis.io" target="_blank" rel="noopener">
 					<Redis/>
 					<small>Redis</small>
 				</a>
 			</div>
 		</article>
 
-
 		<article>
-			<h3>Code quality</h3>
+			<h3>Code Quality</h3>
 			<div class="flex flex-wrap gap-3">
-				<a href="https://github.com/avajs/ava" target="_blank" rel="noopener" class="icon">
+				<a href="https://github.com/avajs/ava" target="_blank" rel="noopener">
 					<Ava/>
 					<small>Ava</small>
 				</a>
-				<a href="https://phpunit.de" target="_blank" rel="noopener" class="icon">
+				<a href="https://phpunit.de" target="_blank" rel="noopener">
 					<PhpUnit/>
 					<small>PHP Unit</small>
 				</a>
-				<a href="https://www.cypress.io" target="_blank" rel="noopener" class="icon">
+				<a href="https://www.cypress.io" target="_blank" rel="noopener">
 					<Cypress/>
 					<small>Cypress</small>
 				</a>
-				<a href="https://mochajs.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://mochajs.org" target="_blank" rel="noopener">
 					<Mocha/>
 					<small>Mocha</small>
 				</a>
@@ -190,25 +194,34 @@ import {
 		<article>
 			<h3>TechStack</h3>
 			<div class="flex flex-wrap gap-3">
-				<a href="https://www.apple.com/macos" target="_blank" rel="noopener" class="icon">
+				<a href="https://www.apple.com/macos" target="_blank" rel="noopener">
 					<Apple/>
 					<small>MacOS</small>
 				</a>
-				<a href="https://www.linux.org" target="_blank" rel="noopener" class="icon">
+				<a href="https://www.linux.org" target="_blank" rel="noopener">
 					<Linux/>
 					<small>Linux</small>
 				</a>
-				<a href="https://www.docker.com" target="_blank" rel="noopener" class="icon">
+				<a href="https://www.docker.com" target="_blank" rel="noopener">
 					<Docker/>
 					<small>Docker</small>
 				</a>
-				<a href="https://git-scm.com" target="_blank" rel="noopener" class="icon">
+				<a href="https://git-scm.com" target="_blank" rel="noopener">
 					<Git/>
 					<small>Git</small>
 				</a>
-				<a href="https://www.jetbrains.com/phpstorm/" target="_blank" rel="noopener" class="icon">
+				<a href="https://www.jetbrains.com/phpstorm/" target="_blank" rel="noopener">
 					<PhpStorm/>
 					<small>PhpStorm</small>
+				</a>
+			</div>
+		</article>
+
+		<article>
+			<div class="flex flex-wrap gap-3">
+				<a href="https://www.wordpress.org" target="_blank" rel="noopener">
+					<Wordpress />
+					<small>Wordpress</small>
 				</a>
 			</div>
 		</article>
@@ -222,11 +235,11 @@ import {
 		}
 
 		a {
-			@apply flex flex-col gap-0.5 items-center;
+			@apply flex flex-col gap-0.5 items-center hover:text-inherit;
 		}
 
 		svg {
-			@apply size-16 print:size-6;
+			@apply size-16;
 		}
 	}
 </style>

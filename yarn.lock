@@ -1302,10 +1302,10 @@
   resolved "https://registry.yarnpkg.com/@vscode/l10n/-/l10n-0.0.18.tgz#916d3a5e960dbab47c1c56f58a7cb5087b135c95"
   integrity sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==
 
-"@wticons/astro@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@wticons/astro/-/astro-2.0.1.tgz#7f992b7983bf71edefa2005f14c5f521a32bc997"
-  integrity sha512-knmq+QZX9kVG4JhTz5JaiaTwLMVeTgc+8gir56d3fsA4/BwVYihVY+ZikOjTcYptAn4KB5aznTARU4bG9rOljw==
+"@wticons/astro@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@wticons/astro/-/astro-2.0.4.tgz#5e32e0327d91d9502d5d76376b6084580111d5ba"
+  integrity sha512-A4W+h1JSbpIFQnRLWxu5cyjZkNiKn0Ixc1QxC1hrWJezHfCuLasx+HVnbSxsOOBv0igvP6YEtDPwDlvzzIdRiQ==
   dependencies:
     "@babel/runtime" "^7.26.0"
     pascalcase "^2.0.0"
