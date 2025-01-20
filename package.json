@@ -10,17 +10,17 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/tailwind": "^5.1.3",
-    "@astrojs/vercel": "^8.0.0",
-    "@tailwindcss/typography": "^0.5.15",
+    "@astrojs/tailwind": "^5.1.4",
+    "@astrojs/vercel": "^8.0.2",
+    "@tailwindcss/typography": "^0.5.16",
     "@vercel/speed-insights": "^1.1.0",
-    "@wticons/astro": "^2.0.4",
-    "astro": "^5.0.2",
+    "@wticons/astro": "^2.0.6",
+    "astro": "^5.1.7",
     "moment": "^2.30.1",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "postcss-nesting": "^13.0.1",
     "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.16",
-    "typescript": "^5.7.2"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
   }
 }
