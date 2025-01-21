@@ -10,8 +10,8 @@ import Headline from "../components/resume/Headline.astro";
 import Language from "../components/resume/Language.astro";
 import DrivingLicense from "../components/resume/DrivingLicense.astro";
 import Education from "../components/resume/Education.astro";
+import DownloadIcon from "../icons/download.svg";
 ---
-
 
 <Layout title="Ing. Roman Ožana / Resume">
 	<Header/>
@@ -35,10 +35,8 @@ import Education from "../components/resume/Education.astro";
 		</section>
 
 		<div class="text-center my-12 print:hidden">
-			<a href="/cv.pdf" download={`Resume - Ing. Roman Ožana - ${new Date().getFullYear()}.pdf`} class="py-3 px-6 bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline inline-flex items-center">
-				<svg class="fill-current size-4 mr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-					<path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
-				</svg>
+			<a href="/cv.pdf" download={`Resume - Ing. Roman Ožana - ${new Date().getFullYear()}.pdf`} class="inline-flex items-center gap-2 py-3 px-6 bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline">
+				<DownloadIcon class="size-5"/>
 				Download as PDF
 			</a>
 		</div>

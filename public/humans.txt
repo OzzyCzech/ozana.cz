@@ -14,7 +14,7 @@
 
 ------------------------------------------------------------------------------------------------------------------------
 
-     Last update: 2024
+     Last update: 2025
         Standards: HTML5, CSS3
        Components: Astro, Tailwind
  Desktop software: macOS, PhpStorm

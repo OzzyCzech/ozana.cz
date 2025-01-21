@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import me from '../../public/img/roman-ozana-medium.jpg';
+import DownloadIcon from '../icons/download.svg';
 ---
 
 <avatar-download class="w-6/12 sm:w-2/12 relative">
@@ -10,23 +11,23 @@ import me from '../../public/img/roman-ozana-medium.jpg';
 
 	<div class="absolute z-10 w-48 right-0 left-0 m-auto bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 self-center hidden">
 		<ul class="py-1 text-sm text-gray-700 dark:text-gray-200">
-			<li><a class="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-small.jpg" download>
-				<svg class="fill-current w-4 h-4 mr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-					<path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
-				</svg>
-				Avatar size</a>
+			<li>
+				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-small.jpg" download>
+					<DownloadIcon class="size-5"/>
+					Avatar size
+				</a>
 			</li>
-			<li><a class="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-medium.jpg" download>
-				<svg class="fill-current w-4 h-4 mr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-					<path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
-				</svg>
-				Medium size</a>
+			<li>
+				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-medium.jpg" download>
+					<DownloadIcon class="size-5"/>
+					Medium size
+				</a>
 			</li>
-			<li><a class="block py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana.jpg" download>
-				<svg class="fill-current w-4 h-4 mr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-					<path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
-				</svg>
-				Full size</a>
+			<li>
+				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana.jpg" download>
+					<DownloadIcon class="size-5"/>
+					Original size
+				</a>
 			</li>
 		</ul>
 	</div>
