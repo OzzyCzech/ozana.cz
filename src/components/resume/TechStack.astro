@@ -2,7 +2,6 @@
 import {
 	Apple,
 	Linux,
-	Angular,
 	Ava,
 	Css,
 	Cypress,
@@ -38,213 +37,193 @@ import {
 } from "@wticons/astro";
 ---
 <section class="break-before-page">
-	<h2 class="text-2xl font-semibold border-b-2 border-gray-300 mb-1 pb-2 italic text-gray-600 print:text-current">Tech Stack</h2>
+	<h2 class="text-2xl font-medium text-slate-800 print:text-current border-b border-slate-300 mb-1 pb-1">Tech I Love Working With</h2>
 
 	<div class="grid gap-8 my-8">
 
 		<article>
-			<h3>Backend</h3>
-			<div class="flex flex-wrap gap-3">
+			<h3 class="font-semibold text-lg mb-2">Backend</h3>
+			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
 				<a href="https://www.php.net" target="_blank" rel="noopener">
-					<Php/>
+					<Php class="size-16"/>
 					<small>PHP</small>
 				</a>
 				<a href="https://nodejs.org" target="_blank" rel="noopener">
-					<Nodejs/>
+					<Nodejs class="size-16"/>
 					<small>Node.js</small>
 				</a>
 				<a href="https://framework.zend.com/" target="_blank" rel="noopener">
-					<ZendFramework/>
+					<ZendFramework class="size-16"/>
 					<small>Zend</small>
 				</a>
 				<a href="https://nette.org" target="_blank" rel="noopener">
-					<Nette/>
+					<Nette class="size-16"/>
 					<small>Nette</small>
 				</a>
 
 				<a href="https://symfony.com" target="_blank" rel="noopener">
-					<Symfony />
+					<Symfony class="size-16"/>
 					<small>Symfony</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3>Frontend</h3>
-			<div class="flex flex-wrap gap-3">
+			<h3 class="font-semibold text-lg mb-2">Frontend</h3>
+			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
 				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
-					<Js/>
+					<Js class="size-16"/>
 					<small>Javascript</small>
 				</a>
 				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
-					<TypeScript/>
+					<TypeScript class="size-16"/>
 					<small>Typescript</small>
 				</a>
 				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">
-					<Html/>
+					<Html class="size-16"/>
 					<small>HTML5</small>
 				</a>
 				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">
-					<Css/>
+					<Css class="size-16"/>
 					<small>CSS3</small>
 				</a>
 				<a href="https://tailwindcss.com" target="_blank" rel="noopener">
-					<Tailwind/>
+					<Tailwind class="size-16"/>
 					<small class="text-center">Tailwindcss</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3>Frameworks</h3>
-			<div class="flex flex-wrap gap-3">
+			<h3 class="font-semibold text-lg mb-2">Frameworks</h3>
+			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
 				<a href="https://vuejs.org" target="_blank" rel="noopener">
-					<Vue/>
+					<Vue class="size-16"/>
 					<small>Vue.js</small>
 				</a>
 				<a href="https://astro.build" target="_blank" rel="noopener">
-					<AstroIcon/>
+					<AstroIcon class="size-16"/>
 					<small>Astro</small>
 				</a>
 				<a href="https://svelte.dev" target="_blank" rel="noopener">
-					<Svelte/>
+					<Svelte class="size-16"/>
 					<small>Svelte</small>
 				</a>
 				<a href="https://reactjs.org" target="_blank" rel="noopener">
-					<React/>
+					<React class="size-16"/>
 					<small>React</small>
 				</a>
 				<a href="https://nextjs.org" target="_blank" rel="noopener">
-					<NextJs/>
+					<NextJs class="size-16"/>
 					<small>Next.js</small>
-				</a>
-				<a href="https://angular.dev" target="_blank" rel="noopener">
-					<Angular/>
-					<small>Angular</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3>Bundlers</h3>
-			<div class="flex flex-wrap gap-3">
+			<h3 class="font-semibold text-lg mb-2">Bundlers</h3>
+			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
 				<a href="https://vitejs.dev" target="_blank" rel="noopener">
-					<Vite/>
+					<Vite class="size-16"/>
 					<small>Vite.js</small>
 				</a>
 				<a href="https://www.gnu.org/software/make/" target="_blank" rel="noopener">
-					<GnuMake/>
+					<GnuMake class="size-16"/>
 					<small>Makefile</small>
 				</a>
 				<a href="https://parceljs.org" target="_blank" rel="noopener">
-					<Parcel/>
+					<Parcel class="size-16"/>
 					<small>Parcel</small>
 				</a>
 				<a href="https://webpack.js.org" target="_blank" rel="noopener">
-					<Webpack/>
+					<Webpack class="size-16"/>
 					<small>Webpack</small>
 				</a>
 
 				<a href="https://www.npmjs.com/" target="_blank" rel="noopener">
-					<Npm/>
+					<Npm class="size-16"/>
 					<small>NPM</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3>Databases</h3>
-			<div class="flex flex-wrap gap-3">
+			<h3 class="font-semibold text-lg mb-2">Databases</h3>
+			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
 				<a href="https://www.mongodb.com" target="_blank" rel="noopener">
-					<Mongodb/>
+					<Mongodb class="size-16"/>
 					<small>MongoDB</small>
 				</a>
 				<a href="https://mariadb.org" target="_blank" rel="noopener">
-					<Mariadb/>
+					<Mariadb class="size-16"/>
 					<small>MariaDB</small>
 				</a>
 				<a href="https://redis.io" target="_blank" rel="noopener">
-					<Redis/>
+					<Redis class="size-16"/>
 					<small>Redis</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3>Code Quality</h3>
-			<div class="flex flex-wrap gap-3">
+			<h3 class="font-semibold text-lg mb-2">Code Quality</h3>
+			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
 				<a href="https://vitest.dev/" target="_blank" rel="noopener">
-					<Vitest />
+					<Vitest class="size-16"/>
 					<small>Vitest</small>
 				</a>
 				<a href="https://github.com/avajs/ava" target="_blank" rel="noopener">
-					<Ava/>
+					<Ava class="size-16"/>
 					<small>Ava</small>
 				</a>
 				<a href="https://phpunit.de" target="_blank" rel="noopener">
-					<PhpUnit/>
+					<PhpUnit class="size-16"/>
 					<small>PHP Unit</small>
 				</a>
 				<a href="https://www.cypress.io" target="_blank" rel="noopener">
-					<Cypress/>
+					<Cypress class="size-16"/>
 					<small>Cypress</small>
 				</a>
 				<a href="https://mochajs.org" target="_blank" rel="noopener">
-					<Mocha/>
+					<Mocha class="size-16"/>
 					<small>Mocha</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3>TechStack</h3>
-			<div class="flex flex-wrap gap-3">
+			<h3 class="font-semibold text-lg mb-2">TechStack</h3>
+			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
 				<a href="https://www.apple.com/macos" target="_blank" rel="noopener">
-					<Apple/>
+					<Apple class="size-16"/>
 					<small>MacOS</small>
 				</a>
 				<a href="https://www.linux.org" target="_blank" rel="noopener">
-					<Linux/>
+					<Linux class="size-16"/>
 					<small>Linux</small>
 				</a>
 				<a href="https://www.docker.com" target="_blank" rel="noopener">
-					<Docker/>
+					<Docker class="size-16"/>
 					<small>Docker</small>
 				</a>
 				<a href="https://git-scm.com" target="_blank" rel="noopener">
-					<Git/>
+					<Git class="size-16"/>
 					<small>Git</small>
 				</a>
 				<a href="https://www.jetbrains.com/phpstorm/" target="_blank" rel="noopener">
-					<PhpStorm/>
+					<PhpStorm class="size-16"/>
 					<small>PhpStorm</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<div class="flex flex-wrap gap-3">
+			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
 				<a href="https://www.wordpress.org" target="_blank" rel="noopener">
-					<Wordpress />
+					<Wordpress class="size-16"/>
 					<small>Wordpress</small>
 				</a>
 			</div>
 		</article>
 	</div>
 </section>
-
-<style>
-	article {
-		h3 {
-			@apply font-semibold text-xl mb-2;
-		}
-
-		a {
-			@apply flex flex-col gap-0.5 items-center hover:text-inherit;
-		}
-
-		svg {
-			@apply size-16;
-		}
-	}
-</style>

@@ -1,12 +1,14 @@
 import { defineConfig, passthroughImageService } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/static";
+import tailwind from '@tailwindcss/vite';
+import vercel from "@astrojs/vercel";
+import sitemap from '@astrojs/sitemap';
+
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://ozana.cz",
-	output: "static",
-	integrations: [tailwind({ nesting: true })],
+	integrations: [sitemap(), tailwind()],
+	output: "server",
 	adapter: vercel(),
 	image: {
 		service: passthroughImageService(),

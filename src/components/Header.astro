@@ -1,31 +1,21 @@
 ---
 const currentPath = Astro.url.pathname;
 ---
-<header class="container p-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg print:hidden">
+<header class="container p-5 lg:py-8 mx-auto xl:px-5 max-w-(--breakpoint-lg) print:hidden">
 	<nav class="flex justify-evenly text-center">
-		<ul class="flex justify-around w-full max-w-[480px] font-medium text-slate-800">
+		<ul class="flex justify-around w-full max-w-[480px] font-medium text-slate-600">
 			<li class={currentPath === '/' && 'active'}>
-				<a href="/">Home</a>
+				<a href="/" class="text-inherit hover:no-underline hover:text-black active:text-black p-2">Home</a>
 			</li>
 			<li class={currentPath.startsWith('/projects') && 'active'}>
-				<a href="/projects">Projects</a>
+				<a href="/projects" class="text-inherit hover:no-underline hover:text-black active:text-black p-2">Projects</a>
 			</li>
 			<li class={currentPath.startsWith('/resume') && 'active'}>
-				<a href="/resume">Resume</a>
+				<a href="/resume" class="text-inherit hover:no-underline hover:text-black active:text-black p-2">Resume</a>
 			</li>
 			<li class={currentPath.startsWith('/contact') && 'active'}>
-				<a href="/contact">Contact</a>
+				<a href="/contact" class="text-inherit hover:no-underline hover:text-black active:text-black p-2">Contact</a>
 			</li>
 		</ul>
 	</nav>
 </header>
-
-<style>
-	a {
-		@apply text-inherit hover:no-underline hover:text-black p-2;
-	}
-
-	li.active {
-		@apply text-black font-semibold;
-	}
-</style>
