@@ -11,18 +11,18 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.5",
-    "@astrojs/vercel": "^8.0.4",
-    "@tailwindcss/postcss": "^4.0.0",
+    "@astrojs/tailwind": "^6.0.0",
+    "@astrojs/vercel": "^8.0.5",
+    "@tailwindcss/postcss": "^4.0.1",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.1",
     "@vercel/speed-insights": "^1.1.0",
     "@wticons/astro": "^2.0.6",
-    "astro": "^5.1.9",
+    "astro": "^5.2.1",
     "moment": "^2.30.1",
     "postcss": "^8.5.1",
     "sharp": "^0.33.5",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "^4.0.1",
     "typescript": "^5.7.3"
   }
 }
