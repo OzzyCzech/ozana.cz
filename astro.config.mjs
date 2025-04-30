@@ -1,8 +1,8 @@
 import { defineConfig, passthroughImageService } from "astro/config";
-import tailwind from '@tailwindcss/vite';
 import vercel from "@astrojs/vercel";
 import sitemap from '@astrojs/sitemap';
-
+import tailwind from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,7 +13,8 @@ export default defineConfig({
 	image: {
 		service: passthroughImageService(),
 	},
-	experimental: {
-		svg: true,
+
+	vite: {
+		plugins: [tailwindcss()]
 	}
 })

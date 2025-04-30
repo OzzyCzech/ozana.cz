@@ -1,5 +1,5 @@
 ---
-import './main.css';
+import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
@@ -26,7 +26,7 @@ const canonical = new URL(Astro.url.pathname, "https://ozana.cz");
 	<title>{title}</title>
 	<meta name="description" content={description}/>
 	<meta name="author" content="All: Roman Ožana; e-mail: roman@ozana.cz"/>
-	<link rel="sitemap" href="/sitemap-index.xml" />
+	<link rel="sitemap" href="/sitemap-index.xml"/>
 </head>
 <body class="font-sans bg-slate-100 text-gray-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
 <slot/>

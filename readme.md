@@ -13,3 +13,9 @@ Personal website https://ozana.cz
 ```bash
 yarn install && yarn build && yarn start
 ```
+
+
+## Resources
+
+- [Astro](https://astro.build/)
+- [Lucide Icons](https://lucide.dev/)
