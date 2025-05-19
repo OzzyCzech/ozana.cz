@@ -1,35 +1,33 @@
 ---
 import GitHubIcon from "../../../icons/github.svg";
 import LinkIcon from "../../../icons/link.svg";
+import ProjectCard from "../card/ProjectCard.astro";
+import CardImage from "../card/CardImage.astro";
+import logo from "./cmd-dialog.svg";
+import CardBody from "../card/CardBody.astro";
+import PackageInfo from "../card/PackageInfo.astro";
 ---
-<article class="text-center bg-slate-800 p-6 md:p-24 lg:p-32 text-blue-50 flex flex-col gap-4">
+<ProjectCard>
 
-	<h2 class="text-2xl lg:text-7xl font-semibold">
-		<a href="https://github.com/OzzyCzech/cmd-dialog/" target="_blank" class="text-inherit hover:text-blue-100 hover:no-underline">cmd-dialog</a>
-	</h2>
+	<CardImage src={logo} alt="CMD Dialog" class="bg-gray-800 p-6"/>
 
-	<div>
-		<p class="my-2 text-2xl">
-			Command dialog and keyboard shortcuts palette for web apps
+	<CardBody class="prose prose-xl">
+		<p>
+			<a href="https://github.com/OzzyCzech/cmd-dialog/">cmd-dialog</a> is a simple and lightweight library for creating
+			command dialogs on web pages. It is designed to be easy to use and integrate into existing projects.
+			Check out the <a href="https://cmd-dialog.vercel.app/" target="_blank">demo</a>
 		</p>
-		<p class="flex flex-wrap items-center justify-center gap-2 my-6">
-			<a href="https://www.npmjs.com/package/cmd-dialog" target="_blank"><img src="https://img.shields.io/npm/dm/cmd-dialog?style=for-the-badge" alt="Downloads"/></a>
-			<a href="https://www.npmjs.com/package/cmd-dialog" target="_blank"><img src="https://img.shields.io/npm/v/cmd-dialog?style=for-the-badge" alt="Version"/></a>
-			<a href="https://github.com/OzzyCzech/cmd-dialog/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/npm/l/cmd-dialog?style=for-the-badge" alt="License"/></a>
-			<a href="https://github.com/OzzyCzech/cmd-dialog/commit/main" target="_blank"><img src="https://img.shields.io/github/last-commit/OzzyCzech/cmd-dialog?style=for-the-badge" alt="Last commit"/></a>
-			<a href="https://github.com/OzzyCzech/cmd-dialog/actions" target="_blank"><img src="https://img.shields.io/github/actions/workflow/status/OzzyCzech/cmd-dialog/main.yml?style=for-the-badge" alt="Workflow status"/></a>
-		</p>
-	</div>
+	</CardBody>
+
+	<PackageInfo npm="cmd-dialog" github="OzzyCzech/cmd-dialog" />
+
+	<!--
 	<p class="flex flex-wrap items-center justify-center gap-2">
-		<a href="https://cmd-dialog.vercel.app/" target="_blank"
-		   class="px-5 py-2.5 rounded-full text-white hover:text-current text-sm tracking-wider font-medium outline-hidden bg-slate-900 hover:bg-slate-950 inline-flex items-center gap-1.5 hover:no-underline">
-			<LinkIcon class="size-4"/>
-			Demo page
-		</a>
 		<a href="https://github.com/OzzyCzech/cmd-dialog/" target="_blank"
 		   class="px-5 py-2.5 rounded-full text-white hover:text-current text-sm tracking-wider font-medium outline-hidden bg-slate-900 hover:bg-slate-950 inline-flex items-center gap-1.5 hover:no-underline">
 			<GitHubIcon class="size-5 -ml-1"/>
 			View on GitHub
 		</a>
 	</p>
-</article>
+	-->
+</ProjectCard>

@@ -1,55 +1,22 @@
 ---
-import { Image } from "astro:assets";
 import logo from "./testomato.svg";
 import screenshot from "./testomato.png";
-import LinkIcon from "../../../icons/link.svg";
+import CardImage from "../card/CardImage.astro";
+import ProjectCard from "../card/ProjectCard.astro";
+import CardBody from "../card/CardBody.astro";
 ---
-<article class="bg-[#b72b2a] grid lg:grid-cols-2 md:p-12 md:gap-12 p-6 lg:p-32 lg:gap-32 text-white">
-	<div>
 
-		<Image src={logo} alt="Testomato" class="w-6/12 sm:w-4/12 my-6" loading="eager"/>
-
-		<p class="text-xl leading-relaxed mb-4">
-			I'm working at <a href="https://www.testomato.com/team" target="_blank" class="hover:text-white">Testomato</a> since beginning as co-founder &amp; developer.{' '}
-			<a href="https://www.testomato.com" target="_blank" class="hover:text-current">Testomato starts</a> almost ten years ago
-			as <a href="https://www.testomato.com/about" class="hover:text-current">one man project</a> based on ideas
-			of <a href="https://michal.illich.cz/" class="hover:text-current" target="_blank">Michal Illich</a>.
-			<a href="https://www.testomato.com" target="_blank" class="hover:text-current">Testomato</a> is a cloud-based
-			<a href="https://www.testomato.com" target="_blank" class="hover:text-current">automated website monitoring tool</a>
-			for checks any type of websites and alerts you to problems. It's fast and easiest way to monitor websites automatically!{' '}
-			<a href="https://www.testomato.com" target="_blank" class="hover:text-current">Testomato</a> can check your website
-			300 times a day. How often do you?
+<ProjectCard>
+	<CardImage
+		alt="Testomato"
+		src={logo}
+		class="bg-[#112239] px-4 lg:px-10"
+	/>
+	<CardBody class="prose prose-lg">
+		<p>
+			As a <strong>co-founder and main developer</strong>, I’ve been with <a href="https://www.testomato.com" target="_blank">Testomato</a> from
+			the beginning. Testomato is a cloud-based service that automatically monitors websites, checking them up to
+			300 times a day and quickly alerting you to any issues. It's simple and reliable.
 		</p>
-
-		<h3 class="font-medium mb-3 text-xl">Technologies &amp; Tools</h3>
-
-		<ul class="list-disc ml-8 leading-loose text-lg mb-4">
-			<li>
-				PHP (<a href="https://nette.org/cs/" target="_blank" rel="nofollow" class="hover:text-current">Nette</a>,
-				<a href="https://framework.zend.com/" target="_blank" rel="nofollow" class="hover:text-current">Zend Framework</a>)
-			</li>
-			<li>
-				<a href="https://mariadb.org/" target="_blank" rel="nofollow" class="hover:text-current">MariaDB</a>,
-				<a href="https://www.mongodb.com/" target="_blank" rel="nofollow" class="hover:text-current">MongoDB</a>,
-				<a href="https://redis.io/" target="_blank" rel="nofollow" class="hover:text-current">Redis</a>
-			</li>
-			<li>our own <a href="https://github.com/testomato/minicrawler" target="_blank" class="hover:text-current">Minicrawler</a></li>
-			<li><a href="https://www.docker.com/" target="_blank" rel="nofollow" class="hover:text-current">Docker</a>, git, DI, CI, TDD, &hellip;</li>
-			<li><a href="https://tailwindcss.com/" target="_blank" class="hover:text-current">Tailwind</a>, Angular JS and Javascript ES6</li>
-			<li>Build with <a href="https://parceljs.org/" target="_blank" class="hover:text-current">Parcel</a> and Makefile</li>
-		</ul>
-
-		<p class="mt-6">
-			<a href="https://www.testomato.com" target="_blank" class="py-3 px-6 bg-white/20 hover:bg-white/30 rounded-full hover:text-current hover:no-underline inline-flex gap-1.5 items-center" title="Visit page">
-				<LinkIcon class="size-4"/>
-				Visit Testomato
-			</a>
-		</p>
-	</div>
-
-	<div>
-		<a href="https://www.testomato.com" target="_blank">
-			<Image src={screenshot} alt="Testomato website screenshot" class="shadow-2xl rounded-lg border border-gray-900" loading="eager"/>
-		</a>
-	</div>
-</article>
+	</CardBody>
+</ProjectCard>

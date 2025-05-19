@@ -1,0 +1,25 @@
+---
+export interface Props {
+	npm?: string;
+	github?: string;
+}
+const {npm, github} = Astro.props as Props;
+---
+
+<p class="flex flex-wrap items-center justify-center gap-2 my-6">
+	<a href={`https://www.npmjs.com/package/${npm}`} target="_blank">
+		<img src={`https://img.shields.io/npm/dm/${npm}?style=for-the-badge`} alt="Downloads"/>
+	</a>
+	<a href={`https://www.npmjs.com/package/${npm}`} target="_blank">
+		<img src={`https://img.shields.io/npm/v/${npm}?style=for-the-badge`} alt="Version"/>
+	</a>
+	<a href={`https://github.com/${github}/blob/main/LICENSE`} target="_blank">
+		<img src={`https://img.shields.io/npm/l/${npm}?style=for-the-badge`} alt="License"/>
+	</a>
+	<a href={`https://github.com/${github}/commit/main`} target="_blank">
+		<img src={`https://img.shields.io/github/last-commit/${github}?style=for-the-badge`} alt="Last commit"/>
+	</a>
+	<a href={`https://github.com/${github}/actions`} target="_blank">
+		<img src={`https://img.shields.io/github/actions/workflow/status/${github}/main.yml?style=for-the-badge`} alt="Workflow status"/>
+	</a>
+</p>

@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from "astro";
+
+export interface Props {
+	src: ImageMetadata;
+	class?: string;
+	alt: string;
+}
+
+const {src, alt} = Astro.props;
+---
+
+<figure class="overflow-hidden rounded-t-xl has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1">
+	<Image
+		width={600}
+		src={src}
+		alt={alt}
+		class:list={["aspect-[21/9] overflow-clip object-contain object-center rounded-t-xl mx-auto", Astro.props.class]}
+		loading="eager"/>
+</figure>

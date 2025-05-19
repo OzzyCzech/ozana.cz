@@ -1,0 +1,8 @@
+---
+export interface Props {
+	class?: string;
+}
+---
+<div class:list={["p-4", Astro.props.class]}>
+	<slot/>
+</div>
