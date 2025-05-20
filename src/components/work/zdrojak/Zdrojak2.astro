@@ -1,5 +1,5 @@
 ---
-import logo from "./testomato.svg";
+import ZdrojakLogo from "./zdrojak.svg";
 import CardImage from "../card/CardImage.astro";
 import CardBody from "../card/CardBody.astro";
 import WebsiteCard from "../card/WebsiteCard.astro";
@@ -7,37 +7,46 @@ import ProjectCard from "../card/ProjectCard.astro";
 import screenshot from "../zdrojak/zdrojak.png";
 import { Image } from "astro:assets";
 import Link from '../../../icons/link.svg'
+import Tags from "../card/Tags.astro";
 ---
 
-<WebsiteCard
-	link="https://www.testomato.com"
-	title="Testomato">
+<WebsiteCard>
 
-	<h2 slot="header" class="text-2xl mb-3 font-semibold">Zdroják.cz</h2>
+	<a href="https://zdrojak.cz" target="_blank" slot="image">
+		<Image
+			src={screenshot} alt="Zdroják.cz"
+			class="rounded-2xl shadow-lg"
+			loading="eager"
+		/>
+	</a>
 
-	<Image src={screenshot} alt="data" slot="image" class="rounded-lg drop-shadow-2xl"/>
+	<div class="lg:grow">
+		<a href="https://zdrojak.cz" target="_blank" class="hover:text-inherit text-gray-800">
+			<ZdrojakLogo class="w-48 h-auto mb-2 mx-auto md:ml-0"/>
+		</a>
 
-	<div>
-		<p class="prose prose-lg mb-6">
-			<a href="https://zdrojak.cz">Zdrojak.cz</a> is one of the most well-known Czech magazines about development. I have been there since its rebirth,
-			working as the <strong>lead developer and site administrator</strong>. The current version is built on WordPress and multiple in-house
-			plugins, modifications and tweaks.
+		<p class="prose prose-xl">
+			<a href="https://zdrojak.cz" target="_blank">Zdroják.cz</a> is one of the most recognized Czech magazines focused on
+			software development. I’ve been part of the team since its <abbr title="In year 2013">relaunch</abbr>,
+			working as the <strong>lead developer</strong> and <strong>site administrator</strong>. The current version runs on WordPress,
+			enhanced with a range of custom-built plugins, WordPress modifications, and optimizations.
 		</p>
 
-		<ul class="flex justify-start items-center flex-wrap gap-2">
-			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">PHP8.4</li>
-			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">MariaDB</li>
-			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Wordpress</li>
-			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Tailwind CSS</li>
-			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Parcel</li>
-			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Docker</li>
-		</ul>
+		<Tags>
+			<li>PHP8.4</li>
+			<li>MariaDB</li>
+			<li>Wordpress</li>
+			<li>Tailwind CSS</li>
+			<li>Parcel</li>
+			<li>Docker</li>
+		</Tags>
 	</div>
 
-	<div slot="footer" class="text-right">
-		<a class="btn" href="https://www.zdrojak.cz" target="_blank">
-			Visit Zdrojak
+	<div slot="footer" class="text-center md:text-right">
+		<a class="inline-flex justify-center items-center gap-1" href="https://zdrojak.cz" target="_blank" slot="link">
 			<Link class="size-4"/>
+			Zdroják.cz
 		</a>
 	</div>
+
 </WebsiteCard>
