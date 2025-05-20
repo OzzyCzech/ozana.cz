@@ -6,16 +6,25 @@ import Sphido from '../components/work/sphido/Sphido.astro';
 import Zdrojak from "../components/work/zdrojak/Zdrojak.astro";
 import CmdDialog from "../components/work/cmd-dialog/CmdDialog.astro";
 import Testomato from "../components/work/testomato/Testomato.astro";
+import Testomato2 from "../components/work/testomato/Testomato2.astro";
 import GitHub from "../components/work/github/GitHub.astro";
+import Zdrojak2 from "../components/work/zdrojak/Zdrojak2.astro";
 ---
 
 <Layout title="Ing. Roman Ožana / Projects">
 	<Header/>
-	<main class="flex flex-col gap-10 px-4 py-10 lg:px-20 lg:gap-20 xl:px-40 lg:grid lg:grid-cols-2">
-		<Testomato/>
-		<Zdrojak/>
-		<Sphido/>
-		<CmdDialog/>
+	<main class="container mx-auto p-4">
+
+		<div class="max-w-[1200px] mx-auto flex flex-col gap-8">
+			<Testomato2 />
+			<Zdrojak2 />
+		</div>
+
+		<div class="flex flex-col gap-4 md:flex-row">
+			<Sphido/>
+			<CmdDialog/>
+		</div>
+
 		<GitHub/>
 	</main>
 	<Footer/>

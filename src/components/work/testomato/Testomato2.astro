@@ -1,0 +1,46 @@
+---
+import logo from "./testomato.svg";
+import CardImage from "../card/CardImage.astro";
+import CardBody from "../card/CardBody.astro";
+import WebsiteCard from "../card/WebsiteCard.astro";
+import ProjectCard from "../card/ProjectCard.astro";
+import { Image } from "astro:assets";
+import screenshot from "./../testomato/testomato.png";
+import Link from '../../../icons/link.svg'
+---
+
+<WebsiteCard
+	link="https://www.testomato.com">
+	<h2 slot="header" class="text-2xl mb-3 font-semibold">Testomato</h2>
+
+	<Image src={screenshot} alt="data" slot="image" class="rounded-lg"/>
+
+	<div>
+		<p class="prose prose-lg mb-6">
+			As a <strong>co-founder and main developer</strong>, I’ve been with <a href="https://www.testomato.com" target="_blank">Testomato</a> from
+			the beginning. Testomato is a cloud-based service that automatically monitors websites, checking them up to
+			300 times a day and quickly alerting you to any issues. It's simple and reliable.
+		</p>
+
+
+		<ul class="flex justify-start items-center flex-wrap gap-2">
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">PHP8.4</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Nette</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Nette Tester</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Javascript</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Vue</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Tailwind CSS</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Vitest</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">MongoDB</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Docker</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">MariaDB</li>
+		</ul>
+	</div>
+
+	<div slot="footer" class="text-right">
+		<a class="btn" href="https://www.testomato.com" target="_blank">
+			Visit Testomato
+			<Link class="size-4"/>
+		</a>
+	</div>
+</WebsiteCard>

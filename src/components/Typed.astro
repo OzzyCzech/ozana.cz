@@ -1,0 +1,40 @@
+---
+const {
+	strings = [
+		'Full Stack Developer',
+		'Front-end Developer',
+		'Javascript Developer',
+		'PHP Developer',
+		'Freelancer',
+		'Open Source Contributor',
+		'WordPress Expert',
+	]
+} = Astro.props;
+---
+
+
+<h2 class="text-3xl py-2 inline-flex">
+	<span id="typed"></span>
+</h2>
+
+<script>
+	import Typed from "typed.js";
+
+	new Typed("#typed", {
+		strings: [
+			'Full Stack Developer',
+			'Front-end Developer',
+			'Javascript Developer',
+			'Back-end Developer',
+			'PHP Developer',
+			'Freelancer',
+			'Open Source Contributor',
+			'WordPress Expert',
+		],
+		typeSpeed: 70,
+		backSpeed: 70,
+		backDelay: 1000,
+		loop: true,
+	});
+</script>
+

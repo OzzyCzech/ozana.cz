@@ -1,0 +1,43 @@
+---
+import logo from "./testomato.svg";
+import CardImage from "../card/CardImage.astro";
+import CardBody from "../card/CardBody.astro";
+import WebsiteCard from "../card/WebsiteCard.astro";
+import ProjectCard from "../card/ProjectCard.astro";
+import screenshot from "../zdrojak/zdrojak.png";
+import { Image } from "astro:assets";
+import Link from '../../../icons/link.svg'
+---
+
+<WebsiteCard
+	link="https://www.testomato.com"
+	title="Testomato">
+
+	<h2 slot="header" class="text-2xl mb-3 font-semibold">Zdroják.cz</h2>
+
+	<Image src={screenshot} alt="data" slot="image" class="rounded-lg drop-shadow-2xl"/>
+
+	<div>
+		<p class="prose prose-lg mb-6">
+			<a href="https://zdrojak.cz">Zdrojak.cz</a> is one of the most well-known Czech magazines about development. I have been there since its rebirth,
+			working as the <strong>lead developer and site administrator</strong>. The current version is built on WordPress and multiple in-house
+			plugins, modifications and tweaks.
+		</p>
+
+		<ul class="flex justify-start items-center flex-wrap gap-2">
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">PHP8.4</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">MariaDB</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Wordpress</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Tailwind CSS</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Parcel</li>
+			<li class="px-2 py-1 bg-gray-200 rounded-sm text-xs text-gray-500">Docker</li>
+		</ul>
+	</div>
+
+	<div slot="footer" class="text-right">
+		<a class="btn" href="https://www.zdrojak.cz" target="_blank">
+			Visit Zdrojak
+			<Link class="size-4"/>
+		</a>
+	</div>
+</WebsiteCard>

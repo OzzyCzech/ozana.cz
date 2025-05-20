@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Avatar from "../components/Avatar.astro";
 import GitHubIcon from '../icons/github-alt.svg';
+import Typed from "../components/Typed.astro";
 ---
 
 <Layout title="Ing. Roman Ožana">
@@ -19,21 +20,21 @@ import GitHubIcon from '../icons/github-alt.svg';
 		<article class="text-center">
 
 			<h1 class="font-bold text-4xl mb-1">
-				<span itemprop="honorificPrefix">Ing.</span>
-				<span itemprop="givenName">Roman</span>
-				<span itemprop="familyName">Ožana</span>
+				Hello, I'm Roman Ožana
 			</h1>
 
-			<h2 class="text-3xl py-2">Full Stack Developer</h2>
+			<Typed string={['Web Developer', 'Software Engineer', 'PHP Developer', 'JavaScript Developer', 'Nette Framework Developer', 'Vue.js Developer']}>
+
+			</Typed>
 
 			<div class="my-5">
-				<a href="https://github.com/OzzyCzech/" target="_blank" class="py-3 px-5 font-medium bg-slate-800 hover:bg-slate-900 rounded-full text-white hover:text-white hover:no-underline inline-flex gap-1 items-center mt-5 print:hidden">
+				<a href="https://github.com/OzzyCzech/" target="_blank" class="btn">
 					<GitHubIcon class="size-5"/>
 					View GitHub
 				</a>
 			</div>
 		</article>
-		
+
 	</main>
 
 	<Footer/>

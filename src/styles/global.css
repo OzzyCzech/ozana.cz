@@ -43,3 +43,13 @@
 		page-break-before: always;
 	}
 }
+
+@utility btn {
+	@apply inline-flex gap-1 items-center print:hidden;
+	@apply py-3 px-5 font-medium rounded-full hover:no-underline;
+	@apply bg-slate-800 hover:bg-slate-900 text-white hover:text-white;
+}
+
+@utility btn-blue {
+	@apply bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline
+}
