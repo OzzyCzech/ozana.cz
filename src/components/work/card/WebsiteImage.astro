@@ -19,7 +19,7 @@ const {href, src, alt} = Astro.props as Props;
 		<Image
 			src={src}
 			alt={alt ?? "Website screenshot"}
-			class="rounded-2xl shadow-lg"
+			class="rounded-md md:rounded-xl shadow-lg"
 			itemprop="image"
 			loading="eager"
 		/>
