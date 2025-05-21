@@ -1,37 +1,48 @@
 ---
-import logo from "./testomato.svg";
-import CardImage from "../card/CardImage.astro";
-import CardBody from "../card/CardBody.astro";
+import TestomatoLogo from "./testomato.svg";
 import WebsiteCard from "../card/WebsiteCard.astro";
-import ProjectCard from "../card/ProjectCard.astro";
+import screenshot from "./../testomato/testomato.png";
+import Tags from "../card/Tags.astro";
+import WebsiteLink from "../card/WebsiteLink.astro";
+import WebsiteImage from "../card/WebsiteImage.astro";
 ---
 
-<ProjectCard
-	link="https://www.testomato.com"
-	title="Testomato"
-	class="bg-[#f6f8fa]">
+<WebsiteCard>
 
-	<CardImage
-		alt="Testomato"
-		src={logo}
-		class="bg-[#112239] px-4 lg:px-10"
-	/>
+	<Fragment slot="header">
+		<h1 itemprop="headline" class="sr-only">Testomato</h1>
+		<WebsiteImage
+			src={screenshot}
+			alt="Testomato"
+			href="https://www.testomato.com"
+		/>
+	</Fragment>
 
-	<CardBody class="prose prose-lg">
-		<p>
+	<Fragment>
+		<a href="https://www.testomato.com" target="_blank" class="hover:text-inherit text-gray-800">
+			<TestomatoLogo class="w-48 h-auto mx-auto md:ml-0"/>
+		</a>
+
+		<p class="prose prose-xl">
 			As a <strong>co-founder and main developer</strong>, I’ve been with <a href="https://www.testomato.com" target="_blank">Testomato</a> from
-			the beginning. Testomato is a cloud-based service that automatically monitors websites, checking them up to
-			300 times a day and quickly alerting you to any issues. It's simple and reliable.
+			the beginning. Testomato is a cloud-based service that continuously monitors websites &mdash; checking them as often as 300 times per day &mdash;
+			and instantly alerts users to any issues. It’s built to be simple, reliable, and efficient.
 		</p>
-	</CardBody>
 
-	<ul class="flex justify-start items-center flex-wrap">
-		<li class="m-2 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-full text-sm font-semibold text-gray-600">PHP8.4</li>
-		<li class="m-2 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-full text-sm font-semibold text-gray-600">Nette</li>
-		<li class="m-2 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-full text-sm font-semibold text-gray-600">Vue</li>
-		<li class="m-2 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-full text-sm font-semibold text-gray-600">Docker</li>
-		<li class="m-2 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-full text-sm font-semibold text-gray-600">MongoDB</li>
-		<li class="m-2 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-full text-sm font-semibold text-gray-600">MariaDB</li>
-		<li class="m-2 px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-full text-sm font-semibold text-gray-600">AngularJS</li>
-	</ul>
-</ProjectCard>
+		<Tags>
+			<li>PHP8.4</li>
+			<li>Nette</li>
+			<li>Javascript</li>
+			<li>Vue</li>
+			<li>Tailwind CSS</li>
+			<li>Vitest</li>
+			<li>MongoDB</li>
+			<li>MariaDB</li>
+			<li><a href="https://github.com/testomato/minicrawler" target="_blank">Minicrawler</a></li>
+			<li>Docker</li>
+		</Tags>
+
+		<WebsiteLink href="https://www.testomato.com">Testomato.com</WebsiteLink>
+	</Fragment>
+
+</WebsiteCard>
