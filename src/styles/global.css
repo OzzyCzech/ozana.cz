@@ -25,6 +25,10 @@
 	@apply bg-slate-800 hover:bg-slate-900 text-white hover:text-white;
 }
 
+@utility btn-xs {
+	@apply py-1 px-3 text-sm font-semibold;
+}
+
 @utility btn-blue {
 	@apply bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline
 }

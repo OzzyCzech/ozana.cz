@@ -28,8 +28,10 @@ const {url, image, alt} = Astro.props as Props;
 		<main class="px-4 prose">
 			<slot/>
 		</main>
-		<footer class="text-right pb-2 px-2">
-			<a href={url} target="_blank" class="bg-slate-800 hover:bg-slate-900 rounded-full text-gray-50 py-1 px-3 hover:no-underline text-sm">Get Code</a>
+		<footer class="text-right pb-2 px-1.5">
+			<a href={url} target="_blank" class="btn btn-xs">
+				View Code
+			</a>
 		</footer>
 	</article>
 </div>
@@ -40,6 +42,6 @@ const {url, image, alt} = Astro.props as Props;
 	article {
 		@apply overflow-clip;
 		@apply has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1;
-		@apply rounded-2xl border border-gray-300;
+		@apply rounded-xl border border-gray-300;
 	}
 </style>
