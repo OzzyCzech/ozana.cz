@@ -1,0 +1,2 @@
+#!/bin/bash
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --headless --disable-gpu --hide-scrollbars --no-pdf-header-footer --print-to-pdf="$1" $2
