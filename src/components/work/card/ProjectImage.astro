@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from "astro";
+
+export interface Props {
+	href: string;
+	src: ImageMetadata,
+	alt?: string;
+}
+
+const {href, src, alt} = Astro.props as Props;
+---
+
+<a
+	href={href}
+	target="_blank"
+	aria-label={`Link to ${alt ?? "project"}`}
+>
+	<figure class="">
+		<Image
+			src={src}
+			alt={alt}
+			class="rounded-t-lg"
+			itemprop="image"
+			loading="eager"
+		/>
+		<figcaption class="sr-only">
+			Screenshot of {alt ?? "website"}
+		</figcaption>
+	</figure>
+</a>

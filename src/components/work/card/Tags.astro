@@ -1,15 +1,18 @@
-<ul class:list={["tags", Astro.props.class]}>
+<ul class={Astro.props.class}>
 	<slot/>
 </ul>
 
 <style>
 	@reference "tailwindcss";
 
-	ul {
-		@apply flex justify-start items-center flex-wrap gap-2 no-underline hover:no-underline;
+	@layer base {
+		ul {
+			@apply flex justify-start items-center flex-wrap gap-2 no-underline hover:no-underline text-sm;
+			@apply *:rounded-sm *:px-2 *:py-1;
 
-		> li {
-			@apply px-2 py-1 bg-gray-200 rounded-sm text-sm text-gray-500;
+			li {
+				@apply bg-gray-200  text-gray-500;
+			}
 		}
 	}
 </style>

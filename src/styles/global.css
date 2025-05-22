@@ -5,20 +5,30 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant active (&:where(.active &));
 
-
 @layer base {
 	*,
 	::after,
 	::before,
 	::backdrop,
 	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
+		border-color: var(--color-gray-300, currentColor);
 	}
 
 	a {
 		@apply text-current hover:underline hover:text-blue-600 hover:ease-in-out;
 	}
 }
+
+@utility btn {
+	@apply inline-flex gap-1 items-center print:hidden;
+	@apply py-3 px-5 font-medium rounded-full hover:no-underline;
+	@apply bg-slate-800 hover:bg-slate-900 text-white hover:text-white;
+}
+
+@utility btn-blue {
+	@apply bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline
+}
+
 
 @media print {
 	@page {
@@ -42,14 +52,4 @@
 	.page-break-before-always {
 		page-break-before: always;
 	}
-}
-
-@utility btn {
-	@apply inline-flex gap-1 items-center print:hidden;
-	@apply py-3 px-5 font-medium rounded-full hover:no-underline;
-	@apply bg-slate-800 hover:bg-slate-900 text-white hover:text-white;
-}
-
-@utility btn-blue {
-	@apply bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline
 }

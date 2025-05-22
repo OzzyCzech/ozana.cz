@@ -1,3 +1,25 @@
-<article class="group max-w-[420px] overflow-clip rounded-xl border border-gray-300 has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1">
-	<slot/>
-</article>
+<div>
+	<article itemscope itemtype="https://schema.org/Article">
+		<header>
+			<slot name="header"/>
+		</header>
+
+		<main itemprop="articleBody">
+			<slot/>
+		</main>
+	</article>
+</div>
+
+<style>
+	@reference "tailwindcss";
+
+	article {
+		@apply overflow-clip;
+		@apply has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1;
+		@apply rounded-xl border border-gray-300;
+	}
+
+	main {
+		@apply flex flex-col gap-4;
+	}
+</style>

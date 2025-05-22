@@ -2,38 +2,29 @@
 import GitHubIcon from "../../../icons/github.svg";
 import LinkIcon from "../../../icons/link.svg";
 import ProjectCard from "../card/ProjectCard.astro";
-import CardImage from "../card/CardImage.astro";
+import ProjectImage from "../card/ProjectImage.astro";
 import logo from "./cmd-dialog.svg";
-import CardBody from "../card/CardBody.astro";
-import PackageInfo from "../card/PackageInfo.astro";
+import Badges from "../card/Badges.astro";
 ---
-<ProjectCard>
+<ProjectCard
+	git="https://github.com/OzzyCzech/cmd-dialog/"
+	npm="cmd-dialog"
+>
 
-	<CardImage src={logo} alt="CMD Dialog" class="bg-gray-800 p-4 lg:px-24"/>
+	<ProjectImage
+		href=""
+		src={logo}
+		alt="CMD Dialog"
+	/>
 
-	<CardBody class="prose">
-		<p>
+	<Fragment>
+		<p class="prose">
 			<a href="https://github.com/OzzyCzech/cmd-dialog/">cmd-dialog</a> is a simple and lightweight library for creating
 			command dialogs on web pages. It is designed to be easy to use and integrate into existing projects.
 			Check out the <a href="https://cmd-dialog.vercel.app/" target="_blank">demo</a>
 		</p>
-	</CardBody>
+	</Fragment>
 
-	<PackageInfo npm="cmd-dialog" github="OzzyCzech/cmd-dialog" />
+	<Badges npm="cmd-dialog" git="OzzyCzech/cmd-dialog"/>
 
-	<div class="px-4 pb-4">
-		<a class="py-3 px-5 font-medium bg-slate-800 hover:bg-slate-900 rounded-full text-white hover:text-white hover:no-underline inline-flex gap-1 items-center mt-5 print:hidden">
-			View demo
-		</a>
-	</div>
-
-	<!--
-	<p class="flex flex-wrap items-center justify-center gap-2">
-		<a href="https://github.com/OzzyCzech/cmd-dialog/" target="_blank"
-		   class="px-5 py-2.5 rounded-full text-white hover:text-current text-sm tracking-wider font-medium outline-hidden bg-slate-900 hover:bg-slate-950 inline-flex items-center gap-1.5 hover:no-underline">
-			<GitHubIcon class="size-5 -ml-1"/>
-			View on GitHub
-		</a>
-	</p>
-	-->
 </ProjectCard>

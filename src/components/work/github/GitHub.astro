@@ -1,31 +1,52 @@
 ---
-import data from './github.json'
-import GitHubLogo from './github.svg'
-import GitHubIcon from '../../../icons/github.svg'
+import GitHubRepo from "./GitHubRepo.astro";
+
+import iCalParserImage from './og/icalparser.png'
+import PoTransImage from './og/potrans.png'
+import FromArray from './og/fromArray.png'
+import GitHubIcon from "../../../icons/github.svg"
 ---
-<article class="bg-[#f6f8fa] p-6 md:p-24 xl:p-32">
+<section>
 
-	<a href="https://github.com/OzzyCzech" target="_blank" title="Visit my GitHub profile">
-		<GitHubLogo class="w-48 my-4"/>
-	</a>
+	<div class="mx-auto px-4 gap-4 max-w-(--breakpoint-2xl) grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
-	<ul class="gap-12 lg:columns-2 list-disc marker:text-gray-300 *:my-2">
-		{data.filter((item) => !item.fork && !item.archived)
-			.sort((a, b) => {
-				return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
-			})
-			.map((item) => (
-				<li>
-					<a href={item.html_url} target="_blank" class="font-bold">{item.name}</a> {item.description ? '- ' + item.description : ''}
-				</li>))}
-	</ul>
+		<GitHubRepo
+			url="https://github.com/OzzyCzech/icalparser"
+			alt="iCal parser"
+			image={iCalParserImage}>
+			<p>Simple iCal parser for PHP that can parse iCal files and return an array of events.</p>
+		</GitHubRepo>
+
+		<GitHubRepo
+			url="https://github.com/OzzyCzech/potrans"
+			alt="Po file translator"
+			image={PoTransImage}>
+			<p>
+				Command line tool for translate <a href="https://www.gnu.org/software/gettext/" target="_blank" rel="noopener noreferrer nofollow">Gettext</a>
+				with <a href="https://translate.google.com/" target="_blank" rel="noopener noreferrer nofollow">Google Translator</a> API or
+				<a href="https://www.deepl.com/translator" target="_blank" rel="noopener noreferrer nofollow">DeepL API</a> written in PHP.
+			</p>
+		</GitHubRepo>
+
+		<GitHubRepo
+			url="https://github.com/OzzyCzech/fromArray"
+			alt="FromArray trait"
+			image={FromArray}>
+			<p>
+				PHP trait <code>fromArray</code> allow create objects instances loaded with initial data array
+			</p>
+		</GitHubRepo>
+
+	</div>
+
 
 	<p class="text-center mt-12">
 		<a href="https://github.com/OzzyCzech?tab=repositories" target="_blank"
 		   class="btn"
 		   title="Visit my GitHub profile">
 			<GitHubIcon class="size-6"/>
-			View all repositories
+			Visit my GitHub profile
 		</a>
 	</p>
-</article>
+
+</section>

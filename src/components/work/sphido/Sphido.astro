@@ -1,19 +1,40 @@
 ---
 import sphido from "./sphido.svg";
-import CardImage from "../card/CardImage.astro";
+import og from "../github/og/sphido.png";
+
+import ProjectImage from "../card/ProjectImage.astro";
 import ProjectCard from "../card/ProjectCard.astro";
-import CardBody from "../card/CardBody.astro";
-import PackageInfo from "../card/PackageInfo.astro";
+import Badges from "../card/Badges.astro";
+import Tags from "../card/Tags.astro";
 ---
 <ProjectCard>
-	<CardImage src={sphido} alt="Sphido" class="bg-gray-800 p-16"/>
-	<CardBody class="prose prose-lg">
-		<p>
+
+	<Fragment slot="header">
+		<h1 itemprop="headline" class="sr-only">Sphido CMS</h1>
+		<ProjectImage
+			href="https://github.com/sphido/sphido"
+			src={og}
+			alt="Sphido CMS"
+		/>
+	</Fragment>
+
+	<Fragment>
+		<p class="prose p-3">
 			<a href="https://sphido.cz">Sphido</a>
 			is a rocket fast, lightweight and flexible static site generator.
 		</p>
-	</CardBody>
 
-	<PackageInfo npm="@sphido/core" github="sphido/sphido"/>
+		<Badges
+			npm="@sphido/core"
+			git="sphido/sphido"
+		/>
+
+		<Tags class="text-xs">
+			<li>Nodejs</li>
+			<li>Typescript</li>
+		</Tags>
+
+	</Fragment>
+
 
 </ProjectCard>
