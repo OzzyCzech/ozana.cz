@@ -3,9 +3,7 @@ import { Image } from 'astro:assets';
 import { existsSync } from 'node:fs';
 import type { ImageMetadata } from "astro";
 import { downloadOgImage } from '../../../lib/og-image.js';
-import { join, normalize, format } from 'node:path';
-import GitHub from "./GitHub.astro";
-import IconGitHub from "../../IconGitHub.astro";
+import { join } from 'node:path';
 
 export interface Props {
 	url: string;
