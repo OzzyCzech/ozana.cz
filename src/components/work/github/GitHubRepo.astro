@@ -4,6 +4,8 @@ import { existsSync } from 'node:fs';
 import type { ImageMetadata } from "astro";
 import { downloadOgImage } from '../../../lib/og-image.js';
 import { join, normalize, format } from 'node:path';
+import GitHub from "./GitHub.astro";
+import IconGitHub from "../../IconGitHub.astro";
 
 export interface Props {
 	url: string;
@@ -53,6 +55,6 @@ if (!images[ogImageFile]) throw new Error(`Image not found: ${ogImageFile}`);
 	article {
 		@apply overflow-clip;
 		@apply has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1;
-		@apply rounded-xl border border-gray-300;
+		@apply rounded-xl border border-slate-300;
 	}
 </style>
