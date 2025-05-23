@@ -16,11 +16,18 @@ const {url} = Astro.props as Props;
 const repository = new URL(url).pathname.replace(/^\/|\/$/g, '')
 const ogImageFile = join('/src/components/work/github', `${repository}.png`);
 
+
 console.log('three');
+if (import.meta.env.DEV) {
+
 
 // Download the OG image if it doesn't exist
-if (!existsSync(`.${ogImageFile}`)) {
-	await downloadOgImage(url, `.${ogImageFile}`);
+	if (!existsSync(`.${ogImageFile}`)) {
+
+		console.log('here');
+		await downloadOgImage(url, `.${ogImageFile}`);
+		console.log('here not');
+	}
 }
 
 console.log('four');
