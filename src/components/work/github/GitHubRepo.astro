@@ -5,37 +5,22 @@ import type { ImageMetadata } from "astro";
 import { downloadOgImage } from '../../../lib/og-image.js';
 import { join } from 'node:path';
 
-console.log('one');
 export interface Props {
 	url: string;
 }
 
-console.log('two');
 
 const {url} = Astro.props as Props;
 const repository = new URL(url).pathname.replace(/^\/|\/$/g, '')
 const ogImageFile = join('/src/components/work/github', `${repository}.png`);
 
-
-console.log('three');
-if (import.meta.env.DEV) {
-
-
-// Download the OG image if it doesn't exist
-	if (!existsSync(`.${ogImageFile}`)) {
-
-		console.log('here');
-		await downloadOgImage(url, `.${ogImageFile}`);
-		console.log('here not');
-	}
+// Download the image if it doesn't exist
+if (import.meta.env.DEV && !existsSync(`.${ogImageFile}`)) {
+	await downloadOgImage(url, `.${ogImageFile}`);
 }
-
-console.log('four');
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/components/work/github/**/*.png')
 if (!images[ogImageFile]) throw new Error(`Image not found: ${ogImageFile}`);
-
-console.log('five');
 ---
 
 <div>
