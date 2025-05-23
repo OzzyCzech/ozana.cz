@@ -1,26 +1,74 @@
 ---
 import GitHubRepo from "./GitHubRepo.astro";
-
-import iCalParserImage from './og/icalparser.png'
-import PoTransImage from './og/potrans.png'
-import FromArray from './og/fromArray.png'
 import GitHubIcon from "../../../icons/github.svg"
 ---
-<section class="my-24">
+<section class="my-24 max-w-(--breakpoint-2xl) px-4 mx-auto">
 
-	<div class="mx-auto px-4 gap-4 max-w-(--breakpoint-2xl) grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+	<h2 class="text-2xl font-semibold my-4">
+		<a href="https://www.npmjs.com/settings/ozzyczech/packages" target="_blank">NPM Packages</a>
+	</h2>
 
-		<GitHubRepo
-			url="https://github.com/OzzyCzech/icalparser"
-			alt="iCal parser"
-			image={iCalParserImage}>
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+		<GitHubRepo url="https://github.com/OzzyCzech/easter-date">
+			<p>
+				A lightweight and dependency-free library to calculate the date of Easter date for any given year.
+			</p>
+		</GitHubRepo>
+
+		<GitHubRepo url="https://github.com/OzzyCzech/international-days-cs">
+			<p>
+				The largest and most comprehensive collection of Czech and international 'something days' – just for fun!
+			</p>
+		</GitHubRepo>
+
+		<GitHubRepo url="https://github.com/OzzyCzech/namedays-cs">
+			<p>
+				Simple library to get Czech name days (jmeniny, svátek) for a given date.
+			</p>
+		</GitHubRepo>
+
+		<GitHubRepo url="https://github.com/OzzyCzech/tailwind-debug">
+			<p>
+				Tailwind debug plugin adds a red dashed outline for the selected element
+			</p>
+		</GitHubRepo>
+
+		<GitHubRepo url="https://github.com/OzzyCzech/wticons">
+			<p>
+				Website Technology Icons (<code>wticons</code>) bundle for
+				<a href="https://astro.build" target="_blank" rel="noopener noreferrer nofollow">Astro</a> and
+				<a href="https://react.dev" target="_blank" rel="noopener noreferrer nofollow">React</a>
+			</p>
+		</GitHubRepo>
+
+		<GitHubRepo url="https://github.com/OzzyCzech/mock-to-openapi">
+			<p>
+				Cli tool (and library) for converting JSON mock objects to <a href="https://swagger.io/specification/" rel="noopener noreferrer nofollow">OpenAPI schemas</a>.
+				Check <a href="https://ozzyczech.github.io/mock-to-openapi/" target="_blank">online converter</a> for demo.
+			</p>
+		</GitHubRepo>
+
+		<GitHubRepo url="https://github.com/OzzyCzech/pux-to-html">
+			<p>
+				Read 1Password (1PUX) format and generate plain HTML output.
+			</p>
+		</GitHubRepo>
+
+	</div>
+
+	<h2 class="text-2xl font-semibold my-4">
+		<a href="https://packagist.org/users/OzzyCzech/packages/" target="_blank">
+			PHP Packages
+		</a>
+	</h2>
+
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+		<GitHubRepo url="https://github.com/OzzyCzech/icalparser">
 			<p>Simple iCal parser for PHP that can parse iCal files and return an array of events.</p>
 		</GitHubRepo>
 
-		<GitHubRepo
-			url="https://github.com/OzzyCzech/potrans"
-			alt="Po file translator"
-			image={PoTransImage}>
+		<GitHubRepo url="https://github.com/OzzyCzech/potrans">
 			<p>
 				Command line tool for translate <a href="https://www.gnu.org/software/gettext/" target="_blank" rel="noopener noreferrer nofollow">Gettext</a>
 				with <a href="https://translate.google.com/" target="_blank" rel="noopener noreferrer nofollow">Google Translator</a> API or
@@ -28,10 +76,7 @@ import GitHubIcon from "../../../icons/github.svg"
 			</p>
 		</GitHubRepo>
 
-		<GitHubRepo
-			url="https://github.com/OzzyCzech/fromArray"
-			alt="FromArray trait"
-			image={FromArray}>
+		<GitHubRepo url="https://github.com/OzzyCzech/fromArray">
 			<p>
 				PHP trait <code>fromArray</code> allow create objects instances loaded with initial data array
 			</p>

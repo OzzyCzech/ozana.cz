@@ -1,12 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Sphido from '../components/work/sphido/Sphido.astro';
 import Zdrojak from "../components/work/zdrojak/Zdrojak.astro";
 import CmdDialog from "../components/work/cmd-dialog/CmdDialog.astro";
 import Testomato from "../components/work/testomato/Testomato.astro";
-import GitHubIcon from "../icons/github.svg";
 import GitHub from "../components/work/github/GitHub.astro";
 ---
 
@@ -19,7 +17,7 @@ import GitHub from "../components/work/github/GitHub.astro";
 			<Zdrojak/>
 		</section>
 
-		<section class="mx-auto px-4 gap-4 max-w-(--breakpoint-2xl) grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+		<section class="mx-auto px-4 gap-4 max-w-(--breakpoint-2xl) grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 hidden">
 			<Sphido/>
 			<CmdDialog/>
 		</section>
