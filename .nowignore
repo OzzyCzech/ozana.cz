@@ -1,5 +1,3 @@
-/Makefile
+Makefile
 /readme.md
-/screenshot.js
-/resume.js
-/work
+/bin
