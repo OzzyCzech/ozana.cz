@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import me from '../../public/img/roman-ozana-medium.jpg';
-import DownloadIcon from '../icons/download.svg';
+import { Download } from '@lucide/astro';
 ---
 
 <avatar-download class="w-6/12 sm:w-2/12 relative">
@@ -13,19 +13,19 @@ import DownloadIcon from '../icons/download.svg';
 		<ul class="py-1 text-sm text-gray-700 dark:text-gray-200">
 			<li>
 				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-small.jpg" download>
-					<DownloadIcon class="size-5"/>
+					<Download class="size-5"/>
 					Avatar size
 				</a>
 			</li>
 			<li>
 				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-medium.jpg" download>
-					<DownloadIcon class="size-5"/>
+					<Download class="size-5"/>
 					Medium size
 				</a>
 			</li>
 			<li>
 				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana.jpg" download>
-					<DownloadIcon class="size-5"/>
+					<Download class="size-5"/>
 					Original size
 				</a>
 			</li>

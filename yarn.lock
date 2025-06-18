@@ -671,6 +671,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@lucide/astro@^0.517.0":
+  version "0.517.0"
+  resolved "https://registry.yarnpkg.com/@lucide/astro/-/astro-0.517.0.tgz#c2f684753a6df47cd33b7fde33604a5cbd16fb47"
+  integrity sha512-ABeG4c+FvxeU9eqALVI/XbaykVT2Upc1UlYtC/OVGdLIFo+WtZdaACqpVKvCRSlgYlzT7ZJPwCn1YKhyfs14VQ==
+
 "@mapbox/node-pre-gyp@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@mapbox/node-pre-gyp/-/node-pre-gyp-2.0.0.tgz#16d1d9049c0218820da81a12ae084e7fe67790d1"

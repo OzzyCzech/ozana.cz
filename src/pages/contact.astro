@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import IconGitHub from "../components/IconGitHub.astro";
-import UserIcon from "../icons/user.svg";
+import { User } from '@lucide/astro';
+
 ---
 <Layout title="Ing. Roman Ožana / Contact">
 
@@ -52,7 +53,7 @@ import UserIcon from "../icons/user.svg";
 				href="/ozana.vcf"
 				class="btn"
 				download="Roman Ožana.vcf">
-				<UserIcon class="size-5"/>
+				<User class="size-5"/>
 				Add to Contacts
 			</a>
 		</div>

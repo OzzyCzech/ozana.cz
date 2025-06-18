@@ -1,34 +1,31 @@
 ---
 const currentPath = Astro.url.pathname;
-import UserIcon from '../icons/user.svg';
-import CodeIcon from '../icons/code.svg';
-import HomeIcon from '../icons/home.svg';
-import ResumeIcon from '../icons/resume.svg';
+import { HouseIcon, Code, Paperclip, User } from '@lucide/astro';
 ---
 <header class="container p-5 lg:py-8 mx-auto print:hidden">
 	<nav class="flex justify-evenly text-center">
 		<ul>
 			<li class={currentPath === '/' && 'active'}>
 				<a href="/" class="text-inherit hover:no-underline hover:text-black active:text-black p-2 inline-flex gap-1.5 items-center">
-					<HomeIcon class="size-4 hidden lg:block"/>
+					<HouseIcon class="size-4 hidden lg:block"/>
 					Home
 				</a>
 			</li>
 			<li class={currentPath.startsWith('/projects') && 'active'}>
 				<a href="/projects" class="text-inherit hover:no-underline hover:text-black active:text-black p-2 inline-flex gap-1.5 items-center">
-					<CodeIcon class="size-4 hidden lg:block"/>
+					<Code class="size-4 hidden lg:block"/>
 					Projects
 				</a>
 			</li>
 			<li class={currentPath.startsWith('/resume') && 'active'}>
 				<a href="/resume" class="text-inherit hover:no-underline hover:text-black active:text-black p-2 inline-flex gap-1.5 items-center">
-					<ResumeIcon class="size-4 hidden lg:block"/>
+					<Paperclip class="size-4 hidden lg:block"/>
 					Resume
 				</a>
 			</li>
 			<li class={currentPath.startsWith('/contact') && 'active'}>
 				<a href="/contact" class="text-inherit hover:no-underline hover:text-black active:text-black p-2 inline-flex gap-1.5 items-center">
-					<UserIcon class="size-4 hidden lg:block"/>
+					<User class="size-4 hidden lg:block"/>
 					Contact
 				</a>
 			</li>
