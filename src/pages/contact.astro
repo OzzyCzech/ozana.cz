@@ -3,50 +3,47 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import IconGitHub from "../components/IconGitHub.astro";
-import { User } from '@lucide/astro';
-
+import { Smartphone, User, Mail, MapPinned, FileSearch } from '@lucide/astro';
 ---
 <Layout title="Ing. Roman Ožana / Contact">
 
 	<Header/>
-	<main class="container p-4 mx-auto max-w-(--breakpoint-sm) self-center align-center">
 
-		<div class="flex flex-col gap-y-10 md:flex-row items-center justify-between">
+	<main class="container p-4 mx-auto flex flex-col self-center align-center items-center">
 
-			<div class="text-center md:text-left">
-				<h2 class="text-3xl font-semibold">
-					Want to talk? <br>
-					Let's get in touch!
-				</h2>
-			</div>
+		<h2 class="text-4xl font-semibold text-center mb-5">
+			Let’s get in touch
+		</h2>
 
-			<div class="text-center md:text-left">
-				<p>
-					<a href="mailto:roman@ozana.cz" itemprop="email" class="font-semibold text-3xl">roman@ozana.cz</a>
-				</p>
-				<p>
-					<a href="tel:+420605783455" itemprop="telephone" class="font-semibold text-xl">+420 605 783 455</a>
-				</p>
-				<p class="hidden lg:inline">
-					<IconGitHub/>
-					<a href="https://github.com/OzzyCzech/" target="_blank">
-						github.com/OzzyCzech
-					</a>
-				</p>
 
+		<ul class="flex flex-col gap-y-3.5 *:flex *:items-center *:gap-3.5">
+			<li>
+				<Mail class="size-6 mt-1.5"/>
+				<a href="mailto:roman@ozana.cz" itemprop="email" class="font-semibold text-3xl">roman@ozana.cz</a>
+			</li>
+
+			<li>
+				<Smartphone class="size-6"/>
+				<a href="tel:+420605783455" itemprop="telephone" class="font-semibold text-xl">+420 605 783 455</a>
+			</li>
+
+			<li class="flex items-center gap-2">
+				<MapPinned class="size-6"/>
 				<p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
 					<span hidden itemprop="streetAddress">Přímětická 1199/36</span>
 					<span itemprop="addressLocality">Prague</span>,
 					<span itemprop="addressRegion">Czech Republic</span>
 					<span hidden itemprop="postalCode">14000</span>
 				</p>
+			</li>
 
-				<p>
-					IN: <a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-current">87098504</a>
-				</p>
-
-			</div>
-		</div>
+			<li>
+				<FileSearch class="size-5"/>
+				<span>
+				IN&nbsp;<a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-current">87098504</a>
+				</span>
+			</li>
+		</ul>
 
 		<div class="text-center mt-24">
 			<a

@@ -1,5 +1,6 @@
 ---
-import { ExternalLink } from "@lucide/astro";
+import { SquareArrowOutUpRight } from "@lucide/astro";
+
 
 export interface Props {
 	href: string;
@@ -8,7 +9,7 @@ const {href} = Astro.props as Props;
 ---
 <div slot="footer" class="text-center md:text-right">
 	<a href={href} target="_blank" class="inline-flex justify-center items-center gap-1 py-4">
-		<ExternalLink class="size-4"/>
+		<SquareArrowOutUpRight class="size-4"/>
 		<slot/>
 	</a>
 </div>
