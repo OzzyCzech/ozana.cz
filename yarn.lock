@@ -677,10 +677,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lucide/astro@^0.518.0":
-  version "0.518.0"
-  resolved "https://registry.yarnpkg.com/@lucide/astro/-/astro-0.518.0.tgz#f6b3cc9fa20e30e9cba0ab5e755f2b62a563d153"
-  integrity sha512-sFFAdLj7A40UFVK5BnutzqH7jb7bqfWEFq7mwkBzjf+Il466I7SFmIe2lAyqdtKA2kJ9V0+129H27tsP1AbJSQ==
+"@lucide/astro@^0.522.0":
+  version "0.522.0"
+  resolved "https://registry.yarnpkg.com/@lucide/astro/-/astro-0.522.0.tgz#16398a02f16734ce2ae5ad2d19a7e0a204d5df12"
+  integrity sha512-0MmFuSyOGEoywOITYgWmwy/6aW0/GJGgJN/oFsdu6Ywbyx5UsSkU3uxKAlk35GfhyLIZu7Y8QBV1h5uGJPVbxg==
 
 "@mapbox/node-pre-gyp@^2.0.0":
   version "2.0.0"
@@ -1346,10 +1346,10 @@ array-iterate@^2.0.0:
   resolved "https://registry.npmjs.org/array-iterate/-/array-iterate-2.0.1.tgz"
   integrity sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==
 
-astro@^5.10.0:
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-5.10.0.tgz#13f1202453ecc6fb1fe2dab09d244961fe5db307"
-  integrity sha512-g/t54kVzQnFVijs+GbbbX/NBAFTl/3yNAEA/AQYq4FumLLVv7n4BIF+jKhcPGn9iFGyT1Cjvr7KB/qYyNvHEIg==
+astro@^5.10.1:
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-5.10.1.tgz#69103332ed533dcf9cc76d821889d545af998863"
+  integrity sha512-DJVmt+51jU1xmgmAHCDwuUgcG/5aVFSU+tcX694acAZqPVt8EMUAmUZcJDX36Z7/EztnPph9HR3pm72jS2EgHQ==
   dependencies:
     "@astrojs/compiler" "^2.12.2"
     "@astrojs/internal-helpers" "0.6.1"
