@@ -677,10 +677,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lucide/astro@^0.522.0":
-  version "0.522.0"
-  resolved "https://registry.yarnpkg.com/@lucide/astro/-/astro-0.522.0.tgz#16398a02f16734ce2ae5ad2d19a7e0a204d5df12"
-  integrity sha512-0MmFuSyOGEoywOITYgWmwy/6aW0/GJGgJN/oFsdu6Ywbyx5UsSkU3uxKAlk35GfhyLIZu7Y8QBV1h5uGJPVbxg==
+"@lucide/astro@^0.523.0":
+  version "0.523.0"
+  resolved "https://registry.yarnpkg.com/@lucide/astro/-/astro-0.523.0.tgz#becdb7c38930a32b9f6a15e966710b546976374f"
+  integrity sha512-F+Ofc7VHgeUiROU8NFNAPOn3Mz7QAM41vBWDWz0cM27W6vKnAj7DcGaS1BHOEsH3aWmZLPuRFf3cMOHKQm2w7Q==
 
 "@mapbox/node-pre-gyp@^2.0.0":
   version "2.0.0"
