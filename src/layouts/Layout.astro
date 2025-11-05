@@ -14,12 +14,10 @@ const {
 import SpeedInsights from "@vercel/speed-insights/astro"
 
 const canonical = new URL(Astro.url.pathname, "https://ozana.cz");
-import { ViewTransitions } from "astro:transitions";
-
 ---
 
 <!doctype html>
-<html lang="en" transition:name="root" transition:animate="none">
+<html lang="en">
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width"/>
@@ -30,7 +28,6 @@ import { ViewTransitions } from "astro:transitions";
 	<meta name="description" content={description}/>
 	<meta name="author" content="All: Roman Ožana; e-mail: roman@ozana.cz"/>
 	<link rel="sitemap" href="/sitemap-index.xml"/>
-	<ViewTransitions />
 </head>
 <body class="font-sans bg-slate-100 print:bg-transparent text-gray-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
 <slot/>
