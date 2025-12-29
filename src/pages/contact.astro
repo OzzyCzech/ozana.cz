@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Smartphone, User, Mail, MapPinned, FileSearch } from '@lucide/astro';
+import { Smartphone, User, Mail, MapPinned, FileSearch, IdCard, ContactRound, Bookmark, MapPin, Phone, File } from '@lucide/astro';
 ---
 <Layout title="Ing. Roman Ožana / Contact">
 
@@ -15,43 +15,57 @@ import { Smartphone, User, Mail, MapPinned, FileSearch } from '@lucide/astro';
 		</h2>
 
 
-		<ul class="flex flex-col gap-y-3.5 *:flex *:items-center *:gap-3.5">
+		<ul class="flex flex-col gap-y-6 *:flex *:items-center *:gap-4 my-6">
 			<li>
-				<Mail class="size-6 mt-1.5"/>
-				<a href="mailto:roman@ozana.cz" itemprop="email" class="font-semibold text-3xl">roman@ozana.cz</a>
+				<div class="bg-slate-200 p-2.5 rounded-xl">
+					<Mail class="size-7 text-slate-600"/>
+				</div>
+				<div>
+					<p>Email</p>
+					<a href="mailto:roman@ozana.cz" itemprop="email" class="font-semibold text-xl">roman@ozana.cz</a>
+				</div>
 			</li>
 
 			<li>
-				<Smartphone class="size-6"/>
-				<a href="tel:+420605783455" itemprop="telephone" class="font-semibold text-xl">+420 605 783 455</a>
+				<div class="bg-slate-200 p-2.5 rounded-xl">
+					<Phone class="size-7 text-slate-600"/>
+				</div>
+				<div>
+					<p>Phone</p>
+					<a href="tel:+420605783455" itemprop="telephone" class="font-semibold text-xl">+420 605 783 455</a>
+				</div>
 			</li>
 
 			<li class="flex items-center gap-2">
-				<MapPinned class="size-6"/>
-				<p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-					<span hidden itemprop="streetAddress">Přímětická 1199/36</span>
-					<span itemprop="addressLocality">Prague</span>,
-					<span itemprop="addressRegion">Czech Republic</span>
-					<span hidden itemprop="postalCode">14000</span>
-				</p>
-			</li>
-
-			<li>
-				<FileSearch class="size-5"/>
-				<span>
-				IN&nbsp;<a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-current">87098504</a>
-				</span>
+				<div class="bg-slate-200 p-2.5 rounded-xl">
+					<MapPin class="size-7 text-slate-600"/>
+				</div>
+				<div>
+					<p>Location</p>
+					<p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" class="font-semibold text-xl">
+						<span hidden itemprop="streetAddress">Přímětická 1199/36</span>
+						<span itemprop="addressLocality">Prague</span>,
+						<span itemprop="addressRegion">Czech Republic</span>
+						<span hidden itemprop="postalCode">14000</span>
+					</p>
+				</div>
 			</li>
 		</ul>
 
-		<div class="text-center mt-24">
+		<div class="text-center mt-6">
 			<a
 				href="/ozana.vcf"
 				class="btn"
 				download="Roman Ožana.vcf">
-				<User class="size-5"/>
+				<Bookmark class="size-5"/>
 				Add to Contacts
 			</a>
+		</div>
+
+		<div class="mt-16 text-slate-800">
+			<p class="text-center w-full">
+				IN:&nbsp;<a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-current">87098504</a>
+			</p>
 		</div>
 
 
