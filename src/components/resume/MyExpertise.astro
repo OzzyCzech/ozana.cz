@@ -1,0 +1,38 @@
+---
+import { Check } from "@lucide/astro";
+import ProgressBar from "./ProgressBar.astro";
+---
+<article>
+
+	<div class="grid gap-6 my-6 md:grid-cols-2">
+		<div>
+			<h2 class="text-4xl md:text-5xl font-bold mb-6 print:text-current">My Expertise</h2>
+			<p class="leading-relaxed text-xl">
+				With years of experience across different technologies, I focus on writing <strong>clean, efficient code</strong>
+				and staying current with the <strong>best tools and practices</strong> in the industry.
+			</p>
+
+			<ul class="text-xl *:flex *:items-center *:gap-3 *:my-3">
+				<li>
+					<div class="bg-primary/10 rounded-lg">
+						<Check class="m-2 text-primary"/>
+					</div>
+					Clean, maintainable code
+				</li>
+				<li>
+					<div class="bg-primary/10 rounded-lg">
+						<Check class="m-2 text-primary"/>
+					</div>
+					Always keep learning
+				</li>
+			</ul>
+		</div>
+
+		<div class="space-y-4 print:block">
+			<ProgressBar skill="PHP" percentage="95%"/>
+			<ProgressBar skill="Node.js / Bun" percentage="80%"/>
+			<ProgressBar skill="Javascript & Typescript" percentage="85%"/>
+			<ProgressBar skill="Docker / Containers / Terminal" percentage="88%"/>
+		</div>
+	</div>
+</article>

@@ -5,6 +5,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant active (&:where(.active &));
 
+@theme {
+	--color-primary: oklch(51.1% 0.262 276.966); /* indigo-600 */
+	--color-accent: oklch(0.54 0.23 264); /* violet-600 */
+
+	--color-secondary: oklch(92.9% 0.013 255.508); /* slate-100 */
+}
+
 @layer base {
 	*,
 	::after,
