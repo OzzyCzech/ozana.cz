@@ -1,23 +1,22 @@
 ---
-const currentPath = Astro.url.pathname;
 import { Menu, X, Github } from '@lucide/astro';
 ---
 
-<header class="w-full sm:border-b sm:border-dashed sm:border-slate-300 print:hidden">
+<header class="sticky top-0 z-40 w-full border-b border-dashed border-slate-200 bg-white/95 backdrop-blur-sm print:hidden">
 <div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto relative">
 	<nav class="flex items-center justify-between h-14">
-		<a href="/" class="flex items-center gap-2.5 hover:no-underline">
-			<div class="flex items-center justify-center size-7 rounded-md overflow-hidden shrink-0 bg-slate-800 text-white text-xs font-bold">
+		<a href="/" class="flex items-center gap-2 hover:no-underline">
+			<div class="flex items-center justify-center size-6 rounded overflow-hidden shrink-0 bg-slate-800 text-white text-[10px] font-bold">
 				RO
 			</div>
 			<span class="text-sm font-semibold text-slate-900">Roman Ožana</span>
 		</a>
 
 		<div class="hidden lg:flex items-center gap-1">
-			<a href="/" class="nav-link" class:list={[currentPath === '/' && 'active']}>Home</a>
-			<a href="/projects" class="nav-link" class:list={[currentPath.startsWith('/projects') && 'active']}>Projects</a>
-			<a href="/resume" class="nav-link" class:list={[currentPath.startsWith('/resume') && 'active']}>Resume</a>
-			<a href="/contact" class="nav-link" class:list={[currentPath.startsWith('/contact') && 'active']}>Contact</a>
+			<a href="/" class="nav-link">Home</a>
+			<a href="/projects" class="nav-link">Projects</a>
+			<a href="/resume" class="nav-link">Resume</a>
+			<a href="/contact" class="nav-link">Contact</a>
 			<a href="https://github.com/OzzyCzech/" target="_blank" class="nav-icon" aria-label="GitHub">
 				<Github class="size-4"/>
 			</a>
@@ -52,15 +51,11 @@ import { Menu, X, Github } from '@lucide/astro';
 	@reference "tailwindcss";
 
 	.nav-link {
-		@apply px-3 py-1.5 text-sm font-medium text-slate-500 rounded-md hover:no-underline hover:text-slate-900 hover:bg-slate-100 transition-colors;
+		@apply px-3 py-1.5 text-sm font-medium text-current rounded-md hover:no-underline hover:bg-slate-100 transition-colors;
 	}
 
-	.nav-link.active {
-		@apply text-slate-900;
-	}
-
-	.nav-icon {
-		@apply p-2 text-slate-500 rounded-md hover:no-underline hover:text-slate-900 hover:bg-slate-100 transition-colors ml-1;
+.nav-icon {
+		@apply p-2 text-current rounded-md hover:no-underline hover:bg-slate-100 transition-colors ml-1;
 	}
 
 	.mobile-nav-link {
