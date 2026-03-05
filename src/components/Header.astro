@@ -1,28 +1,30 @@
 ---
 const currentPath = Astro.url.pathname;
-import { Menu, X, ExternalLink } from '@lucide/astro';
-import GitHubIcon from '../icons/github-alt.svg';
+import { Menu, X, Github } from '@lucide/astro';
 ---
 
-<header class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto print:hidden relative">
-	<nav class="flex items-center justify-between h-18">
-		<a href="/" class="flex items-center gap-2 hover:no-underline">
-			<div class="flex items-center justify-center size-6 rounded-sm overflow-hidden shrink-0 bg-slate-800 text-white text-xs font-bold">
-				R
+<header class="w-full sm:border-b sm:border-dashed sm:border-slate-300 print:hidden">
+<div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto relative">
+	<nav class="flex items-center justify-between h-14">
+		<a href="/" class="flex items-center gap-2.5 hover:no-underline">
+			<div class="flex items-center justify-center size-7 rounded-md overflow-hidden shrink-0 bg-slate-800 text-white text-xs font-bold">
+				RO
 			</div>
-			<div class="text-sm font-medium truncate text-current">Roman Ožana</div>
+			<span class="text-sm font-semibold text-slate-900">Roman Ožana</span>
 		</a>
+
 		<div class="hidden lg:flex items-center gap-1">
-			<a href="/" class="nav-link">Home</a>
-			<a href="/projects" class="nav-link">Projects</a>
-			<a href="/resume" class="nav-link">Resume</a>
-			<a href="/contact" class="nav-link">Contact</a>
+			<a href="/" class="nav-link" class:list={[currentPath === '/' && 'active']}>Home</a>
+			<a href="/projects" class="nav-link" class:list={[currentPath.startsWith('/projects') && 'active']}>Projects</a>
+			<a href="/resume" class="nav-link" class:list={[currentPath.startsWith('/resume') && 'active']}>Resume</a>
+			<a href="/contact" class="nav-link" class:list={[currentPath.startsWith('/contact') && 'active']}>Contact</a>
+			<a href="https://github.com/OzzyCzech/" target="_blank" class="nav-icon" aria-label="GitHub">
+				<Github class="size-4"/>
+			</a>
 		</div>
-		<div class="hidden lg:flex items-center gap-2">
-			<a href="https://github.com/OzzyCzech/" target="_blank" class="nav-link inline-flex items-center gap-1">GitHub <ExternalLink class="size-3"/></a>
-		</div>
+
 		<button
-			class="p-2 rounded-md hover:bg-slate-200 lg:hidden"
+			class="p-2 rounded-md hover:bg-slate-100 lg:hidden"
 			aria-label="Toggle menu"
 			id="menu-toggle"
 		>
@@ -31,28 +33,38 @@ import GitHubIcon from '../icons/github-alt.svg';
 		</button>
 	</nav>
 
-	<div id="mobile-menu" class="hidden lg:hidden absolute left-0 right-0 sm:left-auto sm:w-64 top-full bg-white shadow-lg rounded-xl mx-4 sm:mx-0 sm:mr-6 p-4 z-50">
-		<div class="flex flex-col gap-1">
+	<div id="mobile-menu" class="hidden lg:hidden absolute left-0 right-0 sm:left-auto sm:right-0 sm:w-48 top-full bg-white border border-slate-200 rounded-lg mx-4 sm:mx-0 sm:mr-6 p-2 z-50 shadow-lg">
+		<div class="flex flex-col">
 			<a href="/" class="mobile-nav-link">Home</a>
 			<a href="/projects" class="mobile-nav-link">Projects</a>
 			<a href="/resume" class="mobile-nav-link">Resume</a>
 			<a href="/contact" class="mobile-nav-link">Contact</a>
-		</div>
-		<div class="flex flex-col gap-2 pt-4 border-t mt-4">
-			<a href="https://github.com/OzzyCzech/" target="_blank" class="btn text-center justify-center"><GitHubIcon class="size-5"/> View GitHub <ExternalLink class="size-3.5 hidden sm:block"/></a>
+			<hr class="my-2 border-slate-200"/>
+			<a href="https://github.com/OzzyCzech/" target="_blank" class="mobile-nav-link inline-flex items-center gap-2">
+				<Github class="size-4"/> GitHub
+			</a>
 		</div>
 	</div>
+</div>
 </header>
 
 <style>
 	@reference "tailwindcss";
 
 	.nav-link {
-		@apply px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:no-underline hover:text-black hover:bg-slate-200 transition-colors;
+		@apply px-3 py-1.5 text-sm font-medium text-slate-500 rounded-md hover:no-underline hover:text-slate-900 hover:bg-slate-100 transition-colors;
+	}
+
+	.nav-link.active {
+		@apply text-slate-900;
+	}
+
+	.nav-icon {
+		@apply p-2 text-slate-500 rounded-md hover:no-underline hover:text-slate-900 hover:bg-slate-100 transition-colors ml-1;
 	}
 
 	.mobile-nav-link {
-		@apply px-3 py-2.5 text-base font-medium text-slate-600 rounded-md hover:no-underline hover:text-black hover:bg-slate-100 transition-colors;
+		@apply px-3 py-2 text-sm font-medium text-slate-600 rounded-md hover:no-underline hover:text-slate-900 hover:bg-slate-50 transition-colors;
 	}
 </style>
 
@@ -63,7 +75,7 @@ import GitHubIcon from '../icons/github-alt.svg';
 	const iconClose = document.getElementById('icon-close');
 
 	toggle?.addEventListener('click', () => {
-		const open = mobileMenu?.classList.toggle('hidden');
+		mobileMenu?.classList.toggle('hidden');
 		iconMenu?.classList.toggle('hidden');
 		iconClose?.classList.toggle('hidden');
 	});
