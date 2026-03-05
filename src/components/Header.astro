@@ -1,6 +1,7 @@
 ---
 const currentPath = Astro.url.pathname;
 import { Menu, X } from '@lucide/astro';
+import GitHubIcon from '../icons/github-alt.svg';
 ---
 
 <header class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto print:hidden relative">
@@ -38,7 +39,7 @@ import { Menu, X } from '@lucide/astro';
 			<a href="/contact" class="mobile-nav-link">Contact</a>
 		</div>
 		<div class="flex flex-col gap-2 pt-4 border-t mt-4">
-			<a href="https://github.com/OzzyCzech/" target="_blank" class="btn text-center justify-center">GitHub</a>
+			<a href="https://github.com/OzzyCzech/" target="_blank" class="btn text-center justify-center"><GitHubIcon class="size-5"/> GitHub</a>
 		</div>
 	</div>
 </header>
