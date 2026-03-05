@@ -27,5 +27,8 @@
   },
   "devDependencies": {
     "url-metadata": "^5.4.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp"]
   }
 }
