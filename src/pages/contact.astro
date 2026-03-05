@@ -2,71 +2,71 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Smartphone, User, Mail, MapPinned, FileSearch, IdCard, ContactRound, Bookmark, MapPin, Phone, File } from '@lucide/astro';
+import { Mail, MapPin, Phone, Bookmark } from '@lucide/astro';
 ---
 <Layout title="Ing. Roman Ožana / Contact">
 
 	<Header/>
 
-	<main class="container p-4 mx-auto flex flex-col self-center align-center items-center">
+	<main class="max-w-xl mx-auto px-4 py-12 md:py-24 flex flex-col items-center justify-center">
 
-		<h2 class="text-4xl font-semibold text-center mb-5">
-			Let’s get in touch
-		</h2>
+		<div class="mb-10 text-center">
+			<h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+				Let's get in touch
+			</h1>
+			<p class="text-slate-500 text-lg">Feel free to reach out anytime.</p>
+		</div>
 
-
-		<ul class="flex flex-col gap-y-6 *:flex *:items-center *:gap-4 my-6">
-			<li>
-				<div class="bg-slate-200 p-2.5 rounded-xl">
-					<Mail class="size-7 text-slate-600"/>
+		<div class="flex flex-col gap-6 w-full">
+			<a href="mailto:roman@ozana.cz" itemprop="email" class="flex items-center gap-4 p-4 rounded-lg border border-dashed border-slate-200 hover:bg-slate-50 hover:no-underline transition-colors group">
+				<div class="p-2 rounded-md bg-slate-800 text-white group-hover:bg-slate-900 transition-colors">
+					<Mail class="size-4"/>
 				</div>
 				<div>
-					<p>Email</p>
-					<a href="mailto:roman@ozana.cz" itemprop="email" class="font-semibold text-xl">roman@ozana.cz</a>
+					<p class="text-sm text-slate-500">Email</p>
+					<p class="font-semibold text-slate-900">roman@ozana.cz</p>
 				</div>
-			</li>
+			</a>
 
-			<li>
-				<div class="bg-slate-200 p-2.5 rounded-xl">
-					<Phone class="size-7 text-slate-600"/>
+			<a href="tel:+420605783455" itemprop="telephone" class="flex items-center gap-4 p-4 rounded-lg border border-dashed border-slate-200 hover:bg-slate-50 hover:no-underline transition-colors group">
+				<div class="p-2 rounded-md bg-slate-800 text-white group-hover:bg-slate-900 transition-colors">
+					<Phone class="size-4"/>
 				</div>
 				<div>
-					<p>Phone</p>
-					<a href="tel:+420605783455" itemprop="telephone" class="font-semibold text-xl">+420 605 783 455</a>
+					<p class="text-sm text-slate-500">Phone</p>
+					<p class="font-semibold text-slate-900">+420 605 783 455</p>
 				</div>
-			</li>
+			</a>
 
-			<li class="flex items-center gap-2">
-				<div class="bg-slate-200 p-2.5 rounded-xl">
-					<MapPin class="size-7 text-slate-600"/>
+			<div class="flex items-center gap-4 p-4 rounded-lg border border-dashed border-slate-200" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+				<div class="p-2 rounded-md bg-slate-800 text-white">
+					<MapPin class="size-4"/>
 				</div>
 				<div>
-					<p>Location</p>
-					<p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" class="font-semibold text-xl">
+					<p class="text-sm text-slate-500">Location</p>
+					<p class="font-semibold text-slate-900">
 						<span hidden itemprop="streetAddress">Přímětická 1199/36</span>
 						<span itemprop="addressLocality">Prague</span>,
 						<span itemprop="addressRegion">Czech Republic</span>
 						<span hidden itemprop="postalCode">14000</span>
 					</p>
 				</div>
-			</li>
-		</ul>
+			</div>
+		</div>
 
-		<div class="text-center mt-6">
+		<div class="mt-8 text-center">
 			<a
 				href="/ozana.vcf"
-				class="btn"
+				class="btn py-2 px-4 text-sm"
 				download="Roman Ožana.vcf">
-				<Bookmark class="size-5"/>
+				<Bookmark class="size-4"/>
 				Add to Contacts
 			</a>
 		</div>
 
-		<div class="mt-12 text-slate-800">
-			<p class="text-center w-full">
-				IN:&nbsp;<a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-current">87098504</a>
-			</p>
-		</div>
+		<p class="mt-6 text-sm text-slate-400 text-center">
+			IN:&nbsp;<a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" class="text-slate-400 hover:text-slate-600">87098504</a>
+		</p>
 
 	</main>
 	<Footer/>
