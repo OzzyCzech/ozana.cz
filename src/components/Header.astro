@@ -1,41 +1,77 @@
 ---
 const currentPath = Astro.url.pathname;
-import { HouseIcon, Code, Paperclip, User } from '@lucide/astro';
+import { Menu, X } from '@lucide/astro';
 ---
-<header class="container p-5 lg:py-8 mx-auto print:hidden">
-	<nav class="flex justify-evenly text-center">
-		<ul>
-			<li class={currentPath === '/' && 'active'}>
-				<a href="/" class="text-inherit hover:no-underline active:bg-slate-50 hover:text-black active:text-black active:outline active:outline-slate-200 rounded-full px-4 py-1.5 inline-flex gap-1.5 items-center">
-					<HouseIcon class="size-4 hidden lg:block"/>
-					Home
-				</a>
-			</li>
-			<li class={currentPath.startsWith('/projects') && 'active'}>
-				<a href="/projects" class="text-inherit hover:no-underline active:bg-slate-50 hover:text-black active:text-black active:outline active:outline-slate-200 rounded-full px-4 py-1.5 inline-flex gap-1.5 items-center">
-					<Code class="size-4 hidden lg:block"/>
-					Projects
-				</a>
-			</li>
-			<li class={currentPath.startsWith('/resume') && 'active'}>
-				<a href="/resume" class="text-inherit hover:no-underline active:bg-slate-50 hover:text-black active:text-black active:outline active:outline-slate-200 rounded-full px-4 py-1.5 inline-flex gap-1.5 items-center">
-					<Paperclip class="size-4 hidden lg:block"/>
-					Resume
-				</a>
-			</li>
-			<li class={currentPath.startsWith('/contact') && 'active'}>
-				<a href="/contact" class="text-inherit hover:no-underline active:bg-slate-50 hover:text-black active:text-black active:outline active:outline-slate-200 rounded-full px-4 py-1.5 inline-flex gap-1.5 items-center">
-					<User class="size-4 hidden lg:block"/>
-					Contact
-				</a>
-			</li>
-		</ul>
+
+<header class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto print:hidden relative">
+	<nav class="flex items-center justify-between h-18">
+		<a href="/" class="flex items-center gap-2 hover:no-underline">
+			<div class="flex items-center justify-center size-7 rounded-sm overflow-hidden shrink-0 bg-slate-800 text-white text-xs font-bold">
+				R
+			</div>
+			<div class="text-sm font-medium truncate text-current">Roman Ožana</div>
+		</a>
+		<div class="hidden lg:flex items-center gap-1">
+			<a href="/" class="nav-link">Home</a>
+			<a href="/projects" class="nav-link">Projects</a>
+			<a href="/resume" class="nav-link">Resume</a>
+			<a href="/contact" class="nav-link">Contact</a>
+		</div>
+		<div class="hidden lg:flex items-center gap-2">
+			<a href="https://github.com/OzzyCzech/" target="_blank" class="nav-link">GitHub</a>
+		</div>
+		<button
+			class="p-2 rounded-md hover:bg-slate-200 lg:hidden"
+			aria-label="Toggle menu"
+			id="menu-toggle"
+		>
+			<Menu class="size-5" id="icon-menu"/>
+			<X class="size-5 hidden" id="icon-close"/>
+		</button>
 	</nav>
+
+	<div id="mobile-menu" class="hidden lg:hidden absolute left-0 right-0 sm:left-auto sm:w-64 top-full bg-white shadow-lg rounded-xl mx-4 sm:mx-0 sm:mr-6 p-4 z-50">
+		<div class="flex flex-col gap-1">
+			<a href="/" class="mobile-nav-link">Home</a>
+			<a href="/projects" class="mobile-nav-link">Projects</a>
+			<a href="/resume" class="mobile-nav-link">Resume</a>
+			<a href="/contact" class="mobile-nav-link">Contact</a>
+		</div>
+		<div class="flex flex-col gap-2 pt-4 border-t mt-4">
+			<a href="https://github.com/OzzyCzech/" target="_blank" class="btn text-center justify-center">GitHub</a>
+		</div>
+	</div>
 </header>
 
 <style>
 	@reference "tailwindcss";
-	ul {
-		@apply flex justify-around w-full max-w-[480px] font-medium text-slate-600;
+
+	.nav-link {
+		@apply px-3 py-1.5 text-sm font-medium text-slate-600 rounded-md hover:no-underline hover:text-black hover:bg-slate-200 transition-colors;
+	}
+
+	.mobile-nav-link {
+		@apply px-3 py-2.5 text-base font-medium text-slate-600 rounded-md hover:no-underline hover:text-black hover:bg-slate-100 transition-colors;
 	}
 </style>
+
+<script>
+	const toggle = document.getElementById('menu-toggle');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const iconMenu = document.getElementById('icon-menu');
+	const iconClose = document.getElementById('icon-close');
+
+	toggle?.addEventListener('click', () => {
+		const open = mobileMenu?.classList.toggle('hidden');
+		iconMenu?.classList.toggle('hidden');
+		iconClose?.classList.toggle('hidden');
+	});
+
+	document.addEventListener('click', (e) => {
+		if (!toggle?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+			mobileMenu?.classList.add('hidden');
+			iconMenu?.classList.remove('hidden');
+			iconClose?.classList.add('hidden');
+		}
+	});
+</script>
