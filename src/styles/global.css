@@ -27,8 +27,8 @@
 }
 
 @utility btn {
-	@apply inline-flex gap-1 items-center print:hidden;
-	@apply py-3 px-5 font-medium rounded-full hover:no-underline;
+	@apply inline-flex gap-2 items-center print:hidden;
+	@apply py-2 px-4 text-sm font-medium rounded-full hover:no-underline;
 	@apply bg-slate-800 hover:bg-slate-900 text-white hover:text-white;
 }
 
