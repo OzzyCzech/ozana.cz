@@ -52,7 +52,7 @@
 }
 
 @utility badge {
-	@apply inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium;
+	@apply inline-flex items-center rounded-md px-2.5 py-0.5 text-sm font-medium;
 	@apply bg-slate-100 text-slate-700;
 	@apply transition-colors duration-150;
 }
