@@ -1,3 +1,20 @@
+---
+function formatDuration(startStr: string, endStr: string): string {
+	const start = new Date(startStr);
+	const end = new Date(endStr);
+	let years = end.getFullYear() - start.getFullYear();
+	let months = end.getMonth() - start.getMonth();
+	if (months < 0) {
+		years--;
+		months += 12;
+	}
+	const parts: string[] = [];
+	if (years) parts.push(years === 1 ? '1 year' : `${years} years`);
+	if (months) parts.push(months === 1 ? '1 month' : `${months} months`);
+	return parts.join(' ').trim() || 'less than a month';
+}
+const today = new Date().toISOString().slice(0, 10);
+---
 <section>
 	<h2 class="section-title pb-4 border-b border-slate-200">Work Experience</h2>
 
@@ -5,7 +22,7 @@
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
 			<div class="text-slate-500" title="March 2012 – Present">
 				2012 &ndash; Present
-				<p class="text-slate-400 mt-0.5" data-from="2012-03-01"></p>
+				<p class="text-slate-400 mt-0.5">{formatDuration('2012-03-01', today)}</p>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
@@ -20,7 +37,7 @@
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
 			<div class="text-slate-500" title="May 2011 – Present">
 				2011 &ndash; Present
-				<p class="text-slate-400 mt-0.5" data-from="2011-05-01"></p>
+				<p class="text-slate-400 mt-0.5">{formatDuration('2011-05-01', today)}</p>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
@@ -35,22 +52,22 @@
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
 			<div class="text-slate-500" title="February 2009 – Present">
 				2009 &ndash; Present
-				<p class="text-slate-400 mt-0.5" data-from="2009-02-01"></p>
+				<p class="text-slate-400 mt-0.5">{formatDuration('2009-02-01', today)}</p>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
 					<a href="https://ozana.cz">Freelance Web Developer</a>
 				</h3>
 				<p class="mt-3 leading-relaxed text-slate-600">
-					Full stack developer and freelance web developer.
+					Freelance full-stack web developer working with PHP, JavaScript, TypeScript, Node.js, Astro, Vue.js, React, Tailwind CSS, Docker, and a wide range of technologies across the web development stack.
 				</p>
 			</div>
 		</article>
 
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="text-slate-400" title="July 2010 – April 2011">
+			<div class="text-slate-400" title="July 2010 – March 2011">
 				2010 &ndash; 2011
-				<p class="mt-0.5" data-from="2010-07-01" data-to="2011-03-31"></p>
+				<p class="mt-0.5">{formatDuration('2010-07-01', '2011-03-31')}</p>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-600">
@@ -65,44 +82,16 @@
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10">
 			<div class="text-slate-400" title="March 2009 – July 2010">
 				2009 &ndash; 2010
-				<p class="mt-0.5" data-from="2009-03-01" data-to="2010-08-01"></p>
+				<p class="mt-0.5">{formatDuration('2009-03-01', '2010-08-01')}</p>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-600">
 					PHP Developer &ndash; Skvely.CZ s.r.o.
 				</h3>
 				<p class="mt-3 leading-relaxed text-slate-500">
-					Web application developer mostly in PHP, developing modules for Magento e-commerce.
+					PHP developer building custom web applications for clients and developing modules for the Magento e-commerce platform.
 				</p>
 			</div>
 		</article>
 	</div>
 </section>
-
-<script is:inline>
-	function duration(start, end) {
-		let s = new Date(start);
-		let e = new Date(end);
-
-		let years = e.getFullYear() - s.getFullYear();
-		let months = e.getMonth() - s.getMonth();
-
-		if (months < 0) {
-			years--;
-			months += 12;
-		}
-
-		let parts = [];
-		if (years) parts.push(years + (years === 1 ? ' year' : ' years'));
-		if (months) parts.push(months + (months === 1 ? ' month' : ' months'));
-
-		return parts.join(' ') || 'less than a month';
-	}
-
-	document.querySelectorAll('[data-from]').forEach((el) => {
-		let from = el.getAttribute('data-from');
-		let to = el.getAttribute('data-to') || new Date().toISOString().slice(0, 10);
-
-		el.textContent = duration(from, to);
-	});
-</script>
