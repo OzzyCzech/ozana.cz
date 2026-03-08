@@ -3,15 +3,14 @@
 </ul>
 
 <style>
-	@reference "tailwindcss";
+	@reference "../../../styles/global.css";
 
 	@layer base {
 		ul {
 			@apply flex justify-start items-center flex-wrap gap-2 no-underline hover:no-underline text-sm;
-			@apply *:rounded-full *:px-3 *:py-1;
-
+			@apply max-w-lg;
 			li {
-				@apply bg-slate-100 text-slate-700;
+				@apply badge my-0.5;
 			}
 		}
 	}
