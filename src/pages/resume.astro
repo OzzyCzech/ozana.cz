@@ -19,8 +19,35 @@ import { Download } from "@lucide/astro";
 	<main class="container px-4 mx-auto max-w-(--breakpoint-lg)">
 		<div class="py-10 md:py-16 lg:py-20 text-center">
 			<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Ing. Roman Ožana</h1>
-			<p class="mt-3 text-muted-foreground text-lg">Building things for the web since 2009</p>
+			<p class="mt-3 text-muted-foreground text-lg cursor-pointer select-none print:hidden" id="subtitle">Building things for the web since 2009</p>
+			<p class="mt-3 text-muted-foreground text-lg hidden print:block">Building things for the web since 2009</p>
 		</div>
+
+		<script is:inline>
+			const lines = [
+				'Building things for the web since 2009',
+				'Breaking things on the web since 2009',
+				'Googling Stack Overflow since 2009',
+				'Mass-producing bugs since 2009',
+				'Closing 1000 browser tabs since 2009',
+				'It works on my local since 2009',
+				'Turning coffee into code since 2009',
+				'Fighting CSS since 2009',
+				'git push --force since 2009',
+				'rm -rf node_modules since 2009',
+			];
+			let i = 0;
+			const el = document.getElementById('subtitle');
+			el.addEventListener('click', () => {
+				i = (i + 1) % lines.length;
+				el.style.opacity = 0;
+				setTimeout(() => {
+					el.textContent = lines[i];
+					el.style.opacity = 1;
+				}, 150);
+			});
+			el.style.transition = 'opacity 150ms ease';
+		</script>
 
 		<div class="space-y-16 pb-16">
 			<Headline/>
