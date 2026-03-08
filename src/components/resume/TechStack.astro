@@ -37,193 +37,187 @@ import {
 } from "@wticons/astro";
 ---
 <section class="break-before-page">
-	<h2 class="text-2xl font-medium text-slate-800 print:text-current border-b border-slate-300 mb-1 pb-1">Tech I Love Working With</h2>
+	<h2 class="section-title mb-6">Tech I Love Working With</h2>
 
-	<div class="grid gap-8 my-8">
+	<div class="grid gap-10 sm:grid-cols-2">
 
 		<article>
-			<h3 class="font-semibold text-lg mb-2">Backend</h3>
-			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
+			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Backend</h3>
+			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
 				<a href="https://www.php.net" target="_blank" rel="noopener">
-					<Php class="size-16"/>
-					<small>PHP</small>
+					<Php class="size-14"/>
+					<small class="text-xs text-slate-500">PHP</small>
 				</a>
 				<a href="https://nodejs.org" target="_blank" rel="noopener">
-					<Nodejs class="size-16"/>
-					<small>Node.js</small>
+					<Nodejs class="size-14"/>
+					<small class="text-xs text-slate-500">Node.js</small>
 				</a>
 				<a href="https://framework.zend.com/" target="_blank" rel="noopener">
-					<ZendFramework class="size-16"/>
-					<small>Zend</small>
+					<ZendFramework class="size-14"/>
+					<small class="text-xs text-slate-500">Zend</small>
 				</a>
 				<a href="https://nette.org" target="_blank" rel="noopener">
-					<Nette class="size-16"/>
-					<small>Nette</small>
+					<Nette class="size-14"/>
+					<small class="text-xs text-slate-500">Nette</small>
 				</a>
-
 				<a href="https://symfony.com" target="_blank" rel="noopener">
-					<Symfony class="size-16"/>
-					<small>Symfony</small>
+					<Symfony class="size-14"/>
+					<small class="text-xs text-slate-500">Symfony</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3 class="font-semibold text-lg mb-2">Frontend</h3>
-			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
+			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Frontend</h3>
+			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
 				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
-					<Js class="size-16"/>
-					<small>Javascript</small>
+					<Js class="size-14"/>
+					<small class="text-xs text-slate-500">Javascript</small>
 				</a>
 				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
-					<TypeScript class="size-16"/>
-					<small>Typescript</small>
+					<TypeScript class="size-14"/>
+					<small class="text-xs text-slate-500">Typescript</small>
 				</a>
 				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">
-					<Html class="size-16"/>
-					<small>HTML5</small>
+					<Html class="size-14"/>
+					<small class="text-xs text-slate-500">HTML5</small>
 				</a>
 				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">
-					<Css class="size-16"/>
-					<small>CSS3</small>
+					<Css class="size-14"/>
+					<small class="text-xs text-slate-500">CSS3</small>
 				</a>
 				<a href="https://tailwindcss.com" target="_blank" rel="noopener">
-					<Tailwind class="size-16"/>
-					<small class="text-center">Tailwindcss</small>
+					<Tailwind class="size-14"/>
+					<small class="text-xs text-slate-500">Tailwind</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3 class="font-semibold text-lg mb-2">Frameworks</h3>
-			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
+			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Frameworks</h3>
+			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
 				<a href="https://vuejs.org" target="_blank" rel="noopener">
-					<Vue class="size-16"/>
-					<small>Vue.js</small>
+					<Vue class="size-14"/>
+					<small class="text-xs text-slate-500">Vue.js</small>
 				</a>
 				<a href="https://astro.build" target="_blank" rel="noopener">
-					<AstroIcon class="size-16"/>
-					<small>Astro</small>
+					<AstroIcon class="size-14"/>
+					<small class="text-xs text-slate-500">Astro</small>
 				</a>
 				<a href="https://svelte.dev" target="_blank" rel="noopener">
-					<Svelte class="size-16"/>
-					<small>Svelte</small>
+					<Svelte class="size-14"/>
+					<small class="text-xs text-slate-500">Svelte</small>
 				</a>
 				<a href="https://reactjs.org" target="_blank" rel="noopener">
-					<React class="size-16"/>
-					<small>React</small>
+					<React class="size-14"/>
+					<small class="text-xs text-slate-500">React</small>
 				</a>
 				<a href="https://nextjs.org" target="_blank" rel="noopener">
-					<NextJs class="size-16"/>
-					<small>Next.js</small>
+					<NextJs class="size-14"/>
+					<small class="text-xs text-slate-500">Next.js</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3 class="font-semibold text-lg mb-2">Bundlers</h3>
-			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
-				<a href="https://vitejs.dev" target="_blank" rel="noopener">
-					<Vite class="size-16"/>
-					<small>Vite.js</small>
-				</a>
-				<a href="https://www.gnu.org/software/make/" target="_blank" rel="noopener">
-					<GnuMake class="size-16"/>
-					<small>Makefile</small>
-				</a>
-				<a href="https://parceljs.org" target="_blank" rel="noopener">
-					<Parcel class="size-16"/>
-					<small>Parcel</small>
-				</a>
-				<a href="https://webpack.js.org" target="_blank" rel="noopener">
-					<Webpack class="size-16"/>
-					<small>Webpack</small>
-				</a>
-
-				<a href="https://www.npmjs.com/" target="_blank" rel="noopener">
-					<Npm class="size-16"/>
-					<small>NPM</small>
-				</a>
-			</div>
-		</article>
-
-		<article>
-			<h3 class="font-semibold text-lg mb-2">Databases</h3>
-			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
+			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Databases</h3>
+			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
 				<a href="https://www.mongodb.com" target="_blank" rel="noopener">
-					<Mongodb class="size-16"/>
-					<small>MongoDB</small>
+					<Mongodb class="size-14"/>
+					<small class="text-xs text-slate-500">MongoDB</small>
 				</a>
 				<a href="https://mariadb.org" target="_blank" rel="noopener">
-					<Mariadb class="size-16"/>
-					<small>MariaDB</small>
+					<Mariadb class="size-14"/>
+					<small class="text-xs text-slate-500">MariaDB</small>
 				</a>
 				<a href="https://redis.io" target="_blank" rel="noopener">
-					<Redis class="size-16"/>
-					<small>Redis</small>
+					<Redis class="size-14"/>
+					<small class="text-xs text-slate-500">Redis</small>
 				</a>
 			</div>
 		</article>
 
 		<article>
-			<h3 class="font-semibold text-lg mb-2">Code Quality Tools</h3>
-			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
+			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Build Tools</h3>
+			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
+				<a href="https://vitejs.dev" target="_blank" rel="noopener">
+					<Vite class="size-14"/>
+					<small class="text-xs text-slate-500">Vite</small>
+				</a>
+				<a href="https://www.gnu.org/software/make/" target="_blank" rel="noopener">
+					<GnuMake class="size-14"/>
+					<small class="text-xs text-slate-500">Make</small>
+				</a>
+				<a href="https://parceljs.org" target="_blank" rel="noopener">
+					<Parcel class="size-14"/>
+					<small class="text-xs text-slate-500">Parcel</small>
+				</a>
+				<a href="https://webpack.js.org" target="_blank" rel="noopener">
+					<Webpack class="size-14"/>
+					<small class="text-xs text-slate-500">Webpack</small>
+				</a>
+				<a href="https://www.npmjs.com/" target="_blank" rel="noopener">
+					<Npm class="size-14"/>
+					<small class="text-xs text-slate-500">NPM</small>
+				</a>
+			</div>
+		</article>
+
+		<article>
+			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Testing</h3>
+			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
 				<a href="https://vitest.dev/" target="_blank" rel="noopener">
-					<Vitest class="size-16"/>
-					<small>Vitest</small>
+					<Vitest class="size-14"/>
+					<small class="text-xs text-slate-500">Vitest</small>
 				</a>
 				<a href="https://github.com/avajs/ava" target="_blank" rel="noopener">
-					<Ava class="size-16"/>
-					<small>Ava</small>
+					<Ava class="size-14"/>
+					<small class="text-xs text-slate-500">Ava</small>
 				</a>
 				<a href="https://phpunit.de" target="_blank" rel="noopener">
-					<PhpUnit class="size-16"/>
-					<small>PHP Unit</small>
+					<PhpUnit class="size-14"/>
+					<small class="text-xs text-slate-500">PHPUnit</small>
 				</a>
 				<a href="https://www.cypress.io" target="_blank" rel="noopener">
-					<Cypress class="size-16"/>
-					<small>Cypress</small>
+					<Cypress class="size-14"/>
+					<small class="text-xs text-slate-500">Cypress</small>
 				</a>
 				<a href="https://mochajs.org" target="_blank" rel="noopener">
-					<Mocha class="size-16"/>
-					<small>Mocha</small>
+					<Mocha class="size-14"/>
+					<small class="text-xs text-slate-500">Mocha</small>
 				</a>
 			</div>
 		</article>
 
-		<article>
-			<h3 class="font-semibold text-lg mb-2">Software I use</h3>
-			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
+		<article class="sm:col-span-2">
+			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Tools & Platforms</h3>
+			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
 				<a href="https://www.apple.com/macos" target="_blank" rel="noopener">
-					<Apple class="size-16"/>
-					<small>MacOS</small>
+					<Apple class="size-14"/>
+					<small class="text-xs text-slate-500">macOS</small>
 				</a>
 				<a href="https://www.linux.org" target="_blank" rel="noopener">
-					<Linux class="size-16"/>
-					<small>Linux</small>
+					<Linux class="size-14"/>
+					<small class="text-xs text-slate-500">Linux</small>
 				</a>
 				<a href="https://www.docker.com" target="_blank" rel="noopener">
-					<Docker class="size-16"/>
-					<small>Docker</small>
+					<Docker class="size-14"/>
+					<small class="text-xs text-slate-500">Docker</small>
 				</a>
 				<a href="https://git-scm.com" target="_blank" rel="noopener">
-					<Git class="size-16"/>
-					<small>Git</small>
+					<Git class="size-14"/>
+					<small class="text-xs text-slate-500">Git</small>
 				</a>
 				<a href="https://www.jetbrains.com/phpstorm/" target="_blank" rel="noopener">
-					<PhpStorm class="size-16"/>
-					<small>PhpStorm</small>
+					<PhpStorm class="size-14"/>
+					<small class="text-xs text-slate-500">PhpStorm</small>
+				</a>
+				<a href="https://www.wordpress.org" target="_blank" rel="noopener">
+					<Wordpress class="size-14"/>
+					<small class="text-xs text-slate-500">WordPress</small>
 				</a>
 			</div>
 		</article>
 
-		<article>
-			<div class="flex flex-wrap gap-3 *:flex *:flex-col *:items-center *:gap-0.5">
-				<a href="https://www.wordpress.org" target="_blank" rel="noopener">
-					<Wordpress class="size-16"/>
-					<small>Wordpress</small>
-				</a>
-			</div>
-		</article>
 	</div>
 </section>

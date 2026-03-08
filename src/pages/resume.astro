@@ -17,14 +17,24 @@ import { Download } from "@lucide/astro";
 	<Header/>
 
 	<main class="container px-4 mx-auto max-w-(--breakpoint-lg)">
-		<h1 class="text-center py-6 md:py-8 lg:py-12 xl:py-20 text-2xl font-semibold">Ing. Roman Ožana / Resume</h1>
+		<div class="py-10 md:py-16 lg:py-20 text-center">
+			<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Ing. Roman Ožana</h1>
+			<p class="mt-3 text-muted-foreground text-lg">Building things for the web since 2009</p>
+		</div>
 
-		<Headline/>
-		<WorkExperiences/>
-		<TechStack/>
-		<Language/>
-		<DrivingLicense/>
-		<Education/>
+		<div class="space-y-16 pb-16">
+			<Headline/>
+			<WorkExperiences/>
+			<TechStack/>
+
+			<div class="grid gap-16 md:gap-12 md:grid-cols-2">
+				<Education/>
+				<div class="space-y-12">
+					<Language/>
+					<DrivingLicense/>
+				</div>
+			</div>
+		</div>
 
 		<section class="hidden print:block break-before-page">
 			<div class="grid min-h-screen align-center">
@@ -36,7 +46,7 @@ import { Download } from "@lucide/astro";
 
 		<div class="text-center my-12 print:hidden">
 			<a href="/cv.pdf" download={`Resume - Ing. Roman Ožana - ${new Date().getFullYear()}.pdf`} class="btn">
-				<Download class="size-5"/>
+				<Download class="size-4"/>
 				Download as PDF
 			</a>
 		</div>

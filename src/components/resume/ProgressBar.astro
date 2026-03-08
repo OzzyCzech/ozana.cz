@@ -7,11 +7,11 @@ export interface Props {
 const {skill, percentage} = Astro.props as Props;
 ---
 <div>
-	<div class="flex justify-between mb-2">
-		<span class="font-semibold">{skill}</span>
-		<span>{percentage}</span>
+	<div class="flex justify-between mb-1.5">
+		<span class="text-sm font-medium text-slate-700">{skill}</span>
+		<span class="text-xs text-muted-foreground">{percentage}</span>
 	</div>
-	<div class="h-3 bg-secondary rounded-full overflow-hidden">
-		<div class="h-full bg-linear-to-r from-primary to-accent transition-all duration-1000" style={{width: percentage}}></div>
+	<div class="h-2 bg-muted rounded-full overflow-hidden">
+		<div class="h-full bg-linear-to-r from-primary to-accent rounded-full transition-all duration-1000" style={{width: percentage}}></div>
 	</div>
 </div>

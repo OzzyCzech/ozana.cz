@@ -10,6 +10,9 @@
 	--color-accent: oklch(0.54 0.23 264); /* violet-600 */
 
 	--color-secondary: oklch(92.9% 0.013 255.508); /* slate-100 */
+	--color-border: oklch(90% 0.01 260); /* subtle border */
+	--color-muted: oklch(96% 0.005 260); /* muted background */
+	--color-muted-foreground: oklch(55% 0.02 260); /* muted text */
 }
 
 @layer base {
@@ -18,11 +21,11 @@
 	::before,
 	::backdrop,
 	::file-selector-button {
-		border-color: var(--color-slate-300, currentColor);
+		border-color: var(--color-border, currentColor);
 	}
 
 	a {
-		@apply text-current hover:underline hover:text-blue-600 hover:ease-in-out;
+		@apply text-current hover:underline hover:text-primary hover:ease-in-out;
 	}
 }
 
@@ -37,7 +40,21 @@
 }
 
 @utility btn-blue {
-	@apply bg-blue-600 hover:bg-blue-700 rounded-full text-white hover:text-white hover:no-underline
+	@apply bg-blue-600 hover:bg-blue-700 rounded-lg text-white hover:text-white hover:no-underline;
+}
+
+@utility card {
+	@apply rounded-xl border border-border bg-white shadow-sm;
+}
+
+@utility section-title {
+	@apply text-lg font-semibold tracking-tight text-slate-900 print:text-current;
+}
+
+@utility badge {
+	@apply inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium;
+	@apply bg-slate-100 text-slate-700;
+	@apply transition-colors duration-150;
 }
 
 
