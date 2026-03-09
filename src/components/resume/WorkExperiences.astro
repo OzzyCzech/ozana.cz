@@ -20,9 +20,9 @@ const today = new Date().toISOString().slice(0, 10);
 
 	<div>
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="text-slate-500" title="March 2012 – Present">
-				2012 &ndash; Present
-				<p class="text-slate-400 mt-0.5">{formatDuration('2012-03-01', today)}</p>
+			<div class="flex justify-between md:block text-slate-500" title="March 2012 – Present">
+				<span>2012 &ndash; Present</span>
+				<span class="text-sm text-slate-400 md:block md:mt-0.5">{formatDuration('2012-03-01', today)}</span>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
@@ -35,9 +35,9 @@ const today = new Date().toISOString().slice(0, 10);
 		</article>
 
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="text-slate-500" title="May 2011 – Present">
-				2011 &ndash; Present
-				<p class="text-slate-400 mt-0.5">{formatDuration('2011-05-01', today)}</p>
+			<div class="flex justify-between md:block text-slate-500" title="May 2011 – Present">
+				<span>2011 &ndash; Present</span>
+				<span class="text-sm text-slate-400 md:block md:mt-0.5">{formatDuration('2011-05-01', today)}</span>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
@@ -50,9 +50,9 @@ const today = new Date().toISOString().slice(0, 10);
 		</article>
 
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="text-slate-500" title="February 2009 – Present">
-				2009 &ndash; Present
-				<p class="text-slate-400 mt-0.5">{formatDuration('2009-02-01', today)}</p>
+			<div class="flex justify-between md:block text-slate-500" title="February 2009 – Present">
+				<span>2009 &ndash; Present</span>
+				<span class="text-sm text-slate-400 md:block md:mt-0.5">{formatDuration('2009-02-01', today)}</span>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
@@ -65,9 +65,9 @@ const today = new Date().toISOString().slice(0, 10);
 		</article>
 
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="text-slate-400" title="July 2010 – March 2011">
-				2010 &ndash; 2011
-				<p class="mt-0.5">{formatDuration('2010-07-01', '2011-03-31')}</p>
+			<div class="flex justify-between md:block text-slate-400" title="July 2010 – March 2011">
+				<span>2010 &ndash; 2011</span>
+				<span class="text-sm md:block md:mt-0.5">{formatDuration('2010-07-01', '2011-03-31')}</span>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-600">
@@ -80,9 +80,9 @@ const today = new Date().toISOString().slice(0, 10);
 		</article>
 
 		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10">
-			<div class="text-slate-400" title="March 2009 – July 2010">
-				2009 &ndash; 2010
-				<p class="mt-0.5">{formatDuration('2009-03-01', '2010-08-01')}</p>
+			<div class="flex justify-between md:block text-slate-400" title="March 2009 – July 2010">
+				<span>2009 &ndash; 2010</span>
+				<span class="text-sm md:block md:mt-0.5">{formatDuration('2009-03-01', '2010-08-01')}</span>
 			</div>
 			<div>
 				<h3 class="text-lg font-semibold tracking-tight text-slate-600">
