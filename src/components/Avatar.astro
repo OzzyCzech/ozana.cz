@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import me from '../../public/img/roman-ozana-medium.jpg';
+import me from '../../public/img/roman-ozana.small.jpg';
 import { Download } from '@lucide/astro';
 ---
 
@@ -9,16 +9,16 @@ import { Download } from '@lucide/astro';
 		<Image src={me} alt="Roman Ožana" class="drop-shadow-sm rounded-full max-w-full h-auto align-middle border-none border" width="512" height="512" loading="eager" fetchpriority="high"/>
 	</button>
 
-	<div class="absolute z-10 w-48 right-0 left-0 m-auto bg-white rounded-sm divide-y divide-gray-100 shadow-sm dark:bg-gray-700 self-center hidden">
+	<div class="absolute top-full left-1/2 -translate-x-1/2 z-10 w-48 mt-2 bg-white rounded-sm divide-y divide-gray-100 shadow-sm dark:bg-gray-700 hidden">
 		<ul class="py-1 text-sm text-gray-700 dark:text-gray-200">
 			<li>
-				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-small.jpg" download>
+				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana.small.jpg" download>
 					<Download class="size-5"/>
 					Avatar size
 				</a>
 			</li>
 			<li>
-				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana-medium.jpg" download>
+				<a class="flex items-center gap-2 py-2 px-4 hover:bg-gray-100 hover:no-underline dark:hover:bg-gray-600 dark:hover:text-white" href="/img/roman-ozana.medium.jpg" download>
 					<Download class="size-5"/>
 					Medium size
 				</a>

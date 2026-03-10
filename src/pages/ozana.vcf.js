@@ -3,7 +3,7 @@ import { readFile as readFileAsync } from "node:fs/promises";
 import { join } from "node:path";
 
 export async function GET() {
-	const photo = join(process.cwd(), "/public/img/roman-ozana-small.jpg")
+	const photo = join(process.cwd(), "/public/img/roman-ozana.small.jpg")
 	const vcf = new VCard();
 	vcf.addName("Ožana", "Roman")
 		.addJobTitle("A freelance web developer")
