@@ -19,8 +19,8 @@ const today = new Date().toISOString().slice(0, 10);
 	<h2 class="section-title pb-4 border-b border-slate-200">Work Experience</h2>
 
 	<div>
-		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="flex justify-between md:block text-slate-500" title="March 2012 – Present">
+		<article class="grid md:grid-cols-[200px_1fr] print:block gap-x-10 gap-y-2 py-10 border-b border-slate-100 print:break-inside-avoid">
+			<div class="flex justify-between md:block text-slate-500 print:hidden" title="March 2012 – Present">
 				<span>2012 &ndash; Present</span>
 				<span class="text-sm text-slate-400 md:block md:mt-0.5">{formatDuration('2012-03-01', today)}</span>
 			</div>
@@ -28,14 +28,15 @@ const today = new Date().toISOString().slice(0, 10);
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
 					Co-founder & Full Stack Developer &ndash; <a href="https://www.testomato.com" target="_blank">Testomato s.r.o.</a>
 				</h3>
+				<p class="hidden print:block text-sm text-slate-500 mt-1">2012 &ndash; Present &middot; {formatDuration('2012-03-01', today)}</p>
 				<p class="mt-3 leading-relaxed text-slate-600">
 					Co-founded and developed <a href="https://www.testomato.com" target="_blank">Testomato</a>, a SaaS platform for automated website monitoring and testing. Leading full-stack development in JavaScript and PHP &ndash; from architecture and API design to frontend implementation. Responsible for infrastructure, CI/CD pipelines, and ensuring platform reliability at scale.
 				</p>
 			</div>
 		</article>
 
-		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="flex justify-between md:block text-slate-500" title="May 2011 – Present">
+		<article class="grid md:grid-cols-[200px_1fr] print:block gap-x-10 gap-y-2 py-10 border-b border-slate-100 print:break-inside-avoid">
+			<div class="flex justify-between md:block text-slate-500 print:hidden" title="May 2011 – Present">
 				<span>2011 &ndash; Present</span>
 				<span class="text-sm text-slate-400 md:block md:mt-0.5">{formatDuration('2011-05-01', today)}</span>
 			</div>
@@ -43,14 +44,15 @@ const today = new Date().toISOString().slice(0, 10);
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
 					Full Stack Developer &ndash; <a href="https://www.rzp.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=24683507" target="_blank">Devel.cz Lab s.r.o.</a>
 				</h3>
+				<p class="hidden print:block text-sm text-slate-500 mt-1">2011 &ndash; Present &middot; {formatDuration('2011-05-01', today)}</p>
 				<p class="mt-3 leading-relaxed text-slate-600">
 					Full-stack developer for <a href="https://www.zdrojak.cz">zdrojak.cz</a>, a leading Czech developer platform. Designed and built a custom WordPress theme and plugin suite from scratch, owning everything from database to UI. Delivering new features and maintaining platform stability in close collaboration with the editorial team.
 				</p>
 			</div>
 		</article>
 
-		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="flex justify-between md:block text-slate-500" title="February 2009 – Present">
+		<article class="grid md:grid-cols-[200px_1fr] print:block gap-x-10 gap-y-2 py-10 border-b border-slate-100 print:break-inside-avoid">
+			<div class="flex justify-between md:block text-slate-500 print:hidden" title="February 2009 – Present">
 				<span>2009 &ndash; Present</span>
 				<span class="text-sm text-slate-400 md:block md:mt-0.5">{formatDuration('2009-02-01', today)}</span>
 			</div>
@@ -58,14 +60,15 @@ const today = new Date().toISOString().slice(0, 10);
 				<h3 class="text-lg font-semibold tracking-tight text-slate-900">
 					<a href="https://ozana.cz">Freelance Web Developer</a>
 				</h3>
+				<p class="hidden print:block text-sm text-slate-500 mt-1">2009 &ndash; Present &middot; {formatDuration('2009-02-01', today)}</p>
 				<p class="mt-3 leading-relaxed text-slate-600">
 					Freelance full-stack web developer working with PHP, JavaScript, TypeScript, Node.js, Astro, Vue.js, React, Tailwind CSS, Docker, and a wide range of technologies across the web development stack.
 				</p>
 			</div>
 		</article>
 
-		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10 border-b border-slate-100">
-			<div class="flex justify-between md:block text-slate-400" title="July 2010 – March 2011">
+		<article class="grid md:grid-cols-[200px_1fr] print:block gap-x-10 gap-y-2 py-10 border-b border-slate-100 print:break-inside-avoid">
+			<div class="flex justify-between md:block text-slate-400 print:hidden" title="July 2010 – March 2011">
 				<span>2010 &ndash; 2011</span>
 				<span class="text-sm md:block md:mt-0.5">{formatDuration('2010-07-01', '2011-03-31')}</span>
 			</div>
@@ -73,14 +76,15 @@ const today = new Date().toISOString().slice(0, 10);
 				<h3 class="text-lg font-semibold tracking-tight text-slate-600">
 					Application Engineer &ndash; Intergraph s.r.o.
 				</h3>
+				<p class="hidden print:block text-sm text-slate-500 mt-1">2010 &ndash; 2011 &middot; {formatDuration('2010-07-01', '2011-03-31')}</p>
 				<p class="mt-3 leading-relaxed text-slate-500">
 					Testing enterprise metadata sharing and management solution. Development of C#.NET applications.
 				</p>
 			</div>
 		</article>
 
-		<article class="grid md:grid-cols-[200px_1fr] gap-x-10 gap-y-2 py-10">
-			<div class="flex justify-between md:block text-slate-400" title="March 2009 – July 2010">
+		<article class="grid md:grid-cols-[200px_1fr] print:block gap-x-10 gap-y-2 py-10 print:break-inside-avoid">
+			<div class="flex justify-between md:block text-slate-400 print:hidden" title="March 2009 – July 2010">
 				<span>2009 &ndash; 2010</span>
 				<span class="text-sm md:block md:mt-0.5">{formatDuration('2009-03-01', '2010-08-01')}</span>
 			</div>
@@ -88,6 +92,7 @@ const today = new Date().toISOString().slice(0, 10);
 				<h3 class="text-lg font-semibold tracking-tight text-slate-600">
 					PHP Developer &ndash; Skvely.CZ s.r.o.
 				</h3>
+				<p class="hidden print:block text-sm text-slate-500 mt-1">2009 &ndash; 2010 &middot; {formatDuration('2009-03-01', '2010-08-01')}</p>
 				<p class="mt-3 leading-relaxed text-slate-500">
 					PHP developer building custom web applications for clients and developing modules for the Magento e-commerce platform.
 				</p>
