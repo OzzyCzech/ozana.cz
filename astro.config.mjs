@@ -11,6 +11,8 @@ export default defineConfig({
 	integrations: [sitemap(), tailwind()],
 	output: "server",
 	adapter: vercel({
+    imageService: true,
+    devImageService: 'sharp',
 			webAnalytics: {
 				enabled: true,
 			},
