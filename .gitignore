@@ -1,11 +1,8 @@
-# build output
-dist/
 .cache/
 .claude/
-
-# generated types
 .astro/
 .vercel/
+dist/
 
 # dependencies
 node_modules/
