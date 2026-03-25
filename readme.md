@@ -19,3 +19,7 @@ pnpm install && pnpm build && pnpm start
 
 - [Astro](https://astro.build/)
 - [Lucide Icons](https://lucide.dev/)
+
+# Required environment variables
+
+- `GITHUB_TOKEN` - GitHub [personal access token](https://github.com/settings/personal-access-tokens)
