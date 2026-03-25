@@ -75,17 +75,6 @@ if (totalBytes > 0) {
 ---
 
 <article>
-	{langSegments.length > 0 && (
-		<div class="langbar" aria-hidden="true">
-			{langSegments.map((seg) => (
-				<span
-					class="seg"
-					style={`width:${seg.pct}%;background:${seg.color}`}
-					title={`${seg.name} ${Math.round(seg.pct)}%`}
-				/>
-			))}
-		</div>
-	)}
 	<header>
 		<a href={url} target="_blank" rel="noopener" class="repo-link">
 			{avatarUrl && <img src={avatarUrl} alt="" class="avatar" loading="lazy" />}
@@ -98,11 +87,24 @@ if (totalBytes > 0) {
 
 	<p class="description">{description}</p>
 
-	<footer>
-		<div class="stats">
-			{stars > 0 && <span>{stars} star{stars !== 1 ? 's' : ''}</span>}
-			{forks > 0 && <span>{forks} fork{forks !== 1 ? 's' : ''}</span>}
+	<div class="stats">
+		{stars > 0 && <span>{stars} star{stars !== 1 ? 's' : ''}</span>}
+		{forks > 0 && <span>{forks} fork{forks !== 1 ? 's' : ''}</span>}
+	</div>
+
+	{langSegments.length > 0 && (
+		<div class="langbar" aria-hidden="true">
+			{langSegments.map((seg) => (
+				<span
+					class="seg"
+					style={`width:${seg.pct}%;background:${seg.color}`}
+					title={`${seg.name} ${Math.round(seg.pct)}%`}
+				/>
+			))}
 		</div>
+	)}
+
+	<footer>
 		<a href={url} target="_blank" rel="noopener" class="btn btn-xs">View code</a>
 	</footer>
 </article>
@@ -120,7 +122,7 @@ if (totalBytes > 0) {
 	}
 
 	.langbar {
-		@apply -m-4 mb-3 h-1.5 overflow-hidden bg-slate-200;
+		@apply -mx-4 mt-3 mb-4 h-1.5 overflow-hidden bg-slate-200;
 		@apply flex;
 	}
 
@@ -153,10 +155,10 @@ if (totalBytes > 0) {
 	}
 
 	.description {
-		@apply text-sm text-slate-600 leading-relaxed flex-1 mb-4;
+		@apply text-sm text-slate-600 leading-relaxed flex-1 mb-4 last:mb-0;
 	}
 
 	.stats {
-		@apply flex gap-3 text-xs text-slate-500 mb-3;
+		@apply flex gap-3 text-xs text-slate-500;
 	}
 </style>

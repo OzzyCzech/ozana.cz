@@ -47,7 +47,26 @@ function writeCache(repository: string, data: GitHubRepo): void {
 export async function fetchRepo(repository: string): Promise<GitHubRepo> {
 	// Try cache first
 	const cached = readCache(repository);
-	if (cached) return cached;
+	if (cached) {
+		// If cache doesn't include language breakdown, fetch it (best effort)
+		if (!cached.languages) {
+			const headers: Record<string, string> = {
+				'Accept': 'application/vnd.github.v3+json',
+			};
+			const token = process.env.GITHUB_TOKEN;
+			if (token) headers['Authorization'] = `Bearer ${token}`;
+
+			try {
+				const languagesUrl = cached.languages_url || `https://api.github.com/repos/${repository}/languages`;
+				const langRes = await fetch(languagesUrl, { headers });
+				if (langRes.ok) {
+					cached.languages = await langRes.json();
+					writeCache(repository, cached);
+				}
+			} catch { /* ignore */ }
+		}
+		return cached;
+	}
 
 	const headers: Record<string, string> = {
 		'Accept': 'application/vnd.github.v3+json',
