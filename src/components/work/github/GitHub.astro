@@ -1,14 +1,11 @@
 ---
 import GitHubRepo from "./GitHubRepo.astro";
-import GitHubIcon from "../../../icons/github.svg"
 ---
 <section class="mt-12 pt-12 border-t border-slate-200">
 
-	<h2 class="section-title mb-4">
-		<a href="https://www.npmjs.com/settings/ozzyczech/packages" target="_blank" rel="noopener">Featured NPM Packages</a>
-	</h2>
+	<h2 class="section-title mb-4">Featured NPM Packages</h2>
 
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 items-start">
 		<GitHubRepo url="https://github.com/OzzyCzech/diggy" />
 		<GitHubRepo url="https://github.com/OzzyCzech/easter-date" />
 		<GitHubRepo url="https://github.com/OzzyCzech/international-days-cs" />
@@ -19,17 +16,24 @@ import GitHubIcon from "../../../icons/github.svg"
 		<GitHubRepo url="https://github.com/OzzyCzech/pux-to-html" />
 	</div>
 
+	<div class="text-center my-8 md:my-12">
+		<a
+			href="https://www.npmjs.com/settings/ozzyczech/packages"
+			target="_blank"
+			rel="noopener"
+			class="btn btn-xs"
+		>
+			View NPM
+		</a>
+	</div>
+
 </section>
 
 <section class="mt-12 pt-12 border-t border-slate-200">
 
-	<h2 class="section-title mb-4">
-		<a href="https://packagist.org/users/OzzyCzech/packages/" target="_blank" rel="noopener">
-			Featured PHP Packages
-		</a>
-	</h2>
+	<h2 class="section-title mb-4">Featured PHP Packages</h2>
 
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 items-start">
 		<GitHubRepo url="https://github.com/OzzyCzech/icalparser" />
 		<GitHubRepo url="https://github.com/OzzyCzech/potrans" />
 		<GitHubRepo url="https://github.com/OzzyCzech/fromArray" />
@@ -37,9 +41,13 @@ import GitHubIcon from "../../../icons/github.svg"
 	</div>
 
 	<div class="text-center my-8 md:my-12">
-		<a href="https://github.com/OzzyCzech?tab=repositories" target="_blank" rel="noopener" class="btn btn-xs">
-			<GitHubIcon class="size-4"/>
-			View GitHub
+		<a
+			href="https://packagist.org/users/OzzyCzech/packages/"
+			target="_blank"
+			rel="noopener"
+			class="btn btn-xs"
+		>
+			View Packagist
 		</a>
 	</div>
 

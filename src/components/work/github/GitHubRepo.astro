@@ -74,91 +74,39 @@ if (totalBytes > 0) {
 }
 ---
 
-<article>
-	<header>
-		<a href={url} target="_blank" rel="noopener" class="repo-link">
-			{avatarUrl && <img src={avatarUrl} alt="" class="avatar" loading="lazy" />}
-			<span class="repo-name">
-				<span class="owner">{owner}/</span>
-				<strong>{repo}</strong>
-			</span>
-		</a>
+<a
+	href={url}
+	target="_blank"
+	rel="noopener"
+	class="block overflow-hidden rounded-xl bg-white border border-slate-200 transition-shadow hover:shadow-md focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary p-4 hover:no-underline"
+	aria-label={`${owner}/${repo}`}
+>
+	<header class="flex items-center gap-3 mb-3">
+		{avatarUrl && <img src={avatarUrl} alt="" class="size-10 rounded-full bg-slate-100" loading="lazy" />}
+		<span class="text-sm leading-tight text-slate-800">
+			<span class="text-slate-500 font-normal">{owner}/</span>
+			<strong class="text-base text-slate-900 block">{repo}</strong>
+		</span>
 	</header>
 
-	<p class="description">{description}</p>
+	<div>
+		<p class="text-sm text-slate-600 leading-relaxed flex-1 mb-4">{description}</p>
 
-	<div class="stats">
-		{stars > 0 && <span>{stars} star{stars !== 1 ? 's' : ''}</span>}
-		{forks > 0 && <span>{forks} fork{forks !== 1 ? 's' : ''}</span>}
+		<div class="flex gap-3 text-xs text-slate-500">
+			<span>{stars} star{stars !== 1 ? 's' : ''}</span>
+			<span>{forks} fork{forks !== 1 ? 's' : ''}</span>
+		</div>
 	</div>
 
 	{langSegments.length > 0 && (
-		<div class="langbar" aria-hidden="true">
+		<div class="-mx-4 mt-4 -mb-4 h-1.5 overflow-hidden bg-slate-200 flex" aria-hidden="true">
 			{langSegments.map((seg) => (
 				<span
-					class="seg"
+					class="h-full"
 					style={`width:${seg.pct}%;background:${seg.color}`}
-					title={`${seg.name} ${Math.round(seg.pct)}%`}
 				/>
 			))}
 		</div>
 	)}
+</a>
 
-	<footer>
-		<a href={url} target="_blank" rel="noopener" class="btn btn-xs">View code</a>
-	</footer>
-</article>
-
-<style>
-	@reference "tailwindcss";
-
-	article {
-		@apply overflow-hidden flex flex-col;
-		@apply rounded-xl bg-white;
-		@apply border border-slate-200;
-		@apply transition-shadow hover:shadow-md;
-		@apply has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1;
-		@apply p-4;
-	}
-
-	.langbar {
-		@apply -mx-4 mt-3 mb-4 h-1.5 overflow-hidden bg-slate-200;
-		@apply flex;
-	}
-
-	.seg {
-		@apply h-full;
-	}
-
-	header {
-		@apply mb-3;
-	}
-
-	.repo-link {
-		@apply flex items-center gap-3 hover:no-underline text-slate-800;
-	}
-
-	.avatar {
-		@apply size-10 rounded-full bg-slate-100;
-	}
-
-	.repo-name {
-		@apply text-sm leading-tight;
-	}
-
-	.owner {
-		@apply text-slate-500 font-normal;
-	}
-
-	strong {
-		@apply text-base text-slate-900 block;
-	}
-
-	.description {
-		@apply text-sm text-slate-600 leading-relaxed flex-1 mb-4 last:mb-0;
-	}
-
-	.stats {
-		@apply flex gap-3 text-xs text-slate-500;
-	}
-</style>
