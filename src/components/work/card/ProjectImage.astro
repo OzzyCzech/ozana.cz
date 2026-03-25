@@ -14,6 +14,7 @@ const {href, src, alt} = Astro.props as Props;
 <a
 	href={href}
 	target="_blank"
+	rel="noopener"
 	aria-label={`Link to ${alt ?? "project"}`}
 >
 	<figure class="">

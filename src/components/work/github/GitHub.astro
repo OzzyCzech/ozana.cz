@@ -2,13 +2,13 @@
 import GitHubRepo from "./GitHubRepo.astro";
 import GitHubIcon from "../../../icons/github.svg"
 ---
-<section class=" max-w-(--breakpoint-2xl) px-4 mx-auto">
+<section class="mt-16 pt-16 border-t border-slate-200">
 
-	<h2 class="text-2xl font-semibold my-4">
-		<a href="https://www.npmjs.com/settings/ozzyczech/packages" target="_blank">Featured NPM Packages</a>
+	<h2 class="section-title mb-4">
+		<a href="https://www.npmjs.com/settings/ozzyczech/packages" target="_blank" rel="noopener">Featured NPM Packages</a>
 	</h2>
 
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 		<GitHubRepo url="https://github.com/OzzyCzech/diggy">
 			<p>
 				Diggy is a flexible JavaScript DNS resolver supporting DNS over HTTPS, native dig, and Node.js DNS.
@@ -49,7 +49,7 @@ import GitHubIcon from "../../../icons/github.svg"
 		<GitHubRepo url="https://github.com/OzzyCzech/mock-to-openapi">
 			<p>
 				Cli tool (and library) for converting JSON mock objects to <a href="https://swagger.io/specification/" rel="noopener noreferrer nofollow">OpenAPI schemas</a>.
-				Check <a href="https://ozzyczech.github.io/mock-to-openapi/" target="_blank">online converter</a> for demo.
+				Check <a href="https://ozzyczech.github.io/mock-to-openapi/" target="_blank" rel="noopener">online converter</a> for demo.
 			</p>
 		</GitHubRepo>
 
@@ -61,13 +61,13 @@ import GitHubIcon from "../../../icons/github.svg"
 
 	</div>
 
-	<h2 class="text-2xl font-semibold my-4">
-		<a href="https://packagist.org/users/OzzyCzech/packages/" target="_blank">
+	<h2 class="section-title mt-10 mb-4">
+		<a href="https://packagist.org/users/OzzyCzech/packages/" target="_blank" rel="noopener">
 			Featured PHP Packages
 		</a>
 	</h2>
 
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 
 		<GitHubRepo url="https://github.com/OzzyCzech/icalparser">
 			<p>Simple iCal parser for PHP that can parse iCal files and return an array of events.</p>
@@ -95,13 +95,11 @@ import GitHubIcon from "../../../icons/github.svg"
 
 	</div>
 
-	<p class="text-center my-8 md:my-12">
-		<a href="https://github.com/OzzyCzech?tab=repositories" target="_blank"
-		   class="btn"
-		   title="Visit my GitHub profile">
-			<GitHubIcon class="size-6"/>
-			Visit my GitHub profile
+	<div class="text-center my-8 md:my-12">
+		<a href="https://github.com/OzzyCzech?tab=repositories" target="_blank" rel="noopener" class="btn">
+			<GitHubIcon class="size-5"/>
+			View GitHub
 		</a>
-	</p>
+	</div>
 
 </section>

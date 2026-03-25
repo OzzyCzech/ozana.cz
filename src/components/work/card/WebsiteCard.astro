@@ -3,9 +3,9 @@
 		<slot name="header"/>
 	</header>
 
-	<main itemprop="articleBody">
+	<div itemprop="articleBody">
 		<slot/>
-	</main>
+	</div>
 </article>
 
 <style>
@@ -13,10 +13,10 @@
 
 	article {
 		@apply grid grid-flow-row gap-6;
-		@apply md:grid-cols-[1fr_2fr] lg:gap-x-8;
+		@apply md:grid-cols-[1fr_1fr] lg:gap-x-10;
 	}
 
-	main {
-		@apply flex flex-col gap-4;
+	div {
+		@apply flex flex-col gap-4 justify-center;
 	}
 </style>

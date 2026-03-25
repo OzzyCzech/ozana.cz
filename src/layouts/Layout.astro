@@ -29,7 +29,8 @@ const canonical = new URL(Astro.url.pathname, "https://ozana.cz");
 	<meta name="author" content="All: Roman Ožana; e-mail: roman@ozana.cz"/>
 	<link rel="sitemap" href="/sitemap-index.xml"/>
 </head>
-<body class="font-sans bg-white print:bg-transparent text-gray-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
+<body class="font-sans bg-white print:bg-transparent text-slate-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-slate-800 focus:text-white focus:rounded-md focus:text-sm focus:font-medium">Skip to content</a>
 <slot/>
 <SpeedInsights/>
 </body>

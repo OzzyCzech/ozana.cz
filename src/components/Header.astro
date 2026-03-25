@@ -1,6 +1,6 @@
 ---
 import { Menu, X} from '@lucide/astro';
-import GithubIcon from '../icons/github-alt.svg';
+import GithubIcon from '../icons/github.svg';
 ---
 
 <header class="sticky top-0 z-40 w-full border-b border-dashed border-slate-200 bg-white/95 backdrop-blur-sm print:hidden">
@@ -18,7 +18,7 @@ import GithubIcon from '../icons/github-alt.svg';
 			<a href="/projects" class="nav-link">Projects</a>
 			<a href="/resume" class="nav-link">Resume</a>
 			<a href="/contact" class="nav-link">Contact</a>
-			<a href="https://github.com/OzzyCzech/" target="_blank" class="nav-icon" aria-label="GitHub">
+			<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="nav-icon" aria-label="GitHub">
 				<GithubIcon class="size-4"/>
 			</a>
 		</div>
@@ -26,6 +26,8 @@ import GithubIcon from '../icons/github-alt.svg';
 		<button
 			class="p-2 rounded-md hover:bg-slate-100 lg:hidden"
 			aria-label="Toggle menu"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
 			id="menu-toggle"
 		>
 			<Menu class="size-5" id="icon-menu"/>
@@ -33,18 +35,18 @@ import GithubIcon from '../icons/github-alt.svg';
 		</button>
 	</nav>
 
-	<div id="mobile-menu" class="hidden lg:hidden absolute left-0 right-0 sm:left-auto sm:right-0 sm:w-48 top-full bg-white border border-slate-200 rounded-lg mx-4 sm:mx-0 sm:mr-6 p-2 z-50 shadow-lg">
+	<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden lg:hidden absolute left-0 right-0 sm:left-auto sm:right-0 sm:w-48 top-full bg-white border border-slate-200 rounded-lg mx-4 sm:mx-0 sm:mr-6 p-2 z-50 shadow-lg">
 		<div class="flex flex-col">
 			<a href="/" class="mobile-nav-link">Home</a>
 			<a href="/projects" class="mobile-nav-link">Projects</a>
 			<a href="/resume" class="mobile-nav-link">Resume</a>
 			<a href="/contact" class="mobile-nav-link">Contact</a>
 			<hr class="my-2 border-slate-200"/>
-			<a href="https://github.com/OzzyCzech/" target="_blank" class="mobile-nav-link inline-flex items-center gap-2">
+			<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="mobile-nav-link inline-flex items-center gap-2">
 				<GithubIcon class="size-4"/> GitHub
 			</a>
 		</div>
-	</div>
+	</nav>
 </div>
 </header>
 
@@ -71,9 +73,11 @@ import GithubIcon from '../icons/github-alt.svg';
 	const iconClose = document.getElementById('icon-close');
 
 	toggle?.addEventListener('click', () => {
+		const isOpen = !mobileMenu?.classList.contains('hidden');
 		mobileMenu?.classList.toggle('hidden');
 		iconMenu?.classList.toggle('hidden');
 		iconClose?.classList.toggle('hidden');
+		toggle?.setAttribute('aria-expanded', String(!isOpen));
 	});
 
 	document.addEventListener('click', (e) => {
@@ -81,6 +85,7 @@ import GithubIcon from '../icons/github-alt.svg';
 			mobileMenu?.classList.add('hidden');
 			iconMenu?.classList.remove('hidden');
 			iconClose?.classList.add('hidden');
+			toggle?.setAttribute('aria-expanded', 'false');
 		}
 	});
 </script>

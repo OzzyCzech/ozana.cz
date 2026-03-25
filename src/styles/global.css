@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 
-@plugin '@tailwindcss/typography';
 
-@custom-variant dark (&:where(.dark, .dark *));
 @custom-variant active (&:where(.active &));
 
 @theme {
@@ -37,10 +35,6 @@
 
 @utility btn-xs {
 	@apply py-1 px-3 text-sm font-semibold;
-}
-
-@utility btn-blue {
-	@apply bg-blue-600 hover:bg-blue-700 rounded-lg text-white hover:text-white hover:no-underline;
 }
 
 @utility card {

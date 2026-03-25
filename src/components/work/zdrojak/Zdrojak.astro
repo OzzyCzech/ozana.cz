@@ -10,7 +10,7 @@ import WebsiteImage from "../card/WebsiteImage.astro";
 <WebsiteCard>
 
 	<Fragment slot="header">
-		<h1 itemprop="headline" class="sr-only">Zdrojak</h1>
+		<h2 itemprop="headline" class="sr-only">Zdrojak</h2>
 		<WebsiteImage
 			src={screenshot}
 			href="https://zdrojak.cz"
@@ -18,12 +18,12 @@ import WebsiteImage from "../card/WebsiteImage.astro";
 	</Fragment>
 
 	<Fragment>
-		<a href="https://zdrojak.cz" target="_blank" class="hover:text-inherit text-gray-800" aria-label="Zdroják.cz">
-			<ZdrojakLogo class="w-48 h-auto mx-auto md:ml-0"/>
+		<a href="https://zdrojak.cz" target="_blank" rel="noopener" class="hover:text-inherit text-slate-800" aria-label="Zdroják.cz">
+			<ZdrojakLogo class="w-36 h-auto mx-auto md:ml-0"/>
 		</a>
 
-		<p class="prose prose-lg">
-			<a href="https://zdrojak.cz" target="_blank">Zdroják.cz</a> is one of the most recognized Czech magazines focused on
+		<p class="leading-relaxed text-slate-600">
+			<a href="https://zdrojak.cz" target="_blank" rel="noopener">Zdroják.cz</a> is one of the most recognized Czech magazines focused on
 			software development. I’ve been part of the team since its <abbr title="In year 2013">relaunch</abbr>,
 			working as the <strong>lead developer</strong> and <strong>site administrator</strong>. The current version runs on WordPress,
 			enhanced with a range of custom-built plugins, WordPress modifications, and optimizations.
