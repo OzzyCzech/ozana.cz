@@ -1,46 +1,67 @@
 ---
-import { Image } from 'astro:assets';
-import { existsSync } from 'node:fs';
-import type { ImageMetadata } from "astro";
-import { downloadOgImage } from '../../../lib/og-image.js';
-import { join } from 'node:path';
+import { fetchRepo } from '../../../lib/github';
 
 export interface Props {
 	url: string;
 }
 
+// GitHub linguist language colors
+const LANGUAGE_COLORS: Record<string, string> = {
+	'JavaScript': '#f1e05a',
+	'TypeScript': '#3178c6',
+	'PHP':        '#4F5D95',
+	'Python':     '#3572A5',
+	'HTML':       '#e34c26',
+	'CSS':        '#563d7c',
+	'Shell':      '#89e051',
+	'Go':         '#00ADD8',
+	'Rust':       '#dea584',
+	'Ruby':       '#701516',
+	'Java':       '#b07219',
+	'C':          '#555555',
+	'C++':        '#f34b7d',
+	'Swift':      '#F05138',
+	'Kotlin':     '#A97BFF',
+	'Vue':        '#41b883',
+	'Svelte':     '#ff3e00',
+	'Astro':      '#ff5a03',
+};
 
 const {url} = Astro.props as Props;
-const repository = new URL(url).pathname.replace(/^\/|\/$/g, '')
-const ogImageFile = join('/src/components/work/github', `${repository}.png`);
+const repository = new URL(url).pathname.replace(/^\/|\/$/g, '');
+const [owner, repo] = repository.split('/');
 
-// Download the image if it doesn't exist
-if (import.meta.env.DEV && !existsSync(`.${ogImageFile}`)) {
-	await downloadOgImage(url, `.${ogImageFile}`);
-}
+const data = await fetchRepo(repository);
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/components/work/github/**/*.png')
-if (!images[ogImageFile]) throw new Error(`Image not found: ${ogImageFile}`);
+const description = data.description || '';
+const stars = data.stargazers_count || 0;
+const forks = data.forks_count || 0;
+const avatarUrl = data.owner?.avatar_url;
+
+// Color based on primary language
+const language = data.language || '';
+const borderColor = LANGUAGE_COLORS[language] || '#94a3b8'; // slate-400 fallback
 ---
 
-<article>
-	<a href={url} target="_blank" rel="noopener" class="block hover:no-underline">
-		<Image
-			src={images[ogImageFile]()}
-			alt={`GitHub repository ${repository}`}
-			class="w-full aspect-2/1 object-cover object-top"
-			itemprop="image"
-			loading="lazy"
-		/>
-		<span class="sr-only">Visit GitHub repository</span>
-	</a>
-	<div class="p-4 leading-relaxed text-slate-600">
-		<slot/>
-	</div>
-	<footer class="px-4 pb-4">
-		<a href={url} target="_blank" rel="noopener" class="btn btn-xs">
-			View Code
+<article style={`border-top-color: ${borderColor}`}>
+	<header>
+		<a href={url} target="_blank" rel="noopener" class="repo-link">
+			{avatarUrl && <img src={avatarUrl} alt="" class="avatar" loading="lazy" />}
+			<span class="repo-name">
+				<span class="owner">{owner}/</span>
+				<strong>{repo}</strong>
+			</span>
 		</a>
+	</header>
+
+	<p class="description">{description}</p>
+
+	<footer>
+		<div class="stats">
+			{stars > 0 && <span>{stars} star{stars !== 1 ? 's' : ''}</span>}
+			{forks > 0 && <span>{forks} fork{forks !== 1 ? 's' : ''}</span>}
+		</div>
+		<a href={url} target="_blank" rel="noopener" class="btn btn-xs">View code</a>
 	</footer>
 </article>
 
@@ -49,8 +70,42 @@ if (!images[ogImageFile]) throw new Error(`Image not found: ${ogImageFile}`);
 
 	article {
 		@apply overflow-hidden flex flex-col;
-		@apply rounded-xl border border-slate-200 bg-white;
+		@apply rounded-xl bg-white;
+		@apply border border-slate-200 border-t-4;
 		@apply transition-shadow hover:shadow-md;
 		@apply has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1;
+		@apply p-4;
+	}
+
+	header {
+		@apply mb-3;
+	}
+
+	.repo-link {
+		@apply flex items-center gap-3 hover:no-underline text-slate-800;
+	}
+
+	.avatar {
+		@apply size-10 rounded-full bg-slate-100;
+	}
+
+	.repo-name {
+		@apply text-sm leading-tight;
+	}
+
+	.owner {
+		@apply text-slate-500 font-normal;
+	}
+
+	strong {
+		@apply text-base text-slate-900 block;
+	}
+
+	.description {
+		@apply text-sm text-slate-600 leading-relaxed flex-1 mb-4;
+	}
+
+	.stats {
+		@apply flex gap-3 text-xs text-slate-500 mb-3;
 	}
 </style>
