@@ -1,5 +1,6 @@
 ---
 import { fetchRepo } from '../../../lib/github';
+import type { GitHubRepo as GitHubRepoType } from '../../../lib/github';
 
 export interface Props {
 	url: string;
@@ -31,19 +32,59 @@ const {url} = Astro.props as Props;
 const repository = new URL(url).pathname.replace(/^\/|\/$/g, '');
 const [owner, repo] = repository.split('/');
 
-const data = await fetchRepo(repository);
+const data = (await fetchRepo(repository)) as GitHubRepoType;
 
 const description = data.description || '';
 const stars = data.stargazers_count || 0;
 const forks = data.forks_count || 0;
 const avatarUrl = data.owner?.avatar_url;
 
-// Color based on primary language
 const language = data.language || '';
-const borderColor = LANGUAGE_COLORS[language] || '#94a3b8'; // slate-400 fallback
+const languagesRaw = (data.languages && typeof data.languages === 'object') ? data.languages : null;
+const languagesEntries = languagesRaw ? Object.entries(languagesRaw).filter(([, v]) => typeof v === 'number' && v > 0) : [];
+const totalBytes = languagesEntries.reduce((sum, [, v]) => sum + v, 0);
+
+type LangSeg = { name: string; pct: number; color: string; bytes: number };
+let langSegments: LangSeg[] = [];
+
+if (totalBytes > 0) {
+	langSegments = languagesEntries
+		.sort((a, b) => b[1] - a[1])
+		.map(([name, bytes]) => ({
+			name,
+			bytes,
+			pct: (bytes / totalBytes) * 100,
+			color: LANGUAGE_COLORS[name] || '#94a3b8',
+		}));
+
+	const MAX_SEGMENTS = 4;
+	if (langSegments.length > MAX_SEGMENTS) {
+		const head = langSegments.slice(0, MAX_SEGMENTS);
+		const tail = langSegments.slice(MAX_SEGMENTS);
+		const otherBytes = tail.reduce((s, x) => s + x.bytes, 0);
+		const otherPct = tail.reduce((s, x) => s + x.pct, 0);
+		langSegments = [
+			...head,
+			{ name: 'Other', bytes: otherBytes, pct: otherPct, color: '#94a3b8' },
+		];
+	}
+} else if (language) {
+	langSegments = [{ name: language, bytes: 1, pct: 100, color: LANGUAGE_COLORS[language] || '#94a3b8' }];
+}
 ---
 
-<article style={`border-top-color: ${borderColor}`}>
+<article>
+	{langSegments.length > 0 && (
+		<div class="langbar" aria-hidden="true">
+			{langSegments.map((seg) => (
+				<span
+					class="seg"
+					style={`width:${seg.pct}%;background:${seg.color}`}
+					title={`${seg.name} ${Math.round(seg.pct)}%`}
+				/>
+			))}
+		</div>
+	)}
 	<header>
 		<a href={url} target="_blank" rel="noopener" class="repo-link">
 			{avatarUrl && <img src={avatarUrl} alt="" class="avatar" loading="lazy" />}
@@ -71,10 +112,19 @@ const borderColor = LANGUAGE_COLORS[language] || '#94a3b8'; // slate-400 fallbac
 	article {
 		@apply overflow-hidden flex flex-col;
 		@apply rounded-xl bg-white;
-		@apply border border-slate-200 border-t-4;
+		@apply border border-slate-200;
 		@apply transition-shadow hover:shadow-md;
 		@apply has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1;
 		@apply p-4;
+	}
+
+	.langbar {
+		@apply -m-4 mb-3 h-1.5 overflow-hidden bg-slate-200;
+		@apply flex;
+	}
+
+	.seg {
+		@apply h-full;
 	}
 
 	header {

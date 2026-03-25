@@ -10,6 +10,9 @@ export interface GitHubRepo {
 	description: string;
 	stargazers_count: number;
 	forks_count: number;
+	language?: string;
+	languages_url?: string;
+	languages?: Record<string, number>;
 	owner: {
 		login: string;
 		avatar_url: string;
@@ -77,6 +80,18 @@ export async function fetchRepo(repository: string): Promise<GitHubRepo> {
 	}
 
 	const data = await response.json();
+
+	// Fetch language breakdown (best effort). Requires an extra API call per repo.
+	try {
+		const languagesUrl: string | undefined = data.languages_url || `https://api.github.com/repos/${repository}/languages`;
+		if (languagesUrl) {
+			const langRes = await fetch(languagesUrl, { headers });
+			if (langRes.ok) {
+				data.languages = await langRes.json();
+			}
+		}
+	} catch { /* ignore */ }
+
 	writeCache(repository, data);
 	return data;
 }
