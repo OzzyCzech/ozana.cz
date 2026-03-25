@@ -23,37 +23,34 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/components/wor
 if (!images[ogImageFile]) throw new Error(`Image not found: ${ogImageFile}`);
 ---
 
-<div>
-	<article class="flex flex-col gap-2 bg-slate-50">
-		<header class="relative">
-			<a href={url} target="_blank" rel="noopener" class="hover:no-underline">
-				<Image
-					src={images[ogImageFile]()}
-					alt={`GitHub repository ${repository}`}
-					class="rounded-t-2xl"
-					itemprop="image"
-					loading="lazy"
-				/>
-				<span class="sr-only">Visit GitHub repository</span>
-			</a>
-		</header>
-		<main class="px-4 text-sm leading-relaxed text-slate-600">
-			<slot/>
-		</main>
-		<footer class="text-right pb-2 px-1.5">
-			<a href={url} target="_blank" rel="noopener" class="btn btn-xs">
-				View Code
-			</a>
-		</footer>
-	</article>
-</div>
+<article>
+	<a href={url} target="_blank" rel="noopener" class="block hover:no-underline">
+		<Image
+			src={images[ogImageFile]()}
+			alt={`GitHub repository ${repository}`}
+			class="w-full aspect-2/1 object-cover object-top"
+			itemprop="image"
+			loading="lazy"
+		/>
+		<span class="sr-only">Visit GitHub repository</span>
+	</a>
+	<div class="p-4 leading-relaxed text-slate-600">
+		<slot/>
+	</div>
+	<footer class="px-4 pb-4">
+		<a href={url} target="_blank" rel="noopener" class="btn btn-xs">
+			View Code
+		</a>
+	</footer>
+</article>
 
 <style>
 	@reference "tailwindcss";
 
 	article {
-		@apply overflow-clip;
+		@apply overflow-hidden flex flex-col;
+		@apply rounded-xl border border-slate-200 bg-white;
+		@apply transition-shadow hover:shadow-md;
 		@apply has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1;
-		@apply rounded-xl border border-slate-300;
 	}
 </style>

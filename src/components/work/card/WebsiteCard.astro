@@ -12,11 +12,12 @@
 	@reference "tailwindcss";
 
 	article {
-		@apply grid grid-flow-row gap-6;
-		@apply md:grid-cols-[1fr_1fr] lg:gap-x-10;
+		@apply rounded-xl overflow-hidden;
+		@apply grid grid-flow-row gap-6 md:gap-12;
+		@apply md:grid-cols-[2fr_3fr];
 	}
 
 	div {
-		@apply flex flex-col gap-4 justify-center;
+		@apply flex flex-col gap-3 justify-start items-center md:items-start;
 	}
 </style>

@@ -15,12 +15,13 @@ const {href, src, alt} = Astro.props as Props;
 	href={href}
 	target="_blank"
 	rel="noopener"
+	class="block"
 	aria-label={`Link to ${alt ?? "website"}`}>
 	<figure>
 		<Image
 			src={src}
 			alt={alt ?? "Website screenshot"}
-			class="rounded-md md:rounded-xl shadow-lg"
+			class="w-full h-full object-cover rounded-lg shadow-sm"
 			itemprop="image"
 			loading="eager"
 		/>

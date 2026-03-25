@@ -1,0 +1,91 @@
+---
+import { Newspaper } from "@lucide/astro";
+---
+<section class="mt-12 pt-12 border-t border-slate-200">
+
+	<h2 class="section-title mb-4">
+		<a href="https://zdrojak.cz/autori/roman-ozana/" target="_blank" rel="noopener">Featured Articles</a>
+	</h2>
+
+	<ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+		<li>
+			<a href="https://zdrojak.cz/clanky/docker-bun-caddy-mikrosluzba-za-hodinu/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Docker + Bun + Caddy: mikroslužba za hodinu</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/sluzba-polyfill-io-byla-napadena-hackery/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Služba Polyfill.io byla napadena hackery</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/docker-peceme-obraz-pro-vice-platforem/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Docker: Pečeme obraz pro více platforem</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/bluesky-modrejsi-nez-nebe/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Bluesky: modřejší než nebe</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/jak-na-api-dokumentaci/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Jak na API dokumentaci</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/zacnete-pouzivat-ecmascript-moduly-v-node-js-uz-dnes/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Začněte používat ECMAScript moduly v Node.js už dnes</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/webpack-balime-si-dovolenou-produkci/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Webpack: Balíme si na dovolenou v produkci</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/postcss-a-cssnext-jeste-dnes-v-produkci-diky-webpack-2/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>PostCSS a CSSnext ještě dnes v produkci díky Webpack 2</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/jaka-byla-konference-uxz/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Jaká byla konference UXZ.cz</span>
+			</a>
+		</li>
+		<li>
+			<a href="https://zdrojak.cz/clanky/recenze-dobry-designer-vsechno-vi/" target="_blank" rel="noopener" class="article-link">
+				<Newspaper class="size-4 shrink-0 text-slate-400"/>
+				<span>Recenze: Dobrý designér to všechno ví!</span>
+			</a>
+		</li>
+	</ul>
+
+	<div class="text-center mt-8">
+		<a href="https://zdrojak.cz/autori/roman-ozana/" target="_blank" rel="noopener" class="btn btn-xs">
+			All articles on Zdroják.cz
+		</a>
+	</div>
+
+</section>
+
+<style>
+	@reference "../../styles/global.css";
+
+	.article-link {
+		@apply flex items-center gap-3 px-4 py-3;
+		@apply rounded-lg border border-slate-200;
+		@apply text-sm font-medium text-slate-700;
+		@apply hover:no-underline hover:bg-slate-50 hover:text-primary hover:border-slate-300;
+		@apply transition-colors;
+	}
+</style>

@@ -5,24 +5,26 @@ import Footer from '../components/Footer.astro';
 import Zdrojak from "../components/work/zdrojak/Zdrojak.astro";
 import Testomato from "../components/work/testomato/Testomato.astro";
 import GitHub from "../components/work/github/GitHub.astro";
+import Articles from "../components/work/Articles.astro";
 ---
 
 <Layout title="Ing. Roman Ožana / Projects">
 	<Header/>
-	<main id="main" class="container px-4 mx-auto max-w-(--breakpoint-lg)">
+	<main id="main" class="container px-4 mx-auto max-w-screen-lg">
 
 		<div class="py-10 md:py-16 lg:py-20 text-center">
 			<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Projects</h1>
 			<p class="mt-3 text-muted-foreground text-lg">Things I've built and contribute to.</p>
 		</div>
 
-		<div class="space-y-12 md:space-y-16">
+		<div class="space-y-12">
 			<Testomato/>
-			<hr class="border-slate-200"/>
 			<Zdrojak/>
 		</div>
 
 		<GitHub/>
+
+		<Articles/>
 
 	</main>
 	<Footer/>
