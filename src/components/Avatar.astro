@@ -39,8 +39,8 @@ import { Download } from '@lucide/astro';
 		constructor() {
 			super();
 
-			const button = this.querySelector('button');
-			const menu = this.querySelector('div');
+			const button = this.querySelector('button')!;
+			const menu = this.querySelector('div')!;
 
 			const open = () => {
 				menu.classList.remove('hidden');
