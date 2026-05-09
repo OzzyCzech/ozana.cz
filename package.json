@@ -16,6 +16,7 @@
     "@astrojs/vercel": "^10.0.6",
     "@lucide/astro": "^1.14.0",
     "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.3.0",
     "@vercel/speed-insights": "^2.0.0",
     "@wticons/astro": "^2.1.1",
     "astro": "6.3.1",
@@ -26,14 +27,15 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.0",
-    "postcss": "^8.5.14",
     "url-metadata": "^5.4.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
       "sharp"
-    ]
+    ],
+    "overrides": {
+      "@tailwindcss/vite>vite": "7.3.3"
+    }
   }
 }
