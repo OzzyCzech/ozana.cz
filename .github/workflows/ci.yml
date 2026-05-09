@@ -12,10 +12,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [22, 24, 25, 26]
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6
@@ -23,7 +19,7 @@ jobs:
           version: 10
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - name: Lint and typecheck
