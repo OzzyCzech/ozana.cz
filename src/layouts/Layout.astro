@@ -28,7 +28,7 @@ const canonical = new URL(Astro.url.pathname, "https://ozana.cz");
 	<meta name="description" content={description}/>
 	<meta name="author" content="All: Roman Ožana; e-mail: roman@ozana.cz"/>
 	<link rel="sitemap" href="/sitemap-index.xml"/>
-	<script type="application/ld+json" set:html={JSON.stringify({
+	<script is:inline type="application/ld+json" set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Roman Ožana",
