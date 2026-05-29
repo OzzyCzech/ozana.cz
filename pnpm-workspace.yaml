@@ -1,6 +1,9 @@
 allowBuilds:
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - astro@6.4.2
 overrides:
   '@tailwindcss/vite>vite': ^7.0.0
-  yaml: ^2.8.3
+  '@vercel/routing-utils>path-to-regexp': ^6.3.0
+  yaml: ^2.9.0
