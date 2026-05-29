@@ -13,7 +13,8 @@ const {
 
 import SpeedInsights from "@vercel/speed-insights/astro"
 
-const canonical = new URL(Astro.url.pathname, "https://ozana.cz");
+const pathname = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = new URL(pathname, "https://ozana.cz");
 ---
 
 <!doctype html>
