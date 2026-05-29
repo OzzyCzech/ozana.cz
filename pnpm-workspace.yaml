@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+overrides:
+  '@tailwindcss/vite>vite': ^7.0.0
+  yaml: ^2.8.3
