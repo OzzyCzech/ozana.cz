@@ -8,7 +8,7 @@ export default defineConfig({
 	site: "https://ozana.cz",
 	prefetch: true,
 	integrations: [sitemap()],
-	output: "server",
+	output: "static",
 	adapter: vercel({
 		imageService: true,
 		devImageService: "sharp",

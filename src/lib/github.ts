@@ -86,7 +86,7 @@ export async function fetchRepo(repository: string): Promise<GitHubRepo> {
 		if (stale) return stale;
 
 		// Return minimal fallback
-		const [owner, name] = repository.split('/');
+		const [owner = '', name = repository] = repository.split('/');
 		return {
 			name,
 			full_name: repository,

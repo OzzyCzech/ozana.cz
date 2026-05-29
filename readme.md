@@ -11,7 +11,8 @@ Personal website https://ozana.cz
 ## Install & run
 
 ```bash
-pnpm install && pnpm build && pnpm start
+pnpm install && pnpm dev      # local dev server
+pnpm build && pnpm preview    # production build + preview
 ```
 
 
