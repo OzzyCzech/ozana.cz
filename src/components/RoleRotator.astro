@@ -1,0 +1,92 @@
+---
+const phrases = [
+	'Full Stack Developer',
+	'Front-end Developer',
+	'Javascript Developer',
+	'Back-end Developer',
+	'PHP Developer',
+	'Freelancer',
+	'Open Source Contributor',
+	'WordPress Expert',
+];
+---
+
+<h2 class="text-2xl">
+	<span class="role-rotator inline-grid font-medium align-baseline" data-phrases={JSON.stringify(phrases)}>
+		{/* invisible layers reserve the width of the longest phrase to avoid layout shift */}
+		{phrases.map((phrase) => (
+			<span class="invisible col-start-1 row-start-1 block whitespace-nowrap" aria-hidden="true">
+				{phrase.split('').map((ch) => (
+					<span class="inline-block whitespace-pre">{ch}</span>
+				))}
+			</span>
+		))}
+		{/* two visible layers crossfade between phrases */}
+		<span class="role-layer col-start-1 row-start-1 block whitespace-nowrap" aria-live="polite"></span>
+		<span class="role-layer col-start-1 row-start-1 block whitespace-nowrap" aria-hidden="true"></span>
+	</span>
+</h2>
+
+<style>
+	.role-layer :global(.char) {
+		display: inline-block;
+		white-space: pre;
+		opacity: 0;
+		filter: blur(6px);
+		transition: opacity 0.5s ease, filter 0.5s ease;
+	}
+
+	.role-layer :global(.char.show) {
+		opacity: 1;
+		filter: blur(0px);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.role-layer :global(.char) {
+			transition: none;
+		}
+	}
+</style>
+
+<script>
+	const DURATION = 0.5; // seconds, matches CSS transition
+	const INTERVAL = 3000; // ms between phrases
+
+	function fill(layer: HTMLElement, text: string) {
+		layer.replaceChildren();
+		const len = text.length;
+		[...text].forEach((ch, i) => {
+			const span = document.createElement('span');
+			span.className = 'char';
+			span.textContent = ch;
+			span.style.transitionDelay = `${(i * DURATION) / len}s`;
+			layer.appendChild(span);
+		});
+	}
+
+	function setShown(layer: HTMLElement, shown: boolean) {
+		for (const char of layer.children) char.classList.toggle('show', shown);
+	}
+
+	for (const root of document.querySelectorAll<HTMLElement>('.role-rotator')) {
+		const phrases: string[] = JSON.parse(root.dataset.phrases ?? '[]');
+		const layers = [...root.querySelectorAll<HTMLElement>('.role-layer')];
+		const [first] = phrases;
+		if (first === undefined || layers.length < 2) continue;
+
+		let index = 0;
+		let current = layers[0]!;
+		let other = layers[1]!;
+
+		fill(current, first);
+		requestAnimationFrame(() => setShown(current, true));
+
+		setInterval(() => {
+			index = (index + 1) % phrases.length;
+			fill(other, phrases[index]!);
+			setShown(current, false); // old blurs out
+			requestAnimationFrame(() => setShown(other, true)); // new sharpens in
+			[current, other] = [other, current];
+		}, INTERVAL);
+	}
+</script>
