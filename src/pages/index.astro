@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Avatar from "../components/Avatar.astro";
 import GitHubIcon from '../icons/github.svg';
-import RoleRotator from "../components/RoleRotator.astro";
+import AnimatedTextSlider from "../components/AnimatedTextSlider.astro";
 ---
 
 <Layout
@@ -25,7 +25,9 @@ import RoleRotator from "../components/RoleRotator.astro";
 				Hey, I'm Roman.
 			</h1>
 
-			<RoleRotator/>
+			<h2 class="text-2xl">
+				<AnimatedTextSlider/>
+			</h2>
 
 			<div class="my-5">
 				<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="btn">

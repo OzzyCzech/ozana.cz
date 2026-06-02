@@ -1,0 +1,81 @@
+---
+interface Props {
+	phrases?: string[];
+	interval?: number;
+	class?: string;
+}
+
+const {
+	phrases = [
+		'Full Stack Developer',
+		'Front-end Developer',
+		'Javascript Developer',
+		'Back-end Developer',
+		'PHP Developer',
+		'Freelancer',
+		'Open Source Contributor',
+		'WordPress Expert',
+		'AI Operator',
+	],
+	interval = 3500,
+	class: className = '',
+} = Astro.props;
+---
+
+<span
+	class:list={['text-slider relative block w-full h-[1.5em] overflow-hidden', className]}
+	data-interval={interval}
+>
+	{phrases.map((text, i) => (
+		<span
+			data-slide
+			class:list={[
+				'absolute left-0 w-full whitespace-nowrap',
+				i === 0 ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0',
+			]}
+		>
+			{text}
+		</span>
+	))}
+</span>
+
+<style>
+	@media (prefers-reduced-motion: reduce) {
+		.text-slider :global([data-slide]) {
+			transition: none !important;
+		}
+	}
+</style>
+
+<script>
+	const MOTION = ['transition-all', 'duration-700', 'ease-in-out'];
+
+	function apply(items: HTMLElement[], index: number) {
+		const len = items.length;
+		items.forEach((el, i) => {
+			const isCurrent = i === index;
+			const isPrev = i === (index - 1 + len) % len;
+			const animate = isCurrent || isPrev;
+
+			for (const cls of MOTION) el.classList.toggle(cls, animate);
+			el.classList.toggle('translate-y-0', isCurrent);
+			el.classList.toggle('-translate-y-full', isPrev);
+			el.classList.toggle('translate-y-full', !isCurrent && !isPrev);
+			el.classList.toggle('opacity-100', isCurrent);
+			el.classList.toggle('opacity-0', !isCurrent);
+		});
+	}
+
+	for (const root of document.querySelectorAll<HTMLElement>('.text-slider')) {
+		const items = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
+		if (items.length < 2) continue;
+
+		const interval = Number(root.dataset.interval) || 3500;
+		let index = 0;
+
+		setInterval(() => {
+			index = (index + 1) % items.length;
+			apply(items, index);
+		}, interval);
+	}
+</script>
