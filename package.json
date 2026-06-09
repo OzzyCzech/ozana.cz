@@ -1,7 +1,7 @@
 {
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@11.5.0",
+  "packageManager": "pnpm@11.5.2",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -20,7 +20,7 @@
     "@tailwindcss/vite": "^4.3.0",
     "@vercel/speed-insights": "^2.0.0",
     "@wticons/astro": "^2.1.1",
-    "astro": "6.4.2",
+    "astro": "6.4.4",
     "sharp": "^0.34.5",
     "tailwindcss": "4.3.0",
     "typescript": "^6.0.3"
