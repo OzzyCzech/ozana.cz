@@ -1,7 +1,7 @@
 {
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@11.5.2",
+  "packageManager": "pnpm@11.5.3",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -16,11 +16,11 @@
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vercel": "^10.0.8",
     "@lucide/astro": "^1.17.0",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.0",
     "@vercel/speed-insights": "^2.0.0",
     "@wticons/astro": "^2.1.1",
-    "astro": "6.4.4",
+    "astro": "6.4.5",
     "sharp": "^0.34.5",
     "tailwindcss": "4.3.0",
     "typescript": "^6.0.3"
