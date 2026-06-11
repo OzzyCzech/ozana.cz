@@ -4,8 +4,8 @@
 @custom-variant active (&:where(.active &));
 
 @theme {
-	--color-primary: oklch(51.1% 0.262 276.966); /* indigo-600 */
-	--color-accent: oklch(0.54 0.23 264); /* violet-600 */
+	--color-primary: oklch(27.9% 0.041 260.031); /* slate-800 */
+	--color-accent: oklch(44.6% 0.043 257.281); /* slate-600 */
 
 	--color-secondary: oklch(92.9% 0.013 255.508); /* slate-100 */
 	--color-border: oklch(90% 0.01 260); /* subtle border */

@@ -1,7 +1,28 @@
-<footer class="print:hidden">
-	<section class="flex justify-center text-center py-6 lg:py-20">
-		<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="no-underline hover:underline text-current">GitHub</a><span class="mx-2">&bull;</span>
-		<a href="https://stackoverflow.com/users/355316/ozzyczech/" target="_blank" rel="noopener" class="no-underline hover:underline text-current">StackOverflow</a><span class="mx-2">&bull;</span>
-		<a href="https://www.linkedin.com/in/roman-ozana/" target="_blank" rel="noopener" class="no-underline hover:underline text-current">LinkedIn</a>
-	</section>
+---
+const year = new Date().getFullYear();
+---
+<footer class="print:hidden border-t border-dashed border-slate-200 mt-16">
+	<div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto py-10 flex flex-col sm:flex-row gap-6 items-center justify-between text-sm text-slate-600">
+		<p>
+			<span class="text-slate-400">&copy; {year}</span>
+			<span class="font-medium text-slate-900">Roman Ožana</span>
+			<span class="text-slate-400 mx-1">&middot;</span>
+			<span class="text-slate-400">Prague, CZ</span>
+		</p>
+		<nav class="flex items-center gap-3">
+			<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+			<span class="text-slate-400" aria-hidden="true">&bull;</span>
+			<a href="https://stackoverflow.com/users/355316/ozzyczech/" target="_blank" rel="noopener" class="footer-link">StackOverflow</a>
+			<span class="text-slate-400" aria-hidden="true">&bull;</span>
+			<a href="https://www.linkedin.com/in/roman-ozana/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+		</nav>
+	</div>
 </footer>
+
+<style>
+	@reference "tailwindcss";
+
+	.footer-link {
+		@apply no-underline hover:underline text-slate-600 hover:text-slate-900 transition-colors;
+	}
+</style>
