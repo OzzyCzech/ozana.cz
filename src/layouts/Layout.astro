@@ -1,4 +1,7 @@
 ---
+import '@fontsource-variable/bricolage-grotesque/index.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
 
 export interface Props {
@@ -45,8 +48,8 @@ const canonical = new URL(pathname, "https://ozana.cz");
 		"email": "roman@ozana.cz"
 	})}/>
 </head>
-<body class="font-sans bg-white print:bg-transparent text-slate-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-slate-800 focus:text-white focus:rounded-md focus:text-sm focus:font-medium">Skip to content</a>
+<body class="font-sans bg-ink-950 print:bg-transparent text-ink-100 print:text-slate-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-glow focus:text-ink-950 focus:text-sm focus:font-semibold">Skip to content</a>
 <slot/>
 <SpeedInsights/>
 </body>

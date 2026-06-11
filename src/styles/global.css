@@ -1,16 +1,31 @@
 @import 'tailwindcss';
 
-
 @custom-variant active (&:where(.active &));
 
 @theme {
-	--color-primary: oklch(51.1% 0.262 276.966); /* indigo-600 */
-	--color-accent: oklch(0.54 0.23 264); /* violet-600 */
+	--font-sans: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
-	--color-secondary: oklch(92.9% 0.013 255.508); /* slate-100 */
-	--color-border: oklch(90% 0.01 260); /* subtle border */
-	--color-muted: oklch(96% 0.005 260); /* muted background */
-	--color-muted-foreground: oklch(55% 0.02 260); /* muted text */
+	/* ink — warm near-black scale */
+	--color-ink-950: oklch(16% 0.008 75);
+	--color-ink-900: oklch(20% 0.009 75);
+	--color-ink-800: oklch(25% 0.01 75);
+	--color-ink-700: oklch(32% 0.012 75);
+	--color-ink-500: oklch(48% 0.014 75);
+	--color-ink-300: oklch(68% 0.012 75);
+	--color-ink-100: oklch(88% 0.008 80);
+	--color-ink-50: oklch(96% 0.005 85);
+
+	/* phosphor amber accent */
+	--color-amber-glow: oklch(80% 0.16 75);
+	--color-amber-deep: oklch(68% 0.17 60);
+
+	--color-primary: var(--color-amber-glow);
+	--color-accent: var(--color-amber-deep);
+	--color-secondary: var(--color-ink-800);
+	--color-border: oklch(30% 0.01 75);
+	--color-muted: var(--color-ink-900);
+	--color-muted-foreground: var(--color-ink-300);
 }
 
 @layer base {
@@ -22,15 +37,34 @@
 		border-color: var(--color-border, currentColor);
 	}
 
+	::selection {
+		background: var(--color-amber-glow);
+		color: var(--color-ink-950);
+	}
+
+	html {
+		scrollbar-color: var(--color-ink-700) var(--color-ink-950);
+	}
+
 	a {
-		@apply text-current hover:underline hover:text-primary hover:ease-in-out;
+		@apply text-current hover:text-primary transition-colors duration-150;
+	}
+
+	body {
+		text-rendering: optimizeLegibility;
 	}
 }
 
 @utility btn {
 	@apply inline-flex gap-2 items-center print:hidden;
-	@apply py-2 px-4 text-sm font-medium rounded-full hover:no-underline;
-	@apply bg-slate-800 hover:bg-slate-900 text-white hover:text-white;
+	@apply py-2.5 px-5 text-sm font-semibold rounded-none hover:no-underline;
+	@apply bg-amber-glow text-ink-950 hover:bg-ink-50 hover:text-ink-950;
+	@apply transition-colors duration-150;
+}
+
+@utility btn-ghost {
+	@apply bg-transparent text-ink-100 border border-ink-700;
+	@apply hover:bg-ink-900 hover:text-ink-50 hover:border-ink-500;
 }
 
 @utility btn-xs {
@@ -38,19 +72,47 @@
 }
 
 @utility card {
-	@apply rounded-xl border border-border bg-white shadow-sm;
+	@apply border border-ink-800 bg-ink-900/60;
 }
 
 @utility section-title {
-	@apply text-lg font-semibold tracking-tight text-slate-900 print:text-current;
+	@apply text-lg font-semibold tracking-tight text-ink-50 print:text-current;
 }
 
 @utility badge {
-	@apply inline-flex items-center rounded-md px-2.5 py-0.5 text-sm font-medium;
-	@apply bg-slate-100 text-slate-700;
+	@apply inline-flex items-center px-2.5 py-0.5 text-sm font-mono;
+	@apply bg-ink-800 text-ink-100;
 	@apply transition-colors duration-150;
 }
 
+@utility kicker {
+	@apply font-mono text-xs uppercase tracking-[0.25em] text-amber-glow;
+}
+
+/* paper sheet — light island for the resume on the dark site;
+   remaps the dark ink scale so themed utilities stay readable on white */
+@utility paper {
+	@apply bg-white text-slate-900 print:bg-transparent;
+
+	/* ink-950 stays dark — it's only used as text on amber (btn) inside paper */
+	--color-ink-900: oklch(96% 0.005 260);
+	--color-ink-800: oklch(92.9% 0.013 255.508);
+	--color-ink-700: oklch(85% 0.012 260);
+	--color-ink-500: oklch(55% 0.02 260);
+	--color-ink-300: oklch(45% 0.02 260);
+	--color-ink-100: oklch(30% 0.02 260);
+	--color-ink-50: oklch(20% 0.02 260);
+
+	--color-border: oklch(90% 0.01 260);
+	--color-muted: oklch(96% 0.005 260);
+	--color-muted-foreground: oklch(55% 0.02 260);
+}
+
+/* dotted background grid */
+@utility bg-dots {
+	background-image: radial-gradient(oklch(35% 0.012 75 / 0.55) 1px, transparent 1px);
+	background-size: 28px 28px;
+}
 
 @media print {
 	@page {

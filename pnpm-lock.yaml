@@ -22,6 +22,12 @@ importers:
       '@astrojs/vercel':
         specifier: ^10.0.8
         version: 10.0.8(astro@6.4.4(@types/node@24.12.4)(@vercel/functions@3.5.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.4)(yaml@2.9.0))(rollup@4.60.4)
+      '@fontsource-variable/bricolage-grotesque':
+        specifier: ^5.2.10
+        version: 5.2.10
+      '@fontsource/ibm-plex-mono':
+        specifier: ^5.2.7
+        version: 5.2.7
       '@lucide/astro':
         specifier: ^1.17.0
         version: 1.17.0(astro@6.4.4(@types/node@24.12.4)(@vercel/functions@3.5.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.4)(yaml@2.9.0))
@@ -320,6 +326,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/bricolage-grotesque@5.2.10':
+    resolution: {integrity: sha512-5EDsCqgGpKVcJWE4sg9ydli+t5WM97mISYw5lla/Ev4z71FwXh1oN0YUU8xjkRW9+wBCGD9R+ntAvI8G4bUFJg==}
+
+  '@fontsource/ibm-plex-mono@5.2.7':
+    resolution: {integrity: sha512-MKAb8qV+CaiMQn2B0dIi1OV3565NYzp3WN5b4oT6LTkk+F0jR6j0ZN+5BKJiIhffDC3rtBULsYZE65+0018z9w==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -2560,6 +2572,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.7':
     optional: true
+
+  '@fontsource-variable/bricolage-grotesque@5.2.10': {}
+
+  '@fontsource/ibm-plex-mono@5.2.7': {}
 
   '@img/colour@1.1.0': {}
 

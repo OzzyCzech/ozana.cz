@@ -1,7 +1,25 @@
-<footer class="print:hidden">
-	<section class="flex justify-center text-center py-6 lg:py-20">
-		<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="no-underline hover:underline text-current">GitHub</a><span class="mx-2">&bull;</span>
-		<a href="https://stackoverflow.com/users/355316/ozzyczech/" target="_blank" rel="noopener" class="no-underline hover:underline text-current">StackOverflow</a><span class="mx-2">&bull;</span>
-		<a href="https://www.linkedin.com/in/roman-ozana/" target="_blank" rel="noopener" class="no-underline hover:underline text-current">LinkedIn</a>
-	</section>
+---
+const year = new Date().getFullYear();
+---
+<footer class="print:hidden border-t border-ink-800 mt-16">
+	<div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto py-10 flex flex-col sm:flex-row gap-6 items-center justify-between font-mono text-sm text-ink-300">
+		<p>
+			<span class="text-ink-500">&copy; {year}</span> Roman Ožana
+			<span class="text-ink-500 mx-1">·</span>
+			<span class="text-ink-500">Prague, CZ</span>
+		</p>
+		<nav class="flex gap-6">
+			<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+			<a href="https://stackoverflow.com/users/355316/ozzyczech/" target="_blank" rel="noopener" class="footer-link">StackOverflow</a>
+			<a href="https://www.linkedin.com/in/roman-ozana/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+		</nav>
+	</div>
 </footer>
+
+<style>
+	@reference "../styles/global.css";
+
+	.footer-link {
+		@apply no-underline hover:no-underline text-ink-300 hover:text-amber-glow transition-colors;
+	}
+</style>

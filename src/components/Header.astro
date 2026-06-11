@@ -1,69 +1,79 @@
 ---
-import { Menu, X} from '@lucide/astro';
+import { Menu, X } from '@lucide/astro';
 import GithubIcon from '../icons/github.svg';
+
+const links = [
+	{ href: '/', label: 'home' },
+	{ href: '/projects/', label: 'projects' },
+	{ href: '/resume/', label: 'resume' },
+	{ href: '/contact/', label: 'contact' },
+];
 ---
 
-<header class="sticky top-0 z-40 w-full border-b border-dashed border-slate-200 bg-white/95 backdrop-blur-sm print:hidden">
-<div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto relative">
-	<nav class="flex items-center justify-between h-14">
-		<a href="/" class="flex items-center gap-2 hover:no-underline">
-			<div class="flex items-center justify-center size-6 rounded-full overflow-hidden shrink-0 bg-slate-800 text-white text-[10px] font-bold">
-				RO
+<header class="sticky top-0 z-40 w-full border-b border-ink-800 bg-ink-950/90 backdrop-blur-sm print:hidden">
+	<div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto relative">
+		<nav class="flex items-center justify-between h-14">
+			<a href="/" class="flex items-baseline gap-1 font-mono text-sm hover:no-underline group">
+				<span class="text-amber-glow">~</span>
+				<span class="text-ink-500">/</span>
+				<span class="font-semibold text-ink-50 group-hover:text-amber-glow transition-colors">roman</span>
+				<span class="text-ink-500 hidden sm:inline">$</span>
+				<span class="hidden sm:inline-block w-2 h-3.5 bg-amber-glow self-center animate-pulse motion-reduce:animate-none" aria-hidden="true"></span>
+			</a>
+
+			<div class="hidden lg:flex items-center gap-1 font-mono text-sm">
+				{links.map((link, i) => (
+					<a href={link.href} class="nav-link">
+						<span class="text-ink-500 mr-1">0{i + 1}</span>{link.label}
+					</a>
+				))}
+				<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="nav-icon">
+					<GithubIcon class="size-4" aria-hidden="true"/>
+					<span class="sr-only">GitHub</span>
+				</a>
 			</div>
-			<span class="text-sm font-semibold text-slate-900">Roman Ožana</span>
-		</a>
 
-		<div class="hidden lg:flex items-center gap-1">
-			<a href="/" class="nav-link">Home</a>
-			<a href="/projects/" class="nav-link">Projects</a>
-			<a href="/resume/" class="nav-link">Resume</a>
-			<a href="/contact/" class="nav-link">Contact</a>
-			<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="nav-icon">
-				<GithubIcon class="size-4" aria-hidden="true"/>
-				<span class="sr-only">GitHub</span>
-			</a>
-		</div>
+			<button
+				class="p-2 hover:bg-ink-900 lg:hidden"
+				aria-label="Toggle menu"
+				aria-expanded="false"
+				aria-controls="mobile-menu"
+				id="menu-toggle"
+			>
+				<Menu class="size-5" id="icon-menu"/>
+				<X class="size-5 hidden" id="icon-close"/>
+			</button>
+		</nav>
 
-		<button
-			class="p-2 rounded-md hover:bg-slate-100 lg:hidden"
-			aria-label="Toggle menu"
-			aria-expanded="false"
-			aria-controls="mobile-menu"
-			id="menu-toggle"
-		>
-			<Menu class="size-5" id="icon-menu"/>
-			<X class="size-5 hidden" id="icon-close"/>
-		</button>
-	</nav>
-
-	<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden lg:hidden absolute left-0 right-0 sm:left-auto sm:right-0 sm:w-48 top-full bg-white border border-slate-200 rounded-lg mx-4 sm:mx-0 sm:mr-6 p-2 z-50 shadow-lg">
-		<div class="flex flex-col">
-			<a href="/" class="mobile-nav-link">Home</a>
-			<a href="/projects/" class="mobile-nav-link">Projects</a>
-			<a href="/resume/" class="mobile-nav-link">Resume</a>
-			<a href="/contact/" class="mobile-nav-link">Contact</a>
-			<hr class="my-2 border-slate-200"/>
-			<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="mobile-nav-link inline-flex items-center gap-2">
-				<GithubIcon class="size-4" aria-hidden="true"/> GitHub
-			</a>
-		</div>
-	</nav>
-</div>
+		<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden lg:hidden absolute left-0 right-0 sm:left-auto sm:right-0 sm:w-56 top-full bg-ink-950 border border-ink-800 mx-4 sm:mx-0 sm:mr-6 p-2 z-50 shadow-xl shadow-black/40">
+			<div class="flex flex-col font-mono text-sm">
+				{links.map((link, i) => (
+					<a href={link.href} class="mobile-nav-link">
+						<span class="text-ink-500 mr-2">0{i + 1}</span>{link.label}
+					</a>
+				))}
+				<hr class="my-2 border-ink-800"/>
+				<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="mobile-nav-link inline-flex items-center gap-2">
+					<GithubIcon class="size-4" aria-hidden="true"/> github
+				</a>
+			</div>
+		</nav>
+	</div>
 </header>
 
 <style>
-	@reference "tailwindcss";
+	@reference "../styles/global.css";
 
 	.nav-link {
-		@apply px-3 py-1.5 text-sm font-medium text-current rounded-md hover:no-underline hover:bg-slate-100 transition-colors;
+		@apply px-3 py-1.5 text-ink-300 hover:no-underline hover:text-amber-glow hover:bg-ink-900 transition-colors;
 	}
 
-.nav-icon {
-		@apply p-2 text-current rounded-md hover:no-underline hover:bg-slate-100 transition-colors ml-1;
+	.nav-icon {
+		@apply p-2 text-ink-300 hover:no-underline hover:text-amber-glow hover:bg-ink-900 transition-colors ml-1;
 	}
 
 	.mobile-nav-link {
-		@apply px-3 py-2 text-sm font-medium text-slate-600 rounded-md hover:no-underline hover:text-slate-900 hover:bg-slate-50 transition-colors;
+		@apply px-3 py-2 text-ink-300 hover:no-underline hover:text-amber-glow hover:bg-ink-900 transition-colors;
 	}
 </style>
 

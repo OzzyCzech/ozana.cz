@@ -5,6 +5,39 @@ import Footer from '../components/Footer.astro';
 import Avatar from "../components/Avatar.astro";
 import GitHubIcon from '../icons/github.svg';
 import RoleRotator from "../components/RoleRotator.astro";
+import { ArrowRight, ArrowUpRight } from '@lucide/astro';
+
+const stack = [
+	'PHP', 'TypeScript', 'JavaScript', 'Node.js', 'Astro', 'WordPress',
+	'Tailwind CSS', 'Nette', 'Docker', 'MariaDB', 'Redis', 'Vite', 'Git', 'AI Agents',
+];
+
+const featured = [
+	{
+		index: '01',
+		name: 'Testomato',
+		description: 'Automated website monitoring that watches your pages for errors — so you don\'t have to.',
+		href: 'https://www.testomato.com',
+		meta: 'testomato.com',
+	},
+	{
+		index: '02',
+		name: 'Sphido',
+		description: 'A rocket-fast, ultralight flat-file CMS written in PHP. No database, no admin, just files.',
+		href: 'https://github.com/sphido/sphido',
+		meta: 'github.com/sphido',
+	},
+	{
+		index: '03',
+		name: 'Open Source',
+		description: 'Dozens of packages and tools — icon sets, parsers, deploy helpers — used by developers worldwide.',
+		href: 'https://github.com/OzzyCzech',
+		meta: 'github.com/OzzyCzech',
+	},
+];
+
+const since = 2009;
+const years = new Date().getFullYear() - since;
 ---
 
 <Layout
@@ -13,29 +46,179 @@ import RoleRotator from "../components/RoleRotator.astro";
 
 	<Header/>
 
-	<main id="main" class="container mx-auto p-4 self-center align-center" itemscope itemtype="https://schema.org/Person">
+	<main id="main" itemscope itemtype="https://schema.org/Person">
 
-		<div class="flex flex-wrap justify-center my-10">
-			<Avatar/>
-		</div>
+		{/* ── hero ─────────────────────────────────────────── */}
+		<section class="relative overflow-hidden bg-dots">
+			<div class="absolute inset-0 pointer-events-none" aria-hidden="true"
+					 style="background: radial-gradient(ellipse 60% 50% at 70% 20%, oklch(80% 0.16 75 / 0.07), transparent 70%);"></div>
 
-		<article class="text-center">
+			<div class="relative px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto py-16 md:py-24 lg:py-32">
+				<div class="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center">
 
-			<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-1.5">
-				Hey, I'm Roman.
-			</h1>
+					<div class="max-w-2xl">
+						<p class="kicker reveal mb-6">
+							<span class="text-ink-500">~ $</span> whoami
+						</p>
 
-			<RoleRotator/>
+						<h1 class="reveal reveal-1 text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-ink-50 text-balance mb-6" itemprop="name">
+							Roman Ožana<span class="text-amber-glow">.</span>
+						</h1>
 
-			<div class="my-5">
-				<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="btn">
-					<GitHubIcon class="size-5"/>
-					View GitHub
+						<div class="reveal reveal-2 mb-8">
+							<RoleRotator/>
+						</div>
+
+						<p class="reveal reveal-3 text-lg text-ink-300 leading-relaxed max-w-xl mb-10">
+							Full-stack developer from Prague building robust web applications,
+							developer tools and open-source software for <strong class="text-ink-50 font-semibold">{years}+ years</strong>.
+						</p>
+
+						<div class="reveal reveal-4 flex flex-wrap gap-4">
+							<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="btn">
+								<GitHubIcon class="size-5"/>
+								View GitHub
+							</a>
+							<a href="/contact/" class="btn btn-ghost">
+								Get in touch
+								<ArrowRight class="size-4"/>
+							</a>
+						</div>
+					</div>
+
+					<div class="reveal reveal-2 justify-self-center lg:justify-self-end w-56 sm:w-64 lg:w-80">
+						<Avatar/>
+					</div>
+
+				</div>
+			</div>
+
+			{/* stats strip */}
+			<div class="relative border-t border-ink-800">
+				<div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto grid sm:grid-cols-3 font-mono text-sm divide-y sm:divide-y-0 sm:divide-x divide-ink-800">
+					<p class="py-4 sm:pr-8"><span class="text-amber-glow">{years}+</span> <span class="text-ink-300">years building for the web</span></p>
+					<p class="py-4 sm:px-8"><span class="text-amber-glow">100+</span> <span class="text-ink-300">open-source repositories</span></p>
+					<p class="py-4 sm:pl-8"><span class="text-amber-glow">50.07°N 14.43°E</span> <span class="text-ink-300">Prague, Czechia</span></p>
+				</div>
+			</div>
+		</section>
+
+		{/* ── tech ticker ──────────────────────────────────── */}
+		<section class="border-b border-ink-800 overflow-hidden py-4 select-none" aria-label="Technologies I work with">
+			<div class="ticker flex w-max gap-0 motion-reduce:flex-wrap motion-reduce:w-full motion-reduce:px-4">
+				{[0, 1].map((copy) => (
+					<ul class="flex shrink-0 items-center font-mono text-sm text-ink-300" aria-hidden={copy === 1 ? 'true' : undefined}>
+						{stack.map((tech) => (
+							<li class="flex items-center whitespace-nowrap">
+								<span class="px-5">{tech}</span>
+								<span class="text-amber-glow" aria-hidden="true">*</span>
+							</li>
+						))}
+					</ul>
+				))}
+			</div>
+		</section>
+
+		{/* ── featured work ────────────────────────────────── */}
+		<section class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto py-20 lg:py-28">
+			<div class="flex items-end justify-between mb-12">
+				<div>
+					<p class="kicker mb-4"><span class="text-ink-500">~ $</span> ls ./work</p>
+					<h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink-50">Selected work</h2>
+				</div>
+				<a href="/projects/" class="hidden sm:inline-flex items-center gap-1 font-mono text-sm text-ink-300 hover:text-amber-glow hover:no-underline group">
+					all projects <ArrowRight class="size-4 transition-transform group-hover:translate-x-1"/>
 				</a>
 			</div>
-		</article>
+
+			<div class="border-t border-ink-800">
+				{featured.map((project) => (
+					<a href={project.href} target="_blank" rel="noopener"
+						 class="project-row group grid sm:grid-cols-[4rem_1fr_auto] gap-2 sm:gap-8 items-baseline py-8 border-b border-ink-800 hover:no-underline">
+						<span class="font-mono text-sm text-ink-500 group-hover:text-amber-glow transition-colors">{project.index}</span>
+						<span>
+							<span class="block text-2xl sm:text-3xl font-bold tracking-tight text-ink-50 group-hover:text-amber-glow transition-colors mb-1.5">
+								{project.name}
+							</span>
+							<span class="block text-ink-300 max-w-xl leading-relaxed">{project.description}</span>
+						</span>
+						<span class="font-mono text-sm text-ink-500 inline-flex items-center gap-1 group-hover:text-amber-glow transition-colors">
+							{project.meta}
+							<ArrowUpRight class="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"/>
+						</span>
+					</a>
+				))}
+			</div>
+
+			<a href="/projects/" class="sm:hidden mt-8 inline-flex items-center gap-1 font-mono text-sm text-ink-300 hover:text-amber-glow hover:no-underline">
+				all projects <ArrowRight class="size-4"/>
+			</a>
+		</section>
+
+		{/* ── CTA ──────────────────────────────────────────── */}
+		<section class="border-t border-ink-800 bg-dots">
+			<div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto py-20 lg:py-28 text-center">
+				<p class="kicker mb-6"><span class="text-ink-500">~ $</span> open ./contact</p>
+				<h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-ink-50 text-balance mb-8">
+					Have an idea?<br/>
+					<span class="text-amber-glow">Let's build it.</span>
+				</h2>
+				<a href="/contact/" class="btn">
+					Get in touch
+					<ArrowRight class="size-4"/>
+				</a>
+			</div>
+		</section>
 
 	</main>
 
 	<Footer/>
 </Layout>
+
+<style>
+	/* staggered page-load reveal */
+	.reveal {
+		opacity: 0;
+		transform: translateY(16px);
+		animation: reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	}
+
+	.reveal-1 { animation-delay: 0.1s; }
+	.reveal-2 { animation-delay: 0.2s; }
+	.reveal-3 { animation-delay: 0.3s; }
+	.reveal-4 { animation-delay: 0.4s; }
+
+	@keyframes reveal {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* infinite marquee */
+	.ticker {
+		animation: ticker 36s linear infinite;
+	}
+
+	.ticker:hover {
+		animation-play-state: paused;
+	}
+
+	@keyframes ticker {
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.reveal {
+			opacity: 1;
+			transform: none;
+			animation: none;
+		}
+
+		.ticker {
+			animation: none;
+		}
+	}
+</style>

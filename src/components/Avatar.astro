@@ -4,34 +4,51 @@ import avatar from '../assets/roman-ozana.small.jpg';
 import { Download } from '@lucide/astro';
 ---
 
-<avatar-download class="w-6/12 sm:w-2/12 relative">
-	<button title="Download me" aria-label="Download avatar" type="button" aria-haspopup="true" aria-expanded="false" class="cursor-pointer">
-		<Image src={avatar} alt="Roman Ožana" class="drop-shadow-sm rounded-full max-w-full h-auto align-middle border-none border" width={512} height={512} loading="eager" fetchpriority="high"/>
+<avatar-download class="relative inline-block group">
+	<button title="Download me" aria-label="Download avatar" type="button" aria-haspopup="true" aria-expanded="false" class="cursor-pointer block relative p-2">
+		{/* corner brackets */}
+		<span class="corner top-0 left-0 border-t-2 border-l-2" aria-hidden="true"></span>
+		<span class="corner top-0 right-0 border-t-2 border-r-2" aria-hidden="true"></span>
+		<span class="corner bottom-0 left-0 border-b-2 border-l-2" aria-hidden="true"></span>
+		<span class="corner bottom-0 right-0 border-b-2 border-r-2" aria-hidden="true"></span>
+		<Image src={avatar} alt="Roman Ožana" class="block max-w-full h-auto grayscale contrast-110 group-hover:grayscale-0 transition-[filter] duration-500" width={512} height={512} loading="eager" fetchpriority="high"/>
 	</button>
 
-	<div role="menu" aria-label="Download avatar" class="absolute top-full left-1/2 -translate-x-1/2 z-10 w-48 mt-2 bg-white rounded-sm divide-y divide-slate-100 shadow-sm hidden">
-		<ul class="py-1 text-sm text-slate-700">
+	<div role="menu" aria-label="Download avatar" class="absolute top-full left-1/2 -translate-x-1/2 z-10 w-52 mt-2 bg-ink-900 border border-ink-700 shadow-xl shadow-black/40 hidden">
+		<ul class="py-1 font-mono text-sm text-ink-100">
 			<li role="none">
-				<a role="menuitem" class="flex items-center gap-2 py-2 px-4 hover:bg-slate-100 hover:no-underline" href="/img/roman-ozana.small.jpg" download>
-					<Download class="size-5"/>
-					Download avatar
+				<a role="menuitem" class="flex items-center gap-2 py-2 px-4 hover:bg-ink-800 hover:no-underline" href="/img/roman-ozana.small.jpg" download>
+					<Download class="size-4"/>
+					small.jpg
 				</a>
 			</li>
 			<li role="none">
-				<a role="menuitem" class="flex items-center gap-2 py-2 px-4 hover:bg-slate-100 hover:no-underline" href="/img/roman-ozana.medium.jpg" download>
-					<Download class="size-5"/>
-					Download medium
+				<a role="menuitem" class="flex items-center gap-2 py-2 px-4 hover:bg-ink-800 hover:no-underline" href="/img/roman-ozana.medium.jpg" download>
+					<Download class="size-4"/>
+					medium.jpg
 				</a>
 			</li>
 			<li role="none">
-				<a role="menuitem" class="flex items-center gap-2 py-2 px-4 hover:bg-slate-100 hover:no-underline" href="/img/roman-ozana.jpg" download>
-					<Download class="size-5"/>
-					Download original
+				<a role="menuitem" class="flex items-center gap-2 py-2 px-4 hover:bg-ink-800 hover:no-underline" href="/img/roman-ozana.jpg" download>
+					<Download class="size-4"/>
+					original.jpg
 				</a>
 			</li>
 		</ul>
 	</div>
 </avatar-download>
+
+<style>
+	@reference "../styles/global.css";
+
+	.corner {
+		@apply absolute size-5 border-amber-glow transition-all duration-300;
+	}
+
+	avatar-download:hover .corner {
+		@apply size-7;
+	}
+</style>
 
 <script>
 
@@ -40,7 +57,7 @@ import { Download } from '@lucide/astro';
 			super();
 
 			const button = this.querySelector('button')!;
-			const menu = this.querySelector('div')!;
+			const menu = this.querySelector('div[role="menu"]') as HTMLElement;
 
 			const open = () => {
 				menu.classList.remove('hidden');
