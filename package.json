@@ -20,7 +20,7 @@
     "@tailwindcss/vite": "^4.3.0",
     "@vercel/speed-insights": "^2.0.0",
     "@wticons/astro": "^2.1.1",
-    "astro": "6.4.5",
+    "astro": "6.4.6",
     "sharp": "^0.34.5",
     "tailwindcss": "4.3.0",
     "typescript": "^6.0.3"
