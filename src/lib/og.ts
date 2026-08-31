@@ -16,10 +16,18 @@ export interface OgPage {
 	pathname: string;
 	headline: string;
 	subline: string;
+	/**
+	 * Small line next to the badge. Carries the name on every card except the
+	 * home one, whose headline already is the name — set it to "" there to
+	 * avoid printing "Roman Ožana" twice.
+	 */
+	byline?: string;
 }
 
+const BYLINE = "by Roman Ožana";
+
 export const OG_PAGES: OgPage[] = [
-	{slug: "home", pathname: "/", headline: "Roman Ožana", subline: "Full-Stack Developer"},
+	{slug: "home", pathname: "/", headline: "Roman Ožana", subline: "Full-Stack Developer", byline: ""},
 	{slug: "projects", pathname: "/projects/", headline: "Projects", subline: "& open source"},
 	{slug: "resume", pathname: "/resume/", headline: "Resume", subline: "building since 2009"},
 	{slug: "contact", pathname: "/contact/", headline: "Contact", subline: "let's get in touch"},
@@ -59,6 +67,8 @@ async function loadFonts() {
 
 const FAMILY = "Inter, InterExt";
 
+type CardText = Pick<OgPage, "headline" | "subline" | "byline">;
+
 const INK = "#f1f5f9";
 const MUTED = "#64748b";
 const LINE = "rgba(148, 163, 184, 0.10)";
@@ -83,7 +93,7 @@ function grid() {
 	return lines;
 }
 
-function card({headline, subline}: Pick<OgPage, "headline" | "subline">) {
+function card({headline, subline, byline = BYLINE}: CardText) {
 	return {
 		type: "div",
 		props: {
@@ -197,17 +207,31 @@ function card({headline, subline}: Pick<OgPage, "headline" | "subline">) {
 							{
 								type: "div",
 								props: {
-									style: {
-										display: "flex",
-										border: "1px solid rgba(148,163,184,0.32)",
-										borderRadius: 6,
-										padding: "7px 13px",
-										fontSize: 22,
-										fontWeight: 700,
-										letterSpacing: 1.5,
-										color: "#cbd5e1",
-									},
-									children: "OZANA.CZ",
+									style: {display: "flex", alignItems: "center", gap: 16},
+									children: [
+										{
+											type: "div",
+											props: {
+												style: {
+													display: "flex",
+													border: "1px solid rgba(148,163,184,0.32)",
+													borderRadius: 6,
+													padding: "7px 13px",
+													fontSize: 22,
+													fontWeight: 700,
+													letterSpacing: 1.5,
+													color: "#cbd5e1",
+												},
+												children: "OZANA.CZ",
+											},
+										},
+										...(byline
+											? [{
+												type: "div",
+												props: {style: {fontSize: 24, color: MUTED}, children: byline},
+											}]
+											: []),
+									],
 								},
 							},
 							{
@@ -225,7 +249,7 @@ function card({headline, subline}: Pick<OgPage, "headline" | "subline">) {
 	};
 }
 
-export async function renderOgImage(page: Pick<OgPage, "headline" | "subline">): Promise<Uint8Array<ArrayBuffer>> {
+export async function renderOgImage(page: CardText): Promise<Uint8Array<ArrayBuffer>> {
 	fontCache ??= await loadFonts();
 
 	const svg = await satori(card(page) as Parameters<typeof satori>[0], {
