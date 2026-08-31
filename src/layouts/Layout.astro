@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 
+import { OG_HEIGHT, OG_WIDTH, ogImagePath } from "../lib/og";
+
 export interface Props {
 	title: string;
 	description?: string;
@@ -11,7 +13,7 @@ export interface Props {
 const {
 	title = "Ing. Roman Ožana",
 	description = "Personal website of Roman Ožana",
-	image = "/img/roman-ozana.medium.jpg",
+	image,
 	noindex = false,
 } = Astro.props;
 
@@ -20,7 +22,7 @@ import SpeedInsights from "@vercel/speed-insights/astro"
 const site = Astro.site ?? new URL("https://ozana.cz");
 const pathname = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonical = new URL(pathname, site);
-const ogImage = new URL(image, site);
+const ogImage = new URL(image ?? ogImagePath(pathname), site);
 ---
 
 <!doctype html>
@@ -46,15 +48,17 @@ const ogImage = new URL(image, site);
 	<meta property="og:title" content={title}/>
 	<meta property="og:description" content={description}/>
 	<meta property="og:image" content={ogImage}/>
-	<meta property="og:image:width" content="1280"/>
-	<meta property="og:image:height" content="1280"/>
-	<meta property="og:image:alt" content="Roman Ožana"/>
+	<meta property="og:image:width" content={String(OG_WIDTH)}/>
+	<meta property="og:image:height" content={String(OG_HEIGHT)}/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:alt" content={`${title} – ozana.cz`}/>
 
-	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:creator" content="@OzzyCzech"/>
 	<meta name="twitter:title" content={title}/>
 	<meta name="twitter:description" content={description}/>
 	<meta name="twitter:image" content={ogImage}/>
+	<meta name="twitter:image:alt" content={`${title} – ozana.cz`}/>
 
 	<script is:inline type="application/ld+json" set:html={JSON.stringify({
 		"@context": "https://schema.org",
@@ -70,7 +74,16 @@ const ogImage = new URL(image, site);
 			"https://ozzyczech.cz"
 		],
 		"jobTitle": "Full-Stack Developer",
-		"email": "roman@ozana.cz"
+		"email": "roman@ozana.cz",
+		"telephone": "+420605783455",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Prague",
+			"postalCode": "14000",
+			"addressCountry": "CZ"
+		},
+		"taxID": "87098504",
+		"knowsLanguage": ["cs", "en"]
 	})}/>
 </head>
 <body class="font-sans bg-white print:bg-transparent text-slate-900 antialiased leading-normal tracking-normal grid min-h-screen grid-rows-[auto_1fr_auto]">
