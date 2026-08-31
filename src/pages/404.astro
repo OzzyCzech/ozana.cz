@@ -6,7 +6,10 @@ import { Image } from "astro:assets";
 import dino from '../assets/favicon.svg';
 ---
 
-<Layout title="Page not found">
+<Layout
+	title="Page not found – Ing. Roman Ožana"
+	description="The page you are looking for does not exist."
+	noindex>
 	<Header/>
 	<main id="main" class="lg:container lg:mx-auto self-center align-center text-center">
 		<Image src={dino} alt="404" class="size-86 mx-auto mb-4"/>
