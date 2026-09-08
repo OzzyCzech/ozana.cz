@@ -8,3 +8,4 @@ overrides:
   yaml: '>=2.9.0'
   js-yaml: '^5.4.1'
   tar: '>=7.5.22'
+  fflate: '~0.7.5'
