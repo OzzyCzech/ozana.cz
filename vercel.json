@@ -8,6 +8,17 @@
       "ENABLE_EXPERIMENTAL_COREPACK": "1"
     }
   },
+  "headers": [
+    {
+      "source": "/cv.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "inline"
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/git",
