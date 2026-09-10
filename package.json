@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@vercel/speed-insights": "^2.0.0",
     "@wticons/astro": "^2.1.1",
-    "astro": "7.2.6",
+    "astro": "7.2.8",
     "satori": "^0.33.4",
     "sharp": "^0.35.3",
     "tailwindcss": "4.3.3",
