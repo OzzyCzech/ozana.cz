@@ -3,7 +3,7 @@ import { Menu, X} from '@lucide/astro';
 import GithubIcon from '../icons/github.svg';
 ---
 
-<header class="sticky top-0 z-40 w-full border-b border-dashed border-slate-200 bg-white/95 backdrop-blur-sm print:hidden">
+<header class="sticky top-0 z-40 w-full border-b border-dashed border-slate-200 print:hidden before:absolute before:inset-0 before:-z-10 before:bg-white/95 before:backdrop-blur-sm">
 <div class="px-4 sm:px-6 w-full max-w-3xl lg:max-w-7xl mx-auto relative">
 	<nav class="flex items-center justify-between h-14">
 		<a href="/" class="flex items-baseline gap-1 font-mono text-sm hover:no-underline group">
@@ -37,14 +37,14 @@ import GithubIcon from '../icons/github.svg';
 		</button>
 	</nav>
 
-	<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden lg:hidden absolute left-0 right-0 sm:left-auto sm:right-0 sm:w-48 top-full bg-white border border-slate-200 rounded-lg mx-4 sm:mx-0 sm:mr-6 p-2 z-50 shadow-lg">
+	<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden lg:hidden absolute inset-x-4 sm:inset-x-6 top-full mt-3 z-50 p-2 rounded-2xl border border-white/60 bg-white/75 backdrop-blur-xl backdrop-saturate-150 shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5">
 		<div class="flex flex-col">
 			<a href="/" class="mobile-nav-link">Home</a>
 			<a href="/projects/" class="mobile-nav-link">Projects</a>
 			<a href="/resume/" class="mobile-nav-link">Resume</a>
 			<a href="/contact/" class="mobile-nav-link">Contact</a>
-			<hr class="my-2 border-slate-200"/>
-			<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="mobile-nav-link inline-flex items-center gap-2">
+			<hr class="my-1.5 mx-4 border-slate-900/10"/>
+			<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="mobile-nav-link inline-flex items-center gap-2.5">
 				<GithubIcon class="size-4" aria-hidden="true"/> GitHub
 			</a>
 		</div>
@@ -64,7 +64,24 @@ import GithubIcon from '../icons/github.svg';
 	}
 
 	.mobile-nav-link {
-		@apply px-3 py-2 text-sm font-medium text-slate-600 rounded-md hover:no-underline hover:text-slate-900 hover:bg-slate-50 transition-colors;
+		@apply px-4 py-3 text-base font-semibold text-slate-800 rounded-xl hover:no-underline hover:text-slate-900 hover:bg-slate-900/5 transition-colors;
+	}
+
+	#mobile-menu:not(.hidden) {
+		animation: menu-in 160ms ease-out;
+	}
+
+	@keyframes menu-in {
+		from {
+			opacity: 0;
+			transform: translateY(-6px) scale(0.98);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#mobile-menu:not(.hidden) {
+			animation: none;
+		}
 	}
 
 </style>
