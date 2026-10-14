@@ -14,8 +14,8 @@ const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefi
 
 <header class="sticky top-0 z-40 w-full px-3 sm:px-4 pt-3 print:hidden">
 <!-- glass lives on ::before so this box is not a backdrop root and the mobile menu can blur the page itself -->
-<div class="relative mx-auto max-w-screen-lg before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:border before:border-white/70 before:bg-white/75 before:shadow-lg before:shadow-slate-900/5 before:ring-1 before:ring-slate-900/5 before:backdrop-blur-xl before:backdrop-saturate-150">
-	<nav class="flex items-center justify-between h-14 pl-5 pr-2.5">
+<div class="relative mx-auto max-w-screen-lg before:absolute before:inset-0 before:-z-10 before:rounded-full before:border before:border-white/80 before:bg-white/75 before:shadow-xl before:shadow-slate-900/[0.06] before:backdrop-blur-xl before:backdrop-saturate-150">
+	<nav class="flex items-center justify-between h-16 pl-6 pr-3">
 		<a href="/" class="flex items-baseline gap-1 font-mono text-sm hover:no-underline group">
 			<span class="text-primary">~</span>
 			<span class="text-slate-400">/</span>
@@ -33,7 +33,7 @@ const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefi
 		</div>
 
 		<button
-			class="p-2 rounded-xl hover:bg-slate-900/5 transition-colors lg:hidden"
+			class="p-2.5 rounded-full hover:bg-slate-900/[0.04] transition-colors lg:hidden"
 			aria-label="Toggle menu"
 			aria-expanded="false"
 			aria-controls="mobile-menu"
@@ -44,7 +44,7 @@ const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefi
 		</button>
 	</nav>
 
-	<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden lg:hidden absolute inset-x-0 top-full mt-2 z-50 p-2 rounded-2xl border border-white/60 bg-white/75 backdrop-blur-xl backdrop-saturate-150 shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5">
+	<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden lg:hidden absolute inset-x-0 top-full mt-2 z-50 p-2 rounded-3xl border border-white/80 bg-white/80 backdrop-blur-xl backdrop-saturate-150 shadow-xl shadow-slate-900/[0.08]">
 		<div class="flex flex-col">
 			{links.map(({href, label}) => <a href={href} class="mobile-nav-link" aria-current={current(href)}>{label}</a>)}
 			<hr class="my-1.5 mx-4 border-slate-900/10"/>
@@ -60,23 +60,23 @@ const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefi
 	@reference "tailwindcss";
 
 	.nav-link {
-		@apply px-3.5 py-1.5 text-sm font-medium text-slate-600 rounded-full hover:no-underline hover:text-slate-900 hover:bg-slate-900/5 transition-colors;
+		@apply px-4 py-2 text-sm font-semibold text-slate-900 rounded-full hover:no-underline hover:bg-slate-900/[0.04] transition-colors;
 	}
 
 	.nav-link[aria-current="page"] {
-		@apply text-slate-900 bg-white shadow-sm ring-1 ring-slate-900/5;
+		@apply bg-slate-900/[0.05];
 	}
 
 	.nav-icon {
-		@apply p-2 text-slate-600 rounded-full hover:no-underline hover:text-slate-900 hover:bg-slate-900/5 transition-colors ml-1;
+		@apply p-2.5 text-slate-900 rounded-full hover:no-underline hover:bg-slate-900/[0.04] transition-colors;
 	}
 
 	.mobile-nav-link {
-		@apply px-4 py-3 text-base font-semibold text-slate-800 rounded-xl hover:no-underline hover:text-slate-900 hover:bg-slate-900/5 transition-colors;
+		@apply px-4 py-3 text-base font-semibold text-slate-900 rounded-2xl hover:no-underline hover:bg-slate-900/[0.04] transition-colors;
 	}
 
 	.mobile-nav-link[aria-current="page"] {
-		@apply bg-slate-900/5;
+		@apply bg-slate-900/[0.05];
 	}
 
 	#mobile-menu:not(.hidden) {
