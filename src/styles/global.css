@@ -20,6 +20,11 @@
 }
 
 @layer base {
+	html {
+		/* keep anchor targets clear of the sticky header */
+		scroll-padding-top: 5.5rem;
+	}
+
 	*,
 	::after,
 	::before,

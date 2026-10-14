@@ -12,11 +12,12 @@ const links = [
 const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefined);
 ---
 
-<header class="sticky top-0 z-40 w-full px-3 sm:px-4 pt-3 print:hidden">
+<!-- ::before is a soft white fade that only shows once the page has scrolled, so content doesn't peek raw around the bar -->
+<header id="header" class="sticky top-0 z-40 w-full px-3 sm:px-4 pt-3 print:hidden before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[calc(100%+1.5rem)] before:bg-linear-to-b before:from-white/90 before:via-white/60 before:to-transparent before:opacity-0 before:transition-opacity before:duration-300 data-scrolled:before:opacity-100">
 <!-- glass lives on ::before so this box is not a backdrop root and the mobile menu can blur the page itself -->
 <div class="relative mx-auto max-w-screen-lg before:absolute before:inset-0 before:-z-10 before:rounded-full before:border before:border-white/80 before:bg-white/75 before:shadow-xl before:shadow-slate-900/[0.06] before:backdrop-blur-xl before:backdrop-saturate-150">
 	<nav class="flex items-center justify-between h-16 pl-6 pr-3">
-		<a href="/" class="flex items-baseline gap-1 font-mono text-sm hover:no-underline group">
+		<a href="/" aria-label="Home" class="flex items-baseline gap-1 font-mono text-sm hover:no-underline group">
 			<span class="text-primary">~</span>
 			<span class="text-slate-400">/</span>
 			<span class="font-semibold text-slate-900 group-hover:text-primary transition-colors">roman</span>
@@ -99,25 +100,35 @@ const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefi
 </style>
 
 <script>
+	const header = document.getElementById('header');
 	const toggle = document.getElementById('menu-toggle');
 	const mobileMenu = document.getElementById('mobile-menu');
 	const iconMenu = document.getElementById('icon-menu');
 	const iconClose = document.getElementById('icon-close');
 
-	toggle?.addEventListener('click', () => {
-		const isOpen = !mobileMenu?.classList.contains('hidden');
-		mobileMenu?.classList.toggle('hidden');
-		iconMenu?.classList.toggle('hidden');
-		iconClose?.classList.toggle('hidden');
-		toggle?.setAttribute('aria-expanded', String(!isOpen));
-	});
+	const setOpen = (open: boolean) => {
+		mobileMenu?.classList.toggle('hidden', !open);
+		iconMenu?.classList.toggle('hidden', open);
+		iconClose?.classList.toggle('hidden', !open);
+		toggle?.setAttribute('aria-expanded', String(open));
+	};
+
+	const isOpen = () => !mobileMenu?.classList.contains('hidden');
+
+	toggle?.addEventListener('click', () => setOpen(!isOpen()));
 
 	document.addEventListener('click', (e) => {
-		if (!toggle?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
-			mobileMenu?.classList.add('hidden');
-			iconMenu?.classList.remove('hidden');
-			iconClose?.classList.add('hidden');
-			toggle?.setAttribute('aria-expanded', 'false');
+		if (!toggle?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) setOpen(false);
+	});
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && isOpen()) {
+			setOpen(false);
+			toggle?.focus();
 		}
 	});
+
+	const onScroll = () => header?.toggleAttribute('data-scrolled', window.scrollY > 8);
+	window.addEventListener('scroll', onScroll, {passive: true});
+	onScroll();
 </script>
