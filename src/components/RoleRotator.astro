@@ -23,7 +23,7 @@ const phrases = [
 			</span>
 		))}
 		{/* two visible layers crossfade between phrases */}
-		<span class="role-layer col-start-1 row-start-1 block whitespace-nowrap" aria-live="polite"></span>
+		<span class="role-layer col-start-1 row-start-1 block whitespace-nowrap"></span>
 		<span class="role-layer col-start-1 row-start-1 block whitespace-nowrap" aria-hidden="true"></span>
 	</span>
 </h2>
@@ -81,6 +81,9 @@ const phrases = [
 
 		fill(current, first);
 		requestAnimationFrame(() => setShown(current, true));
+
+		// reduced motion: keep the first phrase, no auto-updating text
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) continue;
 
 		setInterval(() => {
 			index = (index + 1) % phrases.length;
