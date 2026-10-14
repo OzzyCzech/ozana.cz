@@ -15,3 +15,6 @@ yarn.lock
 # environment variables
 .env
 .env.production
+
+# local notes
+docs/
