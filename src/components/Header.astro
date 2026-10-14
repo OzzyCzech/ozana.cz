@@ -17,10 +17,10 @@ const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefi
 <!-- glass lives on ::before so this box is not a backdrop root and the mobile menu can blur the page itself -->
 <div class="relative mx-auto max-w-screen-lg before:absolute before:inset-0 before:-z-10 before:rounded-full before:border before:border-white/40 before:bg-white/45 before:shadow-[0_18px_60px_rgba(15,23,42,0.12)] before:backdrop-blur-[40px] before:backdrop-saturate-150">
 	<nav aria-label="Main" class="flex items-center justify-between h-16 pl-6 pr-3">
-		<a href="/" aria-label="Home" class="flex items-baseline gap-1.5 font-mono text-sm hover:no-underline group">
-			<span class="text-slate-400">~</span>
-			<span class="text-slate-400" aria-hidden="true">❯</span>
+		<a href="/" aria-label="Home" class="flex items-baseline font-mono text-sm hover:no-underline group">
+			<span class="text-slate-400">~/</span>
 			<span class="font-semibold text-slate-900 group-hover:text-primary transition-colors">roman</span>
+			<span class="ml-2 text-slate-400" aria-hidden="true">❯</span>
 		</a>
 
 		<div class="hidden lg:flex items-center gap-1">
