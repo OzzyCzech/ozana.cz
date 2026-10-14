@@ -11,6 +11,12 @@
 	--color-border: oklch(90% 0.01 260); /* subtle border */
 	--color-muted: oklch(96% 0.005 260); /* muted background */
 	--color-muted-foreground: oklch(55% 0.02 260); /* muted text */
+
+	/* backdrop wash */
+	--color-wash-blue: oklch(80% 0.13 235);
+	--color-wash-mint: oklch(88% 0.13 165);
+	--color-wash-peach: oklch(86% 0.1 45);
+	--color-wash-sun: oklch(93% 0.13 95);
 }
 
 @layer base {

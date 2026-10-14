@@ -1,0 +1,98 @@
+---
+/**
+ * Blurry colour wash behind the whole page. A dominant cluster top-left
+ * (blue → mint → peach) that flows to the right, and a small counterweight
+ * bottom-right. Each blob is its own layer drifting on its own clock so the
+ * overlaps keep shifting. Decorative only: no pointer events, hidden in
+ * print, still for reduced motion.
+ */
+---
+
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-hidden print:hidden">
+	<div class="blob blob-blue"></div>
+	<div class="blob blob-mint"></div>
+	<div class="blob blob-peach"></div>
+	<div class="blob blob-sun"></div>
+	<div class="blob blob-foot-blue"></div>
+	<div class="blob blob-foot-peach"></div>
+</div>
+
+<style>
+	@reference "../styles/global.css";
+
+	.blob {
+		position: absolute;
+		width: var(--w);
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background: radial-gradient(closest-side, var(--blob) 0%, --alpha(var(--blob) / 70%) 45%, transparent 100%);
+		filter: blur(clamp(32px, 4vw, 80px));
+		animation: drift var(--drift-time, 28s) ease-in-out infinite alternate;
+		animation-delay: var(--drift-delay, 0s);
+	}
+
+	.blob-blue {
+		--blob: --alpha(var(--color-wash-blue) / 45%);
+		--w: clamp(30rem, 80vw, 72rem);
+		--drift-time: 34s;
+		top: calc(var(--w) * -0.38);
+		left: calc(var(--w) * -0.26);
+	}
+
+	.blob-mint {
+		--blob: --alpha(var(--color-wash-mint) / 50%);
+		--w: clamp(24rem, 56vw, 52rem);
+		--drift-time: 26s;
+		--drift-delay: -9s;
+		top: calc(var(--w) * -0.42);
+		left: 20vw;
+	}
+
+	.blob-peach {
+		--blob: --alpha(var(--color-wash-peach) / 46%);
+		--w: clamp(24rem, 56vw, 50rem);
+		--drift-time: 30s;
+		--drift-delay: -17s;
+		top: calc(var(--w) * -0.36);
+		right: calc(var(--w) * -0.2);
+	}
+
+	.blob-sun {
+		--blob: --alpha(var(--color-wash-sun) / 40%);
+		--w: clamp(14rem, 26vw, 24rem);
+		--drift-time: 22s;
+		--drift-delay: -5s;
+		top: calc(var(--w) * -0.2);
+		left: 46vw;
+	}
+
+	.blob-foot-blue {
+		--blob: --alpha(var(--color-wash-blue) / 35%);
+		--w: clamp(24rem, 56vw, 50rem);
+		--drift-time: 38s;
+		--drift-delay: -21s;
+		bottom: calc(var(--w) * -0.45);
+		right: calc(var(--w) * -0.28);
+	}
+
+	.blob-foot-peach {
+		--blob: --alpha(var(--color-wash-peach) / 32%);
+		--w: clamp(18rem, 38vw, 34rem);
+		--drift-time: 32s;
+		--drift-delay: -12s;
+		bottom: calc(var(--w) * -0.45);
+		right: 20vw;
+	}
+
+	@keyframes drift {
+		to {
+			transform: translate(4%, 6%) scale(1.12);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.blob {
+			animation: none;
+		}
+	}
+</style>
