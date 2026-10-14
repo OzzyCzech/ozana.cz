@@ -17,7 +17,7 @@ const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefi
 <!-- glass lives on ::before so this box is not a backdrop root and the mobile menu can blur the page itself -->
 <div class="relative mx-auto max-w-screen-lg before:absolute before:inset-0 before:-z-10 before:rounded-full before:border before:border-white/40 before:bg-white/45 before:shadow-[0_18px_60px_rgba(15,23,42,0.12)] before:backdrop-blur-[40px] before:backdrop-saturate-150">
 	<nav aria-label="Main" class="flex items-center justify-between h-16 pl-6 pr-3">
-		<a href="/" class="text-[0.95rem] font-semibold tracking-tight text-slate-900 hover:no-underline hover:text-primary transition-colors">Roman Ožana</a>
+		<a href="/" class="text-[0.95rem] font-semibold tracking-tight text-slate-900 hover:no-underline hover:text-primary transition-colors">Ing. Roman Ožana</a>
 
 		<div class="hidden lg:flex items-center gap-1">
 			{links.map(({href, label}) => <a href={href} class="nav-link" aria-current={current(href)}>{label}</a>)}
