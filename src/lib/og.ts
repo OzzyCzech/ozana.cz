@@ -157,6 +157,7 @@ function card(
 			fontFamily: SANS,
 			background: "#ffffff",
 			position: "relative",
+			boxSizing: "border-box",
 		},
 		[
 			// masthead rule
