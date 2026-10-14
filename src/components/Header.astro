@@ -16,11 +16,8 @@ const current = (href: string) => (Astro.url.pathname === href ? 'page' : undefi
 <header id="header" class="sticky top-0 z-40 w-full px-3 sm:px-4 pt-3 print:hidden before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[calc(100%+1.5rem)] before:bg-linear-to-b before:from-white/80 before:to-transparent before:opacity-0 before:transition-opacity before:duration-300 data-scrolled:before:opacity-100">
 <!-- glass lives on ::before so this box is not a backdrop root and the mobile menu can blur the page itself -->
 <div class="relative mx-auto max-w-screen-lg before:absolute before:inset-0 before:-z-10 before:rounded-full before:border before:border-white/40 before:bg-white/45 before:shadow-[0_18px_60px_rgba(15,23,42,0.12)] before:backdrop-blur-[40px] before:backdrop-saturate-150">
-	<nav aria-label="Main" class="flex items-center justify-between h-16 pl-4 pr-3">
-		<a href="/" class="flex items-center gap-2.5 hover:no-underline group">
-			<span class="grid place-items-center size-8 rounded-xl bg-slate-900 text-white text-xs font-bold tracking-tight shadow-sm group-hover:bg-primary transition-colors" aria-hidden="true">RO</span>
-			<span class="text-[0.95rem] font-semibold tracking-tight text-slate-900">Roman Ožana</span>
-		</a>
+	<nav aria-label="Main" class="flex items-center justify-between h-16 pl-6 pr-3">
+		<a href="/" class="text-[0.95rem] font-semibold tracking-tight text-slate-900 hover:no-underline hover:text-primary transition-colors">Roman Ožana</a>
 
 		<div class="hidden lg:flex items-center gap-1">
 			{links.map(({href, label}) => <a href={href} class="nav-link" aria-current={current(href)}>{label}</a>)}
