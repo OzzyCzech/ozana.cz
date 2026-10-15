@@ -79,7 +79,12 @@ import { Mail, MapPin, Phone, Bookmark } from '@lucide/astro';
 	/* glass cards, same language as the floating header and mobile menu */
 	.contact-card {
 		@apply flex items-center gap-4 px-5 py-4 rounded-3xl;
-		@apply border border-white/60 bg-white/60 backdrop-blur-xl;
-		@apply shadow-[0_18px_60px_rgba(15,23,42,0.06)] transition-colors;
+		@apply bg-white/70 backdrop-blur-xl;
+		/* tight contact shadow for the edge, wide soft one for the lift */
+		@apply shadow-[0_1px_3px_rgba(15,23,42,0.06),0_12px_32px_rgba(15,23,42,0.08)] transition-[background-color,box-shadow];
+	}
+
+	a.contact-card:hover {
+		@apply shadow-[0_1px_3px_rgba(15,23,42,0.08),0_16px_40px_rgba(15,23,42,0.12)];
 	}
 </style>
