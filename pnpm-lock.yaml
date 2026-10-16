@@ -211,8 +211,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       '@wticons/astro':
-        specifier: ^2.3.0
-        version: 2.3.0(astro@7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))
+        specifier: ^2.4.0
+        version: 2.4.0(astro@7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))
       astro:
         specifier: 7.3.8
         version: 7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1)
@@ -374,9 +374,8 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/runtime@7.29.7':
-    resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
-    engines: {node: '>=6.9.0'}
+  '@babel/runtime@8.0.7':
+    resolution: {integrity: sha512-k0hagDDq/6w4v+0Sp4wFvIz/yswH5O7Va6aRTnD7N62Tnborp4X+YB+H3XUcWVSR4aE47WPEXiIIZchBs0GmYg==}
 
   '@babel/types@7.29.8':
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
@@ -2060,8 +2059,8 @@ packages:
   '@workflow/serde@4.1.0-beta.2':
     resolution: {integrity: sha512-8kkeoQKLDaKXefjV5dbhBj2aErfKp1Mc4pb6tj8144cF+Em5SPbyMbyLCHp+BVrFfFVCBluCtMx+jjvaFVZGww==}
 
-  '@wticons/astro@2.3.0':
-    resolution: {integrity: sha512-KkESSuDqzVTjvO+dzE/5n8kBzI+TWLcp7ZFxnXASlk2BngKP23DkGJgChbku+c2jfaU8SbehW0UMQ9+Bxl/Gow==}
+  '@wticons/astro@2.4.0':
+    resolution: {integrity: sha512-OZusypZi2mdZVU1emM8fDpx6UTmJVY9xZfCUpU+KTRVX/JeZ+zV5jHm7vebLHSONP5fIqvLCHNLe/O64+kIxcw==}
     peerDependencies:
       astro: '*'
 
@@ -4170,7 +4169,7 @@ snapshots:
     dependencies:
       '@babel/types': 7.29.8
 
-  '@babel/runtime@7.29.7': {}
+  '@babel/runtime@8.0.7': {}
 
   '@babel/types@7.29.8':
     dependencies:
@@ -5588,9 +5587,9 @@ snapshots:
 
   '@workflow/serde@4.1.0-beta.2': {}
 
-  '@wticons/astro@2.3.0(astro@7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))':
+  '@wticons/astro@2.4.0(astro@7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))':
     dependencies:
-      '@babel/runtime': 7.29.7
+      '@babel/runtime': 8.0.7
       astro: 7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1)
       pascalcase: 2.0.0
 
