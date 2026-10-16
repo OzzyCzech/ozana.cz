@@ -1,7 +1,22 @@
 ---
 import { Globe, Mail, MapPin, Phone } from "@lucide/astro";
+import QRCode from "qrcode";
 
 const years = (new Date()).getFullYear() - 2009;
+
+/** Compact vCard for the QR code; the full one with photo (/ozana.vcf) is far too big to encode. */
+const vcard = [
+	'BEGIN:VCARD',
+	'VERSION:3.0',
+	'N:Ožana;Roman;;Ing.;',
+	'FN:Ing. Roman Ožana',
+	'TITLE:Full-Stack Developer',
+	'TEL;TYPE=CELL:+420605783455',
+	'EMAIL:roman@ozana.cz',
+	'URL:https://ozana.cz',
+	'END:VCARD',
+].join('\n');
+const qr = await QRCode.toString(vcard, {type: 'svg', errorCorrectionLevel: 'M', margin: 4, color: {dark: '#0f172a', light: '#0000'}});
 ---
 <!-- print/PDF only: the on-screen resume has its own summary under the name -->
 <section class="hidden print:block">
@@ -15,10 +30,16 @@ const years = (new Date()).getFullYear() - 2009;
 		</p>
 	</article>
 
-	<ul class="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-2 border-y border-slate-200 py-3 text-sm text-slate-700 *:flex *:items-center *:gap-2">
-		<li><MapPin class="size-4 text-slate-500" aria-hidden="true"/>Prague, Czech Republic</li>
-		<li><Globe class="size-4 text-slate-500" aria-hidden="true"/><a href="https://ozana.cz">ozana.cz</a></li>
-		<li><Mail class="size-4 text-slate-500" aria-hidden="true"/><a href="mailto:roman@ozana.cz?subject=Resume">roman@ozana.cz</a></li>
-		<li><Phone class="size-4 text-slate-500" aria-hidden="true"/><a href="tel:+420605783455">+420&nbsp;605&nbsp;783&nbsp;455</a></li>
-	</ul>
+	<div class="mt-4 flex items-center justify-between gap-8 border-y border-slate-200 py-4">
+		<ul class="grid grid-cols-2 gap-x-10 gap-y-3 text-sm text-slate-700 *:flex *:items-center *:gap-2.5">
+			<li><Mail class="size-4 text-slate-500" aria-hidden="true"/><a href="mailto:roman@ozana.cz?subject=Resume">roman@ozana.cz</a></li>
+			<li><Phone class="size-4 text-slate-500" aria-hidden="true"/><a href="tel:+420605783455">+420&nbsp;605&nbsp;783&nbsp;455</a></li>
+			<li><Globe class="size-4 text-slate-500" aria-hidden="true"/><a href="https://ozana.cz">ozana.cz</a></li>
+			<li><MapPin class="size-4 text-slate-500" aria-hidden="true"/>Prague, Czech Republic</li>
+		</ul>
+		<div>
+			<!-- vCard QR: ~30 mm of code inside the standard 4-module quiet zone -->
+			<div class="size-36 shrink-0 *:size-full" role="img" aria-label="QR code with contact details" set:html={qr}></div>
+		</div>
+	</div>
 </section>

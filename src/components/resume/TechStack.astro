@@ -112,19 +112,19 @@ const groups = [
 	},
 ];
 ---
-<section class="break-before-page">
+<section class="print:break-inside-avoid">
 	<h2 class="section-title">Tech I Love Working With</h2>
-	<p class="mt-2 mb-6 text-slate-600">The stack I enjoy most and want to keep building with. AI-assisted development comes first.</p>
+	<p class="mt-2 mb-6 print:mb-4 text-slate-600">The stack I enjoy most and want to keep building with. AI-assisted development comes first.</p>
 
-	<div class="grid gap-10 sm:grid-cols-2">
+	<div class="grid gap-10 print:gap-x-8 print:gap-y-4 sm:grid-cols-2">
 		{groups.map(({title, items}) => (
 			<article>
-				<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">{title}</h3>
-				<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
+				<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3 print:mb-1.5 print:text-xs">{title}</h3>
+				<div class="flex flex-wrap gap-4 print:gap-3 *:flex *:flex-col *:items-center *:gap-1">
 					{items.map(({icon: Icon, label, href}) => (
 						<a href={href} target="_blank" rel="noopener">
-							<Icon class="size-14"/>
-							<small class="text-xs text-slate-600">{label}</small>
+							<Icon class="size-14 print:size-9"/>
+							<small class="text-xs print:text-[0.6rem] text-slate-600">{label}</small>
 						</a>
 					))}
 				</div>
