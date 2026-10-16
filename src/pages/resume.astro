@@ -25,7 +25,7 @@ import { Download } from "@lucide/astro";
 			<p class="mt-3 text-muted-foreground text-lg hidden print:block">Building things for the web since 2009</p>
 		</div>
 
-		<script is:inline>
+		<script>
 			const lines = [
 				'Building things for the web since 2009',
 				'Breaking things on the web since 2009',
@@ -41,21 +41,22 @@ import { Download } from "@lucide/astro";
 			let i = 0;
 			const el = document.getElementById('subtitle');
 			function cycle() {
+				if (!el) return;
 				i = (i + 1) % lines.length;
-				el.style.opacity = 0;
+				el.style.opacity = '0';
 				setTimeout(() => {
-					el.textContent = lines[i];
-					el.style.opacity = 1;
+					el.textContent = lines[i] ?? '';
+					el.style.opacity = '1';
 				}, 150);
 			}
-			el.addEventListener('click', cycle);
-			el.addEventListener('keydown', (e) => {
+			el?.addEventListener('click', cycle);
+			el?.addEventListener('keydown', (e) => {
 				if (e.key === 'Enter' || e.key === ' ') {
 					e.preventDefault();
 					cycle();
 				}
 			});
-			el.style.transition = 'opacity 150ms ease';
+			if (el) el.style.transition = 'opacity 150ms ease';
 		</script>
 
 		<div class="space-y-16 pb-16">

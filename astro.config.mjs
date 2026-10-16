@@ -8,6 +8,28 @@ export default defineConfig({
 	site: "https://ozana.cz",
 	trailingSlash: "always",
 	prefetch: true,
+	security: {
+		// Astro hashes every <script> and <style> it renders and emits the policy as a
+		// <meta> tag per page. frame-ancestors can't live in a meta tag, see vercel.json.
+		csp: {
+			directives: [
+				"default-src 'self'",
+				"img-src 'self' data: https://avatars.githubusercontent.com",
+				"font-src 'self'",
+				"connect-src 'self'",
+				"object-src 'none'",
+				"base-uri 'self'",
+				"form-action 'self'",
+			],
+			scriptDirective: {
+				resources: ["'self'"],
+			},
+			styleDirective: {
+				// inline SVG icons carry style="" attributes; allow those, keep <style> hashed
+				resources: ["'self'", {resource: "'unsafe-inline'", kind: "attribute"}],
+			},
+		},
+	},
 	integrations: [sitemap()],
 	output: "static",
 	adapter: vercel({
