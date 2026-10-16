@@ -2,8 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Mail, MapPin, Phone, Bookmark } from '@lucide/astro';
+import { ArrowUpRight, Bookmark, Mail, MapPin, Phone } from '@lucide/astro';
 import Availability from "../components/Availability.astro";
+import { contactQr } from "../lib/contact-qr";
+
+const qr = await contactQr();
+
+const profiles = [
+	{label: 'GitHub', href: 'https://github.com/OzzyCzech'},
+	{label: 'LinkedIn', href: 'https://www.linkedin.com/in/roman-ozana'},
+	{label: 'Stack Overflow', href: 'https://stackoverflow.com/users/355316/ozzyczech'},
+	{label: 'Zdroják.cz', href: 'https://zdrojak.cz/autori/roman-ozana/'},
+];
 ---
 <Layout
 	title="Contact – Ing. Roman Ožana"
@@ -11,66 +21,72 @@ import Availability from "../components/Availability.astro";
 
 	<Header/>
 
-	<main id="main" class="max-w-xl mx-auto px-4 py-12 md:py-24 flex flex-col items-center justify-center">
+	<main id="main" class="container px-4 mx-auto max-w-screen-lg py-12 md:py-16 self-center">
+		<div class="grid items-center gap-12 md:grid-cols-[1fr_minmax(0,26rem)] md:gap-16">
 
-		<div class="mb-10 text-center">
-			<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-				Let's get in touch
-			</h1>
-			<p class="text-muted-foreground text-lg">Feel free to reach out anytime.</p>
-			<div class="mt-5"><Availability/></div>
-		</div>
+			<section>
+				<Availability/>
+				<h1 class="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Let's get in touch</h1>
+				<p class="mt-4 max-w-md text-lg leading-relaxed text-slate-600 text-pretty">
+					Feel free to reach out anytime, whether it's a project, a question or just a hello.
+				</p>
 
-		<div class="flex flex-col gap-6 w-full">
-			<a href="mailto:roman@ozana.cz" class="contact-card hover:bg-white/85 hover:no-underline">
-				<div class="text-slate-700">
-					<Mail class="size-5"/>
+				<div class="mt-8 flex flex-wrap items-center gap-3">
+					<a href="mailto:roman@ozana.cz" class="btn btn-lg">
+						<Mail class="size-4" aria-hidden="true"/>
+						Send an email
+					</a>
+					<a href="/ozana.vcf" download="Roman Ožana.vcf" class="btn-ghost">
+						<Bookmark class="size-4" aria-hidden="true"/>
+						Add to contacts
+					</a>
 				</div>
-				<div>
-					<p class="text-sm text-slate-600">Email</p>
-					<p class="font-semibold text-slate-900">roman@ozana.cz</p>
-				</div>
-			</a>
 
-			<a href="tel:+420605783455" class="contact-card hover:bg-white/85 hover:no-underline">
-				<div class="text-slate-700">
-					<Phone class="size-5"/>
-				</div>
-				<div>
-					<p class="text-sm text-slate-600">Phone</p>
-					<p class="font-semibold text-slate-900">+420 605 783 455</p>
-				</div>
-			</a>
+				<h2 class="mt-12 text-xs font-medium uppercase tracking-wider text-slate-500">Elsewhere</h2>
+				<ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+					{profiles.map(({label, href}) => (
+						<li>
+							<a href={href} target="_blank" rel="noopener" class="group inline-flex items-center gap-1 font-medium text-slate-700 hover:no-underline hover:text-slate-900">
+								{label}
+								<ArrowUpRight class="size-4 text-slate-400 transition group-hover:text-slate-700 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true"/>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
 
-			<div class="contact-card">
-				<div class="text-slate-700">
-					<MapPin class="size-5"/>
+			<section aria-label="Contact details" class="contact-panel">
+				<a href="mailto:roman@ozana.cz" class="contact-row">
+					<Mail class="size-5 text-slate-500" aria-hidden="true"/>
+					<span>
+						<span class="block text-sm text-slate-600">Email</span>
+						<span class="block font-semibold text-slate-900">roman@ozana.cz</span>
+					</span>
+				</a>
+				<a href="tel:+420605783455" class="contact-row">
+					<Phone class="size-5 text-slate-500" aria-hidden="true"/>
+					<span>
+						<span class="block text-sm text-slate-600">Phone</span>
+						<span class="block font-semibold text-slate-900">+420 605 783 455</span>
+					</span>
+				</a>
+				<div class="contact-row">
+					<MapPin class="size-5 text-slate-500" aria-hidden="true"/>
+					<span>
+						<span class="block text-sm text-slate-600">Location</span>
+						<span class="block font-semibold text-slate-900">Prague, Czech Republic</span>
+					</span>
 				</div>
-				<div>
-					<p class="text-sm text-slate-600">Location</p>
-					<p class="font-semibold text-slate-900">
-						Prague,
-						Czech Republic
-						
+
+				<div class="flex items-center justify-between gap-6 border-t border-slate-900/[0.06] px-6 pt-5 pb-1">
+					<p class="text-sm text-slate-600">
+						IN:&nbsp;<a href="https://rzp.gov.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" rel="noopener" class="link hover:text-slate-900">87098504</a>
 					</p>
+					<div class="size-24 shrink-0 *:size-full" role="img" aria-label="QR code with contact details" set:html={qr}></div>
 				</div>
-			</div>
+			</section>
+
 		</div>
-
-		<div class="mt-8 text-center">
-			<a
-				href="/ozana.vcf"
-				class="btn btn-lg"
-				download="Roman Ožana.vcf">
-				<Bookmark class="size-4" aria-hidden="true"/>
-				Add to Contacts
-			</a>
-		</div>
-
-		<p class="mt-6 text-sm text-slate-600 text-center">
-			IN:&nbsp;<a href="https://rzp.gov.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" rel="noopener" class="link text-slate-600 hover:text-slate-900">87098504</a>
-		</p>
-
 	</main>
 	<Footer/>
 </Layout>
@@ -78,15 +94,17 @@ import Availability from "../components/Availability.astro";
 <style>
 	@reference "../styles/global.css";
 
-	/* glass cards, same language as the floating header and mobile menu */
-	.contact-card {
-		@apply flex items-center gap-4 px-5 py-4 rounded-3xl;
-		@apply bg-white/70 backdrop-blur-xl;
-		/* tight contact shadow for the edge, wide soft one for the lift */
-		@apply shadow-[0_1px_3px_rgba(15,23,42,0.06),0_12px_32px_rgba(15,23,42,0.08)] transition-[background-color,box-shadow];
+	/* one glass panel, same language as the header bar and mobile menu */
+	.contact-panel {
+		@apply rounded-3xl bg-white/70 backdrop-blur-xl p-2 pb-4;
+		@apply shadow-[0_1px_3px_rgba(15,23,42,0.06),0_18px_48px_rgba(15,23,42,0.10)];
 	}
 
-	a.contact-card:hover {
-		@apply shadow-[0_1px_3px_rgba(15,23,42,0.08),0_16px_40px_rgba(15,23,42,0.12)];
+	.contact-row {
+		@apply flex items-center gap-4 rounded-2xl px-4 py-3.5 hover:no-underline;
+	}
+
+	a.contact-row {
+		@apply transition-colors hover:bg-slate-900/[0.04];
 	}
 </style>
