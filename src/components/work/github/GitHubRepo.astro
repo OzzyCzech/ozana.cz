@@ -35,7 +35,8 @@ const [owner, repo] = repository.split('/');
 
 const data = (await fetchRepo(repository)) as GitHubRepoType;
 
-const description = data.description || '';
+// the site avoids em dashes; GitHub descriptions use them as a separator
+const description = (data.description || '').replace(/\s*—\s*/g, ', ');
 const stars = data.stargazers_count || 0;
 const forks = data.forks_count || 0;
 const avatarUrl = data.owner?.avatar_url;
