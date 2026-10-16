@@ -1,7 +1,8 @@
 ---
 import { fetchArticles } from "../../lib/zdrojak";
 
-const articles = (await fetchArticles()).length;
+const articles = await fetchArticles();
+const [latest] = articles;
 const packages = [
 	{name: 'wticons', href: 'https://github.com/OzzyCzech/wticons'},
 	{name: 'ftpsync', href: 'https://github.com/OzzyCzech/ftpsync'},
@@ -20,15 +21,16 @@ const packages = [
 				Author and maintainer of open-source packages for JavaScript, PHP and Rust, including{' '}
 				{packages.map(({name, href}, i) => (
 					<>{i > 0 && (i === packages.length - 1 ? ' and ' : ', ')}<a href={href} target="_blank" rel="noopener" class="link">{name}</a></>
-				))}.
+				))}.{' '}
 				<span class="print:hidden">All of them on <a href="/projects/" class="link">Projects</a>.</span>
 			</p>
 		</div>
 		<div>
 			<h3 class="font-semibold tracking-tight text-slate-900">Writing</h3>
 			<p class="mt-2 leading-relaxed text-slate-600">
-				Author of {articles} articles on <a href="https://zdrojak.cz/autori/roman-ozana/" target="_blank" rel="noopener" class="link">Zdroják.cz</a> about
-				web development, DevOps and web security.
+				I write for <a href="https://zdrojak.cz/autori/roman-ozana/" target="_blank" rel="noopener" class="link">Zdroják.cz</a>, a Czech
+				developer magazine, about web development, DevOps and security, with {articles.length} articles so far.{' '}
+				{latest && <>The latest: <a href={latest.url} target="_blank" rel="noopener" class="link">{latest.title}</a>.</>}
 			</p>
 		</div>
 	</div>
