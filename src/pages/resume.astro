@@ -10,7 +10,10 @@ import Headline from "../components/resume/Headline.astro";
 import Language from "../components/resume/Language.astro";
 import DrivingLicense from "../components/resume/DrivingLicense.astro";
 import Education from "../components/resume/Education.astro";
-import { Download } from "@lucide/astro";
+import { ArrowRight, Download } from "@lucide/astro";
+
+const years = new Date().getFullYear() - 2009;
+const pdfName = `Resume - Ing. Roman Ožana - ${new Date().getFullYear()}.pdf`;
 ---
 
 <Layout
@@ -23,6 +26,24 @@ import { Download } from "@lucide/astro";
 			<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Ing. Roman Ožana</h1>
 			<p class="mt-3 text-muted-foreground text-lg cursor-pointer select-none print:hidden" id="subtitle" role="button" tabindex="0">Building things for the web since 2009</p>
 			<p class="mt-3 text-muted-foreground text-lg hidden print:block">Building things for the web since 2009</p>
+
+			<!-- on-screen summary; the print version has its own in Headline -->
+			<p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 text-pretty print:hidden">
+				Full-stack developer from Prague with over {years} years of building web applications and services.
+				Co-founder of Testomato and long-time lead developer of Zdroják.cz, working mostly in PHP and TypeScript.
+				I like small, efficient teams and products that stay simple.
+			</p>
+
+			<div class="mt-8 flex flex-wrap items-center justify-center gap-3 print:hidden">
+				<a href="/cv.pdf" download={pdfName} class="btn btn-lg">
+					<Download class="size-4" aria-hidden="true"/>
+					Download PDF
+				</a>
+				<a href="/contact/" class="btn-ghost">
+					Get in touch
+					<ArrowRight class="size-4" aria-hidden="true"/>
+				</a>
+			</div>
 		</div>
 
 		<script>
@@ -82,7 +103,7 @@ import { Download } from "@lucide/astro";
 		</section>
 
 		<div class="text-center my-12 print:hidden">
-			<a href="/cv.pdf" download={`Resume - Ing. Roman Ožana - ${new Date().getFullYear()}.pdf`} class="btn btn-lg">
+			<a href="/cv.pdf" download={pdfName} class="btn btn-lg">
 				<Download class="size-4" aria-hidden="true"/>
 				Download as PDF
 			</a>
