@@ -49,6 +49,17 @@
 	@apply underline decoration-slate-300 underline-offset-2 hover:decoration-current;
 }
 
+@utility btn-lg {
+	@apply py-2.5 px-5 text-base;
+}
+
+/* secondary action: the same lifted white as the contact cards */
+@utility btn-ghost {
+	@apply inline-flex items-center gap-2 py-2.5 px-5 rounded-full text-base font-medium text-slate-900 hover:no-underline print:hidden;
+	@apply bg-white/70 backdrop-blur-xl transition-shadow;
+	@apply shadow-[0_1px_3px_rgba(15,23,42,0.06),0_8px_24px_rgba(15,23,42,0.08)] hover:shadow-[0_1px_3px_rgba(15,23,42,0.08),0_12px_32px_rgba(15,23,42,0.12)];
+}
+
 @utility btn-xs {
 	@apply py-1 px-3 text-sm font-semibold;
 }

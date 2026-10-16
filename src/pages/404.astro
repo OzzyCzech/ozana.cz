@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from "astro:assets";
+import { ArrowLeft } from "@lucide/astro";
 import dino from '../assets/favicon.svg';
 ---
 
@@ -11,10 +12,22 @@ import dino from '../assets/favicon.svg';
 	description="The page you are looking for does not exist."
 	noindex>
 	<Header/>
-	<main id="main" class="lg:container lg:mx-auto self-center align-center text-center">
-		<Image src={dino} alt="404" class="size-86 mx-auto mb-4"/>
-		<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">#404 Page not found</h1>
-		<p class="text-lg mb-4">The page you are looking for does not exist. <a href="/" class="text-blue-600">Return to the homepage</a>.</p>
+	<main id="main" class="container mx-auto p-4 self-center text-center">
+		<Image src={dino} alt="" class="mx-auto mb-6 size-28 opacity-80"/>
+
+		<p class="font-mono text-sm font-semibold tracking-widest text-slate-600">404</p>
+		<h1 class="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Page not found</h1>
+		<p class="mx-auto mt-4 max-w-md text-lg leading-relaxed text-slate-600 text-pretty">
+			The page you are looking for doesn't exist or has moved. The dino didn't find it either.
+		</p>
+
+		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+			<a href="/" class="btn btn-lg">
+				<ArrowLeft class="size-4" aria-hidden="true"/>
+				Back to homepage
+			</a>
+			<a href="/projects/" class="btn-ghost">See projects</a>
+		</div>
 	</main>
 	<Footer/>
 </Layout>
