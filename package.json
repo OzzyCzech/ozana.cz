@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "@ozzyczech/tsconfig": "^2.1.0",
-    "url-metadata": "^6.3.0"
+    "playwright": "1.64.1",
+    "url-metadata": "^6.3.0",
+    "vercel": "64.3.1"
   }
 }
