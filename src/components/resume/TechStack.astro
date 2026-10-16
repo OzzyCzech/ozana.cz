@@ -21,7 +21,6 @@ import {
 	Npm,
 	Openai,
 	Php,
-	PhpStorm,
 	PhpUnit,
 	Puppeteer,
 	React,
@@ -33,12 +32,10 @@ import {
 	Vite,
 	Vitest,
 	Vue,
-	Webpack,
-	Wordpress,
-	ZendFramework
+	Wordpress
 } from "@wticons/astro";
 
-/** Grouped by how much each matters today, most important first; within a group, current before legacy. */
+/** Where Roman wants to keep going, most important first; past tech lives in the work experience. */
 const groups = [
 	{
 		title: 'AI',
@@ -66,7 +63,6 @@ const groups = [
 			{icon: Nodejs, label: 'Node.js', href: 'https://nodejs.org'},
 			{icon: Bun, label: 'Bun', href: 'https://bun.sh'},
 			{icon: Symfony, label: 'Symfony', href: 'https://symfony.com'},
-			{icon: ZendFramework, label: 'Zend', href: 'https://framework.zend.com/'}
 		],
 	},
 	{
@@ -102,7 +98,6 @@ const groups = [
 			{icon: Biomejs, label: 'Biome', href: 'https://biomejs.dev'},
 			{icon: Npm, label: 'NPM', href: 'https://www.npmjs.com/'},
 			{icon: GnuMake, label: 'Make', href: 'https://www.gnu.org/software/make/'},
-			{icon: Webpack, label: 'Webpack', href: 'https://webpack.js.org'},
 		],
 	},
 	{
@@ -110,16 +105,16 @@ const groups = [
 		items: [
 			{icon: Docker, label: 'Docker', href: 'https://www.docker.com'},
 			{icon: Git, label: 'Git', href: 'https://git-scm.com'},
-			{icon: Linux, label: 'Linux', href: 'https://www.linux.org'},
 			{icon: Apple, label: 'macOS', href: 'https://www.apple.com/os/macos/'},
-			{icon: PhpStorm, label: 'PhpStorm', href: 'https://www.jetbrains.com/phpstorm/'},
+			{icon: Linux, label: 'Linux', href: 'https://www.linux.org'},
 			{icon: Wordpress, label: 'WordPress', href: 'https://wordpress.org'}
 		],
 	},
 ];
 ---
 <section class="break-before-page">
-	<h2 class="section-title mb-6">Tech I Love Working With</h2>
+	<h2 class="section-title">Tech I Love Working With</h2>
+	<p class="mt-2 mb-6 text-slate-600">The stack I enjoy most and want to keep building with &mdash; AI-assisted development first.</p>
 
 	<div class="grid gap-10 sm:grid-cols-2">
 		{groups.map(({title, items}) => (
