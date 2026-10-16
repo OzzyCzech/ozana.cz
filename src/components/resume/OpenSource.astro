@@ -1,0 +1,35 @@
+---
+import { fetchArticles } from "../../lib/zdrojak";
+
+const articles = (await fetchArticles()).length;
+const packages = [
+	{name: 'wticons', href: 'https://github.com/OzzyCzech/wticons'},
+	{name: 'ftpsync', href: 'https://github.com/OzzyCzech/ftpsync'},
+	{name: 'potrans', href: 'https://github.com/OzzyCzech/potrans'},
+	{name: 'icalparser', href: 'https://github.com/OzzyCzech/icalparser'},
+	{name: 'mock-to-openapi', href: 'https://github.com/OzzyCzech/mock-to-openapi'},
+];
+---
+<section class="print:break-inside-avoid">
+	<h2 class="section-title pb-4 border-b border-slate-200">Open Source &amp; Writing</h2>
+
+	<div class="grid gap-6 pt-8 md:grid-cols-2 md:gap-10">
+		<div>
+			<h3 class="font-semibold tracking-tight text-slate-900">Open source</h3>
+			<p class="mt-2 leading-relaxed text-slate-600">
+				Author and maintainer of open-source packages for JavaScript, PHP and Rust, including
+				{packages.map(({name, href}, i) => (
+					<>{i > 0 && (i === packages.length - 1 ? ' and ' : ', ')}<a href={href} target="_blank" rel="noopener" class="link">{name}</a></>
+				))}.
+				<span class="print:hidden">All of them on <a href="/projects/" class="link">Projects</a>.</span>
+			</p>
+		</div>
+		<div>
+			<h3 class="font-semibold tracking-tight text-slate-900">Writing</h3>
+			<p class="mt-2 leading-relaxed text-slate-600">
+				Author of {articles} articles on <a href="https://zdrojak.cz/autori/roman-ozana/" target="_blank" rel="noopener" class="link">Zdroják.cz</a>
+				about web development, DevOps and web security.
+			</p>
+		</div>
+	</div>
+</section>

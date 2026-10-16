@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { Image } from "astro:assets";
 import qr from "../components/resume/contact.svg";
 import WorkExperiences from "../components/resume/WorkExperiences.astro";
+import OpenSource from "../components/resume/OpenSource.astro";
 import TechStack from "../components/resume/TechStack.astro";
 import Headline from "../components/resume/Headline.astro";
 import Language from "../components/resume/Language.astro";
@@ -84,6 +85,7 @@ const pdfName = `Resume - Ing. Roman Ožana - ${new Date().getFullYear()}.pdf`;
 		<div class="space-y-16 pb-16">
 			<Headline/>
 			<WorkExperiences/>
+			<OpenSource/>
 			<TechStack/>
 
 			<div class="grid gap-16 md:gap-12 md:grid-cols-2">
