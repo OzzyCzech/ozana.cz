@@ -194,7 +194,7 @@ function card({headline, subline, footer = "Full-Stack Developer · Prague"}: Ca
 						src: portrait,
 						width: PORTRAIT_SIZE,
 						height: PORTRAIT_SIZE,
-						style: {borderRadius: PORTRAIT_SIZE / 2, border: "6px solid #ffffff", boxShadow: LIFT},
+						style: {borderRadius: PORTRAIT_SIZE / 2, boxShadow: LIFT},
 					},
 				},
 			]),
