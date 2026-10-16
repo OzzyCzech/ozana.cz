@@ -17,13 +17,8 @@ export interface OgPage {
 	pathname: string;
 	headline: string;
 	subline: string;
-	/**
-	 * Bottom-left brand line. Defaults to the name; the home card blanks it
-	 * because its headline already is the name.
-	 */
-	footerLeft?: string;
-	/** Bottom-right line. Home drops the role, its subline already says it. */
-	footerRight?: string;
+	/** Bottom pill. Defaults to the role; home uses the place, its subline already says the role. */
+	footer?: string;
 }
 
 export const OG_PAGES: OgPage[] = [
@@ -32,8 +27,7 @@ export const OG_PAGES: OgPage[] = [
 		pathname: "/",
 		headline: "Roman Ožana",
 		subline: "Full-Stack Developer",
-		footerLeft: "",
-		footerRight: "Prague · Czech Republic",
+		footer: "Prague · Czech Republic",
 	},
 	{slug: "projects", pathname: "/projects/", headline: "Projects", subline: "& open source"},
 	{slug: "resume", pathname: "/resume/", headline: "Resume", subline: "building since 2009"},
@@ -59,12 +53,9 @@ const FONTS = [
 	{pkg: "inter", file: "inter-latin-700-normal.woff", name: "Inter", weight: 700},
 	{pkg: "inter", file: "inter-latin-ext-400-normal.woff", name: "InterExt", weight: 400},
 	{pkg: "inter", file: "inter-latin-ext-700-normal.woff", name: "InterExt", weight: 700},
-	{pkg: "jetbrains-mono", file: "jetbrains-mono-latin-400-normal.woff", name: "Mono", weight: 400},
-	{pkg: "jetbrains-mono", file: "jetbrains-mono-latin-ext-400-normal.woff", name: "MonoExt", weight: 400},
 ] as const;
 
 const SANS = "Inter, InterExt";
-const MONO = "Mono, MonoExt";
 
 /**
  * Resolved against the project root rather than import.meta.url: this module is
@@ -75,11 +66,21 @@ const MONO = "Mono, MonoExt";
 const PORTRAIT = resolve(process.cwd(), "public/img/roman-ozana.small.jpg");
 
 const INK = "#0f172a";
-const MUTED = "#64748b";
+const MUTED = "#475569";
 const FAINT = "#94a3b8";
-const RULE = "#e2e8f0";
 
-type CardText = Pick<OgPage, "headline" | "subline" | "footerLeft" | "footerRight">;
+/** The site's backdrop wash (global.css --color-wash-*), as sRGB for satori. */
+const WASH = {
+	blue: "97, 195, 250",
+	mint: "124, 238, 196",
+	peach: "255, 196, 163",
+	sun: "245, 230, 130",
+};
+
+/** Glass surfaces on the site: white with a tight edge shadow and a wide soft lift. */
+const LIFT = "0 1px 3px rgba(15, 23, 42, 0.06), 0 18px 48px rgba(15, 23, 42, 0.10)";
+
+type CardText = Pick<OgPage, "headline" | "subline" | "footer">;
 
 const PADDING_X = 84;
 const PORTRAIT_SIZE = 196;
@@ -140,10 +141,7 @@ async function loadAssets() {
 
 const div = (style: Record<string, unknown>, children?: unknown) => ({type: "div", props: {style, children}});
 
-function card(
-	{headline, subline, footerLeft = "Roman Ožana", footerRight = "Full-Stack Developer · Prague"}: CardText,
-	portrait: string,
-) {
+function card({headline, subline, footer = "Full-Stack Developer · Prague"}: CardText, portrait: string) {
 	const fontSize = headlineSize(headline, subline);
 
 	return div(
@@ -153,27 +151,35 @@ function card(
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "space-between",
-			padding: `64px ${PADDING_X}px`,
+			padding: `40px ${PADDING_X}px 56px`,
 			fontFamily: SANS,
 			background: "#ffffff",
-			position: "relative",
+			// same wash as the site: blue → mint → sun → peach across the top, a blue echo bottom-right
+			backgroundImage: [
+				`radial-gradient(circle at 8% 0%, rgba(${WASH.blue}, 0.55), rgba(${WASH.blue}, 0) 45%)`,
+				`radial-gradient(circle at 42% 0%, rgba(${WASH.mint}, 0.55), rgba(${WASH.mint}, 0) 38%)`,
+				`radial-gradient(circle at 62% 10%, rgba(${WASH.sun}, 0.45), rgba(${WASH.sun}, 0) 28%)`,
+				`radial-gradient(circle at 96% 4%, rgba(${WASH.peach}, 0.6), rgba(${WASH.peach}, 0) 40%)`,
+				`radial-gradient(circle at 100% 100%, rgba(${WASH.blue}, 0.35), rgba(${WASH.blue}, 0) 40%)`,
+			].join(", "),
 			boxSizing: "border-box",
 		},
 		[
-			// masthead rule
-			div({position: "absolute", top: 0, left: 0, width: OG_WIDTH, height: 6, background: INK}),
-
+			// the floating glass header bar
 			div(
 				{
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "space-between",
-					borderBottom: `2px dashed ${RULE}`,
-					paddingBottom: 26,
+					height: 76,
+					padding: "0 36px",
+					borderRadius: 38,
+					background: "rgba(255, 255, 255, 0.72)",
+					boxShadow: LIFT,
 				},
 				[
-					div({fontFamily: MONO, fontSize: 24, color: "#475569", letterSpacing: 1}, "~/roman$"),
-					div({fontSize: 22, color: FAINT, letterSpacing: 2}, "OZANA.CZ"),
+					div({fontSize: 26, fontWeight: 700, color: INK, letterSpacing: -0.5}, "Ing. Roman Ožana"),
+					div({fontSize: 24, color: MUTED}, "ozana.cz"),
 				],
 			),
 
@@ -188,24 +194,27 @@ function card(
 						src: portrait,
 						width: PORTRAIT_SIZE,
 						height: PORTRAIT_SIZE,
-						style: {borderRadius: PORTRAIT_SIZE / 2, border: `3px solid ${RULE}`},
+						style: {borderRadius: PORTRAIT_SIZE / 2, border: "6px solid #ffffff", boxShadow: LIFT},
 					},
 				},
 			]),
 
-			div(
-				{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "space-between",
-					borderTop: `2px dashed ${RULE}`,
-					paddingTop: 26,
-				},
-				[
-					div({fontSize: 26, fontWeight: 700, color: INK}, footerLeft),
-					div({fontSize: 24, color: MUTED}, footerRight),
-				],
-			),
+			// white lifted pill, like the availability badge on the homepage
+			div({display: "flex"}, [
+				div(
+					{
+						display: "flex",
+						padding: "12px 26px",
+						borderRadius: 999,
+						background: "rgba(255, 255, 255, 0.8)",
+						boxShadow: LIFT,
+						fontSize: 24,
+						fontWeight: 500,
+						color: MUTED,
+					},
+					footer,
+				),
+			]),
 		],
 	);
 }
