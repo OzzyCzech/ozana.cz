@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Avatar from "../components/Avatar.astro";
-import GitHubIcon from '../icons/github.svg';
+import { ArrowRight } from "@lucide/astro";
 import RoleRotator from "../components/RoleRotator.astro";
 ---
 
@@ -21,17 +21,33 @@ import RoleRotator from "../components/RoleRotator.astro";
 
 		<article class="text-center">
 
+			<p class="availability mb-5">
+				<span class="relative flex size-2" aria-hidden="true">
+					<span class="absolute inline-flex size-full rounded-full bg-emerald-500 opacity-60 animate-ping motion-reduce:hidden"></span>
+					<span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+				</span>
+				Available for new projects
+			</p>
+
 			<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-1.5">
 				Hey, I'm Roman.
 			</h1>
 
 			<RoleRotator/>
 
-			<div class="my-5">
-				<a href="https://github.com/OzzyCzech/" target="_blank" rel="noopener" class="btn">
-					<GitHubIcon class="size-5"/>
-					View GitHub
+			<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-600 text-pretty">
+				I build web applications and services in Prague, since 2009.
+				Co-founder of <a href="https://www.testomato.com" target="_blank" rel="noopener" class="link">Testomato</a>,
+				long-time developer of <a href="https://zdrojak.cz" target="_blank" rel="noopener" class="link">Zdroják.cz</a> and
+				author of a few dozen open-source packages. I like small, efficient teams and products that stay simple.
+			</p>
+
+			<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+				<a href="/contact/" class="btn btn-lg">
+					Get in touch
+					<ArrowRight class="size-4" aria-hidden="true"/>
 				</a>
+				<a href="/resume/" class="btn-ghost">View resume</a>
 			</div>
 		</article>
 
@@ -39,3 +55,23 @@ import RoleRotator from "../components/RoleRotator.astro";
 
 	<Footer/>
 </Layout>
+
+<style>
+	@reference "../styles/global.css";
+
+	.availability {
+		@apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium text-slate-700;
+		@apply bg-white/70 backdrop-blur-xl shadow-[0_1px_3px_rgba(15,23,42,0.06),0_8px_24px_rgba(15,23,42,0.06)];
+	}
+
+	.btn-lg {
+		@apply py-2.5 px-5 text-base;
+	}
+
+	/* secondary action: same lifted white as the contact cards */
+	.btn-ghost {
+		@apply inline-flex items-center py-2.5 px-5 rounded-full text-base font-medium text-slate-900 hover:no-underline;
+		@apply bg-white/70 backdrop-blur-xl transition-shadow;
+		@apply shadow-[0_1px_3px_rgba(15,23,42,0.06),0_8px_24px_rgba(15,23,42,0.08)] hover:shadow-[0_1px_3px_rgba(15,23,42,0.08),0_12px_32px_rgba(15,23,42,0.12)];
+	}
+</style>
