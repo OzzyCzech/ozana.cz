@@ -1,22 +1,10 @@
 ---
 import { Globe, Mail, MapPin, Phone } from "@lucide/astro";
-import QRCode from "qrcode";
+import { contactQr } from "../../lib/contact-qr";
 
 const years = (new Date()).getFullYear() - 2009;
 
-/** Compact vCard for the QR code; the full one with photo (/ozana.vcf) is far too big to encode. */
-const vcard = [
-	'BEGIN:VCARD',
-	'VERSION:3.0',
-	'N:Ožana;Roman;;Ing.;',
-	'FN:Ing. Roman Ožana',
-	'TITLE:Full-Stack Developer',
-	'TEL;TYPE=CELL:+420605783455',
-	'EMAIL:roman@ozana.cz',
-	'URL:https://ozana.cz',
-	'END:VCARD',
-].join('\n');
-const qr = await QRCode.toString(vcard, {type: 'svg', errorCorrectionLevel: 'M', margin: 4, color: {dark: '#0f172a', light: '#0000'}});
+const qr = await contactQr();
 ---
 <!-- print/PDF only: the on-screen resume has its own summary under the name -->
 <section class="hidden print:block">
