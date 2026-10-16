@@ -1,239 +1,143 @@
 ---
 import {
 	Apple,
-	Linux,
+	Astro as AstroIcon,
 	Ava,
+	Biomejs,
+	Bun,
+	Claude,
 	Css,
 	Cypress,
+	Docker,
 	Git,
 	GnuMake,
 	Html,
 	Js,
-	TypeScript,
-	Symfony,
+	Linux,
+	Mariadb,
 	Mocha,
 	Mongodb,
-	Mariadb,
-	Vue,
-	Npm,
 	Nette,
 	NextJs,
 	Nodejs,
+	Npm,
+	Openai,
 	Parcel,
-	Vite,
-	Astro as AstroIcon,
 	Php,
 	PhpStorm,
-	Docker,
 	PhpUnit,
 	React,
 	Redis,
 	Svelte,
-	Vitest,
+	Symfony,
 	Tailwind,
+	TypeScript,
+	Vite,
+	Vitest,
+	Vue,
 	Webpack,
 	Wordpress,
-	ZendFramework,
-	Claude,
-	Openai
+	ZendFramework
 } from "@wticons/astro";
+
+/** Grouped by how much each matters today, most important first; within a group, current before legacy. */
+const groups = [
+	{
+		title: 'AI',
+		items: [
+			{icon: Claude, label: 'Claude', href: 'https://claude.ai'},
+			{icon: Openai, label: 'OpenAI', href: 'https://openai.com'}
+		],
+	},
+	{
+		title: 'Languages',
+		items: [
+			{icon: Php, label: 'PHP', href: 'https://www.php.net'},
+			{icon: TypeScript, label: 'TypeScript', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'},
+			{icon: Js, label: 'JavaScript', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'},
+			{icon: Html, label: 'HTML5', href: 'https://developer.mozilla.org/en-US/docs/Web/HTML'},
+			{icon: Css, label: 'CSS3', href: 'https://developer.mozilla.org/en-US/docs/Web/CSS'}
+		],
+	},
+	{
+		title: 'Backend',
+		items: [
+			{icon: Nette, label: 'Nette', href: 'https://nette.org'},
+			{icon: Nodejs, label: 'Node.js', href: 'https://nodejs.org'},
+			{icon: Bun, label: 'Bun', href: 'https://bun.sh'},
+			{icon: Symfony, label: 'Symfony', href: 'https://symfony.com'},
+			{icon: ZendFramework, label: 'Zend', href: 'https://framework.zend.com/'}
+		],
+	},
+	{
+		title: 'Frontend',
+		items: [
+			{icon: Vue, label: 'Vue.js', href: 'https://vuejs.org'},
+			{icon: Tailwind, label: 'Tailwind', href: 'https://tailwindcss.com'},
+			{icon: AstroIcon, label: 'Astro', href: 'https://astro.build'},
+			{icon: React, label: 'React', href: 'https://reactjs.org'},
+			{icon: Svelte, label: 'Svelte', href: 'https://svelte.dev'},
+			{icon: NextJs, label: 'Next.js', href: 'https://nextjs.org'}
+		],
+	},
+	{
+		title: 'Databases',
+		items: [
+			{icon: Mongodb, label: 'MongoDB', href: 'https://www.mongodb.com'},
+			{icon: Mariadb, label: 'MariaDB', href: 'https://mariadb.org'},
+			{icon: Redis, label: 'Redis', href: 'https://redis.io'}
+		],
+	},
+	{
+		title: 'Testing',
+		items: [
+			{icon: Vitest, label: 'Vitest', href: 'https://vitest.dev/'},
+			{icon: PhpUnit, label: 'PHPUnit', href: 'https://phpunit.de'},
+			{icon: Cypress, label: 'Cypress', href: 'https://www.cypress.io'},
+			{icon: Ava, label: 'Ava', href: 'https://github.com/avajs/ava'},
+			{icon: Mocha, label: 'Mocha', href: 'https://mochajs.org'}
+		],
+	},
+	{
+		title: 'Build & Tooling',
+		items: [
+			{icon: Vite, label: 'Vite', href: 'https://vitejs.dev'},
+			{icon: Biomejs, label: 'Biome', href: 'https://biomejs.dev'},
+			{icon: Npm, label: 'NPM', href: 'https://www.npmjs.com/'},
+			{icon: GnuMake, label: 'Make', href: 'https://www.gnu.org/software/make/'},
+			{icon: Webpack, label: 'Webpack', href: 'https://webpack.js.org'},
+			{icon: Parcel, label: 'Parcel', href: 'https://parceljs.org'}
+		],
+	},
+	{
+		title: 'Platforms & Tools',
+		items: [
+			{icon: Docker, label: 'Docker', href: 'https://www.docker.com'},
+			{icon: Git, label: 'Git', href: 'https://git-scm.com'},
+			{icon: Linux, label: 'Linux', href: 'https://www.linux.org'},
+			{icon: Apple, label: 'macOS', href: 'https://www.apple.com/macos'},
+			{icon: PhpStorm, label: 'PhpStorm', href: 'https://www.jetbrains.com/phpstorm/'},
+			{icon: Wordpress, label: 'WordPress', href: 'https://www.wordpress.org'}
+		],
+	},
+];
 ---
 <section class="break-before-page">
 	<h2 class="section-title mb-6">Tech I Love Working With</h2>
 
 	<div class="grid gap-10 sm:grid-cols-2">
-
-		<article>
-			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Backend</h3>
-			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
-				<a href="https://www.php.net" target="_blank" rel="noopener">
-					<Php class="size-14"/>
-					<small class="text-xs text-slate-600">PHP</small>
-				</a>
-				<a href="https://nodejs.org" target="_blank" rel="noopener">
-					<Nodejs class="size-14"/>
-					<small class="text-xs text-slate-600">Node.js</small>
-				</a>
-				<a href="https://framework.zend.com/" target="_blank" rel="noopener">
-					<ZendFramework class="size-14"/>
-					<small class="text-xs text-slate-600">Zend</small>
-				</a>
-				<a href="https://nette.org" target="_blank" rel="noopener">
-					<Nette class="size-14"/>
-					<small class="text-xs text-slate-600">Nette</small>
-				</a>
-				<a href="https://symfony.com" target="_blank" rel="noopener">
-					<Symfony class="size-14"/>
-					<small class="text-xs text-slate-600">Symfony</small>
-				</a>
-			</div>
-		</article>
-
-		<article>
-			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Frontend</h3>
-			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
-				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
-					<Js class="size-14"/>
-					<small class="text-xs text-slate-600">Javascript</small>
-				</a>
-				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
-					<TypeScript class="size-14"/>
-					<small class="text-xs text-slate-600">Typescript</small>
-				</a>
-				<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">
-					<Html class="size-14"/>
-					<small class="text-xs text-slate-600">HTML5</small>
-				</a>
-				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">
-					<Css class="size-14"/>
-					<small class="text-xs text-slate-600">CSS3</small>
-				</a>
-				<a href="https://tailwindcss.com" target="_blank" rel="noopener">
-					<Tailwind class="size-14"/>
-					<small class="text-xs text-slate-600">Tailwind</small>
-				</a>
-			</div>
-		</article>
-
-		<article>
-			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Frameworks</h3>
-			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
-				<a href="https://vuejs.org" target="_blank" rel="noopener">
-					<Vue class="size-14"/>
-					<small class="text-xs text-slate-600">Vue.js</small>
-				</a>
-				<a href="https://astro.build" target="_blank" rel="noopener">
-					<AstroIcon class="size-14"/>
-					<small class="text-xs text-slate-600">Astro</small>
-				</a>
-				<a href="https://svelte.dev" target="_blank" rel="noopener">
-					<Svelte class="size-14"/>
-					<small class="text-xs text-slate-600">Svelte</small>
-				</a>
-				<a href="https://reactjs.org" target="_blank" rel="noopener">
-					<React class="size-14"/>
-					<small class="text-xs text-slate-600">React</small>
-				</a>
-				<a href="https://nextjs.org" target="_blank" rel="noopener">
-					<NextJs class="size-14"/>
-					<small class="text-xs text-slate-600">Next.js</small>
-				</a>
-			</div>
-		</article>
-
-		<article>
-			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Databases</h3>
-			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
-				<a href="https://www.mongodb.com" target="_blank" rel="noopener">
-					<Mongodb class="size-14"/>
-					<small class="text-xs text-slate-600">MongoDB</small>
-				</a>
-				<a href="https://mariadb.org" target="_blank" rel="noopener">
-					<Mariadb class="size-14"/>
-					<small class="text-xs text-slate-600">MariaDB</small>
-				</a>
-				<a href="https://redis.io" target="_blank" rel="noopener">
-					<Redis class="size-14"/>
-					<small class="text-xs text-slate-600">Redis</small>
-				</a>
-			</div>
-		</article>
-
-		<article>
-			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Build Tools</h3>
-			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
-				<a href="https://vitejs.dev" target="_blank" rel="noopener">
-					<Vite class="size-14"/>
-					<small class="text-xs text-slate-600">Vite</small>
-				</a>
-				<a href="https://www.gnu.org/software/make/" target="_blank" rel="noopener">
-					<GnuMake class="size-14"/>
-					<small class="text-xs text-slate-600">Make</small>
-				</a>
-				<a href="https://parceljs.org" target="_blank" rel="noopener">
-					<Parcel class="size-14"/>
-					<small class="text-xs text-slate-600">Parcel</small>
-				</a>
-				<a href="https://webpack.js.org" target="_blank" rel="noopener">
-					<Webpack class="size-14"/>
-					<small class="text-xs text-slate-600">Webpack</small>
-				</a>
-				<a href="https://www.npmjs.com/" target="_blank" rel="noopener">
-					<Npm class="size-14"/>
-					<small class="text-xs text-slate-600">NPM</small>
-				</a>
-			</div>
-		</article>
-
-		<article>
-			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Testing</h3>
-			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
-				<a href="https://vitest.dev/" target="_blank" rel="noopener">
-					<Vitest class="size-14"/>
-					<small class="text-xs text-slate-600">Vitest</small>
-				</a>
-				<a href="https://github.com/avajs/ava" target="_blank" rel="noopener">
-					<Ava class="size-14"/>
-					<small class="text-xs text-slate-600">Ava</small>
-				</a>
-				<a href="https://phpunit.de" target="_blank" rel="noopener">
-					<PhpUnit class="size-14"/>
-					<small class="text-xs text-slate-600">PHPUnit</small>
-				</a>
-				<a href="https://www.cypress.io" target="_blank" rel="noopener">
-					<Cypress class="size-14"/>
-					<small class="text-xs text-slate-600">Cypress</small>
-				</a>
-				<a href="https://mochajs.org" target="_blank" rel="noopener">
-					<Mocha class="size-14"/>
-					<small class="text-xs text-slate-600">Mocha</small>
-				</a>
-			</div>
-		</article>
-
-		<article class="sm:col-span-2">
-			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">Tools & Platforms</h3>
-			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
-				<a href="https://www.apple.com/macos" target="_blank" rel="noopener">
-					<Apple class="size-14"/>
-					<small class="text-xs text-slate-600">macOS</small>
-				</a>
-				<a href="https://www.linux.org" target="_blank" rel="noopener">
-					<Linux class="size-14"/>
-					<small class="text-xs text-slate-600">Linux</small>
-				</a>
-				<a href="https://www.docker.com" target="_blank" rel="noopener">
-					<Docker class="size-14"/>
-					<small class="text-xs text-slate-600">Docker</small>
-				</a>
-				<a href="https://git-scm.com" target="_blank" rel="noopener">
-					<Git class="size-14"/>
-					<small class="text-xs text-slate-600">Git</small>
-				</a>
-				<a href="https://www.jetbrains.com/phpstorm/" target="_blank" rel="noopener">
-					<PhpStorm class="size-14"/>
-					<small class="text-xs text-slate-600">PhpStorm</small>
-				</a>
-				<a href="https://www.wordpress.org" target="_blank" rel="noopener">
-					<Wordpress class="size-14"/>
-					<small class="text-xs text-slate-600">WordPress</small>
-				</a>
-			</div>
-		</article>
-
-		<article>
-			<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">AI</h3>
-			<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
-				<a href="https://claude.ai" target="_blank" rel="noopener">
-					<Claude class="size-14"/>
-					<small class="text-xs text-slate-600">Claude</small>
-				</a>
-				<a href="https://openai.com" target="_blank" rel="noopener">
-					<Openai class="size-14"/>
-					<small class="text-xs text-slate-600">OpenAI</small>
-				</a>
-			</div>
-		</article>
-
+		{groups.map(({title, items}) => (
+			<article>
+				<h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">{title}</h3>
+				<div class="flex flex-wrap gap-4 *:flex *:flex-col *:items-center *:gap-1">
+					{items.map(({icon: Icon, label, href}) => (
+						<a href={href} target="_blank" rel="noopener">
+							<Icon class="size-14"/>
+							<small class="text-xs text-slate-600">{label}</small>
+						</a>
+					))}
+				</div>
+			</article>
+		))}
 	</div>
 </section>
