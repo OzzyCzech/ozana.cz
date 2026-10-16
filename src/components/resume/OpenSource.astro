@@ -17,7 +17,7 @@ const packages = [
 		<div>
 			<h3 class="font-semibold tracking-tight text-slate-900">Open source</h3>
 			<p class="mt-2 leading-relaxed text-slate-600">
-				Author and maintainer of open-source packages for JavaScript, PHP and Rust, including
+				Author and maintainer of open-source packages for JavaScript, PHP and Rust, including{' '}
 				{packages.map(({name, href}, i) => (
 					<>{i > 0 && (i === packages.length - 1 ? ' and ' : ', ')}<a href={href} target="_blank" rel="noopener" class="link">{name}</a></>
 				))}.
