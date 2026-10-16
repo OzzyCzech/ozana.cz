@@ -66,6 +66,13 @@ try {
 	const response = await page.goto(`http://127.0.0.1:${port}/resume/`, {waitUntil: "networkidle"});
 	if (!response?.ok()) throw new Error(`/resume/ answered ${response?.status()}`);
 	await page.evaluate(() => document.fonts.ready);
+	// icons are lazy <img>s; load them all before printing so the PDF never ships without them
+	const missing = await page.evaluate(async () => {
+		for (const img of document.images) img.loading = "eager";
+		await Promise.all([...document.images].map((img) => img.decode().catch(() => {})));
+		return [...document.images].filter((img) => !img.complete || img.naturalWidth === 0).map((img) => img.src);
+	});
+	failed.push(...missing.filter((src) => !onVercelOnly(src)));
 	if (failed.length) throw new Error(`resources failed to load:\n  ${failed.join("\n  ")}`);
 
 	const pdf = await page.pdf({preferCSSPageSize: true, printBackground: true});
