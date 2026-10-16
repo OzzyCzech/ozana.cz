@@ -1,6 +1,5 @@
 ---
-import { SquareArrowOutUpRight } from "@lucide/astro";
-
+import { ArrowUpRight } from "@lucide/astro";
 
 export interface Props {
 	href: string;
@@ -8,8 +7,9 @@ export interface Props {
 const {href} = Astro.props as Props;
 ---
 <div class="mt-4">
-	<a href={href} target="_blank" rel="noopener" class="btn-ghost">
+	<a href={href} target="_blank" rel="noopener" class="link inline-flex items-center gap-1 font-medium text-slate-900">
 		<slot/>
-		<SquareArrowOutUpRight class="size-4" aria-hidden="true"/>
+		<ArrowUpRight class="size-4 text-slate-500" aria-hidden="true"/>
+		<span class="sr-only">(opens in a new tab)</span>
 	</a>
 </div>
