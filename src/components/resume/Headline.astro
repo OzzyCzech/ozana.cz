@@ -1,27 +1,24 @@
 ---
+import { Globe, Mail, MapPin, Phone } from "@lucide/astro";
+
 const years = (new Date()).getFullYear() - 2009;
 ---
+<!-- print/PDF only: the on-screen resume has its own summary under the name -->
 <section class="hidden print:block">
-	<article class="flex gap-4 py-4">
-		<div>
-			<p class="mb-3 text-lg leading-relaxed">
-				I'm a full-stack developer from Prague with <strong>over {years} years</strong> of building web applications and services.
-				I co-founded <strong>Testomato</strong>, a SaaS platform for website monitoring, where I'm the main developer, and have led development
-				of <strong>Zdroják.cz</strong>, a Czech developer magazine, for more than a decade. I work mostly in PHP and TypeScript,
-				from architecture and APIs to frontend and infrastructure, and use AI tools like Claude Code and Codex every day.
-				I also maintain a number of open-source packages. I like small, efficient teams and products that stay simple,
-				and I'm open to new projects.
-			</p>
-			<ul class="leading-loose">
-				<li><strong>Address</strong>: Prague, Czech Republic</li>
-				<li><strong>Web</strong>: <a href="https://ozana.cz">https://ozana.cz</a></li>
-				<li><strong>Email</strong>: <a href="mailto:roman@ozana.cz?subject=Resume">roman@ozana.cz</a></li>
-				<li><strong>Phone</strong>: <a href="tel:+420605783455">+420&nbsp;605&nbsp;783&nbsp;455</a></li>
-			</ul>
-		</div>
-		<div class="w-[650px]">
-			<img src="/img/roman-ozana.medium.jpg" alt="Roman Ožana" loading="lazy" class="object-cover my-4 rounded-sm"/>
-		</div>
+	<article class="grid grid-cols-[150px_1fr] items-center gap-8 py-4">
+		<img src="/img/roman-ozana.small.jpg" alt="Roman Ožana" class="size-[150px] rounded-full object-cover"/>
+		<p class="text-base leading-relaxed text-slate-700">
+			Full-stack developer from Prague with <strong>over {years} years</strong> of building web applications.
+			Co-founder and main developer of <strong>Testomato</strong>, a website monitoring SaaS, and long-time lead developer
+			of <strong>Zdroják.cz</strong>. I work mostly in PHP and TypeScript, use AI tools every day, and like small teams
+			and products that stay simple. Open to new projects.
+		</p>
 	</article>
-</section>
 
+	<ul class="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-2 border-y border-slate-200 py-3 text-sm text-slate-700 *:flex *:items-center *:gap-2">
+		<li><MapPin class="size-4 text-slate-500" aria-hidden="true"/>Prague, Czech Republic</li>
+		<li><Globe class="size-4 text-slate-500" aria-hidden="true"/><a href="https://ozana.cz">ozana.cz</a></li>
+		<li><Mail class="size-4 text-slate-500" aria-hidden="true"/><a href="mailto:roman@ozana.cz?subject=Resume">roman@ozana.cz</a></li>
+		<li><Phone class="size-4 text-slate-500" aria-hidden="true"/><a href="tel:+420605783455">+420&nbsp;605&nbsp;783&nbsp;455</a></li>
+	</ul>
+</section>
