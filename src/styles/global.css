@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
+/* Inter for print only: the PDF is generated on Linux in CI, where system-ui
+   falls back to DejaVu. @font-face files download only when text uses them,
+   so the screen keeps the system stack and fetches nothing extra. */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
 
 @custom-variant active (&:where(.active &));
 
@@ -79,6 +87,10 @@
 	@page {
 		size: a4;
 		margin: 10mm;
+	}
+
+	body {
+		font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
 	}
 
 	p, h2, h3 {
