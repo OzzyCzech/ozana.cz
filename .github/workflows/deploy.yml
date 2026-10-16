@@ -26,7 +26,7 @@ jobs:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       # --prod only from main; anything else becomes a preview deployment
       VERCEL_ENV: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
-      VERCEL_PROD_FLAG: ${{ github.ref == 'refs/heads/main' && '--prod' || '' }}
+      VERCEL_PROD: ${{ github.ref == 'refs/heads/main' && 'true' || '' }}
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -40,10 +40,10 @@ jobs:
         run: pnpm run lint
 
       - name: Pull Vercel project settings
-        run: pnpm exec vercel pull --yes --environment=$VERCEL_ENV --token=$VERCEL_TOKEN
+        run: pnpm exec vercel pull --yes --environment="$VERCEL_ENV" --token="$VERCEL_TOKEN"
 
       - name: Build
-        run: pnpm exec vercel build $VERCEL_PROD_FLAG --token=$VERCEL_TOKEN
+        run: pnpm exec vercel build ${VERCEL_PROD:+--prod} --token="$VERCEL_TOKEN"
         env:
           # repo cards on /projects/; don't rely on vercel pull, sensitive vars come back empty
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -62,6 +62,6 @@ jobs:
 
       - name: Deploy
         run: |
-          url=$(pnpm exec vercel deploy --prebuilt $VERCEL_PROD_FLAG --token=$VERCEL_TOKEN)
+          url=$(pnpm exec vercel deploy --prebuilt ${VERCEL_PROD:+--prod} --token="$VERCEL_TOKEN")
           echo "Deployed: $url" >> "$GITHUB_STEP_SUMMARY"
           echo "$url"
