@@ -13,8 +13,8 @@ export async function GET() {
 		.addURL("https://ozana.cz", "WORK")
 		.addURL("https://ozzyczech.cz", "BLOG")
 		.addSocial("https://github.com/OzzyCzech", "GitHub", "OzzyCzech")
-		.addSocial("https://stackoverflow.com/users/355316/ozzyczech/", "StackOverflow", "OzzyCzech")
-		.addSocial("https://www.linkedin.com/in/roman-ozana/", "LinkedIn", "Roman Ožana")
+		.addSocial("https://stackoverflow.com/users/355316/ozzyczech", "StackOverflow", "OzzyCzech")
+		.addSocial("https://www.linkedin.com/in/roman-ozana", "LinkedIn", "Roman Ožana")
 		.addNickname("OzzyCzech")
 		.addPhoto(await readFileAsync(photo, { encoding: "base64", flag: "r" }), "JPEG")
 
