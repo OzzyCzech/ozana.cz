@@ -76,10 +76,10 @@
 	@apply text-lg font-semibold tracking-tight text-slate-900 print:text-current;
 }
 
+/* white lifted pill: stack badges, languages, the New label */
 @utility badge {
-	@apply inline-flex items-center rounded-md px-2.5 py-0.5 text-sm font-medium;
-	@apply bg-slate-100 text-slate-700;
-	@apply transition-colors duration-150;
+	@apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium text-slate-700 bg-white/80;
+	@apply shadow-[0_1px_2px_rgba(15,23,42,0.06),0_4px_12px_rgba(15,23,42,0.06)];
 }
 
 

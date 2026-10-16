@@ -8,10 +8,8 @@
 	@layer base {
 		ul {
 			@apply flex justify-start items-center flex-wrap gap-2 no-underline hover:no-underline;
-			/* white lifted pills, same language as the availability badge and ghost buttons */
 			li {
-				@apply px-3 py-1 rounded-full text-xs font-medium text-slate-700 bg-white/80;
-				@apply shadow-[0_1px_2px_rgba(15,23,42,0.06),0_4px_12px_rgba(15,23,42,0.06)];
+				@apply badge;
 			}
 		}
 	}
