@@ -2,12 +2,13 @@ name: Deploy
 
 # Builds the site, prints the resume to cv.pdf from that same build and ships
 # the result to Vercel as a prebuilt deployment. Production on main, a preview
-# deployment when run by hand on any other branch. The weekly run refreshes
+# deployment for pull requests and manual runs on any other branch. The weekly run refreshes
 # build-time data (GitHub stars, Zdroják articles, years of experience).
 
 on:
   push:
     branches: [main]
+  pull_request:
   schedule:
     - cron: "0 5 * * 1" # Mondays 05:00 UTC
   workflow_dispatch:
