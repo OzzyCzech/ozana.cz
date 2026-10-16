@@ -60,10 +60,6 @@
 	@apply shadow-[0_1px_3px_rgba(15,23,42,0.06),0_8px_24px_rgba(15,23,42,0.08)] hover:shadow-[0_1px_3px_rgba(15,23,42,0.08),0_12px_32px_rgba(15,23,42,0.12)];
 }
 
-@utility btn-xs {
-	@apply py-1 px-3 text-sm font-semibold;
-}
-
 @utility card {
 	@apply rounded-xl border border-border bg-white shadow-sm;
 }
