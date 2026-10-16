@@ -8,8 +8,8 @@ export interface Props {
 const {href} = Astro.props as Props;
 ---
 <div class="mt-4">
-	<a href={href} target="_blank" rel="noopener" class="btn btn-xs">
+	<a href={href} target="_blank" rel="noopener" class="btn-ghost">
 		<slot/>
-		<SquareArrowOutUpRight class="size-3"/>
+		<SquareArrowOutUpRight class="size-4" aria-hidden="true"/>
 	</a>
 </div>
