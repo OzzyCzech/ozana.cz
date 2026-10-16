@@ -4,15 +4,11 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ArrowUpRight, Bookmark, Mail, MapPin, Phone } from '@lucide/astro';
 import Availability from "../components/Availability.astro";
-import { contactQr } from "../lib/contact-qr";
-
-const qr = await contactQr();
 
 const profiles = [
 	{label: 'GitHub', href: 'https://github.com/OzzyCzech'},
 	{label: 'LinkedIn', href: 'https://www.linkedin.com/in/roman-ozana'},
 	{label: 'Stack Overflow', href: 'https://stackoverflow.com/users/355316/ozzyczech'},
-	{label: 'Zdroják.cz', href: 'https://zdrojak.cz/autori/roman-ozana/'},
 ];
 ---
 <Layout
@@ -78,12 +74,9 @@ const profiles = [
 					</span>
 				</div>
 
-				<div class="flex items-center justify-between gap-6 border-t border-slate-900/[0.06] px-6 pt-5 pb-1">
-					<p class="text-sm text-slate-600">
-						IN:&nbsp;<a href="https://rzp.gov.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" rel="noopener" class="link hover:text-slate-900">87098504</a>
-					</p>
-					<div class="size-24 shrink-0 *:size-full" role="img" aria-label="QR code with contact details" set:html={qr}></div>
-				</div>
+				<p class="mt-1 border-t border-slate-900/[0.06] px-6 pt-4 text-sm text-slate-600">
+					IN:&nbsp;<a href="https://rzp.gov.cz/verejne-udaje/cs/udaje/vyber-subjektu;ico=87098504" title="Registration number" target="_blank" rel="noopener" class="link hover:text-slate-900">87098504</a>
+				</p>
 			</section>
 
 		</div>
