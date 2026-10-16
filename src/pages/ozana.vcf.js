@@ -6,12 +6,11 @@ export async function GET() {
 	const photo = join(process.cwd(), "/public/img/roman-ozana.small.jpg")
 	const vcf = new VCard();
 	vcf.addName("Ožana", "Roman")
-		.addJobTitle("A freelance web developer")
+		.addJobTitle("Full-Stack Developer")
 		.addEmail("roman@ozana.cz")
 		.addPhoneNumber("+420605783455", "IPHONE")
 		.addAddress("", "Prague", "Czech Republic", "14000", "Czech Republic")
 		.addURL("https://ozana.cz", "WORK")
-		.addURL("https://ozzyczech.cz", "BLOG")
 		.addSocial("https://github.com/OzzyCzech", "GitHub", "OzzyCzech")
 		.addSocial("https://stackoverflow.com/users/355316/ozzyczech", "StackOverflow", "OzzyCzech")
 		.addSocial("https://www.linkedin.com/in/roman-ozana", "LinkedIn", "Roman Ožana")

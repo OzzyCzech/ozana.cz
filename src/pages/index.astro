@@ -5,11 +5,12 @@ import Footer from '../components/Footer.astro';
 import Avatar from "../components/Avatar.astro";
 import { ArrowRight } from "@lucide/astro";
 import RoleRotator from "../components/RoleRotator.astro";
+import Availability from "../components/Availability.astro";
 ---
 
 <Layout
 	title="Ing. Roman Ožana – Full-Stack Developer"
-	description="Hey, I'm Roman Ožana, a passionate Full-Stack Developer specializing in building robust web applications and services. Explore my projects and get in touch!">
+	description="Roman Ožana, full-stack developer from Prague with over 17 years of building web applications. Co-founder and main developer of Testomato, long-time developer of Zdroják.cz.">
 
 	<Header/>
 
@@ -21,13 +22,7 @@ import RoleRotator from "../components/RoleRotator.astro";
 
 		<article class="text-center">
 
-			<p class="availability mb-5">
-				<span class="relative flex size-2" aria-hidden="true">
-					<span class="absolute inline-flex size-full rounded-full bg-emerald-500 opacity-60 animate-ping motion-reduce:hidden"></span>
-					<span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
-				</span>
-				Available for new projects
-			</p>
+			<div class="mb-5"><Availability/></div>
 
 			<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-1.5">
 				Hey, I'm Roman.
@@ -59,8 +54,4 @@ import RoleRotator from "../components/RoleRotator.astro";
 <style>
 	@reference "../styles/global.css";
 
-	.availability {
-		@apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium text-slate-700;
-		@apply bg-white/70 backdrop-blur-xl shadow-[0_1px_3px_rgba(15,23,42,0.06),0_8px_24px_rgba(15,23,42,0.06)];
-	}
 </style>
