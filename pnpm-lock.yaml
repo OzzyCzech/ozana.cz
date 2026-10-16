@@ -211,8 +211,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       '@wticons/astro':
-        specifier: ^3.0.0
-        version: 3.0.0(astro@7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))
+        specifier: ^3.0.1
+        version: 3.0.1(astro@7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))
       astro:
         specifier: 7.3.8
         version: 7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1)
@@ -2068,8 +2068,8 @@ packages:
   '@workflow/serde@4.1.0-beta.2':
     resolution: {integrity: sha512-8kkeoQKLDaKXefjV5dbhBj2aErfKp1Mc4pb6tj8144cF+Em5SPbyMbyLCHp+BVrFfFVCBluCtMx+jjvaFVZGww==}
 
-  '@wticons/astro@3.0.0':
-    resolution: {integrity: sha512-Xpmb5PSdpzvpyQJXN5lUO6fFDsbeb5q4moodRXcjf/SwatU21x/sLbQNLPKWyVo5Zc3dcjspA9Fid44ongZlAw==}
+  '@wticons/astro@3.0.1':
+    resolution: {integrity: sha512-etZ57D29kOpSaNC8mtJiZ4zxcQ5IwLPO3sd6wEh0GH3eRAEo6+/so3jPCfmb4TQdN56EjmyDNkqP1OMLk63rUA==}
     peerDependencies:
       astro: '>=5.7.0'
 
@@ -5702,7 +5702,7 @@ snapshots:
 
   '@workflow/serde@4.1.0-beta.2': {}
 
-  '@wticons/astro@3.0.0(astro@7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))':
+  '@wticons/astro@3.0.1(astro@7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))':
     dependencies:
       '@babel/runtime': 8.0.7
       astro: 7.3.8(@types/node@24.13.3)(@vercel/blob@2.8.0)(@vercel/functions@3.10.1(ws@8.22.0))(esbuild@0.27.0)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1)
