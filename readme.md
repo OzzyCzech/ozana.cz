@@ -25,7 +25,8 @@ pnpm build && pnpm preview    # production build + preview
 
 Production is deployed by GitHub Actions (`.github/workflows/deploy.yml`), not by Vercel's Git
 integration: on every push to `main`, every Monday at 05:00 UTC (to refresh GitHub stars, Zdroják
-articles and years of experience) and by hand via *Run workflow* (any other branch gives a preview).
+articles and years of experience) and by hand via *Run workflow*. Pull requests and other branches
+get a preview deployment.
 
 The workflow runs `vercel build`, prints `/resume/` from that build to `cv.pdf` with Playwright
 (`bin/cv.mjs`) and ships it with `vercel deploy --prebuilt`. `cv.pdf` is not in the repository;
