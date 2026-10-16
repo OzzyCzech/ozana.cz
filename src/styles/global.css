@@ -88,10 +88,12 @@
 		size: a4;
 		margin: 10mm 10mm 14mm;
 
-		@bottom-center {
+		@bottom-right {
 			content: "Ing. Roman Ožana · Resume · " counter(page) " / " counter(pages);
 			font: 8pt 'Inter', sans-serif;
 			color: #64748b;
+			/* the margin box reaches the page edge; pull it back to the 10 mm text margin */
+			margin-right: 10mm;
 		}
 	}
 
