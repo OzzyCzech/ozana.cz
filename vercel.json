@@ -63,5 +63,8 @@
   ],
   "alias": [
     "ozana.cz"
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": false
+  }
 }
