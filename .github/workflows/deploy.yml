@@ -49,20 +49,9 @@ jobs:
           # repo cards on /projects/; don't rely on vercel pull, sensitive vars come back empty
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Cache Playwright browsers
-        id: playwright-cache
-        uses: actions/cache@v6
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
-
-      # No --with-deps: it runs apt-get on every run and the Ubuntu mirror is at times
-      # minutes slow. ubuntu-latest ships Google Chrome, so Chromium's shared libraries are
-      # already there; the apt step only added CJK fonts, xvfb and X fonts the print never uses.
-      - name: Install Chromium
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: pnpm exec playwright install chromium
-
+      # No Playwright browser install: bin/cv.mjs prints with the Google Chrome that ships on
+      # ubuntu-latest. `playwright install --with-deps` ran apt-get on every deploy and the
+      # Ubuntu mirror has at times taken over ten minutes to serve a few font packages.
       - name: Print resume to cv.pdf
         run: node bin/cv.mjs .vercel/output/static
 

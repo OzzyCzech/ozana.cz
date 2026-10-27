@@ -29,7 +29,7 @@ articles and years of experience) and by hand via *Run workflow*. Pull requests 
 get a preview deployment.
 
 The workflow runs `vercel build`, prints `/resume/` from that build to `cv.pdf` with Playwright
-(`bin/cv.mjs`) and ships it with `vercel deploy --prebuilt`. `cv.pdf` is not in the repository;
+(`bin/cv.mjs`, driving the Google Chrome preinstalled on the runner) and ships it with `vercel deploy --prebuilt`. `cv.pdf` is not in the repository;
 `make resume` generates it locally.
 
 Repository secrets: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`.

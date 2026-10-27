@@ -5,9 +5,13 @@
  *   node bin/cv.mjs [static-dir]     (default: .vercel/output/static)
  *
  * Serves the static output on a random local port, opens /resume/ in headless
- * Chromium with print media and writes <static-dir>/cv.pdf, so the PDF always
+ * Chrome with print media and writes <static-dir>/cv.pdf, so the PDF always
  * comes from the exact build that gets deployed. Exits non-zero on any failure,
  * a missing or stale PDF must never ship silently.
+ *
+ * Uses the installed Google Chrome (Playwright's "chrome" channel) rather than a
+ * downloaded Chromium: GitHub's ubuntu-latest runner ships Chrome, so the deploy
+ * needs no browser install, and macOS has it under /Applications for `make resume`.
  */
 import { createServer } from "node:http";
 import { readFile, stat, writeFile } from "node:fs/promises";
@@ -49,7 +53,7 @@ const server = createServer(async (req, res) => {
 await new Promise((done) => server.listen(0, "127.0.0.1", done));
 const {port} = /** @type {import("node:net").AddressInfo} */ (server.address());
 
-const browser = await chromium.launch();
+const browser = await chromium.launch({channel: "chrome"});
 try {
 	const page = await browser.newPage();
 	// /_vercel/* only exists on Vercel (image optimisation, analytics); everything else must load
