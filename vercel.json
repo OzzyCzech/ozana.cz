@@ -59,6 +59,11 @@
       "source": "/source",
       "destination": "https://github.com/OzzyCzech/ozana.cz",
       "permanent": true
+    },
+    {
+      "source": "/security.txt",
+      "destination": "/.well-known/security.txt",
+      "permanent": true
     }
   ],
   "alias": [
