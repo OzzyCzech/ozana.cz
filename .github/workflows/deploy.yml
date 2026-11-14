@@ -19,6 +19,9 @@ concurrency:
 
 jobs:
   deploy:
+    # Runs started by Dependabot get no repository secrets, so the Vercel steps would fail on
+    # an empty token. Its PRs are still built and checked by the CI workflow.
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
