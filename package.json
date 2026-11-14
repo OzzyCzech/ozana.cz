@@ -1,7 +1,7 @@
 {
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@12.11.2",
+  "packageManager": "pnpm@12.18.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,28 +12,28 @@
     "lint": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/vercel": "^11.0.14",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/sitemap": "^3.7.5",
+    "@astrojs/vercel": "^11.0.22",
     "@fontsource/inter": "^5.3.0",
     "@fontsource/jetbrains-mono": "^5.3.0",
-    "@lucide/astro": "^1.57.0",
+    "@lucide/astro": "^1.73.0",
     "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.3",
-    "@vercel/speed-insights": "^2.0.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "@vercel/speed-insights": "^2.1.0",
     "@wticons/astro": "^3.0.1",
-    "astro": "7.3.8",
-    "satori": "^0.56.1",
+    "astro": "7.4.12",
+    "satori": "^0.63.2",
     "sharp": "^0.35.5",
-    "tailwindcss": "4.3.3",
+    "tailwindcss": "4.3.5",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@ozzyczech/tsconfig": "^2.1.0",
     "@types/qrcode": "^1.5.6",
-    "playwright": "1.64.1",
+    "playwright": "1.65.1",
     "qrcode": "1.5.4",
-    "url-metadata": "^6.3.0",
-    "vercel": "64.3.1"
+    "url-metadata": "^6.3.1",
+    "vercel": "65.16.0"
   }
 }
